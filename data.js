@@ -106,9 +106,9 @@ const CASES = [
   // ============================================================
   {
     id: 1,
-    title: "Smear-negative pulmonary TB, evolving to isoniazid mono-resistance",
+    title: "34-year-old laborer with 6 weeks of productive cough and weight loss",
     hubDescription:
-      "A smear-negative cavitary presentation that evolves into isoniazid mono-resistant TB — molecular test limits, katG vs inhA, and the evidence behind Hr-TB regimens.",
+      "A subacute cough-and-weight-loss presentation worked up with a rapid molecular test and culture — what that first result does and doesn't rule out, and the evidence behind the regimen once the full picture is in.",
     vignette:
       "34-year-old male laborer, no known TB contact, 6 weeks productive cough, low-grade fevers, night sweats, 5 kg weight loss.",
     stages: [
@@ -119,6 +119,7 @@ const CASES = [
           <ol>
             <li><strong>The tests:</strong> sputum for AFB smear microscopy and a WHO-recommended rapid molecular test (e.g., Xpert MTB/RIF Ultra) sent together, plus a CXR.</li>
             <li>Differential to hold in mind while results pend: pulmonary TB, non-tuberculous mycobacteria, endemic fungal infection, subacute bacterial pneumonia, malignancy.</li>
+            <li>Don't just hold the alternatives in mind — test for them: send a routine bacterial sputum culture (covers the pneumonia possibility) alongside the TB workup, and add fungal serology/urine antigen testing (e.g., Histoplasma) if the patient has lived in or traveled through an endemic area.</li>
             <li>Send the molecular test alongside the smear, not after it — it is faster and does not need to be gated behind microscopy.</li>
           </ol>`,
         pearl:
@@ -211,9 +212,9 @@ const CASES = [
   // ============================================================
   {
     id: 2,
-    title: "Multidrug-resistant TB in a retreatment patient",
+    title: "42-year-old woman with recurrent cough and hemoptysis after prior TB treatment",
     hubDescription:
-      "A retreatment patient with adherence gaps returns with rifampin-resistant TB — rpoB resistance-detection limits and the trial evidence behind BPaLM and its alternatives.",
+      "A retreatment patient with adherence gaps returns with new respiratory symptoms — working through rapid resistance testing, its molecular basis and blind spots, and the trial evidence behind current regimen options.",
     vignette:
       "42-year-old female. Completed a standard first-line TB treatment course 18 months ago, with reported adherence gaps during that course. Now presents with 2 months of recurrent cough, hemoptysis, and weight loss. No known contact with a resistant TB case on direct questioning.",
     stages: [
@@ -226,6 +227,7 @@ const CASES = [
             <li><strong>The test:</strong> a WHO-recommended rapid molecular assay for rifampin resistance (Xpert MTB/RIF Ultra or equivalent) — sent immediately, alongside routine sputum smear microscopy, not after it.</li>
             <li><strong>Why now, not later:</strong> it detects both <em>M. tuberculosis</em> and rifampin resistance within hours rather than the weeks culture takes — and a prior treatment course with adherence gaps is itself a major resistance risk factor, independent of a reported negative contact history.</li>
             <li>Also send culture with full first- and second-line phenotypic DST regardless of the rapid result — molecular assays only flag specific known mutations and can miss others.</li>
+            <li>Don't anchor on relapse/resistant TB alone — the hemoptysis and prior lung disease also raise post-TB bronchiectasis with secondary bacterial infection and an aspergilloma (fungal ball) in a residual cavity. A routine bacterial sputum culture covers the first; if imaging shows a residual cavity, add Aspergillus serology.</li>
             <li>Document the exact prior regimen, duration of interruptions, and any known exposure to a resistant source case.</li>
           </ol>`,
         pearl:
@@ -262,7 +264,7 @@ const CASES = [
         question:
           "Given this susceptibility profile, what regimen and duration does current evidence support, and what studies is that based on?",
         reveal: `
-          <p>With fluoroquinolone susceptibility confirmed, current WHO guidance supports the 6-month BPaLM regimen — bedaquiline, pretomanid, linezolid 600 mg, and moxifloxacin — usable programmatically in patients aged 15 and older who have not had more than one month of prior exposure to bedaquiline, pretomanid, or linezolid.</p>
+          <p>With fluoroquinolone susceptibility confirmed, current WHO guidance supports the 6-month BPaLM regimen — bedaquiline, pretomanid, linezolid 600 mg, and moxifloxacin — usable programmatically in patients aged 15 and older who have not had more than one month of prior exposure to bedaquiline, pretomanid, or linezolid.${cite(3, 4)}</p>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Control arm</th><th>Experimental arm</th><th>Key result</th></tr></thead>
@@ -366,7 +368,8 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p>In all linezolid-containing arms, the linezolid dose was reduced at week 16 (or sooner if needed) to limit toxicity — the same dose-tapering principle as BPaLM. Grade 3 or higher hepatotoxicity occurred in 11.7% of experimental participants overall vs 7.1% of controls.</p>`,
+          <p>In all linezolid-containing arms, the linezolid dose was reduced at week 16 (or sooner if needed) to limit toxicity — the same dose-tapering principle as BPaLM. Grade 3 or higher hepatotoxicity occurred in 11.7% of experimental participants overall vs 7.1% of controls.</p>
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline-currency note:</em> WHO's drug-resistant TB guidance (Module 4) is revised periodically, and further updates may have been issued after the sources cited above — potentially affecting which alternative regimens are preferred for patients who don't qualify for BPaLM. Please check the current WHO Module 4 guideline directly before teaching this stage as fully up to date.</p>`,
         pearl:
           "MDR-TB management does not stop at the regimen — contact investigation has to account for the resistance pattern too. Also worth naming for fellows: 4 of 5 endTB regimens performed about as well as standard care, but at 9 months versus 18&ndash;20+ months — that duration reduction is the real headline. The one regimen that failed (9DCLLfxZ) is a useful example of why testing multiple candidate combinations in a single trial matters, rather than assuming any bedaquiline/delamanid-based combination works equally well.",
       },
@@ -379,9 +382,9 @@ const CASES = [
   {
     id: 3,
     title:
-      "Diagnostic dilemma: negative initial workup in miliary TB with advanced HIV",
+      "36-year-old man with new HIV diagnosis, fever, and progressive dyspnea",
     hubDescription:
-      "Miliary TB with advanced HIV where every initial test comes back negative — interpreting LAM, sputum vs BAL, and when to treat empirically.",
+      "A newly diagnosed HIV patient with fever and progressive dyspnea whose initial workup keeps coming back negative — interpreting urine LAM, sputum vs BAL, and when to treat despite negative microbiology.",
     vignette:
       "36-year-old man, newly diagnosed HIV (CD4 38 cells/uL, not yet on ART), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. CT chest shows a diffuse micronodular (\"miliary\") pattern." +
       img(3, "stage1", "ct-miliary", 'Diffuse micronodular ("miliary") pattern on CT chest'),
@@ -394,6 +397,7 @@ const CASES = [
             <li><strong>The tests:</strong> sputum (spontaneous, or induced if the patient cannot expectorate) for AFB smear, NAAT, and culture — ideally multiple specimens; mycobacterial blood culture (lysis-centrifugation technique); a urine lateral-flow LAM assay; baseline CD4 and HIV viral load if not already known.</li>
             <li>Why the broader net: miliary TB in advanced HIV is disseminated disease, not a purely pulmonary process — sampling the lungs alone can under-diagnose it. Urine LAM specifically has its best performance in exactly this population: seriously ill, low CD4, disseminated disease.</li>
             <li>Differential to hold: miliary TB, disseminated histoplasmosis or other endemic fungal infection, disseminated non-tuberculous mycobacterial infection (especially at very low CD4), lymphoma, bacterial sepsis with an ARDS-type pattern (less likely given the subacute course).</li>
+            <li>Test for that differential, not just the TB-directed panel: send routine bacterial blood cultures and a serum or urine fungal antigen test (e.g., Histoplasma antigen) up front — disseminated fungal disease can mimic this presentation closely in advanced HIV, especially in endemic regions.</li>
           </ol>`,
         pearl:
           'Name urine LAM explicitly in your initial orders — it is easy to leave off as an "extra" test, but in this population it can be your fastest positive result, sometimes same-day.',
@@ -528,9 +532,9 @@ const CASES = [
   // ============================================================
   {
     id: 4,
-    title: "Lymphadenopathy: TB, lymphoma, or sarcoidosis, and choosing how to biopsy",
+    title: "29-year-old expatriate worker with fever, night sweats, and mediastinal lymphadenopathy",
     hubDescription:
-      "Mediastinal lymphadenopathy on the TB–lymphoma–sarcoidosis differential — choosing EBUS-TBNA vs IR-guided biopsy.",
+      "Fever, night sweats, and mediastinal lymphadenopathy with no lung findings — working through a broad differential and choosing how to biopsy.",
     vignette:
       "29-year-old expatriate construction worker, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. CT chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
       img(4, "stage1", "ct-lymphadenopathy", "Bilateral hilar and mediastinal lymphadenopathy without parenchymal lung lesion"),
@@ -544,6 +548,7 @@ const CASES = [
             <li><strong>The procedure:</strong> EBUS-TBNA (endobronchial ultrasound-guided transbronchial needle aspiration) of the largest and most accessible node station, sending material for both microbiology (AFB smear, mycobacterial culture, NAAT/PCR) and cytopathology (looking specifically for granulomas — necrotizing vs non-necrotizing) — with flow cytometry sent as well, given lymphoma sits on the differential.</li>
             <li><strong>Why not sputum:</strong> there is no parenchymal lesion and no cough here — isolated nodal disease has nothing for a sputum sample to reflect. Tissue is the only way to actually distinguish the three leading possibilities.</li>
             <li>Differential to hold: TB lymphadenitis, sarcoidosis, lymphoma (Hodgkin or non-Hodgkin) — with metastatic malignancy and fungal lymphadenitis as less likely alternatives depending on epidemiologic context.</li>
+            <li>Send a fungal stain and culture from the same EBUS-TBNA specimen rather than leaving fungal lymphadenitis as an untested differential item — it adds no extra procedure, just an additional order on tissue you already have.</li>
           </ol>`,
         pearl:
           "When the disease lives in a lymph node and not in the airway or parenchyma, sputum-based testing has nothing to sample — go straight to tissue.",
@@ -587,7 +592,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>Lymphoma (new/de novo cases)</td>
-                  <td>Pooled sensitivity ~66% in systematic review data ${cite(20)}, though single-cohort studies comparing directly against newer tissue-core techniques found standard EBUS-TBNA sensitivity as low as 14&ndash;15% (41% with flow cytometry added) ${cite(22)}</td>
+                  <td>Pooled sensitivity ~66% in systematic review data ${cite(20)}, though a single-cohort study comparing directly against newer tissue-core techniques found standard EBUS-TBNA sensitivity as low as 14&ndash;15% in new/de novo cases ${cite(22)} — a 41% figure sometimes quoted alongside this comes from the same cohort's <em>recurrent</em>-lymphoma subgroup, not new cases, and should not be conflated with the de novo number</td>
                   <td>Aspirate cytology alone usually cannot provide the architecture plus immunophenotype needed for WHO subtyping — a particular problem for follicular and marginal zone lymphoma, and part of why estimates vary so much across studies ${cite(21)}</td>
                 </tr>
               </tbody>
@@ -623,9 +628,9 @@ const CASES = [
   // ============================================================
   {
     id: 5,
-    title: "Latent TB: when to test and treat, and post-exposure management",
+    title: "32-year-old ICU nurse with an unmasked TB exposure",
     hubDescription:
-      "Latent TB after a high-risk occupational exposure — the window period, IGRA vs TST, and short-course LTBI regimens.",
+      "A high-risk occupational TB exposure — the window period, IGRA vs TST, and short-course preventive-treatment regimens.",
     vignette:
       "32-year-old ICU nurse with an unmasked, prolonged exposure to a patient later confirmed to have smear-positive, NAAT-positive pulmonary TB, during a period before the index patient was isolated.",
     stages: [
@@ -636,6 +641,7 @@ const CASES = [
           <ol>
             <li><strong>The actions:</strong> a baseline TST or IGRA as soon as possible (same day/this week), plus a symptom screen (cough, fever, night sweats, weight loss, hemoptysis) — regardless of any prior test result on file.</li>
             <li>This baseline result is a reference point, not a clearance — schedule the <em>same</em> test type again at 8&ndash;10 weeks after the last exposure. The immune response to <em>M. tuberculosis</em> takes 8&ndash;10 weeks to become detectable, so an early negative test cannot yet rule out infection.</li>
+            <li>If the symptom screen is positive at any point, don't assume it means TB disease by default — get a CXR (and sputum studies if abnormal) to actually rule active disease in or out, since an unrelated viral or bacterial respiratory illness is at least as likely as TB this early after exposure.</li>
             <li>Contact prioritization matters at the program level: exposure intensity, duration, and the index case's smear status determine who gets tested first and how urgently — not every contact needs the same urgency.</li>
             <li>The index case's infectious period — relevant for defining who actually counts as exposed — runs until roughly 2 weeks of effective treatment or clinical/microbiologic improvement, not just until the diagnosis was made.</li>
           </ol>`,
@@ -675,7 +681,7 @@ const CASES = [
                 <tr>
                   <td>Sterling et al., PREVENT TB study, N Engl J Med 2011 ${cite(25)}</td>
                   <td>3HP: rifapentine 900mg + isoniazid 900mg, weekly x3 months, directly observed, vs 9H: daily isoniazid x9 months, self-administered</td>
-                  <td>Confirmed TB in 0.19% (3HP) vs 0.40% (9H); noninferior; significantly higher treatment completion and fewer hepatotoxic events with 3HP</td>
+                  <td>Confirmed TB in 0.19% (3HP) vs 0.43% (9H); noninferior; significantly higher treatment completion and fewer hepatotoxic events with 3HP</td>
                 </tr>
                 <tr>
                   <td>Menzies et al., N Engl J Med 2018 ${cite(26)}</td>
@@ -689,7 +695,8 @@ const CASES = [
                 </tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline-currency note:</em> WHO has also been updating its TB preventive treatment guidance; I am not fully certain whether a newer edition has since revised or added to the 3HP/4R/3HR options summarized here. Please verify against the current WHO TB preventive treatment guideline before teaching this stage as fully up to date.</p>`,
         pearl:
           "This regimen decision has genuinely strong RCT evidence behind it — unlike some of the guideline-only recommendations in earlier cases, both 3HP and 4R rest on large noninferiority trials, which is exactly why short-course regimens have displaced 9H as preferred.",
       },
@@ -724,11 +731,11 @@ const REFERENCES = {
       title: "Case 1 & 2 — MDR-TB / BPaLM",
       items: [
         { n: 4, text: "World Health Organization. WHO consolidated guidelines on tuberculosis. Module 4: treatment — drug-resistant tuberculosis treatment, 2022 update. Geneva: WHO; 2022.", tag: "Clinical practice guideline" },
-        { n: 5, text: "Conradie F, Diacon AH, Ngubane N, et al. Treatment of highly drug-resistant pulmonary tuberculosis. N Engl J Med. 2020.", doi: "10.1056/NEJMoa1901814", tag: "Single-arm, open-label trial — Nix-TB" },
-        { n: 6, text: "Conradie F, et al. Bedaquiline-pretomanid-linezolid regimens for drug-resistant tuberculosis. N Engl J Med. 2022.", doi: "10.1056/NEJMoa2119430", tag: "Randomized dose-finding trial — ZeNix" },
-        { n: 7, text: "Nyang'wa BT, Berry C, Kazounis E, et al. A 24-week, all-oral regimen for rifampin-resistant tuberculosis. N Engl J Med. 2022.", doi: "10.1056/NEJMoa2117166", tag: "Randomized controlled trial — TB-PRACTECAL" },
+        { n: 5, text: "Conradie F, Diacon AH, Ngubane N, et al. Treatment of highly drug-resistant pulmonary tuberculosis. N Engl J Med. 2020;382(10):893-902.", doi: "10.1056/NEJMoa1901814", tag: "Single-arm, open-label trial — Nix-TB" },
+        { n: 6, text: "Conradie F, et al. Bedaquiline-pretomanid-linezolid regimens for drug-resistant tuberculosis. N Engl J Med. 2022;387(9):810-823.", doi: "10.1056/NEJMoa2119430", tag: "Randomized dose-finding trial — ZeNix" },
+        { n: 7, text: "Nyang'wa BT, Berry C, Kazounis E, et al. A 24-week, all-oral regimen for rifampin-resistant tuberculosis. N Engl J Med. 2022;387(25):2331-2343.", doi: "10.1056/NEJMoa2117166", tag: "Randomized controlled trial — TB-PRACTECAL" },
         { n: 8, text: "World Health Organization. WHO issues rapid communication on key updates to the treatment of drug-resistant tuberculosis. Geneva: WHO; 2024 Aug 23.", tag: "Guideline update" },
-        { n: 9, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Nine-month, all-oral regimens for rifampin-resistant tuberculosis. N Engl J Med. 2025;392(5):468-482.", doi: "10.1056/NEJMoa2400327", tag: "Randomized controlled non-inferiority trial — endTB" },
+        { n: 9, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Oral Regimens for Rifampin-Resistant, Fluoroquinolone-Susceptible Tuberculosis. N Engl J Med. 2025;392(5):468-482.", doi: "10.1056/NEJMoa2400327", tag: "Randomized controlled non-inferiority trial — endTB" },
         { n: 10, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Bedaquiline, delamanid, linezolid, and clofazimine for rifampicin-resistant and fluoroquinolone-resistant tuberculosis (endTB-Q). Lancet Respir Med. 2025;13(9):809-820.", doi: "10.1016/S2213-2600(25)00194-8", tag: "Randomized controlled non-inferiority trial — endTB-Q" },
       ],
     },
