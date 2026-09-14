@@ -369,7 +369,7 @@ const CASES = [
             </table>
           </div>
           <p>In all linezolid-containing arms, the linezolid dose was reduced at week 16 (or sooner if needed) to limit toxicity — the same dose-tapering principle as BPaLM. Grade 3 or higher hepatotoxicity occurred in 11.7% of experimental participants overall vs 7.1% of controls.</p>
-          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline-currency note:</em> WHO's drug-resistant TB guidance (Module 4) is revised periodically, and further updates may have been issued after the sources cited above — potentially affecting which alternative regimens are preferred for patients who don't qualify for BPaLM. Please check the current WHO Module 4 guideline directly before teaching this stage as fully up to date.</p>`,
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline update (WHO Module 4, April 2025)${cite(29)}:</em> two further options were added for patients who don't qualify for BPaLM. The 6-month <strong>BDLLfxC</strong> regimen — bedaquiline, delamanid, linezolid 600&nbsp;mg, levofloxacin, and clofazimine, adapted to BDLLfx if fluoroquinolone-susceptible or BDLC if fluoroquinolone-resistant — may be used in patients with no more than one month of prior bedaquiline, delamanid, or linezolid exposure, and extends 6-month treatment to populations (e.g., children, pregnant patients) who lack safety/dosing data for pretomanid. For fluoroquinolone-susceptible RR-TB specifically, WHO now also states a preference order among the modified 9-month regimens above: BLMZ is preferred over BLLfxCZ, which is preferred over BDLLfxZ; the DCLLfxZ and DCMZ combinations are recommended against. BPaLM remains the preferred first-choice 6-month regimen for eligible patients aged 14 and older — these newer options are specifically for patients who don't qualify for it.</p>`,
         pearl:
           "MDR-TB management does not stop at the regimen — contact investigation has to account for the resistance pattern too. Also worth naming for fellows: 4 of 5 endTB regimens performed about as well as standard care, but at 9 months versus 18&ndash;20+ months — that duration reduction is the real headline. The one regimen that failed (9DCLLfxZ) is a useful example of why testing multiple candidate combinations in a single trial matters, rather than assuming any bedaquiline/delamanid-based combination works equally well.",
       },
@@ -696,7 +696,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline-currency note:</em> WHO has also been updating its TB preventive treatment guidance; I am not fully certain whether a newer edition has since revised or added to the 3HP/4R/3HR options summarized here. Please verify against the current WHO TB preventive treatment guideline before teaching this stage as fully up to date.</p>`,
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline update (WHO Module 1, TB preventive treatment, 2nd edition, Sept 2024)${cite(30)}:</em> the 3HP/4R/3HR/6H/9H content above is unchanged in substance — 6H/9H, 3HP, and 3HR remain strongly recommended (moderate-to-high certainty), while 1HP and 4R remain conditional alternatives (low-to-moderate certainty), the same classification as the 2020 edition. The one genuinely new option is a strong recommendation for 6 months of daily levofloxacin (6Lfx) specifically for contacts of multidrug- or rifampicin-resistant TB — not applicable to this patient, since the index case's isolate was drug-susceptible, but worth knowing as TPT options for resistant-TB contacts have expanded.</p>`,
         pearl:
           "This regimen decision has genuinely strong RCT evidence behind it — unlike some of the guideline-only recommendations in earlier cases, both 3HP and 4R rest on large noninferiority trials, which is exactly why short-course regimens have displaced 9H as preferred.",
       },
@@ -770,6 +770,13 @@ const REFERENCES = {
         { n: 26, text: "Menzies D, Adjobimey M, Ruslami R, Trajman A, Sow O, Kim H, Obeng Baah J, Marks GB, Long R, Hoeppner V, Elwood K, Al-Jahdali H, Gninafon M, Apriani L, Koesoemadinata RC, Kritski A, Rolla V, Bah B, Camara A, Boakye I, Cook VJ, Goldberg H, Valiquette C, Hornby K, Dion MJ, Li PZ, Hill PC, Schwartzman K, Benedetti A. Four Months of Rifampin or Nine Months of Isoniazid for Latent Tuberculosis in Adults. N Engl J Med. 2018;379(5):440-453.", doi: "10.1056/NEJMoa1714283", tag: "Randomized controlled non-inferiority trial" },
         { n: 27, text: "Sterling TR, Njie G, Zenner D, et al. Guidelines for the Treatment of Latent Tuberculosis Infection: Recommendations from the National Tuberculosis Controllers Association and CDC, 2020. MMWR Recomm Rep. 2020;69(1):1-11.", doi: "10.15585/mmwr.rr6901a1", tag: "Clinical practice guideline" },
         { n: 28, text: "National Tuberculosis Controllers Association; Centers for Disease Control and Prevention. Guidelines for the investigation of contacts of persons with infectious tuberculosis. MMWR Recomm Rep. 2005;54(RR-15):1-47.", tag: "Clinical practice guideline — also the source of the 8–10 week window period recommendation used throughout this case" },
+      ],
+    },
+    {
+      title: "Guideline updates (2024–2025)",
+      items: [
+        { n: 29, text: "World Health Organization. WHO consolidated guidelines on tuberculosis. Module 4: treatment and care. Geneva: WHO; 2025.", tag: "Clinical practice guideline — 2025 edition; introduces the BDLLfxC regimen and a preference order among modified 9-month regimens" },
+        { n: 30, text: "World Health Organization. WHO consolidated guidelines on tuberculosis. Module 1: prevention — tuberculosis preventive treatment, second edition. Geneva: WHO; 2024.", tag: "Clinical practice guideline — second edition" },
       ],
     },
   ],
