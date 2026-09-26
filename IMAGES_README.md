@@ -15,7 +15,7 @@ here without renaming.
 images/case<N>/case<N>-<location>-<slug>.jpg
 ```
 
-- `<N>` — case number, 1 through 5
+- `<N>` — case number, 1 through 10
 - `<location>` — `stage1`, `stage2`, `stage3`, etc. (the slug is filed under
   the stage it's most naturally discussed in, even for images that describe
   something mentioned in the patient vignette)
@@ -37,6 +37,10 @@ Files must be `.jpg`. If you only have `.png`, convert or re-save as `.jpg`
 | 4 | Stage 2 | `images/case4/case4-stage2-histopath-necrotizing-granuloma.jpg` | Necrotizing granulomatous inflammation on EBUS-TBNA cytology | optional |
 | 4 | Stage 3 | `images/case4/case4-stage3-histopath-non-necrotizing-granuloma.jpg` | Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image | optional |
 | 5 | Stage 4 | `images/case5/case5-stage4-cxr-normal.jpg` | Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding | optional |
+| 6 | Vignette | `images/case6/case6-stage1-cxr-effusion.jpg` | Unilateral right pleural effusion (reference image) | optional |
+| 7 | Stage 2 | `images/case7/case7-stage2-spine-pathology.jpg` | Tuberculosis of the spinal column, autopsy specimen | optional |
+| 8 | Stage 4 | `images/case8/case8-stage4-ct-hydrocephalus.jpg` | Hydrocephalus on CT (reference image) | optional |
+| 10 | Vignette | `images/case10/case10-stage1-ct-peritonitis.jpg` | CT of wet-type tuberculous peritonitis | optional |
 
 Case 2 has no imaging findings described in the source text, so it has no
 placeholder slot. All slots are optional — every one degrades gracefully to
@@ -58,6 +62,10 @@ const IMAGE_AI_FLAGS = {
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
   "case5-stage4-cxr-normal": false,
+  "case6-stage1-cxr-effusion": false,
+  "case7-stage2-spine-pathology": false,
+  "case8-stage4-ct-hydrocephalus": false,
+  "case10-stage1-ct-peritonitis": false,
 };
 ```
 

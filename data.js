@@ -31,6 +31,10 @@ const IMAGE_AI_FLAGS = {
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
   "case5-stage4-cxr-normal": false,
+  "case6-stage1-cxr-effusion": false,
+  "case7-stage2-spine-pathology": false,
+  "case8-stage4-ct-hydrocephalus": false,
+  "case10-stage1-ct-peritonitis": false,
 };
 
 // Attribution for images sourced from published, licensed figures (as opposed
@@ -87,6 +91,31 @@ const IMAGE_CREDITS = {
     license: "CC0",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg",
     note: "Public-domain dedication (CC0, https://creativecommons.org/publicdomain/zero/1.0/); credit given for consistency. Resized to 800 px wide. Not this patient's film.",
+  },
+  "case6-stage1-cxr-effusion": {
+    text: "Nabih S. \"Unilateral Pleural Effusion.\" Wikimedia Commons (own work).",
+    license: "CC BY-SA 4.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Unilateral_Pleural_Effusion.jpg",
+    note: "Licensed under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Resized to 800 px wide; otherwise unmodified. Cause of the effusion not stated by the author; not this patient.",
+  },
+  "case7-stage2-spine-pathology": {
+    text: "Rosen Y. \"Tuberculosis of spinal column.\" Atlas of Pulmonary Pathology, via Flickr / Wikimedia Commons.",
+    license: "CC BY-SA 2.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tuberculosis_of_spinal_column_(6539943165).jpg",
+    note: "Licensed under CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/). Resized to 800 px wide; otherwise unmodified. Autopsy specimen shown in place of an MRI (no suitably licensed spinal TB MRI was found).",
+  },
+  "case8-stage4-ct-hydrocephalus": {
+    text: "Monfils L. \"Hydrocephalus.\" CT scan of the brain, Wikimedia Commons (own work).",
+    license: "CC BY-SA 3.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Hydrocephalus.jpg",
+    note: "Licensed under CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Unmodified. The cause of the hydrocephalus is not stated; shown to illustrate ventricular enlargement only.",
+  },
+  "case10-stage1-ct-peritonitis": {
+    text: "Singh S, Devi YS, Bhalothia S, Gunasekaran V. Peritoneal carcinomatosis: pictorial review of computed tomography findings. Int J Adv Res. 2016;4(7):735-748. Figure: \"CT of wet type of tuberculous peritonitis\", via Wikimedia Commons.",
+    doi: "10.21474/IJAR01/936",
+    license: "CC BY 4.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:CT_of_wet_type_of_tuberculous_peritonitis.jpg",
+    note: "Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Resized to 800 px wide; otherwise unmodified.",
   },
 };
 
