@@ -547,7 +547,7 @@ const CASES = [
                 <tr>
                   <td><strong>endTB</strong>, NEJM 2025 ${cite(24)}</td>
                   <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
-                  <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BLLfxCZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
+                  <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BCLLfxZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
                   <td>Control 80.7% favorable (mITT). Risk differences: <strong>BCLLfxZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
                 </tr>
                 <tr>
@@ -577,7 +577,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>WHO Module 4 (2025) ${cite(13)}</td>
-                  <td><strong>9-month BLMZ, BLLfxCZ, BDLLfxZ</strong> over longer regimens when FQ resistance is excluded; <strong>preference order BLMZ &gt; BLLfxCZ &gt; BDLLfxZ</strong></td>
+                  <td><strong>9-month BLMZ, BCLLfxZ, BDLLfxZ</strong> over longer regimens when FQ resistance is excluded; <strong>preference order BLMZ &gt; BCLLfxZ &gt; BDLLfxZ</strong></td>
                   <td>Conditional, very low certainty</td>
                 </tr>
                 <tr>
