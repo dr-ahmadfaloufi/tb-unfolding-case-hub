@@ -24,10 +24,11 @@ const IMAGE_AI_FLAGS = {
   "case1-stage2-afb-smear": false,
   "case1-stage2-cxr": false,
   "case3-stage1-ct-miliary": false,
+  "case3-stage6-histopath": false,
   "case4-stage1-ct-lymphadenopathy": false,
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
-  "case5-stage3-cxr-normal": false,
+  "case5-stage4-cxr-normal": false,
 };
 
 // Attribution for images sourced from published, licensed figures (as opposed
@@ -72,6 +73,18 @@ const IMAGE_CREDITS = {
     license: "CC BY-SA 2.0",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Sarcoidosis_-_Lymph_node_-_non-necrotizing_granulomas_(6201135213).jpg",
     note: "Optional sarcoidosis comparator image, used here unmodified for internal, non-commercial educational purposes.",
+  },
+  "case3-stage6-histopath": {
+    text: "Arif S. \"Caseating granuloma - Tuberculous lymph node.\" Wikimedia Commons. Central caseous necrosis within a granuloma (H&E).",
+    license: "CC BY-SA 4.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Caseating_granuloma_-_Tuberculous_lymph_node.jpg",
+    note: "Licensed under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Resized to 800 px wide; otherwise unmodified. Real histopathology, not AI-generated.",
+  },
+  "case5-stage4-cxr-normal": {
+    text: "Häggström M. \"Normal posteroanterior (PA) chest radiograph (X-ray).\" Wikimedia Commons.",
+    license: "CC0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg",
+    note: "Public-domain dedication (CC0, https://creativecommons.org/publicdomain/zero/1.0/); credit given for consistency. Resized to 800 px wide. Not this patient's film.",
   },
 };
 
