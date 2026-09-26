@@ -1927,6 +1927,164 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 8
+  // ============================================================
+  {
+    id: 8,
+    section: "extrapulmonary",
+    title: "32-year-old man with three weeks of headache and new confusion",
+    hubDescription:
+      "A subacute meningitis with a cranial-nerve palsy: what to send in the first lumbar puncture, why a negative Xpert shouldn't delay treatment, the steroid and intensified-treatment trials, and what changes with HIV.",
+    vignette:
+      "32-year-old Saudi man with 3 weeks of headache, fever and vomiting, and 2 days of confusion. Double vision (left sixth-nerve palsy). GCS 13. Neck stiffness. No rash. HIV status unknown.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous meningitis</strong>
+              <ul>
+                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>ADA</strong>; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the CSF. ${cite(1, 92)}</li>
+                <li><strong>Brain MRI</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
+                <li><strong>CXR</strong>, and sputum if abnormal.</li>
+              </ul>
+            </li>
+            <li><strong>Partially treated bacterial meningitis</strong>
+              <ul><li>CSF Gram stain and culture, plus blood cultures.</li></ul>
+            </li>
+            <li><strong>Neurobrucellosis</strong>
+              <ul><li>Brucellosis is <strong>endemic in Saudi Arabia</strong>, and neurobrucellosis can be clinically obscure. ${cite(102)} Diagnosis rests on CSF analysis, <strong>Brucella serology or culture</strong>, and response to treatment. ${cite(103)}</li></ul>
+            </li>
+            <li><strong>Cryptococcal meningitis</strong> (especially if HIV-positive)
+              <ul><li>CSF and serum cryptococcal antigen. ${cite(28)}</li></ul>
+            </li>
+            <li><strong>Viral meningoencephalitis</strong>
+              <ul><li>CSF viral PCR.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine in anyone with presumptive TB. ${cite(3)}</p>`,
+        pearl:
+          "A subacute meningitis with a cranial-nerve palsy is TB until proven otherwise. In Saudi Arabia, send Brucella serology in the same draw.",
+      },
+      {
+        title: "CSF back, Xpert Ultra negative. Treat now?",
+        context:
+          "CSF: 180 cells/µL, <strong>85% lymphocytes</strong>; protein 2.1 g/L; <strong>CSF:serum glucose 0.3</strong>; ADA 12 U/L. Gram stain negative. AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> CrAg negative. Brucella serology negative. HIV test negative.",
+        question:
+          "Does a negative Xpert Ultra rule out TB meningitis? Do you start treatment now or wait for culture?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (CSF)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(92)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
+                <tr><td>NAAT (any)</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>62%</td><td>98%</td><td>So a negative result misses about 4 in 10</td></tr>
+                <tr><td><strong>ADA</strong></td><td>Two meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>79%</td><td>91%</td><td>"Exquisitely sensitive" to threshold: at 4 U/L, sensitivity &gt;93% but specificity &lt;80%; at 8 U/L, sensitivity &lt;59% but specificity &gt;96%</td></tr>
+                <tr><td>Mycobacterial culture</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;70%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>What is at stake</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Thao 2018 ${cite(104)}</td><td>1,699 adults, Vietnam (4 trials + 1 cohort)</td><td>9-month mortality <strong>23.0%</strong> if HIV-negative and <strong>51.3%</strong> if HIV-positive. <strong>Higher MRC grade</strong> predicted death</td></tr>
+                <tr><td>Alshehri 2024 ${cite(105)}</td><td>140 CNS-TB patients, 3 Saudi tertiary centres, 2009&ndash;2019</td><td><strong>35% poor outcome</strong> (modified Rankin). <strong>GCS &le;10</strong> at presentation and TBM/tuberculoma predicted poor outcome</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>ADA on CSF in suspected TB meningitis</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Culture (strong) and NAAT (conditional) on CSF. <strong>A negative NAAT "may not be used to exclude TB"</strong></td><td>Strong / conditional</td></tr>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td>Empiric multidrug treatment is started in almost all situations in which active TB is suspected</td><td>(general principle)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> <strong>no.</strong> A negative Xpert Ultra doesn't exclude TB meningitis. With this CSF, a cranial-nerve palsy and falling consciousness, <strong>start TB treatment and dexamethasone today</strong>. Don't wait weeks for a culture. ${cite(1, 3)}</p>`,
+        pearl:
+          "In TB meningitis, time is brain. A lymphocytic CSF with low glucose and a cranial-nerve palsy is enough to treat; a negative Xpert isn't enough to stop.",
+      },
+      {
+        title: "Which regimen, how long, and steroids?",
+        question:
+          "What regimen and duration? Do adjunctive corticosteroids or intensified antibiotics help?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Thwaites 2004</strong>, NEJM ${cite(106)}</td><td>RCT, 545 patients &gt;14 years, Vietnam, with or without HIV</td><td><strong>Dexamethasone reduced death</strong> (RR 0.69, 0.52&ndash;0.92). It did <strong>not</strong> significantly reduce severe disability among survivors, or death-or-severe-disability. <strong>Fewer serious adverse events</strong> (26 vs 45)</td></tr>
+                <tr><td><strong>Heemskerk 2016</strong>, NEJM ${cite(107)}</td><td>RCT, 817 adults</td><td><strong>Intensified treatment</strong> (rifampin 15 mg/kg + levofloxacin 20 mg/kg for 8 weeks) vs standard: <strong>no survival benefit</strong> (HR 0.94, 0.73&ndash;1.22)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>Adjunctive dexamethasone or prednisolone, tapered over 6&ndash;8 weeks</strong>, for TB meningitis (Recommendation 8)</td><td><strong>Strong, moderate</strong></td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>2 months of HRZE, then HR for 7&ndash;10 more months</strong> (optimal duration not defined). Ethambutol preferred as the fourth drug in adults (expert opinion). Consider <strong>repeat lumbar punctures</strong> early to monitor the CSF</td><td>(narrative / expert opinion)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>"An initial adjuvant corticosteroid therapy with dexamethasone or prednisolone tapered over 6&ndash;8 weeks <strong>should be used</strong>" (&sect;5.5.3)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> HRZE, then HR, for <strong>9&ndash;12 months in total</strong>, plus a <strong>dexamethasone taper over 6&ndash;8 weeks</strong>. ${cite(3, 5)}</p>`,
+        pearl:
+          "Dexamethasone in HIV-negative TB meningitis saves lives. Higher-dose rifampin plus levofloxacin did not. The two strongest levers are still starting early and adding the steroid.",
+      },
+      {
+        title: "Day 10: drowsier",
+        context:
+          "On day 10 his GCS falls to 10. CT: <strong>enlarging ventricles (hydrocephalus)</strong>." +
+          img(8, "stage4", "ct-hydrocephalus", "Hydrocephalus on non-contrast CT (reference image; the cause in this example is not specified)"),
+        question: "What do you do?",
+        reveal: `
+          <ul>
+            <li><strong>Refer to neurosurgery now.</strong> Hydrocephalus, tuberculous brain abscess and paraparesis are the listed complications "warranting neurosurgical referral". ${cite(3)}</li>
+            <li><strong>Continue the full regimen and the steroid.</strong> ${cite(3)}</li>
+            <li><strong>Reassess the diagnosis:</strong> check adherence and drug susceptibility before calling it a paradoxical reaction. ${cite(3)}</li>
+            <li><strong>If new or enlarging tuberculomas appear on treatment:</strong> the Saudi manual (in its paediatric section) describes paradoxical enlargement of tuberculomas. It advises continuing TB treatment and says adjuvant corticosteroids "might be useful". ${cite(5)}</li>
+            <li><strong>Prognosis:</strong> a GCS &le;10 predicted poor outcome in the Saudi series. ${cite(105)}</li>
+          </ul>`,
+        pearl:
+          "In TB meningitis, a falling GCS is hydrocephalus until the scan says otherwise. Call neurosurgery; don't change the drugs.",
+      },
+      {
+        title: "What if he had been HIV-positive?",
+        question: "If his HIV test had been positive, what would change?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Donovan 2023, ACT HIV</strong>, NEJM ${cite(108)}</td><td>RCT, 520 HIV-positive adults with TBM (Vietnam, Indonesia)</td><td>Dexamethasone vs placebo: <strong>no survival benefit</strong> (deaths 44.1% vs 49.0%; HR 0.85, 0.66&ndash;1.10). No subgroup clearly benefited</td></tr>
+                <tr><td><strong>T&ouml;r&ouml;k 2011</strong>, CID ${cite(45)}</td><td>RCT, HIV-associated TBM</td><td>Immediate vs deferred ART: <strong>no survival benefit, more grade 4 adverse events</strong> with immediate ART</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>Steroids:</strong> the best trial in HIV-positive adults showed no survival benefit. ${cite(108)} The ATS recommendation was written before that trial. ${cite(3)}</li>
+            <li><strong>ART:</strong> <strong>defer</strong> when TB meningitis is suspected. ${cite(28, 45)} The Saudi manual likewise advises caution with early ART in TB meningitis (as taught in Case 3). ${cite(5)}</li>
+            <li><strong>Cryptococcus:</strong> check the CrAg if CD4 &lt;100. ${cite(28)}</li>
+          </ul>`,
+        pearl:
+          "In HIV-associated TB meningitis, the usual reflexes reverse: don't rush the ART, and don't expect the steroid to save a life.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
