@@ -1119,73 +1119,401 @@ const CASES = [
     hubDescription:
       "A high-risk occupational TB exposure — the window period, IGRA vs TST, and short-course preventive-treatment regimens.",
     vignette:
-      "32-year-old ICU nurse with an unmasked, prolonged exposure to a patient later confirmed to have smear-positive, NAAT-positive pulmonary TB, during a period before the index patient was isolated.",
+      "32-year-old Egyptian ICU nurse at a tertiary hospital in Riyadh. She received BCG in childhood. She had an unmasked, prolonged exposure to a ventilated patient who was later confirmed to have smear-positive, NAAT-positive, cavitary pulmonary TB. The exposure happened before the patient was placed in airborne isolation. She assisted with intubation and open suctioning.",
     stages: [
       {
-        title: "Post-exposure: what do you do, and when?",
-        question: "A colleague reports this exposure. What do you do, and on what timeline?",
+        title: "Who counts as exposed, and what do you do now?",
+        question:
+          "A colleague reports the exposure. Who counts as exposed, and what do you do now?",
         reveal: `
-          <ol>
-            <li><strong>The actions:</strong> a baseline TST or IGRA as soon as possible (same day/this week), plus a symptom screen (cough, fever, night sweats, weight loss, hemoptysis) — regardless of any prior test result on file.</li>
-            <li>This baseline result is a reference point, not a clearance — schedule the <em>same</em> test type again at 8&ndash;10 weeks after the last exposure. The immune response to <em>M. tuberculosis</em> takes 8&ndash;10 weeks to become detectable, so an early negative test cannot yet rule out infection.</li>
-            <li>If the symptom screen is positive at any point, don't assume it means TB disease by default — get a CXR (and sputum studies if abnormal) to actually rule active disease in or out, since an unrelated viral or bacterial respiratory illness is at least as likely as TB this early after exposure.</li>
-            <li>Contact prioritization matters at the program level: exposure intensity, duration, and the index case's smear status determine who gets tested first and how urgently — not every contact needs the same urgency.</li>
-            <li>The index case's infectious period — relevant for defining who actually counts as exposed — runs until roughly 2 weeks of effective treatment or clinical/microbiologic improvement, not just until the diagnosis was made.</li>
-          </ol>`,
+          <h4>1. Define the index patient's infectious period ${cite(28)}</h4>
+          <ul>
+            <li><strong>Start:</strong> 3 months <strong>before the TB diagnosis</strong>. Start earlier if the patient reports a longer illness. ${cite(28)}
+              <ul>
+                <li><strong>Saudi NTP Manual:</strong> "3 months before symptom onset or first positive finding" (&sect;14.6.3). Its definitions section uses "3 months before initiation of treatment" and calls the 3-month period "somewhat arbitrary", a general guideline (&sect;14.1). ${cite(37)}</li>
+                <li><strong>Teaching point:</strong> all sources use <strong>~3 months</strong>. They differ only on the anchor (diagnosis, symptom onset, or treatment start). When in doubt, take the <strong>earliest</strong> anchor.</li>
+              </ul>
+            </li>
+            <li><strong>End:</strong> only when <strong>all three</strong> apply:
+              <ol>
+                <li>more than 2 weeks of effective treatment (confirmed by susceptibility results);</li>
+                <li>fewer symptoms;</li>
+                <li>a microbiologic response, such as a falling smear grade.</li>
+              </ol>
+            </li>
+            <li>Stricter criteria apply before returning to congregate settings: &ge;3 consecutive negative sputum smears, collected &gt;8 h apart, one of them early morning. ${cite(28)}</li>
+          </ul>
+          <h4>2. Her exposure window</h4>
+          <p>Her exposure window is the time she spent with the patient <strong>inside that infectious period, before airborne isolation and N95 use began</strong>. Once those were in place, she was no longer exposed. ${cite(28)}</p>
+          <h4>3. What raises her priority as a contact (ICU-specific) ${cite(69)}</h4>
+          <ul>
+            <li><strong>Aerosol-generating procedures:</strong> bronchoscopy, endotracheal intubation, suctioning, sputum induction, aerosol treatments.</li>
+            <li><strong>Proximity and duration:</strong> "the closer the proximity and the longer the duration of exposure, the higher the risk".</li>
+            <li><strong>Room ventilation:</strong> inadequate ventilation, recirculated air, small enclosed spaces.</li>
+          </ul>
+          <h4>4. How infectious was the source?</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Index-patient feature</th><th>Relative infectiousness</th><th>Implication for contacts</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Smear-positive</strong></td>
+                  <td>Highest (reference group)</td>
+                  <td>Highest priority for contact testing ${cite(28)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Cavitary disease on CXR</strong></td>
+                  <td>More infectious; an <strong>independent predictor</strong> even after smear results are accounted for ${cite(28)}</td>
+                  <td>Raises priority further</td>
+                </tr>
+                <tr>
+                  <td><strong>Smear-negative, culture-positive</strong></td>
+                  <td>Lower but real: relative transmission <strong>~0.22&ndash;0.24</strong> vs smear-positive. These patients caused <strong>~13&ndash;17% of transmission</strong> in genotyping studies ${cite(71, 72)}</td>
+                  <td>Contacts still need evaluation, with lower urgency</td>
+                </tr>
+                <tr>
+                  <td><strong>Smear-negative, NAAT-positive</strong></td>
+                  <td>NTCA 2024 groups <strong>smear and/or NAAT positivity</strong> and cavitation as markers of higher pre-treatment bacterial burden, and so of more infectiousness (Rec 3.1, <strong>strong, moderate certainty</strong>). A <strong>lower NAAT Ct value</strong> may indicate higher burden. No study gives a separate transmission rate for this group ${cite(87)}</td>
+                  <td>Treat as potentially infectious; prioritize by exposure intensity</td>
+                </tr>
+                <tr>
+                  <td><strong>Smear- and NAAT-negative</strong> (culture-positive or clinically diagnosed)</td>
+                  <td>Lowest; data are limited</td>
+                  <td>Lower priority, but not zero. <strong>Saudi NTP:</strong> still investigate if the CXR shows <strong>cavities</strong>, even with 3 negative smears (&sect;14.4) ${cite(37)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Already on effective treatment</strong></td>
+                  <td>Infectiousness falls fast: most are low/non-infectious <strong>after &ge;5 days</strong> of effective therapy, regardless of sputum results (NTCA Rec 3.2 strong/moderate; Rec 3.3 conditional/moderate) ${cite(87)}. Saudi NTP: "less contagious within few days to two weeks" (&sect;14.5.4) ${cite(37)}</td>
+                  <td>Exposure <strong>before</strong> treatment is what counts, which applies to this nurse</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Contact-side modifiers (these change <strong>urgency</strong>, not infectiousness):</p>
+          <ul>
+            <li>people with <strong>HIV</strong> progress faster than with any other known risk factor, <strong>35&ndash;162 per 1,000 person-years</strong>;</li>
+            <li><strong>children &lt;5</strong> progress faster and get more disseminated disease. ${cite(28)}</li>
+            <li>See Stage 2 for what this means in practice.</li>
+          </ul>
+          <h4>5. What to do now ${cite(70)}</h4>
+          <ul>
+            <li><strong>Symptom evaluation now</strong>, for everyone exposed.</li>
+            <li><strong>Baseline IGRA or TST</strong> for those <strong>without</strong> documented prior LTBI or TB.</li>
+            <li>A person with a <strong>documented prior positive</strong> test does <strong>not</strong> need another test for infection. They get a symptom evaluation, and further work-up only if there is concern for TB disease.</li>
+            <li>If the baseline is negative, <strong>repeat 8&ndash;10 weeks after the last exposure</strong>, preferably with the <strong>same test type</strong>.</li>
+          </ul>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>NTCA/CDC contact investigation (2005) ${cite(28)}</td>
+                  <td>Infectious period starts 3 months before diagnosis. It ends only when all 3 criteria are met. Retest 8&ndash;10 weeks after exposure ends</td>
+                  <td>Not GRADE-rated (expert guideline)</td>
+                </tr>
+                <tr>
+                  <td>CDC healthcare-settings TB guideline (2005) ${cite(69)}</td>
+                  <td>Aerosol-generating procedures, proximity/duration and ventilation drive healthcare-associated transmission</td>
+                  <td>Not GRADE-rated</td>
+                </tr>
+                <tr>
+                  <td>NTCA/CDC healthcare personnel (2019) ${cite(70)}</td>
+                  <td>Symptom evaluation for all exposed staff. Test those without prior LTBI/TB. Retest at 8&ndash;10 weeks, same test. No retest if documented prior positive</td>
+                  <td>Not GRADE-rated</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td>Start the contact investigation as soon as possible, generally <strong>within 1 week</strong> of diagnosis. Contacts get history, exam and a <strong>TST</strong>. If the TST is positive &rarr; CXR; if the CXR is abnormal or symptoms are present &rarr; sputum smear or Xpert (&sect;14.3, &sect;14.6.8). <strong>No 8&ndash;10-week retest is described</strong></td>
+                  <td>Not graded</td>
+                </tr>
+                <tr>
+                  <td>NTCA community isolation guideline (2024) ${cite(87)}</td>
+                  <td>Most people with TB can stop <strong>community</strong> respiratory isolation after <strong>5 days of effective treatment</strong>, with exceptions: drug resistance, vulnerable contacts (children &lt;5, immunosuppressed), poor response or adherence. Extension beyond 14 days needs expert review</td>
+                  <td>Rec 3.2 strong/moderate; Rec 3.3 and 4.2&ndash;4.3 conditional/moderate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>"5 days" vs "2 weeks": these answer different questions.</strong></p>
+          <ul>
+            <li><strong>NTCA 2024</strong> decides when a person on treatment can stop <strong>community</strong> restrictions. The guideline is explicitly for <strong>community settings</strong>. ${cite(87)}</li>
+            <li><strong>CDC 2005</strong> defines the <strong>infectious period</strong> used to decide <strong>who counts as a contact</strong>. It ends only after &gt;2 weeks of effective treatment plus clinical and microbiologic response. ${cite(28)}</li>
+            <li><strong>Hospital airborne isolation</strong> follows healthcare-setting rules: for example, three consecutive negative AFB smears, 8&ndash;24 h apart, one early morning. ${cite(69)}</li>
+            <li>For this ICU case, the nurse's exposure was <strong>before any treatment</strong>, so the 5-day rule doesn't shorten her exposure window.</li>
+          </ul>`,
         pearl:
-          "Name both the baseline test and the scheduled 8&ndash;10 week repeat together as your plan — a baseline test without a scheduled repeat is an incomplete post-exposure workup.",
+          "Being \"exposed\" is a time window, not an event. It starts about 3 months before diagnosis and closes when isolation begins. Define it first, then list who was inside it.",
       },
       {
-        title: "Baseline negative. Cleared?",
+        title: "Baseline IGRA on day 3 is negative. Is she cleared?",
         context: "Baseline IGRA at day 3 post-exposure: negative. No symptoms.",
         question:
           "Does this rule out infection? What's next, and does the choice between TST and IGRA matter here?",
         reveal: `
           <ul>
-            <li>No. Day 3 is well inside the 8&ndash;10 week window period — a negative result now cannot exclude infection.</li>
-            <li>Repeat testing happens at 8&ndash;10 weeks post-exposure, using the <em>same</em> test type as baseline. Switching test types between baseline and repeat makes "conversion" uninterpretable.</li>
-            <li>TST vs IGRA: IGRA is generally preferred where BCG vaccination is widespread, since BCG cross-reacts with TST but not with the RD1-region antigens IGRAs use — directly relevant here, given BCG is part of the national immunization program. TST remains a reasonable, lower-cost option, particularly for serial occupational screening, provided prior BCG is accounted for when interpreting it.</li>
-            <li>Exception worth knowing: children under 5 and immunocompromised contacts generally start empiric "window prophylaxis" once active disease is excluded, without waiting for the 8&ndash;10 week result, given their risk of rapid progression to severe or disseminated disease.</li>
+            <li><strong>No.</strong> It takes up to <strong>8&ndash;10 weeks</strong> after exposure for the immune response to become detectable. A negative test before 8 weeks cannot exclude infection. ${cite(28)}</li>
+            <li><strong>Repeat at 8&ndash;10 weeks after the last exposure</strong>, with the <strong>same test type</strong>. Switching tests makes "conversion" hard to interpret. ${cite(70)}</li>
+          </ul>
+          <h4>IGRA vs TST in a BCG-vaccinated workforce</h4>
+          <ul>
+            <li>ATS/IDSA/CDC <strong>recommend IGRA over TST</strong> in people &ge;5 years with a history of <strong>BCG vaccination</strong> (or who are unlikely to return for a TST reading). <strong>TST is an acceptable alternative</strong> when IGRA is unavailable or too costly. ${cite(34)}</li>
+            <li><strong>For this nurse, BCG-vaccinated, IGRA is the right choice.</strong> This is why her baseline was an IGRA.</li>
+            <li><strong>Saudi NTP Manual (2021)</strong> ${cite(37)}:
+              <ul>
+                <li>"Either a TST or IGRA can be used to test for LTBI" (strong, very low-quality evidence; &sect;12.4);</li>
+                <li>contact investigation describes <strong>TST</strong> (&sect;14.6.8), read as positive at <strong>&ge;5 mm for recent contacts</strong> (&sect;13.8.1);</li>
+                <li>the manual advises <strong>ignoring BCG</strong> when interpreting TST in people at increased risk (&sect;13.8.3);</li>
+                <li>it recommends <strong>two-step TST</strong> for adults who will be retested periodically, such as healthcare staff, to avoid mistaking a "boosted" reaction for a new infection (&sect;13.9).</li>
+                <li><strong>Teaching point:</strong> with TST, a BCG-vaccinated nurse needs two-step baseline testing and careful reading. IGRA avoids both problems.</li>
+              </ul>
+            </li>
+            <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QFT in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(73)}</li>
+            <li>A 2026 meta-analysis of healthcare workers found pooled positivity of <strong>22% by IGRA vs 38% by TST</strong>; <strong>TST positivity tracked BCG vaccination rates, but IGRA positivity did not</strong>. ${cite(74)}</li>
+          </ul>
+          <h4>Exception: window prophylaxis ${cite(28)}</h4>
+          <ul>
+            <li><strong>Who:</strong> exposed contacts at risk of rapid progression:
+              <ul>
+                <li><strong>children &lt;5 years</strong>;</li>
+                <li><strong>people with HIV</strong>;</li>
+                <li><strong>other immunosuppression</strong>, specifically organ transplant and <strong>TNF-&alpha; antagonists</strong>. For <strong>prednisone &gt;15 mg/day</strong> the benefit is "less clear".</li>
+              </ul>
+            </li>
+            <li><strong>Tests first (to exclude active disease):</strong>
+              <ul>
+                <li>symptom evaluation;</li>
+                <li><strong>chest radiograph for all of them</strong>;</li>
+                <li>sputum studies if either is abnormal;</li>
+                <li>a <strong>baseline TST/IGRA</strong> at the same visit, so the repeat can be compared. In <strong>healthy children &lt;5</strong>, ATS/IDSA/CDC <strong>suggest TST over IGRA</strong>; some experts use IGRA above age 3. ${cite(34)}</li>
+              </ul>
+            </li>
+            <li><strong>When to start:</strong> an LTBI regimen as soon as active TB is excluded. <strong>Don't wait</strong> for the 8&ndash;10-week result.</li>
+            <li><strong>After the 8&ndash;10-week repeat:</strong>
+              <ul>
+                <li><strong>child, repeat negative</strong> &rarr; stop;</li>
+                <li><strong>repeat positive</strong> &rarr; complete a full LTBI course;</li>
+                <li><strong>HIV or other significant immunosuppression</strong> &rarr; a <strong>full LTBI course even if the repeat is negative</strong>, because a false-negative test is likely.</li>
+              </ul>
+            </li>
+            <li><strong>Evidence level:</strong> CDC describes the evidence for window prophylaxis as <strong>"inferential"</strong>.</li>
+            <li><strong>Relevance to this nurse:</strong> none. She is an immunocompetent adult, so she waits for the repeat test.</li>
           </ul>`,
         pearl:
-          "The window period is the single most important concept in exposure management — a same-day negative test is a baseline, not a clearance.",
+          "The window period is the single most important concept in exposure management. A same-week negative test is a baseline, not a clearance.",
+      },
+      {
+        title: "Day 10: fever, cough and a lobar consolidation. Is this TB?",
+        context:
+          "Ten days after the exposure she develops <strong>rhinorrhea, fever, cough and shortness of breath</strong>. SpO<sub>2</sub> is 96% on room air, she has no comorbidities, and she is managed as an outpatient. <strong>CXR shows right lower lobe consolidation.</strong>",
+        question: "Does this change your TB plan? How do you manage her?",
+        reveal: `
+          <p><strong>Differential first</strong>, most to least likely:</p>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Diagnosis</th><th>Test</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Bacterial CAP</strong> (e.g. <em>S. pneumoniae</em>)</td>
+                  <td>Clinical diagnosis plus CXR (done). Blood and sputum cultures are not routine outside severe or hospitalized cases ${cite(76)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Viral pneumonia</strong> (influenza, SARS-CoV-2, RSV)</td>
+                  <td><strong>Respiratory viral NAAT</strong>, especially influenza when it is circulating ${cite(75)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Atypical bacterial CAP</strong> (<em>Mycoplasma</em>, <em>Chlamydophila</em>)</td>
+                  <td>Clinical; atypical testing when indicated ${cite(76)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Pulmonary TB</strong> (least likely at day 10)</td>
+                  <td>Only if the course is atypical (see below): sputum AFB smear, culture, NAAT ${cite(34)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Why TB is unlikely now ${cite(78)}</h4>
+          <ul>
+            <li>After infection, the TST converts within <strong>&lt;6 weeks</strong>.</li>
+            <li>Active TB typically appears <strong>3&ndash;9 months</strong> later, and <strong>almost always within 2 years</strong>.</li>
+            <li><strong>Disease 10 days after exposure would be biologically implausible.</strong></li>
+          </ul>
+          <h4>Management</h4>
+          <ul>
+            <li><strong>Treat as CAP.</strong>
+              <ul>
+                <li><strong>ATS/IDSA 2019</strong> (healthy outpatient): <strong>amoxicillin 1 g three times daily</strong> (strong); doxycycline (conditional); a macrolide only where pneumococcal macrolide resistance is &lt;25%. ${cite(75)}</li>
+                <li><strong>Saudi Thoracic Society 2025:</strong> <strong>beta-lactams first-line</strong>. In outpatients it suggests <strong>macrolides over fluoroquinolones</strong> (conditional, very low certainty). It reserves quinolones as second-line in children because TB is endemic in the region. ${cite(76)}</li>
+              </ul>
+            </li>
+            <li><strong>Avoid an empiric fluoroquinolone here.</strong> In a meta-analysis, empiric fluoroquinolones for pneumonia <strong>delayed TB diagnosis and treatment by ~19 days</strong> and raised the odds of <strong>fluoroquinolone-resistant <em>M. tuberculosis</em></strong> (OR <strong>2.70</strong>). ${cite(77)} This matters in anyone with a recent TB exposure.</li>
+            <li><strong>No airborne isolation and no TB work-up</strong> unless the course is atypical: no response to appropriate CAP treatment, cavitation, or symptoms that persist.</li>
+            <li><strong>Keep the scheduled 8&ndash;10-week repeat IGRA.</strong> The pneumonia doesn't change it.</li>
+          </ul>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>ATS/IDSA CAP (2019) ${cite(75)}</td>
+                  <td>Healthy outpatient: amoxicillin, <strong>or</strong> doxycycline, <strong>or</strong> a macrolide if local resistance &lt;25%</td>
+                  <td>Strong/moderate; conditional/low; conditional/moderate</td>
+                </tr>
+                <tr>
+                  <td>ATS/IDSA CAP (2019) ${cite(75)}</td>
+                  <td>Test for influenza with a rapid molecular assay when influenza is circulating</td>
+                  <td>Strong, moderate</td>
+                </tr>
+                <tr>
+                  <td>Saudi Thoracic Society CAP (2025) ${cite(76)}</td>
+                  <td>Outpatient: macrolides over fluoroquinolones; beta-lactams first-line</td>
+                  <td>Conditional, very low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>`,
+        pearl:
+          "Don't anchor on the exposure. TB takes months, not days. A lobar pneumonia at day 10 is pneumonia, and the drug you choose for it (not a fluoroquinolone) protects the TB work-up you may need later.",
       },
       {
         title: "Nine weeks later, repeat IGRA positive. Now what?",
-        context:
-          "Nine weeks later, repeat IGRA positive.",
+        context: "Nine weeks later, the repeat IGRA is positive. The CAP has resolved.",
         question:
-          "Given a documented conversion, what has to be established before treating, and what does current evidence support for regimen and duration?",
+          "What must you establish before treating, and why treat at all?",
         reveal: `
-          <h4>Reveal — rule out active disease first:</h4>
-          <p>before starting any LTBI regimen, active TB disease must be excluded — symptom screen plus CXR at minimum, with sputum studies if either is abnormal. Treating presumed LTBI with a rifamycin-containing regimen in someone with unrecognized active disease risks under-treatment and can select for rifamycin resistance.</p>
-          ${img(5, "stage3", "cxr-normal", "Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding")}
-          <h4>Reveal — regimen and evidence, once active disease is excluded:</h4>
+          <h4>Rule out active disease first</h4>
+          <ul>
+            <li><strong>Symptom evaluation plus CXR</strong> for everyone with a new positive test, with sputum studies if either is abnormal. ${cite(70, 34)}</li>
+            <li>IGRA and TST cannot tell latent from active TB, so disease must be excluded before starting LTBI treatment. ${cite(34)}</li>
+            <li><strong>Why it matters:</strong> preventive treatment given for unrecognized active TB under-treats the disease. Trials have not shown a significant rise in drug resistance, but that risk cannot be excluded, so active TB must be ruled out first.
+              <ul>
+                <li><strong>Rifamycin regimens:</strong> a meta-analysis of 6 RCTs found <strong>no statistically significant increase</strong> in rifamycin resistance vs non-rifamycin regimens (RR 3.45, 95% CI 0.72&ndash;16.56). The wide confidence interval means a risk <strong>cannot be excluded</strong>. ${cite(88)}</li>
+                <li><strong>Isoniazid preventive therapy:</strong> 13 studies; summary RR for isoniazid resistance <strong>1.45</strong> (95% CI 0.85&ndash;2.47). The findings "do not exclude an increased risk", and the authors conclude active TB <strong>should be excluded before IPT</strong>. ${cite(89)}</li>
+              </ul>
+            </li>
+          </ul>
+          ${img(5, "stage4", "cxr-normal", "Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding")}
+          <h4>Why treat? Her risk from here</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Question</th><th>Evidence</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>How often do close contacts get infected?</td>
+                  <td>Latent infection in <strong>28%</strong> of contacts in high-income settings and <strong>52%</strong> in low/middle-income settings. Active TB in <strong>1.4%</strong> and <strong>3.1%</strong>. <strong>Incidence is highest in the first year.</strong> ${cite(79)}</td>
+                </tr>
+                <tr>
+                  <td>Healthcare workers specifically</td>
+                  <td>Pooled <strong>IGRA conversion ~8%</strong> in serially tested healthcare workers ${cite(74)}</td>
+                </tr>
+                <tr>
+                  <td>Lifetime risk of disease with LTBI (healthy adult)</td>
+                  <td><strong>~5&ndash;10%</strong> (WHO estimate, as quoted by Behr 2018) ${cite(78)}</td>
+                </tr>
+                <tr>
+                  <td><strong>When</strong> that risk falls</td>
+                  <td>Of eventual cases: <strong>45% by 1 year, 62% by 2 years, 83% by 5 years</strong> (Borgdorff). Among Amsterdam contacts, <strong>75% within 1 year and 97% within 2 years</strong> (Sloot) ${cite(78)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Takeaway:</strong> the risk is <strong>front-loaded</strong>, which is why TPT is offered promptly after a documented conversion.</p>
+          <h4>Higher-risk groups (relative risk of progression)</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Group</th><th>Figure</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td><strong>HIV</strong></td><td><strong>35&ndash;162 per 1,000 person-years</strong>, the highest of any known factor</td><td>${cite(28)}</td></tr>
+                <tr><td><strong>TNF-&alpha; inhibitors (monoclonal antibodies)</strong></td><td>TB standardized incidence ratio: <strong>infliximab 18.6, adalimumab 29.3</strong></td><td>${cite(80)}</td></tr>
+                <tr><td><strong>TNF-&alpha; inhibitor (etanercept)</strong></td><td>SIR <strong>1.8</strong>, much lower</td><td>${cite(80)}</td></tr>
+                <tr><td><strong>JAK inhibitor (tofacitinib)</strong></td><td>TB was the most common opportunistic infection: <strong>0.21/100 PY</strong> overall and <strong>0.75/100 PY in high-incidence regions</strong></td><td>${cite(81)}</td></tr>
+                <tr><td><strong>Diabetes</strong></td><td><strong>RR 3.11</strong> (95% CI 2.27&ndash;4.26)</td><td>${cite(82)}</td></tr>
+                <tr><td><strong>Corticosteroids</strong></td><td><strong>&ge;15 mg/day prednisone-equivalent for &ge;1 month</strong> is listed as an immunosuppression risk factor. CDC calls the benefit of a full course "less clear"</td><td>${cite(70, 28)}</td></tr>
+                <tr><td><strong>Transplant, dialysis, silicosis</strong></td><td>WHO <strong>strongly recommends</strong> systematic testing and treatment in these groups</td><td>${cite(83)}</td></tr>
+              </tbody>
+            </table>
+          </div>`,
+        pearl:
+          "A conversion is a recent infection, and recent infection is when TB happens. Most of the lifetime risk arrives in the first two years, which is the window TPT is meant to close.",
+      },
+      {
+        title: "Active disease excluded. Which regimen, and what's the evidence?",
+        question:
+          "Active disease has been excluded. Which preventive regimen do you choose, and what evidence supports it?",
+        reveal: `
+          <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Comparison</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>Sterling et al., PREVENT TB study, N Engl J Med 2011 ${cite(25)}</td>
-                  <td>3HP: rifapentine 900mg + isoniazid 900mg, weekly x3 months, directly observed, vs 9H: daily isoniazid x9 months, self-administered</td>
-                  <td>Confirmed TB in 0.19% (3HP) vs 0.43% (9H); noninferior; significantly higher treatment completion and fewer hepatotoxic events with 3HP</td>
+                  <td>Sterling 2011, PREVENT TB ${cite(25)}</td>
+                  <td><strong>3HP</strong> (rifapentine 900 mg + isoniazid 900 mg weekly &times;12, observed) vs <strong>9H</strong></td>
+                  <td>TB <strong>0.19% vs 0.43%</strong>; non-inferior; higher completion, less hepatotoxicity</td>
                 </tr>
                 <tr>
-                  <td>Menzies et al., N Engl J Med 2018 ${cite(26)}</td>
-                  <td>4R: daily rifampin x4 months, vs 9H</td>
-                  <td>Noninferior for confirmed active TB prevention; completion rate 15.1 percentage points higher with 4R; fewer grade 3&ndash;5 adverse events, including hepatotoxicity, with 4R</td>
+                  <td>Menzies 2018 ${cite(26)}</td>
+                  <td><strong>4R</strong> (daily rifampin &times;4 months) vs <strong>9H</strong></td>
+                  <td>Non-inferior; completion <strong>+15.1 points</strong>; fewer grade 3&ndash;5 adverse events</td>
                 </tr>
                 <tr>
-                  <td>CDC/National TB Controllers Association guidelines, 2020 ${cite(27)}</td>
-                  <td>Guideline synthesis</td>
-                  <td>Preferentially recommends short-course rifamycin-based 3&ndash;4 month regimens (3HP, 4R, 3HR) over 6&ndash;9 month isoniazid monotherapy, given comparable efficacy with meaningfully better completion and safety</td>
+                  <td>Swindells 2019, BRIEF-TB ${cite(84)}</td>
+                  <td><strong>1HP</strong> (daily rifapentine + isoniazid &times;1 month) vs <strong>9H</strong>, in <strong>people with HIV</strong></td>
+                  <td>TB/death <strong>0.65 vs 0.67 per 100 PY</strong>; non-inferior; completion <strong>97% vs 90%</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline update (WHO Module 1, TB preventive treatment, 2nd edition, Sept 2024)${cite(30)}:</em> the 3HP/4R/3HR/6H/9H content above is unchanged in substance — 6H/9H, 3HP, and 3HR remain strongly recommended (moderate-to-high certainty), while 1HP and 4R remain conditional alternatives (low-to-moderate certainty), the same classification as the 2020 edition. The one genuinely new option is a strong recommendation for 6 months of daily levofloxacin (6Lfx) specifically for contacts of multidrug- or rifampicin-resistant TB — not applicable to this patient, since the index case's isolate was drug-susceptible, but worth knowing as TPT options for resistant-TB contacts have expanded.</p>`,
+          <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(84, 30)}</p>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>NTCA/CDC LTBI treatment (2020) ${cite(27)}</td>
+                  <td><strong>Preferred:</strong> short rifamycin regimens (3HP, 4R, 3HR) over 6&ndash;9 months of isoniazid</td>
+                  <td>3HP: strong, moderate. 4R: strong, moderate (HIV-negative). 3HR: conditional, very low (HIV-negative) / conditional, low (HIV-positive)</td>
+                </tr>
+                <tr>
+                  <td>WHO TPT, Module 1, 2nd ed. (2024) ${cite(30)}</td>
+                  <td>6H/9H, 3HP, 3HR</td>
+                  <td><strong>Strong</strong>, moderate&ndash;high</td>
+                </tr>
+                <tr>
+                  <td>WHO (2024) ${cite(30)}</td>
+                  <td>1HP, 4R</td>
+                  <td>Conditional, low&ndash;moderate</td>
+                </tr>
+                <tr>
+                  <td>WHO (2024) ${cite(30)}</td>
+                  <td><strong>6 months of levofloxacin (6Lfx)</strong> for contacts of <strong>MDR/RR-TB</strong>. Not for this nurse: her source was drug-susceptible</td>
+                  <td>Strong</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td><strong>6H</strong> recommended (&sect;12.5)</td>
+                  <td>Strong, high</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td>For low-incidence countries (KSA): <strong>9H, 3HP, 3&ndash;4 months HR, or 3&ndash;4 months rifampicin alone</strong> as alternatives to 6H</td>
+                  <td>Strong, moderate&ndash;high</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Her regimen</h4>
+          <ul>
+            <li><strong>Rifapentine is not available in Saudi Arabia.</strong> 3HP and 1HP are shown as options that exist internationally, <strong>but not what this nurse receives.</strong></li>
+            <li><strong>This nurse: 4R</strong>, daily rifampin for 4 months. It is non-inferior to 9H, with higher completion and fewer serious adverse events ${cite(26)}, and is among the preferred short regimens ${cite(27)}.</li>
+            <li><strong>Alternative with no rifapentine: 3HR</strong>, daily isoniazid + rifampin for 3 months (WHO strong recommendation ${cite(30)}).</li>
+            <li><strong>Dose (Saudi NTP Manual table, &sect;12.5):</strong> rifampicin <strong>10 mg/kg daily, max 600 mg</strong> (adults), for 3&ndash;4 months. For 3HR, add isoniazid 5 mg/kg, max 300 mg. ${cite(37)}</li>
+            <li>Note: the Saudi manual still lists 3HP as an option ${cite(37)}, even though rifapentine is not available locally.</li>
+          </ul>`,
         pearl:
-          "This regimen decision has genuinely strong RCT evidence behind it — unlike some of the guideline-only recommendations in earlier cases, both 3HP and 4R rest on large noninferiority trials, which is exactly why short-course regimens have displaced 9H as preferred.",
+          "Pick the best regimen you can actually get. Rifapentine isn't available here, so 4R or 3HR it is. Short rifamycin regimens are now preferred because they rest on large non-inferiority trials and are completed more often. A regimen that gets finished protects better than a longer one that doesn't.",
       },
       {
         title: "Zooming out: who should be tested for LTBI at all?",
@@ -1193,12 +1521,34 @@ const CASES = [
           "Outside a documented exposure like this one, who should actually be tested for LTBI — and why does that question matter before you even pick a test?",
         reveal: `
           <ul>
-            <li>LTBI testing should be risk-based, not universal — reserved for those at meaningfully increased risk of progression to active disease: recent close contacts, people with HIV or other immunosuppression (biologics, transplant, dialysis), silicosis, recent immigrants from high-burden countries within a defined window, and children.</li>
-            <li>The guiding principle: only test if a positive result will change management — meaning you're already prepared to treat. Testing someone you would not treat regardless of the result mainly generates anxiety and false-positive management problems, not benefit.</li>
-            <li>Test choice still matters at the population level: IGRA is preferable where BCG vaccination is common, or when a contact is unlikely to return for the 48&ndash;72 hour TST reading; TST remains reasonable and cost-effective for serial testing programs, provided its BCG cross-reactivity is accounted for in interpretation ${cite(28)}.</li>
+            <li><strong>Test only if you would treat a positive result.</strong> Guidelines advise <strong>against testing people at low risk</strong> of infection and progression. ${cite(34)}</li>
+            <li><strong>WHO</strong> (guideline for countries with incidence &lt;100/100,000, which includes Saudi Arabia) ${cite(83)}:
+              <ul>
+                <li><strong>strongly recommends</strong> systematic testing and treatment for people with HIV; adult and child contacts; patients <strong>starting anti-TNF treatment</strong>; patients on dialysis; patients preparing for transplant; and patients with silicosis;</li>
+                <li><strong>conditionally recommends</strong> it for <strong>healthcare workers</strong>; <strong>immigrants from high-burden countries</strong>; and prisoners, homeless people and people who use drugs.</li>
+              </ul>
+            </li>
+            <li><strong>Saudi policy</strong> ${cite(37)}:
+              <ul>
+                <li><strong>household contacts</strong> of bacteriologically confirmed PTB "should be systematically tested and treated for LTBI" because KSA is low-incidence (strong, high&ndash;moderate);</li>
+                <li><strong>anti-TNF, dialysis, pre-transplant and silicosis</strong> patients: systematic testing and treatment (strong, low&ndash;very low);</li>
+                <li><strong>health workers and immigrants from high-burden countries:</strong> "may be considered" (conditional, low&ndash;very low);</li>
+                <li><strong>not</strong> recommended for diabetes, harmful alcohol use, smokers or underweight people alone (conditional, very low) (&sect;12);</li>
+                <li>its major policies also state that <strong>all healthcare professionals are screened for latent TB</strong> under infection-prevention protocols (&sect;2.3);</li>
+                <li><strong>immigrants from high-burden regions</strong> seeking long residency undergo <strong>active case finding</strong>: a first assessment in the home country and re-examination on arrival. Note this is screening for <strong>active</strong> TB, not LTBI.</li>
+              </ul>
+            </li>
+            <li><strong>Before any biologic or JAK inhibitor:</strong>
+              <ul>
+                <li>International recommendations agree on <strong>screening before starting</strong>: IGRA/TST plus CXR, with many advising <strong>both tests in BCG-vaccinated patients</strong>. Patients with LTBI should <strong>receive TPT before the biologic</strong>. ${cite(85)}</li>
+                <li>Why it matters: in the French RATIO registry, <strong>none</strong> of the anti-TNF-associated TB cases had received correct prophylaxis. ${cite(80)}</li>
+                <li><strong>How long before?</strong> Start TPT before or with the biologic. The ideal lead-in time is not standardized. Observational data suggest a <strong>concurrent start</strong> can be safe: 263 patients took isoniazid alongside tofacitinib with <strong>no TB cases</strong> ${cite(81)}, and a small Nepal cohort started adalimumab on the same day as 3HR with <strong>no reactivation</strong> ${cite(86)}.</li>
+              </ul>
+            </li>
+            <li><strong>Test choice</strong> (IGRA in BCG-vaccinated people; TST acceptable): see Stage 2. ${cite(34)}</li>
           </ul>`,
         pearl:
-          "LTBI testing is a treatment decision dressed up as a diagnostic test — decide you will treat a positive result before you order it, or do not order it at all.",
+          "LTBI testing is a treatment decision dressed up as a diagnostic test. Decide you will treat a positive result before you order it, or don't order it.",
       },
     ],
   },
