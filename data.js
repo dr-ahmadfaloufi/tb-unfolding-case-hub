@@ -612,30 +612,73 @@ const CASES = [
     hubDescription:
       "A newly diagnosed HIV patient with fever and progressive dyspnea whose initial workup keeps coming back negative — interpreting urine LAM, sputum vs BAL, and when to treat despite negative microbiology.",
     vignette:
-      "36-year-old man, newly diagnosed HIV (CD4 38 cells/uL, not yet on ART), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. CT chest shows a diffuse micronodular (\"miliary\") pattern." +
+      "36-year-old man, newly diagnosed HIV (CD4 38 cells/µL, not yet on ART), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. CT chest shows a diffuse micronodular (\"miliary\") pattern. He has travelled through India, Vietnam, Thailand and Indonesia, where he worked on farms, including in rice paddies, and ate raw or pickled freshwater crab." +
       img(3, "stage1", "ct-miliary", 'Diffuse micronodular ("miliary") pattern on CT chest'),
     stages: [
       {
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
+          <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
-            <li><strong>The tests:</strong> sputum (spontaneous, or induced if the patient cannot expectorate) for AFB smear, NAAT, and culture — ideally multiple specimens; mycobacterial blood culture (lysis-centrifugation technique); a urine lateral-flow LAM assay; baseline CD4 and HIV viral load if not already known.</li>
-            <li>Why the broader net: miliary TB in advanced HIV is disseminated disease, not a purely pulmonary process — sampling the lungs alone can under-diagnose it. Urine LAM specifically has its best performance in exactly this population: seriously ill, low CD4, disseminated disease.</li>
-            <li>Differential to hold: miliary TB, disseminated histoplasmosis or other endemic fungal infection, disseminated non-tuberculous mycobacterial infection (especially at very low CD4), lymphoma, bacterial sepsis with an ARDS-type pattern (less likely given the subacute course).</li>
-            <li>Test for that differential, not just the TB-directed panel: send routine bacterial blood cultures and a serum or urine fungal antigen test (e.g., Histoplasma antigen) up front — disseminated fungal disease can mimic this presentation closely in advanced HIV, especially in endemic regions.</li>
-          </ol>`,
+            <li><strong>Miliary / disseminated TB</strong>
+              <ul>
+                <li><strong>Sputum</strong> (induced if he cannot expectorate) for smear, <strong>NAAT</strong>, and <strong>mycobacterial culture</strong>;</li>
+                <li><strong>mycobacterial blood culture</strong>;</li>
+                <li><strong>urine LF-LAM</strong>. WHO conditionally recommends LAM in people with HIV and advanced disease (CD4 &le;100, WHO stage 3/4, or a danger sign). ${cite(12)}</li>
+                <li>Cultures on specimens from any other involved site. ${cite(34)}</li>
+              </ul>
+            </li>
+            <li><strong><em>Pneumocystis jirovecii</em> pneumonia (PCP)</strong> (CD4 38, progressive dyspnea)
+              <ul><li>Induced sputum or BAL for <em>Pneumocystis</em> testing. The Saudi NTP algorithm for seriously ill people with HIV also advises considering PCP treatment alongside broad-spectrum antibiotics. ${cite(37)}</li></ul>
+            </li>
+            <li><strong>Disseminated cryptococcosis</strong>
+              <ul><li><strong>Serum/plasma cryptococcal antigen (CrAg)</strong>. WHO <strong>strongly recommends CrAg screening before starting ART when CD4 &lt;100</strong>; a positive result &rarr; lumbar puncture. ${cite(48)}</li></ul>
+            </li>
+            <li><strong>Disseminated NTM</strong> (typical at very low CD4)
+              <ul><li>Mycobacterial blood culture with species identification.</li></ul>
+            </li>
+            <li><strong>Talaromycosis (<em>Talaromyces marneffei</em>)</strong>
+              <ul>
+                <li>An AIDS-defining invasive fungal infection of advanced HIV, endemic in <strong>tropical and subtropical Asia</strong>. Highest incidence in <strong>Southeast Asia, southern China and the Indian subcontinent</strong>. ${cite(56, 57)}</li>
+                <li>Disseminated disease can cause <strong>skin lesions</strong>, and up to a third of diagnosed cases die. ${cite(56)}</li>
+                <li>Test: <strong>fungal blood culture</strong> (the gold standard; growth takes up to 2&ndash;4 weeks), plus microscopy/culture of skin lesions, bone marrow or lymph node. Antigen tests are an alternative. ${cite(57)}</li>
+                <li>Why it matters: amphotericin induction beat itraconazole on 24-week mortality (11.3% vs 21.0%, IVAP trial). ${cite(58)}</li>
+              </ul>
+            </li>
+            <li><strong>Disseminated histoplasmosis</strong> (endemic in parts of India, e.g. the Gangetic plains ${cite(62)})
+              <ul><li><strong>Circulating Histoplasma antigen</strong>, as WHO recommends for people with HIV. ${cite(48)}</li></ul>
+            </li>
+            <li><strong>Melioidosis (<em>Burkholderia pseudomallei</em>)</strong>
+              <ul>
+                <li>Endemic in tropical areas, <strong>especially Southeast Asia</strong>. <strong>Diabetes</strong> is the major risk factor. Most patients present with <strong>sepsis</strong>. Mortality can exceed <strong>40%</strong> in some regions. ${cite(59)}</li>
+                <li>Test: <strong>blood culture, plus cultures of sputum and any pus or other sites</strong>, with the lab warned that melioidosis is suspected. Diagnosis rests on culture. ${cite(59)}</li>
+              </ul>
+            </li>
+            <li><strong>Paragonimiasis (lung fluke)</strong>
+              <ul>
+                <li>Acquired by eating <strong>raw, pickled or undercooked freshwater crabs or crayfish</strong> (or raw wild-boar/deer meat). Causes subacute to chronic lung disease that <strong>mimics TB</strong> (cough, chest pain, haemoptysis). Test: <strong>serology</strong>; treatment: praziquantel. ${cite(60)}</li>
+                <li>It is on this list only because of his raw-crab history, and it sits low: imaging usually shows <strong>nodules</strong> (often solitary) and <strong>pleural lesions/effusions</strong>, with <strong>eosinophilia</strong>. ${cite(61)} A <strong>diffuse miliary pattern with hepatosplenomegaly</strong> is not its typical picture.</li>
+              </ul>
+            </li>
+            <li><strong>Lymphoma</strong>
+              <ul><li>Tissue if nodes or masses are accessible.</li></ul>
+            </li>
+            <li><strong>Bacterial sepsis</strong>
+              <ul><li>Routine blood cultures (less likely given the 3-week subacute course).</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> CD4 and HIV viral load if not already done.</p>`,
         pearl:
-          'Name urine LAM explicitly in your initial orders — it is easy to leave off as an "extra" test, but in this population it can be your fastest positive result, sometimes same-day.',
+          "Put urine LAM in your first set of orders. In this population it can be your fastest positive result.",
       },
       {
-        title: "Initial results: everything comes back negative",
+        title: "Everything comes back negative. Does a negative LAM rule out TB?",
         context:
           "Spontaneous sputum smear x2: negative. Sputum NAAT: negative. Urine LAM: negative.",
-        question:
-          "Does a negative LAM rule out TB here? How do you interpret this, and what does it change about your next steps?",
+        question: "Does a negative LAM rule out TB here?",
         reveal: `
-          <h4>Reveal — LAM's real sensitivity:</h4>
+          <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Source</th><th>Population</th><th>Sensitivity</th><th>Specificity</th><th>Key point</th></tr></thead>
@@ -648,61 +691,79 @@ const CASES = [
                   <td>Sensitivity rises and specificity falls as CD4 declines</td>
                 </tr>
                 <tr>
-                  <td>Same review, inpatient subgroup ${cite(11)}</td>
+                  <td>Same review, inpatients ${cite(11)}</td>
                   <td>Hospitalized HIV-positive adults</td>
                   <td>52% (40&ndash;64%)</td>
                   <td>87% (78&ndash;93%)</td>
-                  <td>Notably better than outpatients (29% sensitivity, 96% specificity)</td>
+                  <td>Better than outpatients (29% / 96%)</td>
                 </tr>
                 <tr>
-                  <td>Same review, CD4 &lt;=100 subgroup ${cite(11)}</td>
-                  <td>Advanced HIV disease</td>
+                  <td>Same review, CD4 &le;100 ${cite(11)}</td>
+                  <td>Advanced HIV</td>
                   <td>~56% (41&ndash;70%)</td>
                   <td>not separately reported</td>
-                  <td>Best-performing subgroup — still misses roughly half</td>
-                </tr>
-                <tr>
-                  <td>WHO policy guidance, 2019 ${cite(12)}</td>
-                  <td>&mdash;</td>
-                  <td>&mdash;</td>
-                  <td>&mdash;</td>
-                  <td>Conditional recommendation to use LF-LAM in HIV-positive patients with advanced disease (CD4&lt;=100, WHO clinical stage 3/4, or a danger sign); recommends against using it as a general unselected screening test</td>
+                  <td>Best-performing subgroup, and still misses about half</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <h4>Reveal — what a positive or negative LAM actually buys you clinically:</h4>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>WHO LF-LAM policy update (2019) ${cite(12)}</td>
+                  <td>Use LF-LAM in HIV-positive patients with advanced disease (CD4 &le;100, WHO stage 3/4, or a danger sign). <strong>Not</strong> as an unselected screening test</td>
+                  <td>Conditional</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td>LF-LAM <strong>in parallel with Xpert</strong> for PLHIV who are seriously ill or have CD4 &le;100. A <strong>positive</strong> LAM: consider starting TB treatment immediately. A <strong>negative</strong> LAM: re-evaluate and do further testing (CXR, repeat Xpert, culture) (Algorithm 4)</td>
+                  <td>Not graded in the manual</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> no. A negative LAM misses about half of TB even in the best subgroup. ${cite(11)} It must not delay further work-up, or empiric treatment in someone this sick.</p>`,
+        pearl:
+          "In advanced HIV, a positive LAM rules TB in; a negative one rules nothing out.",
+      },
+      {
+        title: "What does a LAM result change clinically?",
+        question: "Beyond accuracy, does LAM-guided care change outcomes?",
+        reveal: `
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Population</th><th>Comparison</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
                   <td>Peter et al., Lancet 2016 ${cite(13)}</td>
-                  <td>HIV-positive hospital inpatients with suspected TB</td>
+                  <td>HIV-positive inpatients with suspected TB</td>
                   <td>LAM-guided treatment initiation vs standard care</td>
-                  <td>Reduced 8-week mortality; greatest benefit in patients with severe illness, advanced immunosuppression, and inability to self-expectorate sputum</td>
+                  <td>Reduced 8-week mortality; greatest benefit in the sickest, most immunosuppressed, and those unable to expectorate</td>
                 </tr>
                 <tr>
-                  <td>Gupta-Wright et al., STAMP trial, Lancet 2018 ${cite(14)}</td>
-                  <td>Unselected HIV-positive hospital inpatients</td>
+                  <td>Gupta-Wright et al., STAMP, Lancet 2018 ${cite(14)}</td>
+                  <td>Unselected HIV-positive inpatients</td>
                   <td>Urine LAM + urine Xpert added to sputum Xpert vs sputum Xpert alone</td>
-                  <td>Did not reduce overall 56-day mortality across all patients; benefit appeared concentrated in high-risk subgroups only</td>
+                  <td>No reduction in overall 56-day mortality; benefit concentrated in high-risk subgroups</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p>For this patient specifically — severely immunosuppressed, hospitalized, unable to reliably expectorate — this is exactly the phenotype where LAM-guided practice showed its clearest benefit in trial data. A negative result here is not reassuring, and it should not delay further workup, or, depending on severity, empiric treatment (see Stage 4).</p>`,
+          <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized, unable to expectorate reliably) is exactly the phenotype where LAM-guided care showed benefit. ${cite(13)}</p>`,
         pearl:
-          '"Who gets tested" changes what the evidence says as much as the test itself does — LAM\'s mortality benefit in trials tracks with illness severity and CD4, not with HIV status alone.',
+          "Who gets tested changes what the evidence says as much as the test itself does. LAM's mortality benefit tracks with illness severity and CD4, not with HIV status alone.",
       },
       {
-        title: "Cultures return negative. Now what?",
+        title: "Initial tests negative, cultures pending: induced sputum or bronchoscopy?",
         context:
-          "Mycobacterial cultures (blood and sputum) return negative at 6 weeks. The clinical and radiographic picture remains highly consistent with disseminated TB.",
+          "Initial smear, NAAT and LAM are negative; mycobacterial cultures are pending. The clinical and radiographic picture remains highly consistent with disseminated TB.",
         question:
-          "What further testing do you pursue, and how do you weigh sputum induction against bronchoscopy with BAL?",
+          "What further respiratory sampling do you pursue, and how do you weigh sputum induction against bronchoscopy with BAL?",
         reveal: `
-          <h4>Reveal — the induced sputum vs BAL evidence:</h4>
+          <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Comparison</th><th>Key result</th></tr></thead>
@@ -710,29 +771,57 @@ const CASES = [
                 <tr>
                   <td>McWilliams et al., Thorax 2002 ${cite(15)}</td>
                   <td>Prospective, 129 subjects, smear-negative or unable to expectorate</td>
-                  <td>Three induced sputum samples vs a single bronchoscopy</td>
-                  <td>Induced sputum detected 26/27 (96%) of smear-negative/culture-positive cases vs bronchoscopy 14/27 (52%), p&lt;0.005; induced sputum cost roughly one-third of bronchoscopy</td>
+                  <td>3 induced sputum samples vs 1 bronchoscopy</td>
+                  <td>Induced sputum detected 26/27 (96%) vs bronchoscopy 14/27 (52%) of smear-negative/culture-positive cases, p&lt;0.005; ~&#8531; of the cost</td>
                 </tr>
                 <tr>
                   <td>Musso et al., BMC Infect Dis 2025 ${cite(16)}</td>
-                  <td>Retrospective, 215 patients, two negative spontaneous sputum samples required before enrollment, low TB-prevalence setting</td>
-                  <td>Single induced sputum vs single BAL</td>
-                  <td>BAL sensitivity 84.6% vs induced sputum sensitivity 38.5% (both 100% specificity) — BAL clearly superior in this setting</td>
+                  <td>Retrospective, 215 patients, low-prevalence setting</td>
+                  <td>1 induced sputum vs 1 BAL</td>
+                  <td>BAL sensitivity 84.6% vs 38.5% (both 100% specificity)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>ATS/IDSA/CDC diagnosis (2017) ${cite(34)}</td>
+                  <td><strong>Sputum induction rather than bronchoscopy</strong> as the first sampling method when a patient can't expectorate or is smear-negative. <strong>Bronchoscopy</strong> if induced sputum cannot be obtained</td>
+                  <td>Conditional</td>
+                </tr>
+                <tr>
+                  <td>Same ${cite(34)}</td>
+                  <td><strong>Suspected miliary TB</strong> with negative induced sputum and no other accessible lesion: bronchoscopy with <strong>brushings and/or transbronchial biopsy</strong> (washings yield less; BAL yield unknown). <strong>Transbronchial biopsy</strong> when a rapid presumptive diagnosis is needed</td>
+                  <td>Conditional</td>
+                </tr>
+                <tr>
+                  <td>Same ${cite(34)}</td>
+                  <td>Collect <strong>post-bronchoscopy sputum</strong></td>
+                  <td>Conditional</td>
                 </tr>
               </tbody>
             </table>
           </div>`,
         pearl:
-          "The number of samples taken and the population/prevalence context both change the answer — three induced sputum samples can outperform a single bronchoscopy, but comparing one sample of each found the opposite result in a different setting. There is no universal winner; know what is actually being compared before citing either study to a fellow.",
-        revealExtra: `
-          <h4>Reveal — beyond respiratory sampling:</h4>
-          <p>given hepatosplenomegaly and a disseminated-disease phenotype, non-respiratory sampling can outperform repeat respiratory sampling here:</p>
+          "The number of samples and the setting both change the answer. There is no universal winner, so know what is actually being compared before citing either study.",
+      },
+      {
+        title: "Beyond respiratory samples: where else do you look?",
+        question:
+          "Given hepatosplenomegaly and a disseminated picture, which non-respiratory samples could give the diagnosis faster?",
+        reveal: `
           <ul>
-            <li>Bone marrow aspirate/biopsy — smear, culture, and histopathology; especially valuable if cytopenias are present</li>
-            <li>Liver biopsy if hepatomegaly or deranged LFTs</li>
-            <li>Repeat urine LAM later in the illness course — antigenuria can become detectable as disease progresses</li>
-            <li>If bronchoscopy is pursued, send BAL fluid <em>and</em> a transbronchial biopsy together — histopathology showing necrotizing granulomas can be diagnostic even when fluid AFB smear/culture is negative</li>
-          </ul>`,
+            <li><strong>Bone marrow aspirate/biopsy:</strong> smear, culture, histopathology; especially if cytopenias are present.</li>
+            <li><strong>Liver biopsy</strong> if hepatomegaly or deranged LFTs.</li>
+            <li><strong>If bronchoscopy is done:</strong> send BAL <strong>and</strong> transbronchial biopsy.</li>
+          </ul>
+          <p>For all extrapulmonary specimens: send <strong>AFB smear, mycobacterial culture, NAAT, and histology</strong>. A positive result supports TB; a negative one never excludes it. ${cite(34)}</p>`,
+        pearl:
+          "In disseminated TB, the fastest diagnosis often comes from the organ that isn't the lung.",
       },
       {
         title: "When do you stop testing and just treat?",
@@ -740,15 +829,117 @@ const CASES = [
           "Given ongoing negative microbiology despite reasonable escalation, how do you decide between further invasive testing and starting empiric treatment?",
         reveal: `
           <ul>
-            <li>In disseminated TB with advanced HIV, the mortality cost of diagnostic delay is real and well documented — this is exactly the population where trial evidence ${cite(13)} supports acting on a strong clinical/radiographic picture rather than waiting for microbiologic perfection.</li>
-            <li>Histopathology showing necrotizing (caseating) granulomas, even with a negative culture, is generally accepted as sufficient to treat as TB in the right clinical context — paucibacillary disease can be culture-negative despite unmistakable granulomatous inflammation.
-              ${img(3, "stage4", "histopath", "Necrotizing (caseating) granulomas on biopsy histopathology")}
+            <li>In disseminated TB with advanced HIV, delaying treatment carries a real mortality cost. Trial evidence ${cite(13)} supports acting on a strong clinical/radiographic picture.</li>
+            <li>Necrotizing (caseating) granulomas on histopathology, even with a negative culture, are generally accepted as sufficient to treat as TB in the right clinical context. Histology still has to be read in that context, "because neither false-positive nor false-negative results are rare". ${cite(34)}
+              ${img(3, "stage6", "histopath", "Necrotizing (caseating) granulomas on biopsy histopathology")}
             </li>
-            <li>Clinical and radiographic response to empiric treatment is itself a diagnostic tool: substantial improvement over 2&ndash;4 weeks supports the diagnosis retrospectively; a lack of response should prompt reconsidering the differential (fungal infection, lymphoma, NTM) rather than simply extending TB treatment blindly.</li>
-            <li>Practically: for a patient this sick, most experienced clinicians would not wait for a 6-week culture result before treating — empiric therapy typically starts back at Stage 2 or 3, in parallel with the diagnostic workup, not after it concludes.</li>
+            <li><strong>Saudi NTP Algorithm 4</strong> (people with HIV who are seriously ill or have CD4 &le;100): ${cite(37)}
+              <ul>
+                <li><strong>"Seriously ill"</strong> = any danger sign: respiratory rate &gt;30/min, temperature &gt;39&nbsp;&deg;C, heart rate &gt;120/min, or unable to walk unaided.</li>
+                <li>Treat for bacterial infection with broad-spectrum antibiotics, <strong>not fluoroquinolones</strong>, and consider PCP treatment.</li>
+                <li><strong>If worse or not improving after 3&ndash;5 days:</strong> further TB investigations and, if seriously ill, <strong>start presumptive TB treatment</strong>.</li>
+                <li><strong>Improvement does not rule TB out.</strong> If clinical suspicion is high, use clinical judgement on starting TB treatment.</li>
+              </ul>
+            </li>
           </ul>`,
         pearl:
-          "The diagnostic workup and the treatment decision do not have to be sequential in a patient this sick — they run in parallel, and the evidence specifically supports that approach in advanced HIV with disseminated TB.",
+          "In a patient this sick, work-up and treatment run in parallel, not in sequence.",
+      },
+      {
+        title: "TB treatment started. What about his HIV?",
+        question:
+          "He starts standard TB treatment. When do you start ART, what do you need to watch for, and what else must be added?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Population</th><th>Comparison</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>CAMELIA</strong>, NEJM 2011 ${cite(50)}</td>
+                  <td>CD4 &le;200 (median 25)</td>
+                  <td>ART at <strong>2 wk vs 8 wk</strong> after TB treatment</td>
+                  <td><strong>Deaths 18% vs 27%</strong> (HR 0.62); TB-IRIS HR 2.51</td>
+                </tr>
+                <tr>
+                  <td><strong>STRIDE</strong>, NEJM 2011 ${cite(51)}</td>
+                  <td>CD4 &lt;250 (median 77)</td>
+                  <td>&le;2 wk vs 8&ndash;12 wk</td>
+                  <td>Overall no difference; <strong>CD4 &lt;50: AIDS/death 15.5% vs 26.6%</strong> (P=0.02); IRIS 11% vs 5%</td>
+                </tr>
+                <tr>
+                  <td><strong>SAPiT</strong>, NEJM 2011 ${cite(52)}</td>
+                  <td>CD4 &lt;500, smear-positive</td>
+                  <td>Within 4 wk vs continuation phase</td>
+                  <td><strong>CD4 &lt;50: 8.5 vs 26.3 per 100 PY</strong>; IRIS 20.1 vs 7.7 per 100 PY</td>
+                </tr>
+                <tr>
+                  <td><strong>PredART</strong>, NEJM 2018 ${cite(53)}</td>
+                  <td>CD4 &le;100, starting ART</td>
+                  <td><strong>Prednisone 40 mg/d &times;14 d, then 20 mg/d &times;14 d</strong> vs placebo</td>
+                  <td><strong>TB-IRIS 32.5% vs 46.7%</strong> (RR 0.70); no excess severe infections or cancers</td>
+                </tr>
+                <tr>
+                  <td><strong>T&ouml;r&ouml;k</strong>, CID 2011 ${cite(54)}</td>
+                  <td>HIV-associated <strong>TB meningitis</strong></td>
+                  <td>Immediate vs deferred (2 mo) ART</td>
+                  <td>No survival benefit; <strong>more grade 4 adverse events</strong> with immediate ART</td>
+                </tr>
+                <tr>
+                  <td><strong>INSPIRING</strong>, CID 2020 ${cite(55)}</td>
+                  <td>On rifampicin-based TB treatment, <strong>CD4 &ge;50</strong></td>
+                  <td><strong>Dolutegravir 50 mg twice daily</strong> (during TB treatment and for 2 wk after) vs efavirenz</td>
+                  <td>Viral suppression 75% vs 82% (non-comparative); TB-IRIS uncommon</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>WHO (2021, reprinted in Module 4 2025) ${cite(29)}</td>
+                  <td><strong>Start ART as soon as possible within 2 weeks of starting TB treatment, regardless of CD4</strong></td>
+                  <td>Strong, low&ndash;moderate certainty (adults)</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td>ART for all PLHIV with TB regardless of CD4: <strong>within 2 weeks if CD4 &le;50, within 8 weeks if CD4 &gt;50</strong>; caution with early ART in <strong>TB meningitis</strong>; <strong>co-trimoxazole for all HIV-positive TB patients</strong>, started as soon as possible and given throughout TB treatment (&sect;8.5.4, &sect;8.5.6)</td>
+                  <td>Not graded in the manual</td>
+                </tr>
+                <tr>
+                  <td>WHO advanced HIV disease ${cite(48)}</td>
+                  <td><strong>Defer ART when TB meningitis or cryptococcal meningitis is suspected</strong>, because of the risk of life-threatening paradoxical worsening</td>
+                  <td>&mdash;</td>
+                </tr>
+                <tr>
+                  <td>WHO HIV (2021) ${cite(49)}</td>
+                  <td><strong>Co-trimoxazole prophylaxis for all people with HIV and active TB, regardless of CD4</strong></td>
+                  <td>Strong, high certainty</td>
+                </tr>
+                <tr>
+                  <td>WHO advanced HIV disease ${cite(48)}</td>
+                  <td><strong>CrAg screening before ART if CD4 &lt;100</strong>; pre-emptive antifungal therapy if positive</td>
+                  <td>Strong, moderate certainty</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>What this means for this patient (CD4 38, no meningitis)</h4>
+          <ul>
+            <li>ART within 2 weeks ${cite(29, 37)};</li>
+            <li><strong>co-trimoxazole now</strong> ${cite(37, 49)};</li>
+            <li><strong>CrAg before ART</strong> (see Stage 1) ${cite(48)};</li>
+            <li>consider <strong>prednisone</strong> to prevent IRIS (PredART eligibility met) ${cite(53)};</li>
+            <li>if dolutegravir is used with rifampicin, give it <strong>twice daily</strong> ${cite(55)}.</li>
+            <li><strong>Saudi vs WHO timing:</strong> for this patient (CD4 38) both say <strong>within 2 weeks</strong>. They differ <strong>above CD4 50</strong>: the Saudi NTP Manual (2021) allows <strong>up to 8 weeks</strong>, while WHO 2021 says <strong>within 2 weeks regardless of CD4</strong>. ${cite(37, 29)}</li>
+            <li>INSPIRING enrolled CD4 &ge;50, so the dolutegravir evidence at his CD4 is extrapolated. ${cite(55)} If talaromycosis were confirmed, its treatment and ART timing would need separate guidance, which this case does not cover.</li>
+            <li><strong>If he had signs of meningitis:</strong> check for TB and cryptococcal meningitis first; ART is deferred in both. ${cite(48)}</li>
+          </ul>`,
+        pearl:
+          "At CD4 below 50, early ART saves lives despite more IRIS. The exception is meningitis, where early ART does harm.",
       },
     ],
   },
