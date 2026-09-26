@@ -1780,6 +1780,153 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 7
+  // ============================================================
+  {
+    id: 7,
+    section: "extrapulmonary",
+    title: "46-year-old man with three months of back pain and weight loss",
+    hubDescription:
+      "Back pain, night sweats and weight loss in a man who drinks unpasteurized milk: separating the two leading causes on imaging and microbiology, why tissue comes before treatment, and when a spine needs a surgeon.",
+    vignette:
+      "46-year-old Saudi man from a rural area who regularly drinks unpasteurized milk. Three months of worsening mid-back pain, night sweats and 7 kg weight loss. Tender over the lower thoracic spine. Neurologically intact. No prior TB.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous spondylitis (Pott's disease)</strong>
+              <ul>
+                <li><strong>MRI of the whole spine</strong> first.</li>
+                <li>Then <strong>image-guided biopsy</strong> of the vertebra or paravertebral collection for <strong>histology</strong>, <strong>mycobacterial culture</strong> (strong recommendation), and <strong>AFB smear and NAAT</strong> (Xpert). ${cite(1)}</li>
+                <li><strong>CXR</strong>, and sputum if the chest is abnormal.</li>
+              </ul>
+            </li>
+            <li><strong>Brucellar spondylitis</strong>
+              <ul>
+                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(100)}</li>
+                <li>The clinical pattern suggests one or the other, "but the definitive diagnosis depends upon bacteriological tests". ${cite(98)}</li>
+              </ul>
+            </li>
+            <li><strong>Pyogenic spondylodiscitis</strong>
+              <ul><li>Blood cultures, plus bacterial culture of the biopsy.</li></ul>
+            </li>
+            <li><strong>Malignancy</strong> (metastasis, myeloma, lymphoma)
+              <ul><li>Histology on the same biopsy.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an HIV test. ${cite(3)}</p>`,
+        pearl:
+          "In Saudi Arabia, spinal infection with a raw-milk history has two leading causes, TB and brucella. Send for both before anyone reaches for a biopsy needle or a prescription.",
+      },
+      {
+        title: "The MRI",
+        context:
+          "MRI: destruction of <strong>T8 and T9</strong>, with disc involvement, a <strong>large paravertebral abscess</strong>, and <strong>subligamentous spread over three levels</strong>. Early vertebral collapse. The lumbar spine is normal." +
+          img(7, "stage2", "spine-pathology", "Tuberculosis of the spinal column, autopsy specimen (reference image, not this patient)"),
+        question: "Does the imaging favour TB or brucella?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Feature</th><th>Tuberculous spondylitis</th><th>Brucellar spondylitis</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(97)}</td></tr>
+                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(97)}</td></tr>
+                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(97)}</td></tr>
+                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(99)}</td></tr>
+                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(99)}</td></tr>
+                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(99)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(97)}</p>
+          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(98)}</p>`,
+        pearl:
+          "Thoracic, abscess, collapse: think TB. Lumbar, end-plate, disc: think brucella. The final word still belongs to the lab.",
+      },
+      {
+        title: "Brucella negative. Is the biopsy worth it?",
+        context:
+          "Brucella serology negative. Blood cultures negative. CT-guided biopsy of the paravertebral collection: granulomatous inflammation; <strong>Xpert MTB detected, rifampicin resistance not detected</strong>. Culture pending.",
+        question: "Why biopsy at all, and what if the biopsy had been negative?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Ravichandran 2023 ${cite(101)}</td><td>259 CT-guided spinal biopsies, suspected infective spondylodiscitis (India)</td><td>Confirmatory in <strong>57.5%</strong> overall: histology 36.6%, Xpert 27.8%, MGIT culture 19.9%. <strong>Rifampicin resistance in 16/72 (22%) of Xpert-positives.</strong> Complications 0.3%. <strong>Prior TB treatment reduced the yield</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>For extrapulmonary specimens, positive smear, culture or NAAT support TB; <strong>negative results "may not be used to exclude TB"</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td><strong>Mycobacterial culture</strong> on extrapulmonary specimens</td><td><strong>Strong</strong>, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>AFB smear, <strong>NAAT</strong> and <strong>histology</strong> on extrapulmonary specimens</td><td>Conditional, very low</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong></p>
+          <ul>
+            <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(101)}</li>
+            <li><strong>Only a culture gives a full DST.</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
+            <li>A negative biopsy doesn't exclude TB. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "Biopsy first, treat second. In one referral series, one in five Xpert-positive spinal biopsies was rifampicin-resistant, and you only find that out if you sample before you treat.",
+      },
+      {
+        title: "Treatment: how long, and does he need surgery?",
+        question: "What regimen and duration, and is surgery indicated?",
+        reveal: `
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6&ndash;9 months</strong> of a rifampin-containing regimen is at least as effective as 18-month regimens without rifampin. Some experts favour <strong>9 months</strong> because response is hard to assess; <strong>12 months</strong> with extensive orthopaedic hardware</td><td>(narrative)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Several trials found <strong>no added benefit of surgical debridement</strong> over chemotherapy alone; <strong>uncomplicated spinal TB is managed medically</strong></td><td>(narrative)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Surgery considered for: <strong>(1)</strong> poor response with ongoing infection or deterioration; <strong>(2)</strong> cord compression with persistent or recurrent neurological deficit; <strong>(3)</strong> spinal instability</td><td>Expert opinion</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Spinal TB with <strong>meningitis</strong> is managed as TB meningitis, including adjunctive corticosteroids</td><td>(narrative)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No spinal-specific adult recommendation; steroids are recommended only for TB meningitis and pericarditis (&sect;5.5.3)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>For this patient (neurologically intact, no instability)</h4>
+          <ul>
+            <li><strong>2HRZE, then HR, for 6&ndash;9 months in total</strong>; many would choose 9. ${cite(3)}</li>
+            <li><strong>No surgery now.</strong> ${cite(3)}</li>
+            <li>Continue a DST-guided regimen once the culture returns. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "For uncomplicated Pott's disease, the drugs do the work. Surgery is for deficits, instability or failure, not for the abscess alone.",
+      },
+      {
+        title: "Week 6: new leg weakness",
+        context:
+          "At week 6 he reports leg weakness and difficulty walking. MRI: the paravertebral abscess is larger, with <strong>cord compression at T8</strong>. His culture has grown fully susceptible <em>M. tuberculosis</em>, and adherence is documented.",
+        question: "Is this treatment failure, and what now?",
+        reveal: `
+          <ul>
+            <li><strong>Paradoxical worsening is possible</strong>, but it is diagnosed only after a thorough evaluation has excluded <strong>treatment failure and drug resistance</strong>. Here the isolate is susceptible and adherence is documented. ${cite(3)}</li>
+            <li><strong>Either way, the cord comes first.</strong> Cord compression with a new neurological deficit is one of the listed indications for surgery. <strong>Refer to spinal surgery urgently.</strong> ${cite(3)}</li>
+            <li><strong>Continue the same drugs.</strong> ${cite(3)}</li>
+            <li><strong>Duration:</strong> if hardware is placed, some experts extend treatment to 12 months. ${cite(3)}</li>
+          </ul>`,
+        pearl:
+          "A new deficit on treatment is a surgical question first and a microbiology question second. Decompress, keep the drugs going, and prove it isn't resistance.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
