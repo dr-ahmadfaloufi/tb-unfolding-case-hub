@@ -2228,6 +2228,156 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 10
+  // ============================================================
+  {
+    id: 10,
+    section: "extrapulmonary",
+    title: "38-year-old woman with abdominal swelling and a raised CA-125",
+    hubDescription:
+      "Ascites, peritoneal thickening and a raised CA-125 in a young woman: what the fluid can settle, when laparoscopy beats laparotomy, six months of treatment, and two patients in whom the usual tests mislead.",
+    vignette:
+      "38-year-old Saudi woman with 2 months of abdominal distension, low-grade fevers, night sweats and weight loss. Ultrasound: moderate ascites. CT: ascites with smooth peritoneal thickening and omental thickening; ovaries not clearly enlarged. <strong>Serum CA-125 raised.</strong> She has been referred to gynaecological oncology for suspected ovarian cancer." +
+      img(10, "stage1", "ct-peritonitis", "CT of wet-type tuberculous peritonitis with ascites (reference image, not this patient)"),
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Peritoneal TB</strong>
+              <ul>
+                <li><strong>Diagnostic paracentesis:</strong> cell count and differential; <strong>serum&ndash;ascites albumin gradient (SAAG)</strong>; <strong>ADA</strong> &plusmn; free IFN-&gamma;; <strong>AFB smear, mycobacterial culture</strong> and NAAT. ${cite(1)}</li>
+                <li>Consider TB peritonitis in anyone with unexplained <strong>lymphocytic ascites</strong> and a <strong>SAAG &lt;11 g/L</strong>. ${cite(116)}</li>
+                <li><strong>CXR.</strong></li>
+              </ul>
+            </li>
+            <li><strong>Peritoneal carcinomatosis / advanced ovarian cancer</strong>
+              <ul>
+                <li><strong>Ascitic cytology</strong>, then tissue.</li>
+                <li><strong>A raised CA-125 does not separate them:</strong> in 28 women with abdominopelvic TB, CA-125 was raised in <strong>all 28</strong>, and half were diagnosed only at laparotomy. ${cite(117)}</li>
+              </ul>
+            </li>
+            <li><strong>Ascites from portal hypertension</strong> (cirrhosis, heart failure)
+              <ul><li>A <strong>high SAAG</strong> points here. ${cite(116)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an HIV test. ${cite(3)}</p>`,
+        pearl:
+          "A raised CA-125 with ascites is not a diagnosis of ovarian cancer. Tap the fluid, and send an ADA, before anyone books a laparotomy.",
+      },
+      {
+        title: "The ascitic fluid",
+        context:
+          "Exudative, <strong>lymphocyte-predominant</strong> ascites. <strong>SAAG 7 g/L.</strong> <strong>ADA 58 U/L.</strong> Cytology: no malignant cells. AFB smear negative; NAAT negative. Culture pending.",
+        question: "How far does this take you?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (ascitic fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 20 studies, 2,291 participants ${cite(118)}</td><td><strong>90%</strong> (85&ndash;94)</td><td><strong>94%</strong> (92&ndash;95)</td><td>Very low certainty (GRADE); cut-off varied</td></tr>
+                <tr><td>ADA</td><td>Meta-analysis of 4 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>100%</td><td>97%</td><td>Threshold 36&ndash;40 U/L</td></tr>
+                <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 6 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>93%</td><td>99%</td><td>Thresholds varied</td></tr>
+                <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;69%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Measure <strong>ADA</strong> and <strong>free IFN-&gamma;</strong> on fluid in suspected peritoneal TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Culture (strong); smear and NAAT (conditional). <strong>Negative results do not exclude TB</strong></td><td>Strong / conditional</td></tr>
+                <tr><td>Sanai 2005, systematic review ${cite(116)}</td><td>Culture of ascitic fluid or peritoneal biopsy is the <strong>gold standard</strong>; <strong>low threshold for diagnostic laparoscopy</strong></td><td>(review recommendation)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> lymphocytic, low-SAAG ascites with a high ADA and negative cytology makes peritoneal TB very likely. A negative smear and NAAT don't count against it. ${cite(1, 118)}</p>`,
+        pearl:
+          "In a young woman without cirrhosis, a high ascitic ADA is one of the most accurate tests in extrapulmonary TB. It can save her from an unnecessary cancer operation.",
+      },
+      {
+        title: "Laparoscopy, or treat now?",
+        question:
+          "Gynaecological oncology still wants tissue. Is laparoscopy needed, or can you treat on the fluid results?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Hossain 1992</strong> ${cite(119)}</td><td>82 laparoscopies, Riyadh</td><td><strong>22</strong> found peritoneal TB. Direct visualization plus peritoneal biopsy "provide the definitive tissue diagnosis". The tuberculin test was <strong>not always positive</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td><strong>Peritoneal biopsy histology: 79&ndash;100%</strong> sensitive</td></tr>
+                <tr><td><strong>Liu 2014</strong> ${cite(117)}</td><td>28 women with abdominopelvic TB and raised CA-125</td><td>Diagnosis came from <strong>laparotomy in 50%</strong> and laparoscopy in 32%. "Treatment &hellip; is totally based on medical therapy other than surgery except biopsy"</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(115)}</td><td>104 GI TB, 8 countries including Saudi Arabia</td><td>Ascitic culture positive in <strong>11 of 19</strong> (57.9%). <strong>43%</strong> were diagnosed from surgical specimens</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer</h4>
+          <ul>
+            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and DST in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(116, 119, 117)}</li>
+            <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(3, 118)}</li>
+          </ul>`,
+        pearl:
+          "For peritoneal TB, the laparoscope beats the laparotomy: same tissue, far less surgery. The cure is medical.",
+      },
+      {
+        title: "Treatment",
+        context:
+          "Laparoscopy: studding of the peritoneum with tubercles. Histology: caseating granulomas. Culture later grows fully susceptible <em>M. tuberculosis</em>.",
+        question: "What regimen and duration? Are adjunctive steroids needed?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(114)}</td><td>3 RCTs, 328 adults with intestinal <strong>and peritoneal</strong> TB</td><td><strong>6 vs 9 months:</strong> no difference in clinical cure (moderate certainty). Relapse too rare to compare</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6 months</strong> is adequate for peritoneal TB. Data on <strong>adjunctive corticosteroids</strong> for TB peritonitis are <strong>limited</strong>, so they should <strong>not</strong> be prescribed routinely</td><td>Expert opinion</td></tr>
+                <tr><td>Sanai 2005 ${cite(116)}</td><td>6 months of first-line drugs in uncomplicated cases</td><td>(review recommendation)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No peritoneal-specific adult recommendation; 2HRZE/4HR standard</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> <strong>2HRZE/4HR</strong>, with no routine steroids. ${cite(3)}</p>`,
+        pearl:
+          "Peritoneal TB is treated like pulmonary TB: six months, no steroids. The hard part is getting the diagnosis without a laparotomy.",
+      },
+      {
+        title: "Two patients who don't fit the textbook",
+        question:
+          "How would your approach change if she had (a) <strong>cirrhosis</strong>, or (b) end-stage kidney disease on <strong>peritoneal dialysis</strong> with cloudy dialysate?",
+        reveal: `
+          <h4>(a) Cirrhosis: the ADA loses sensitivity</h4>
+          <ul>
+            <li>In a cross-sectional study, ADA activity and accuracy were <strong>significantly lower in cirrhotic patients</strong>, regardless of age. ADA also <strong>fell with increasing age</strong>. ${cite(120)}</li>
+            <li>A "normal" ADA in a cirrhotic patient <strong>does not reassure</strong>: go to culture and peritoneal biopsy. ${cite(120, 116)}</li>
+            <li>TB peritonitis frequently complicates end-stage liver or renal disease, which adds to the diagnostic difficulty. ${cite(116)}</li>
+          </ul>
+          <h4>(b) Peritoneal dialysis</h4>
+          <ul>
+            <li>A <strong>Jeddah</strong> cohort of 89 CAPD patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by PCR (1), culture (2) or clinical response (1). ${cite(121)}</li>
+            <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(121)}</li>
+          </ul>`,
+        pearl:
+          "In cirrhosis, a low ADA doesn't rule out TB. In a PD patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
