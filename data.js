@@ -31,6 +31,10 @@ const IMAGE_AI_FLAGS = {
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
   "case5-stage4-cxr-normal": false,
+  "case6-stage1-cxr-effusion": false,
+  "case7-stage2-spine-pathology": false,
+  "case8-stage4-ct-hydrocephalus": false,
+  "case10-stage1-ct-peritonitis": false,
 };
 
 // Attribution for images sourced from published, licensed figures (as opposed
@@ -87,6 +91,31 @@ const IMAGE_CREDITS = {
     license: "CC0",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg",
     note: "Public-domain dedication (CC0, https://creativecommons.org/publicdomain/zero/1.0/); credit given for consistency. Resized to 800 px wide. Not this patient's film.",
+  },
+  "case6-stage1-cxr-effusion": {
+    text: "Nabih S. \"Unilateral Pleural Effusion.\" Wikimedia Commons (own work).",
+    license: "CC BY-SA 4.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Unilateral_Pleural_Effusion.jpg",
+    note: "Licensed under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Resized to 800 px wide; otherwise unmodified. Cause of the effusion not stated by the author; not this patient.",
+  },
+  "case7-stage2-spine-pathology": {
+    text: "Rosen Y. \"Tuberculosis of spinal column.\" Atlas of Pulmonary Pathology, via Flickr / Wikimedia Commons.",
+    license: "CC BY-SA 2.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tuberculosis_of_spinal_column_(6539943165).jpg",
+    note: "Licensed under CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/). Resized to 800 px wide; otherwise unmodified. Autopsy specimen shown in place of an MRI (no suitably licensed spinal TB MRI was found).",
+  },
+  "case8-stage4-ct-hydrocephalus": {
+    text: "Monfils L. \"Hydrocephalus.\" CT scan of the brain, Wikimedia Commons (own work).",
+    license: "CC BY-SA 3.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Hydrocephalus.jpg",
+    note: "Licensed under CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Unmodified. The cause of the hydrocephalus is not stated; shown to illustrate ventricular enlargement only.",
+  },
+  "case10-stage1-ct-peritonitis": {
+    text: "Singh S, Devi YS, Bhalothia S, Gunasekaran V. Peritoneal carcinomatosis: pictorial review of computed tomography findings. Int J Adv Res. 2016;4(7):735-748. Figure: \"CT of wet type of tuberculous peritonitis\", via Wikimedia Commons.",
+    doi: "10.21474/IJAR01/936",
+    license: "CC BY 4.0",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:CT_of_wet_type_of_tuberculous_peritonitis.jpg",
+    note: "Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Resized to 800 px wide; otherwise unmodified.",
   },
 };
 
@@ -1554,6 +1583,801 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 6
+  // ============================================================
+  {
+    id: 6,
+    section: "extrapulmonary",
+    title: "31-year-old man with fever and a one-sided pleural effusion",
+    hubDescription:
+      "A young man with a lymphocytic pleural effusion: what the fluid can and can't tell you, when tissue is worth getting, drainage versus steroids, and why a clean lung field doesn't mean clean sputum.",
+    vignette:
+      "31-year-old Saudi man, previously healthy, with 3 weeks of fever, dry cough and right-sided pleuritic chest pain, and increasing breathlessness over the last week. CXR: moderate right pleural effusion; no visible parenchymal lesion. HIV status unknown." +
+      img(6, "stage1", "cxr-effusion", "Unilateral right pleural effusion on chest radiograph (reference image, not this patient)"),
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(87)}</p>
+          <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous pleurisy</strong>
+              <ul>
+                <li><strong>Diagnostic thoracentesis:</strong> protein and LDH (to confirm an exudate by Light's criteria) ${cite(88)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
+                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(89)}</li>
+              </ul>
+            </li>
+            <li><strong>Parapneumonic effusion or empyema</strong>
+              <ul><li>Gram stain and bacterial culture on the same fluid.</li></ul>
+            </li>
+            <li><strong>Malignant effusion</strong> (lymphoma, metastatic disease)
+              <ul><li>Pleural fluid cytology; pleural biopsy if the work-up stays non-diagnostic. Among undiagnosed exudates in a high-TB-incidence setting, 82% were TB and 10% malignancy. ${cite(90)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine for everyone with presumptive TB. ${cite(3)}</p>`,
+        pearl:
+          "A clean lung field doesn't mean clean sputum. Induce sputum in suspected pleural TB: it can give you a culture, and therefore drug susceptibility, without a biopsy.",
+      },
+      {
+        title: "The fluid results",
+        context:
+          "Straw-coloured exudate, <strong>lymphocyte-predominant</strong>. <strong>ADA 78 U/L.</strong> AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> Cultures pending.",
+        question:
+          "Does a negative smear and Xpert rule out TB here? How much weight does the ADA carry?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (pleural fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(91)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
+                <tr><td><strong>ADA</strong></td><td>5 earlier meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89&ndash;99%</td><td>88&ndash;97%</td><td>Thresholds ranged from 10 to 71 U/L</td></tr>
+                <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 22 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89%</td><td>97%</td><td>Thresholds varied widely</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(92)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
+                <tr><td><strong>NAAT (any)</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>56%</td><td>98%</td><td></td></tr>
+                <tr><td><strong>AFB smear</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td><strong>0&ndash;10%</strong></td><td>high</td><td></td></tr>
+                <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>23&ndash;58%</td><td>&gt;97%</td><td>The only route to an isolate for DST</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Measure <strong>ADA</strong> on fluid in suspected pleural TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Measure <strong>free IFN-&gamma;</strong> on fluid in suspected pleural TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td><strong>Mycobacterial culture</strong> on extrapulmonary specimens</td><td><strong>Strong</strong>, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td><strong>AFB smear</strong> and <strong>NAAT</strong> on extrapulmonary specimens. A positive result supports TB; <strong>a negative result may not be used to exclude TB</strong></td><td>Conditional, very low</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>Xpert is recommended for extrapulmonary specimens, "however, the test has <strong>low sensitivity for pleural fluid</strong> specimens" (Chapter 3 algorithm)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> <strong>no.</strong> In pleural fluid, a negative smear or NAAT never excludes TB. ${cite(1)} A lymphocytic exudate with a high ADA is strong <strong>supporting</strong> evidence. ATS/IDSA/CDC stress that neither ADA nor IFN-&gamma; "provide a definitive diagnosis"; they "must be interpreted in the entire clinical context". ${cite(1)}</p>`,
+        pearl:
+          "In pleural TB, the fluid is full of the immune response and almost empty of bacilli. That's why ADA performs well and the smear fails.",
+      },
+      {
+        title: "Treat now, or biopsy first?",
+        question:
+          "With a lymphocytic, high-ADA exudate and negative microbiology, do you start treatment now or get pleural tissue first?",
+        reveal: `
+          <h4>Studies: diagnostic yield of each specimen</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Diacon 2003 ${cite(90)}</td><td>Prospective, 51 undiagnosed exudates (82% TB), South Africa</td><td><strong>Closed needle biopsy:</strong> histology 66%, culture 48%, combined <strong>79%</strong>. <strong>Thoracoscopy:</strong> histology 100%, culture 76%, combined <strong>100%</strong>. Both 100% specific. <strong>ADA &ge;50 U/L:</strong> 95% sensitive, 89% specific. <strong>ADA + lymphocyte/neutrophil ratio &ge;0.75 + closed biopsy:</strong> 93% sensitive, 100% specific</td></tr>
+                <tr><td>Conde 2003 ${cite(89)}</td><td>Prospective, 84 pleural TB, Brazil</td><td>Pleural biopsy histology <strong>78%</strong>. Culture yield: pleural tissue <strong>62%</strong>, pleural fluid <strong>12%</strong>, induced sputum <strong>52%</strong></td></tr>
+                <tr><td>al-Quorain 1994 ${cite(87)}</td><td>Prospective, 89 pleural TB, Eastern Province, KSA</td><td>Culture or histology positive: pleural biopsy <strong>68.5%</strong>, pleural fluid <strong>10%</strong>, sputum <strong>2%</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>Pleural <strong>tissue</strong>: histology 69&ndash;97%, culture 40&ndash;58%, smear 14&ndash;39%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td><strong>Histology</strong> on specimens from suspected extrapulmonary TB. Positive and negative results are read "in the context of the clinical scenario because neither false-positive nor false-negative results are rare"</td><td>Conditional, very low</td></tr>
+                <tr><td>ATS/CDC/IDSA treatment (2016) ${cite(3)}</td><td>Empiric multidrug treatment is started in almost all situations in which active TB is suspected</td><td>(general principle)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Reasoning for this patient</h4>
+          <ul>
+            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(3, 91)}</li>
+            <li><strong>Tissue still earns its place.</strong> It is the best route to a positive <strong>culture</strong>, and so to <strong>drug-susceptibility testing</strong>; NAAT "does not produce an isolate, which is needed for DST". ${cite(1)} Tissue also excludes malignancy. Pleural biopsy was the single most useful test in the Saudi series. ${cite(87)}</li>
+            <li><strong>If the ADA were low, the fluid neutrophilic, or the patient older:</strong> go to biopsy before treating. Thoracoscopy has the highest yield where it's available. ${cite(90)}</li>
+          </ul>`,
+        pearl:
+          "High ADA is enough to start treatment; it isn't enough to get a susceptibility result. Culture of pleural tissue or induced sputum gives you both a diagnosis and a DST.",
+      },
+      {
+        title: "Treatment: how long, drain it, and steroids?",
+        context: "He starts treatment. The effusion is moderate and he is breathless.",
+        question:
+          "What regimen and duration? Should the effusion be drained? Do adjunctive corticosteroids help?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Ryan 2017, Cochrane</strong> ${cite(93)}</td><td>6 RCTs, 590 participants (1 trial in HIV-positive people)</td><td>Corticosteroids <strong>may speed resolution</strong>. Residual effusion reduced at 8 weeks (RR 0.54) and at 24 weeks (RR 0.35); residual pleural changes reduced (RR 0.72, ARR 16%). <strong>Low certainty.</strong> No long-term lung-function benefit shown (very low certainty). <strong>More adverse events leading to discontinuation</strong> (RR 2.78). <strong>Kaposi sarcoma 6/99 vs 0/98</strong> in the HIV trial</td></tr>
+                <tr><td><strong>Bhuniya 2012</strong> ${cite(94)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1/FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>A standard 6-month regimen is adequate</strong> for pleural TB</td><td>(narrative recommendation)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>No evidence to support routine adjunctive corticosteroids.</strong> In 4 RCTs, steroids did not reduce residual pleural thickening; in HIV-associated pleurisy they increased Kaposi sarcoma</td><td>(narrative recommendation)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>Tuberculous empyema</strong> (a cavity rupturing into the pleural space): drainage, often surgical, plus chemotherapy; optimal duration not established</td><td>(narrative)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td><strong>2HRZE/4HR</strong> is the stated regimen for drug-susceptible <strong>pulmonary</strong> TB (&sect;5.5.1). The extrapulmonary section (&sect;5.5.3) recommends steroids <strong>only for TB meningitis and pericarditis</strong>, and says nothing specific about pleural TB</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer for this patient</h4>
+          <ul>
+            <li><strong>2HRZE/4HR for 6 months.</strong> ${cite(3, 5)}</li>
+            <li><strong>Therapeutic thoracentesis</strong> to relieve his breathlessness. ${cite(94)}</li>
+            <li><strong>No routine steroids.</strong> ${cite(3)}</li>
+          </ul>
+          <p><strong>Why the two sources seem to disagree on steroids:</strong> the Cochrane review (6 trials) found a <em>possible</em> reduction in residual pleural changes, at low certainty ${cite(93)}, while ATS 2016 read 4 trials as showing no benefit ${cite(3)}. Both agree there is <strong>no proven long-term functional benefit</strong>, and there is a signal of <strong>harm</strong> (discontinuations; Kaposi sarcoma in HIV).</p>`,
+        pearl:
+          "Drain the fluid for breathlessness. Don't reach for steroids to prevent pleural thickening: the benefit is uncertain, and the harm in HIV isn't.",
+      },
+      {
+        title: "Week 3: the induced-sputum culture grows <em>M. tuberculosis</em>",
+        context:
+          "Three weeks into treatment, the induced-sputum culture sent on day 1 grows <em>M. tuberculosis</em>, fully susceptible. Repeat CXR still shows no parenchymal lesion.",
+        question: "Does this change how he is classified, and does it matter for his contacts?",
+        reveal: `
+          <ul>
+            <li><strong>Classification changes.</strong> Under the Saudi NTP Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
+            <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for LTBI" (Saudi policy, strong). ${cite(5)}</li>
+            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(89)}</li>
+            <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
+            <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
+          </ul>`,
+        pearl:
+          "\"Pleural TB is not infectious\" holds only until the sputum says otherwise. That is one more reason to induce sputum on day 1.",
+      },
+      {
+        title: "Week 8: the effusion is bigger",
+        context:
+          "Eight weeks into fully supervised treatment, he feels well. The CXR shows the right effusion has <strong>enlarged</strong>.",
+        question: "Is this treatment failure? What do you do?",
+        reveal: `
+          <p><strong>Most likely a paradoxical response, but that is a diagnosis of exclusion.</strong> It is made only after a thorough evaluation has excluded other causes, particularly <strong>treatment failure and drug resistance</strong>. New or enlarging pleural effusions are a recognised pattern. ${cite(3)} Here his isolate is fully susceptible and adherence is documented.</p>
+          <h4>How common</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Al-Majed 1996</strong> ${cite(95)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
+                <tr><td><strong>Jeon 2012</strong> ${cite(96)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>What to do</h4>
+          <ul>
+            <li><strong>Continue the same regimen.</strong> ${cite(3)}</li>
+            <li>Confirm adherence and susceptibility. ${cite(3)}</li>
+            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(95)}</li>
+            <li>Re-sample if the picture is atypical (fever returns, fluid turns purulent). ${cite(3)}</li>
+            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(95)}</li>
+          </ul>`,
+        pearl:
+          "At 2 months, a bigger effusion in a patient who feels well is usually the immune response catching up. Prove adherence and susceptibility, drain it if he's breathless, and don't change the drugs.",
+      },
+    ],
+  },
+
+  // ============================================================
+  // CASE 7
+  // ============================================================
+  {
+    id: 7,
+    section: "extrapulmonary",
+    title: "46-year-old man with three months of back pain and weight loss",
+    hubDescription:
+      "Back pain, night sweats and weight loss in a man who drinks unpasteurized milk: separating the two leading causes on imaging and microbiology, why tissue comes before treatment, and when a spine needs a surgeon.",
+    vignette:
+      "46-year-old Saudi man from a rural area who regularly drinks unpasteurized milk. Three months of worsening mid-back pain, night sweats and 7 kg weight loss. Tender over the lower thoracic spine. Neurologically intact. No prior TB.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous spondylitis (Pott's disease)</strong>
+              <ul>
+                <li><strong>MRI of the whole spine</strong> first.</li>
+                <li>Then <strong>image-guided biopsy</strong> of the vertebra or paravertebral collection for <strong>histology</strong>, <strong>mycobacterial culture</strong> (strong recommendation), and <strong>AFB smear and NAAT</strong> (Xpert). ${cite(1)}</li>
+                <li><strong>CXR</strong>, and sputum if the chest is abnormal.</li>
+              </ul>
+            </li>
+            <li><strong>Brucellar spondylitis</strong>
+              <ul>
+                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(97)}</li>
+                <li>The clinical pattern suggests one or the other, "but the definitive diagnosis depends upon bacteriological tests". ${cite(98)}</li>
+              </ul>
+            </li>
+            <li><strong>Pyogenic spondylodiscitis</strong>
+              <ul><li>Blood cultures, plus bacterial culture of the biopsy.</li></ul>
+            </li>
+            <li><strong>Malignancy</strong> (metastasis, myeloma, lymphoma)
+              <ul><li>Histology on the same biopsy.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an HIV test. ${cite(3)}</p>`,
+        pearl:
+          "In Saudi Arabia, spinal infection with a raw-milk history has two leading causes, TB and brucella. Send for both before anyone reaches for a biopsy needle or a prescription.",
+      },
+      {
+        title: "The MRI",
+        context:
+          "MRI: destruction of <strong>T8 and T9</strong>, with disc involvement, a <strong>large paravertebral abscess</strong>, and <strong>subligamentous spread over three levels</strong>. Early vertebral collapse. The lumbar spine is normal." +
+          img(7, "stage2", "spine-pathology", "Tuberculosis of the spinal column, autopsy specimen (reference image, not this patient)"),
+        question: "Does the imaging favour TB or brucella?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Feature</th><th>Tuberculous spondylitis</th><th>Brucellar spondylitis</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(99)}</td></tr>
+                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(99)}</td></tr>
+                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(99)}</td></tr>
+                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(100)}</td></tr>
+                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(100)}</td></tr>
+                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(100)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(99)}</p>
+          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(98)}</p>`,
+        pearl:
+          "Thoracic, abscess, collapse: think TB. Lumbar, end-plate, disc: think brucella. The final word still belongs to the lab.",
+      },
+      {
+        title: "Brucella negative. Is the biopsy worth it?",
+        context:
+          "Brucella serology negative. Blood cultures negative. CT-guided biopsy of the paravertebral collection: granulomatous inflammation; <strong>Xpert MTB detected, rifampicin resistance not detected</strong>. Culture pending.",
+        question: "Why biopsy at all, and what if the biopsy had been negative?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Ravichandran 2023 ${cite(101)}</td><td>259 CT-guided spinal biopsies, suspected infective spondylodiscitis (India)</td><td>Confirmatory in <strong>57.5%</strong> overall: histology 36.6%, Xpert 27.8%, MGIT culture 19.9%. <strong>Rifampicin resistance in 16/72 (22%) of Xpert-positives.</strong> Complications 0.3%. <strong>Prior TB treatment reduced the yield</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>For extrapulmonary specimens, positive smear, culture or NAAT support TB; <strong>negative results "may not be used to exclude TB"</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td><strong>Mycobacterial culture</strong> on extrapulmonary specimens</td><td><strong>Strong</strong>, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>AFB smear, <strong>NAAT</strong> and <strong>histology</strong> on extrapulmonary specimens</td><td>Conditional, very low</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong></p>
+          <ul>
+            <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(101)}</li>
+            <li><strong>Only a culture gives a full DST.</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
+            <li>A negative biopsy doesn't exclude TB. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "Biopsy first, treat second. In one referral series, one in five Xpert-positive spinal biopsies was rifampicin-resistant, and you only find that out if you sample before you treat.",
+      },
+      {
+        title: "Treatment: how long, and does he need surgery?",
+        question: "What regimen and duration, and is surgery indicated?",
+        reveal: `
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6&ndash;9 months</strong> of a rifampin-containing regimen is at least as effective as 18-month regimens without rifampin. Some experts favour <strong>9 months</strong> because response is hard to assess; <strong>12 months</strong> with extensive orthopaedic hardware</td><td>(narrative)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Several trials found <strong>no added benefit of surgical debridement</strong> over chemotherapy alone; <strong>uncomplicated spinal TB is managed medically</strong></td><td>(narrative)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Surgery considered for: <strong>(1)</strong> poor response with ongoing infection or deterioration; <strong>(2)</strong> cord compression with persistent or recurrent neurological deficit; <strong>(3)</strong> spinal instability</td><td>Expert opinion</td></tr>
+                <tr><td>Same ${cite(3)}</td><td>Spinal TB with <strong>meningitis</strong> is managed as TB meningitis, including adjunctive corticosteroids</td><td>(narrative)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No spinal-specific adult recommendation; steroids are recommended only for TB meningitis and pericarditis (&sect;5.5.3)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>For this patient (neurologically intact, no instability)</h4>
+          <ul>
+            <li><strong>2HRZE, then HR, for 6&ndash;9 months in total</strong>; many would choose 9. ${cite(3)}</li>
+            <li><strong>No surgery now.</strong> ${cite(3)}</li>
+            <li>Continue a DST-guided regimen once the culture returns. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "For uncomplicated Pott's disease, the drugs do the work. Surgery is for deficits, instability or failure, not for the abscess alone.",
+      },
+      {
+        title: "Week 6: new leg weakness",
+        context:
+          "At week 6 he reports leg weakness and difficulty walking. MRI: the paravertebral abscess is larger, with <strong>cord compression at T8</strong>. His culture has grown fully susceptible <em>M. tuberculosis</em>, and adherence is documented.",
+        question: "Is this treatment failure, and what now?",
+        reveal: `
+          <ul>
+            <li><strong>Paradoxical worsening is possible</strong>, but it is diagnosed only after a thorough evaluation has excluded <strong>treatment failure and drug resistance</strong>. Here the isolate is susceptible and adherence is documented. ${cite(3)}</li>
+            <li><strong>Either way, the cord comes first.</strong> Cord compression with a new neurological deficit is one of the listed indications for surgery. <strong>Refer to spinal surgery urgently.</strong> ${cite(3)}</li>
+            <li><strong>Continue the same drugs.</strong> ${cite(3)}</li>
+            <li><strong>Duration:</strong> if hardware is placed, some experts extend treatment to 12 months. ${cite(3)}</li>
+          </ul>`,
+        pearl:
+          "A new deficit on treatment is a surgical question first and a microbiology question second. Decompress, keep the drugs going, and prove it isn't resistance.",
+      },
+    ],
+  },
+
+  // ============================================================
+  // CASE 8
+  // ============================================================
+  {
+    id: 8,
+    section: "extrapulmonary",
+    title: "32-year-old man with three weeks of headache and new confusion",
+    hubDescription:
+      "A subacute meningitis with a cranial-nerve palsy: what to send in the first lumbar puncture, why a negative Xpert shouldn't delay treatment, the steroid and intensified-treatment trials, and what changes with HIV.",
+    vignette:
+      "32-year-old Saudi man with 3 weeks of headache, fever and vomiting, and 2 days of confusion. Double vision (left sixth-nerve palsy). GCS 13. Neck stiffness. No rash. HIV status unknown.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous meningitis</strong>
+              <ul>
+                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>ADA</strong>; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the CSF. ${cite(1, 92)}</li>
+                <li><strong>Brain MRI</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
+                <li><strong>CXR</strong>, and sputum if abnormal.</li>
+              </ul>
+            </li>
+            <li><strong>Partially treated bacterial meningitis</strong>
+              <ul><li>CSF Gram stain and culture, plus blood cultures.</li></ul>
+            </li>
+            <li><strong>Neurobrucellosis</strong>
+              <ul><li>Brucellosis is <strong>endemic in Saudi Arabia</strong>, and neurobrucellosis can be clinically obscure. ${cite(102)} Diagnosis rests on CSF analysis, <strong>Brucella serology or culture</strong>, and response to treatment. ${cite(103)}</li></ul>
+            </li>
+            <li><strong>Cryptococcal meningitis</strong> (especially if HIV-positive)
+              <ul><li>CSF and serum cryptococcal antigen. ${cite(28)}</li></ul>
+            </li>
+            <li><strong>Viral meningoencephalitis</strong>
+              <ul><li>CSF viral PCR.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine in anyone with presumptive TB. ${cite(3)}</p>`,
+        pearl:
+          "A subacute meningitis with a cranial-nerve palsy is TB until proven otherwise. In Saudi Arabia, send Brucella serology in the same draw.",
+      },
+      {
+        title: "CSF back, Xpert Ultra negative. Treat now?",
+        context:
+          "CSF: 180 cells/µL, <strong>85% lymphocytes</strong>; protein 2.1 g/L; <strong>CSF:serum glucose 0.3</strong>; ADA 12 U/L. Gram stain negative. AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> CrAg negative. Brucella serology negative. HIV test negative.",
+        question:
+          "Does a negative Xpert Ultra rule out TB meningitis? Do you start treatment now or wait for culture?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (CSF)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(92)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
+                <tr><td>NAAT (any)</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>62%</td><td>98%</td><td>So a negative result misses about 4 in 10</td></tr>
+                <tr><td><strong>ADA</strong></td><td>Two meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>79%</td><td>91%</td><td>"Exquisitely sensitive" to threshold: at 4 U/L, sensitivity &gt;93% but specificity &lt;80%; at 8 U/L, sensitivity &lt;59% but specificity &gt;96%</td></tr>
+                <tr><td>Mycobacterial culture</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;70%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>What is at stake</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Thao 2018 ${cite(104)}</td><td>1,699 adults, Vietnam (4 trials + 1 cohort)</td><td>9-month mortality <strong>23.0%</strong> if HIV-negative and <strong>51.3%</strong> if HIV-positive. <strong>Higher MRC grade</strong> predicted death</td></tr>
+                <tr><td>Alshehri 2024 ${cite(105)}</td><td>140 CNS-TB patients, 3 Saudi tertiary centres, 2009&ndash;2019</td><td><strong>35% poor outcome</strong> (modified Rankin). <strong>GCS &le;10</strong> at presentation and TBM/tuberculoma predicted poor outcome</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>ADA on CSF in suspected TB meningitis</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Culture (strong) and NAAT (conditional) on CSF. <strong>A negative NAAT "may not be used to exclude TB"</strong></td><td>Strong / conditional</td></tr>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td>Empiric multidrug treatment is started in almost all situations in which active TB is suspected</td><td>(general principle)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> <strong>no.</strong> A negative Xpert Ultra doesn't exclude TB meningitis. With this CSF, a cranial-nerve palsy and falling consciousness, <strong>start TB treatment and dexamethasone today</strong>. Don't wait weeks for a culture. ${cite(1, 3)}</p>`,
+        pearl:
+          "In TB meningitis, time is brain. A lymphocytic CSF with low glucose and a cranial-nerve palsy is enough to treat; a negative Xpert isn't enough to stop.",
+      },
+      {
+        title: "Which regimen, how long, and steroids?",
+        question:
+          "What regimen and duration? Do adjunctive corticosteroids or intensified antibiotics help?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Thwaites 2004</strong>, NEJM ${cite(106)}</td><td>RCT, 545 patients &gt;14 years, Vietnam, with or without HIV</td><td><strong>Dexamethasone reduced death</strong> (RR 0.69, 0.52&ndash;0.92). It did <strong>not</strong> significantly reduce severe disability among survivors, or death-or-severe-disability. <strong>Fewer serious adverse events</strong> (26 vs 45)</td></tr>
+                <tr><td><strong>Heemskerk 2016</strong>, NEJM ${cite(107)}</td><td>RCT, 817 adults</td><td><strong>Intensified treatment</strong> (rifampin 15 mg/kg + levofloxacin 20 mg/kg for 8 weeks) vs standard: <strong>no survival benefit</strong> (HR 0.94, 0.73&ndash;1.22)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>Adjunctive dexamethasone or prednisolone, tapered over 6&ndash;8 weeks</strong>, for TB meningitis (Recommendation 8)</td><td><strong>Strong, moderate</strong></td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>2 months of HRZE, then HR for 7&ndash;10 more months</strong> (optimal duration not defined). Ethambutol preferred as the fourth drug in adults (expert opinion). Consider <strong>repeat lumbar punctures</strong> early to monitor the CSF</td><td>(narrative / expert opinion)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>"An initial adjuvant corticosteroid therapy with dexamethasone or prednisolone tapered over 6&ndash;8 weeks <strong>should be used</strong>" (&sect;5.5.3)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> HRZE, then HR, for <strong>9&ndash;12 months in total</strong>, plus a <strong>dexamethasone taper over 6&ndash;8 weeks</strong>. ${cite(3, 5)}</p>`,
+        pearl:
+          "Dexamethasone in HIV-negative TB meningitis saves lives. Higher-dose rifampin plus levofloxacin did not. The two strongest levers are still starting early and adding the steroid.",
+      },
+      {
+        title: "Day 10: drowsier",
+        context:
+          "On day 10 his GCS falls to 10. CT: <strong>enlarging ventricles (hydrocephalus)</strong>." +
+          img(8, "stage4", "ct-hydrocephalus", "Hydrocephalus on non-contrast CT (reference image; the cause in this example is not specified)"),
+        question: "What do you do?",
+        reveal: `
+          <ul>
+            <li><strong>Refer to neurosurgery now.</strong> Hydrocephalus, tuberculous brain abscess and paraparesis are the listed complications "warranting neurosurgical referral". ${cite(3)}</li>
+            <li><strong>Continue the full regimen and the steroid.</strong> ${cite(3)}</li>
+            <li><strong>Reassess the diagnosis:</strong> check adherence and drug susceptibility before calling it a paradoxical reaction. ${cite(3)}</li>
+            <li><strong>If new or enlarging tuberculomas appear on treatment:</strong> the Saudi manual (in its paediatric section) describes paradoxical enlargement of tuberculomas. It advises continuing TB treatment and says adjuvant corticosteroids "might be useful". ${cite(5)}</li>
+            <li><strong>Prognosis:</strong> a GCS &le;10 predicted poor outcome in the Saudi series. ${cite(105)}</li>
+          </ul>`,
+        pearl:
+          "In TB meningitis, a falling GCS is hydrocephalus until the scan says otherwise. Call neurosurgery; don't change the drugs.",
+      },
+      {
+        title: "What if he had been HIV-positive?",
+        question: "If his HIV test had been positive, what would change?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Donovan 2023, ACT HIV</strong>, NEJM ${cite(108)}</td><td>RCT, 520 HIV-positive adults with TBM (Vietnam, Indonesia)</td><td>Dexamethasone vs placebo: <strong>no survival benefit</strong> (deaths 44.1% vs 49.0%; HR 0.85, 0.66&ndash;1.10). No subgroup clearly benefited</td></tr>
+                <tr><td><strong>T&ouml;r&ouml;k 2011</strong>, CID ${cite(45)}</td><td>RCT, HIV-associated TBM</td><td>Immediate vs deferred ART: <strong>no survival benefit, more grade 4 adverse events</strong> with immediate ART</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>Steroids:</strong> the best trial in HIV-positive adults showed no survival benefit. ${cite(108)} The ATS recommendation was written before that trial. ${cite(3)}</li>
+            <li><strong>ART:</strong> <strong>defer</strong> when TB meningitis is suspected. ${cite(28, 45)} The Saudi manual likewise advises caution with early ART in TB meningitis (as taught in Case 3). ${cite(5)}</li>
+            <li><strong>Cryptococcus:</strong> check the CrAg if CD4 &lt;100. ${cite(28)}</li>
+          </ul>`,
+        pearl:
+          "In HIV-associated TB meningitis, the usual reflexes reverse: don't rush the ART, and don't expect the steroid to save a life.",
+      },
+    ],
+  },
+
+  // ============================================================
+  // CASE 9
+  // ============================================================
+  {
+    id: 9,
+    section: "extrapulmonary",
+    title: "26-year-old man with right lower abdominal pain, fever and weight loss",
+    hubDescription:
+      "Terminal ileal disease in a TB-endemic setting: the few features that truly separate the two main diagnoses, why TB must be excluded before immunosuppression, how long to treat, and what a clinical response does and doesn't prove.",
+    vignette:
+      "26-year-old Saudi man with 4 months of intermittent right lower abdominal pain, evening fevers, night sweats and 6 kg weight loss. Occasional loose stools, no blood. No perianal disease. CRP raised; mild anaemia.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Intestinal (ileocaecal) TB</strong>
+              <ul>
+                <li><strong>Ileocolonoscopy with multiple biopsies</strong> for histology, AFB smear, mycobacterial culture and TB PCR/Xpert. ${cite(1)}</li>
+                <li><strong>Cross-sectional imaging</strong> (CT enterography).</li>
+                <li><strong>CXR.</strong></li>
+              </ul>
+            </li>
+            <li><strong>Crohn's disease</strong>
+              <ul><li>The same colonoscopy and biopsies, and the same CT enterography. The features that separate the two are covered in the next stage. ${cite(109)}</li></ul>
+            </li>
+            <li><strong>Intestinal lymphoma</strong>
+              <ul><li>Histology and immunohistochemistry on the biopsies.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>IGRA</strong> is supporting evidence only (see the next stage). ${cite(110)}</p>`,
+        pearl:
+          "In a TB-endemic setting, every \"Crohn's disease\" of the terminal ileum is intestinal TB until the biopsies and the CT say otherwise.",
+      },
+      {
+        title: "Biopsies inconclusive. How do you tell TB from Crohn's?",
+        context:
+          "<strong>Colonoscopy:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB PCR negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
+        question: "Does anything here settle it?",
+        reveal: `
+          <h4>Studies: features that separate intestinal TB (ITB) from Crohn's disease (CD)</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Feature / test</th><th>Favours</th><th>Accuracy</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>Caseation necrosis on biopsy; AFB smear or culture positive; <strong>necrotic nodes on CT</strong></td><td><strong>ITB</strong>: the only <strong>exclusive</strong> features, but all have poor sensitivity</td><td>&mdash;</td><td>${cite(109)}</td></tr>
+                <tr><td>Transverse ulcers; patulous ileocaecal valve; contiguous ileocaecal involvement</td><td>ITB</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
+                <tr><td>Longitudinal or aphthous ulcers; skip lesions; long segments; perianal disease</td><td>CD</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
+                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(111)}</td></tr>
+                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(111)}</td></tr>
+                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(111)}</td></tr>
+                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(110)}</td></tr>
+                <tr><td><strong>TB PCR on biopsy</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>47%</strong>, specificity <strong>95%</strong>; "negative results cannot exclude ITB"</td><td>${cite(112)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Culture (strong), plus smear, NAAT and histology (conditional), on extrapulmonary specimens. Negative results do not exclude TB</td><td>Strong / conditional</td></tr>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td>The nonspecific presentation of abdominal TB means "a high index of suspicion is an important factor in early diagnosis"</td><td>(narrative)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> the colonoscopy features and the positive IGRA lean towards TB, but <strong>none of the exclusive features is present</strong>. This is the classic unresolved case. ${cite(109)}</p>`,
+        pearl:
+          "Only caseation, AFB and necrotic nodes are exclusive to TB, and each is usually absent. Most cases are decided by weighing the whole picture, not by a single test.",
+      },
+      {
+        title: "Treat for TB, or treat for Crohn's?",
+        question:
+          "The gastroenterologist wants to start steroids for presumed Crohn's disease. What do you advise?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Pratap Mouli 2017</strong> ${cite(113)}</td><td>Retrospective, 288 patients (131 eventual CD, 157 ITB), plus a prospective validation cohort of 55 with diagnostic confusion (India)</td><td><strong>Symptomatic response to TB treatment:</strong> 94% of ITB by 3 months, but also <strong>38%</strong> of eventual CD at 3 months (64% at 2 months in validation). <strong>Endoscopic mucosal healing: 100% of ITB vs 5% of CD</strong></td></tr>
+                <tr><td><strong>Tubach 2009</strong> ${cite(76)}</td><td>French RATIO registry</td><td>TB risk with anti-TNF monoclonal antibodies is high (SIR 18.6&ndash;29.3), and none of the affected patients had received correct prophylaxis</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer</h4>
+          <ul>
+            <li><strong>Don't start immunosuppression while TB is unexcluded.</strong> A <strong>therapeutic trial of TB treatment</strong> is still needed "in a significant proportion of patients to establish the diagnosis", despite the cost of delaying a Crohn's diagnosis. ${cite(109)}</li>
+            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with LTBI treatment first. ${cite(85)}</li>
+            <li>Wait for the biopsy culture while treatment runs. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "A trial of TB treatment is reversible. Starting anti-TNF therapy on an unrecognized intestinal TB can be catastrophic. When in doubt, treat the TB first.",
+      },
+      {
+        title: "Regimen and duration",
+        context:
+          "He starts TB treatment. The biopsy culture later grows fully susceptible <em>M. tuberculosis</em>.",
+        question: "How long do you treat?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(114)}</td><td>3 RCTs, 328 adults with intestinal and peritoneal TB (Asia)</td><td><strong>6 vs 9 months:</strong> relapse 2/140 vs 0/129 (too few events to compare; very low certainty). Clinical cure <strong>no different</strong> (RR 1.02, 0.97&ndash;1.08; moderate certainty). No evidence that 6 months is inadequate</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(115)}</td><td>104 proven GI TB, 21 centres in 8 countries <strong>including Saudi Arabia</strong></td><td>Terminal ileum the commonest site (44%). Biopsy culture positive in 87% of those cultured; PCR positive in 95% of those tested. <strong>One-third immunosuppressed. 43% diagnosed from surgical specimens.</strong> Mortality 3.8%, relapse 1.9%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6 months is adequate</strong> for intestinal or peritoneal TB</td><td>Expert opinion</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No intestinal-TB-specific recommendation; 2HRZE/4HR is the standard for drug-susceptible disease (&sect;5.5.1)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> <strong>2HRZE/4HR (6 months).</strong> ${cite(3, 114)}</p>`,
+        pearl:
+          "Gut TB doesn't need a longer course. Six months is as good as nine in the trials we have.",
+      },
+      {
+        title: "Two months later, the pain is gone. Diagnosis confirmed?",
+        context: "At 2 months he is pain-free and gaining weight.",
+        question: "Does his clinical response confirm intestinal TB?",
+        reveal: `
+          <ul>
+            <li><strong>Not on its own.</strong> Symptoms also improved in <strong>38&ndash;64%</strong> of patients who turned out to have Crohn's disease. ${cite(113)}</li>
+            <li><strong>Mucosal healing is the discriminator:</strong> it occurred in <strong>100%</strong> of intestinal TB vs <strong>5%</strong> of Crohn's disease. <strong>Repeat colonoscopy</strong> is needed to confirm. ${cite(113)}</li>
+            <li><strong>Symptoms that persist after 3 months</strong> of TB treatment suggest Crohn's disease. ${cite(113)}</li>
+            <li>In <strong>this</strong> patient, the positive biopsy culture has already settled it. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "In the ITB-vs-Crohn's trial of treatment, trust the mucosa, not the symptoms. A Crohn's patient can feel better on TB drugs; their ulcers rarely heal.",
+      },
+    ],
+  },
+
+  // ============================================================
+  // CASE 10
+  // ============================================================
+  {
+    id: 10,
+    section: "extrapulmonary",
+    title: "38-year-old woman with abdominal swelling and a raised CA-125",
+    hubDescription:
+      "Ascites, peritoneal thickening and a raised CA-125 in a young woman: what the fluid can settle, when laparoscopy beats laparotomy, six months of treatment, and two patients in whom the usual tests mislead.",
+    vignette:
+      "38-year-old Saudi woman with 2 months of abdominal distension, low-grade fevers, night sweats and weight loss. Ultrasound: moderate ascites. CT: ascites with smooth peritoneal thickening and omental thickening; ovaries not clearly enlarged. <strong>Serum CA-125 raised.</strong> She has been referred to gynaecological oncology for suspected ovarian cancer." +
+      img(10, "stage1", "ct-peritonitis", "CT of wet-type tuberculous peritonitis with ascites (reference image, not this patient)"),
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Peritoneal TB</strong>
+              <ul>
+                <li><strong>Diagnostic paracentesis:</strong> cell count and differential; <strong>serum&ndash;ascites albumin gradient (SAAG)</strong>; <strong>ADA</strong> &plusmn; free IFN-&gamma;; <strong>AFB smear, mycobacterial culture</strong> and NAAT. ${cite(1)}</li>
+                <li>Consider TB peritonitis in anyone with unexplained <strong>lymphocytic ascites</strong> and a <strong>SAAG &lt;11 g/L</strong>. ${cite(116)}</li>
+                <li><strong>CXR.</strong></li>
+              </ul>
+            </li>
+            <li><strong>Peritoneal carcinomatosis / advanced ovarian cancer</strong>
+              <ul>
+                <li><strong>Ascitic cytology</strong>, then tissue.</li>
+                <li><strong>A raised CA-125 does not separate them:</strong> in 28 women with abdominopelvic TB, CA-125 was raised in <strong>all 28</strong>, and half were diagnosed only at laparotomy. ${cite(117)}</li>
+              </ul>
+            </li>
+            <li><strong>Ascites from portal hypertension</strong> (cirrhosis, heart failure)
+              <ul><li>A <strong>high SAAG</strong> points here. ${cite(116)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an HIV test. ${cite(3)}</p>`,
+        pearl:
+          "A raised CA-125 with ascites is not a diagnosis of ovarian cancer. Tap the fluid, and send an ADA, before anyone books a laparotomy.",
+      },
+      {
+        title: "The ascitic fluid",
+        context:
+          "Exudative, <strong>lymphocyte-predominant</strong> ascites. <strong>SAAG 7 g/L.</strong> <strong>ADA 58 U/L.</strong> Cytology: no malignant cells. AFB smear negative; NAAT negative. Culture pending.",
+        question: "How far does this take you?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (ascitic fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 20 studies, 2,291 participants ${cite(118)}</td><td><strong>90%</strong> (85&ndash;94)</td><td><strong>94%</strong> (92&ndash;95)</td><td>Very low certainty (GRADE); cut-off varied</td></tr>
+                <tr><td>ADA</td><td>Meta-analysis of 4 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>100%</td><td>97%</td><td>Threshold 36&ndash;40 U/L</td></tr>
+                <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 6 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>93%</td><td>99%</td><td>Thresholds varied</td></tr>
+                <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;69%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Measure <strong>ADA</strong> and <strong>free IFN-&gamma;</strong> on fluid in suspected peritoneal TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Culture (strong); smear and NAAT (conditional). <strong>Negative results do not exclude TB</strong></td><td>Strong / conditional</td></tr>
+                <tr><td>Sanai 2005, systematic review ${cite(116)}</td><td>Culture of ascitic fluid or peritoneal biopsy is the <strong>gold standard</strong>; <strong>low threshold for diagnostic laparoscopy</strong></td><td>(review recommendation)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> lymphocytic, low-SAAG ascites with a high ADA and negative cytology makes peritoneal TB very likely. A negative smear and NAAT don't count against it. ${cite(1, 118)}</p>`,
+        pearl:
+          "In a young woman without cirrhosis, a high ascitic ADA is one of the most accurate tests in extrapulmonary TB. It can save her from an unnecessary cancer operation.",
+      },
+      {
+        title: "Laparoscopy, or treat now?",
+        question:
+          "Gynaecological oncology still wants tissue. Is laparoscopy needed, or can you treat on the fluid results?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Hossain 1992</strong> ${cite(119)}</td><td>82 laparoscopies, Riyadh</td><td><strong>22</strong> found peritoneal TB. Direct visualization plus peritoneal biopsy "provide the definitive tissue diagnosis". The tuberculin test was <strong>not always positive</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td><strong>Peritoneal biopsy histology: 79&ndash;100%</strong> sensitive</td></tr>
+                <tr><td><strong>Liu 2014</strong> ${cite(117)}</td><td>28 women with abdominopelvic TB and raised CA-125</td><td>Diagnosis came from <strong>laparotomy in 50%</strong> and laparoscopy in 32%. "Treatment &hellip; is totally based on medical therapy other than surgery except biopsy"</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(115)}</td><td>104 GI TB, 8 countries including Saudi Arabia</td><td>Ascitic culture positive in <strong>11 of 19</strong> (57.9%). <strong>43%</strong> were diagnosed from surgical specimens</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer</h4>
+          <ul>
+            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and DST in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(116, 119, 117)}</li>
+            <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(3, 118)}</li>
+          </ul>`,
+        pearl:
+          "For peritoneal TB, the laparoscope beats the laparotomy: same tissue, far less surgery. The cure is medical.",
+      },
+      {
+        title: "Treatment",
+        context:
+          "Laparoscopy: studding of the peritoneum with tubercles. Histology: caseating granulomas. Culture later grows fully susceptible <em>M. tuberculosis</em>.",
+        question: "What regimen and duration? Are adjunctive steroids needed?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(114)}</td><td>3 RCTs, 328 adults with intestinal <strong>and peritoneal</strong> TB</td><td><strong>6 vs 9 months:</strong> no difference in clinical cure (moderate certainty). Relapse too rare to compare</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6 months</strong> is adequate for peritoneal TB. Data on <strong>adjunctive corticosteroids</strong> for TB peritonitis are <strong>limited</strong>, so they should <strong>not</strong> be prescribed routinely</td><td>Expert opinion</td></tr>
+                <tr><td>Sanai 2005 ${cite(116)}</td><td>6 months of first-line drugs in uncomplicated cases</td><td>(review recommendation)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No peritoneal-specific adult recommendation; 2HRZE/4HR standard</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> <strong>2HRZE/4HR</strong>, with no routine steroids. ${cite(3)}</p>`,
+        pearl:
+          "Peritoneal TB is treated like pulmonary TB: six months, no steroids. The hard part is getting the diagnosis without a laparotomy.",
+      },
+      {
+        title: "Two patients who don't fit the textbook",
+        question:
+          "How would your approach change if she had (a) <strong>cirrhosis</strong>, or (b) end-stage kidney disease on <strong>peritoneal dialysis</strong> with cloudy dialysate?",
+        reveal: `
+          <h4>(a) Cirrhosis: the ADA loses sensitivity</h4>
+          <ul>
+            <li>In a cross-sectional study, ADA activity and accuracy were <strong>significantly lower in cirrhotic patients</strong>, regardless of age. ADA also <strong>fell with increasing age</strong>. ${cite(120)}</li>
+            <li>A "normal" ADA in a cirrhotic patient <strong>does not reassure</strong>: go to culture and peritoneal biopsy. ${cite(120, 116)}</li>
+            <li>TB peritonitis frequently complicates end-stage liver or renal disease, which adds to the diagnostic difficulty. ${cite(116)}</li>
+          </ul>
+          <h4>(b) Peritoneal dialysis</h4>
+          <ul>
+            <li>A <strong>Jeddah</strong> cohort of 89 CAPD patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by PCR (1), culture (2) or clinical response (1). ${cite(121)}</li>
+            <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(121)}</li>
+          </ul>`,
+        pearl:
+          "In cirrhosis, a low ADA doesn't rule out TB. In a PD patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
@@ -1893,6 +2717,66 @@ const REFERENCES = {
         { n: 84, text: "Sterling TR, Njie G, Zenner D, et al. Guidelines for the Treatment of Latent Tuberculosis Infection: Recommendations from the National Tuberculosis Controllers Association and CDC, 2020. MMWR Recomm Rep. 2020;69(RR-1):1-11.", doi: "10.15585/mmwr.rr6901a1", tag: "Clinical practice guideline" },
         { n: 85, text: "Iannone F, Cantini F, Lapadula G. Diagnosis of latent tuberculosis and prevention of reactivation in rheumatic patients receiving biologic therapy: international recommendations. J Rheumatol Suppl. 2014;91:41-6.", doi: "10.3899/jrheum.140101", tag: "Review of international recommendations" },
         { n: 86, text: "Vaidya B, Nakarmi S. Simultaneous Adalimumab and Antitubercular Treatment for Latent Tubercular Infection: An Experience from Nepal. Int J Rheumatol. 2019;2019:2034950.", doi: "10.1155/2019/2034950", tag: "Retrospective case series" },
+      ],
+    },
+    {
+      title: "Case 6 — Pleural TB",
+      items: [
+        { n: 87, text: "al-Quorain A, Larbi EB, Satti MB, al-Muhanna F, Baloush A. Tuberculous pleural effusion in the eastern province of Saudi Arabia. Trop Geogr Med. 1994;46(5):298-301.", url: "https://pubmed.ncbi.nlm.nih.gov/7855916/", tag: "Prospective study (Eastern Province, Saudi Arabia)" },
+        { n: 88, text: "Light RW, Macgregor MI, Luchsinger PC, Ball WC Jr. Pleural effusions: the diagnostic separation of transudates and exudates. Ann Intern Med. 1972;77(4):507-13.", doi: "10.7326/0003-4819-77-4-507", tag: "Diagnostic study (origin of Light's criteria)" },
+        { n: 89, text: "Conde MB, Loivos AC, Rezende VM, Soares SL, Mello FC, Reingold AL, et al. Yield of sputum induction in the diagnosis of pleural tuberculosis. Am J Respir Crit Care Med. 2003;167(5):723-5.", doi: "10.1164/rccm.2111019", tag: "Prospective diagnostic study" },
+        { n: 90, text: "Diacon AH, Van de Wal BW, Wyser C, Smedema JP, Bezuidenhout J, Bolliger CT, et al. Diagnostic tools in tuberculous pleurisy: a direct comparative study. Eur Respir J. 2003;22(4):589-91.", doi: "10.1183/09031936.03.00017103a", tag: "Prospective comparative diagnostic study" },
+        { n: 91, text: "Aggarwal AN, Agarwal R, Sehgal IS, Dhooria S. Adenosine deaminase for diagnosis of tuberculous pleural effusion: A systematic review and meta-analysis. PLoS One. 2019;14(3):e0213728.", doi: "10.1371/journal.pone.0213728", tag: "Systematic review and meta-analysis" },
+        { n: 92, text: "Kohli M, Inbaraj LR, Salomon A, Scandrett K, Korobitsyn A, Ismail N, et al. Low-complexity automated nucleic acid amplification tests for extrapulmonary tuberculosis and rifampicin resistance in adults and adolescents. Cochrane Database Syst Rev. 2025;8(8):CD012768.", doi: "10.1002/14651858.CD012768.pub4", tag: "Diagnostic test accuracy systematic review (Cochrane)" },
+        { n: 93, text: "Ryan H, Yoo J, Darsini P. Corticosteroids for tuberculous pleurisy. Cochrane Database Syst Rev. 2017;3(3):CD001876.", doi: "10.1002/14651858.CD001876.pub3", tag: "Systematic review of RCTs (Cochrane)" },
+        { n: 94, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
+        { n: 95, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
+        { n: 96, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
+      ],
+    },
+    {
+      title: "Case 7 — Spinal TB",
+      items: [
+        { n: 97, text: "Sadat-Ali M, al-Mousa MS, al-Salem AH. Brucellosis as a cause of backache. Trop Geogr Med. 1991;43(1-2):148-51.", url: "https://pubmed.ncbi.nlm.nih.gov/1836289/", tag: "Prospective screening study (Al-Khobar, Saudi Arabia)" },
+        { n: 98, text: "Cordero M, Sánchez I. Brucellar and tuberculous spondylitis. A comparative study of their clinical features. J Bone Joint Surg Br. 1991;73(1):100-3.", doi: "10.1302/0301-620X.73B1.1991738", tag: "Comparative clinical study" },
+        { n: 99, text: "Sharif HS, Aideyan OA, Clark DC, Madkour MM, Aabed MY, Mattsson TA, et al. Brucellar and tuberculous spondylitis: comparative imaging features. Radiology. 1989;171(2):419-25.", doi: "10.1148/radiology.171.2.2704806", tag: "Comparative imaging study (Riyadh, Saudi Arabia)" },
+        { n: 100, text: "Gao M, Sun J, Jiang Z, Cui X, Liu X, Wang G, et al. Comparison of Tuberculous and Brucellar Spondylitis on Magnetic Resonance Images. Spine (Phila Pa 1976). 2017;42(2):113-121.", doi: "10.1097/BRS.0000000000001697", tag: "Retrospective cross-sectional study" },
+        { n: 101, text: "Ravichandran RCA, Amritanand R, Moses V, Kandagaddala M, Krishnan V, David KS, et al. Computed Tomography-Guided Spinal Biopsy in Suspected Infective Spondylodiscitis: An Institutional Review of Its Utility. Indian J Radiol Imaging. 2023;33(3):289-294.", doi: "10.1055/s-0043-1764491", tag: "Retrospective institutional review" },
+      ],
+    },
+    {
+      title: "Case 8 — TB meningitis",
+      items: [
+        { n: 102, text: "Gokul BN, Paul A, Hussein I. Neurobrucellosis. Saudi Med J. 2000;21(6):577-80.", url: "https://pubmed.ncbi.nlm.nih.gov/11500711/", tag: "Case report (Saudi Arabia)" },
+        { n: 103, text: "Soares CN, da Silva MTT, Lima MA. Neurobrucellosis. Curr Opin Infect Dis. 2023;36(3):192-197.", doi: "10.1097/QCO.0000000000000920", tag: "Narrative review" },
+        { n: 104, text: "Thao LTP, Heemskerk AD, Geskus RB, Mai NTH, Ha DTM, Chau TTH, et al. Prognostic Models for 9-Month Mortality in Tuberculous Meningitis. Clin Infect Dis. 2018;66(4):523-532.", doi: "10.1093/cid/cix849", tag: "Prognostic modelling study" },
+        { n: 105, text: "Dhafer Alshehri F, Mahmood Okal F, Baeshen SK, Alharbi ZG, Khojah O, Alhawsawi WK, et al. Outcomes of central nervous system tuberculosis in Saudi Arabia: a multi-center study. Neurol Res. 2024;46(9):812-822.", doi: "10.1080/01616412.2024.2359262", tag: "Retrospective multicentre cohort (Saudi Arabia)" },
+        { n: 106, text: "Thwaites GE, Nguyen DB, Nguyen HD, Hoang TQ, Do TT, Nguyen TC, et al. Dexamethasone for the treatment of tuberculous meningitis in adolescents and adults. N Engl J Med. 2004;351(17):1741-51.", doi: "10.1056/NEJMoa040573", tag: "Randomized placebo-controlled trial" },
+        { n: 107, text: "Heemskerk AD, Bang ND, Mai NT, Chau TT, Phu NH, Loc PP, et al. Intensified Antituberculosis Therapy in Adults with Tuberculous Meningitis. N Engl J Med. 2016;374(2):124-34.", doi: "10.1056/NEJMoa1507062", tag: "Randomized placebo-controlled trial" },
+        { n: 108, text: "Donovan J, Bang ND, Imran D, Nghia HDT, Burhan E, Huong DTT, et al. Adjunctive Dexamethasone for Tuberculous Meningitis in HIV-Positive Adults. N Engl J Med. 2023;389(15):1357-1367.", doi: "10.1056/NEJMoa2216218", tag: "Randomized placebo-controlled trial — ACT HIV" },
+      ],
+    },
+    {
+      title: "Case 9 — Intestinal TB",
+      items: [
+        { n: 109, text: "Kedia S, Das P, Madhusudhan KS, Dattagupta S, Sharma R, Sahni P, et al. Differentiating Crohn's disease from intestinal tuberculosis. World J Gastroenterol. 2019;25(4):418-432.", doi: "10.3748/wjg.v25.i4.418", tag: "Narrative review" },
+        { n: 110, text: "Chen W, Fan JH, Luo W, Peng P, Su SB. Effectiveness of interferon-gamma release assays for differentiating intestinal tuberculosis from Crohn's disease: a meta-analysis. World J Gastroenterol. 2013;19(44):8133-40.", doi: "10.3748/wjg.v19.i44.8133", tag: "Meta-analysis" },
+        { n: 111, text: "Kedia S, Sharma R, Sreenivas V, Madhusudhan KS, Sharma V, Bopanna S, et al. Accuracy of computed tomographic features in differentiating intestinal tuberculosis from Crohn's disease: a systematic review with meta-analysis. Intest Res. 2017;15(2):149-159.", doi: "10.5217/ir.2017.15.2.149", tag: "Systematic review and meta-analysis" },
+        { n: 112, text: "Jin T, Fei B, Zhang Y, He X. The diagnostic value of polymerase chain reaction for Mycobacterium tuberculosis to distinguish intestinal tuberculosis from crohn's disease: A meta-analysis. Saudi J Gastroenterol. 2017;23(1):3-10.", doi: "10.4103/1319-3767.199135", tag: "Meta-analysis" },
+        { n: 113, text: "Pratap Mouli V, Munot K, Ananthakrishnan A, Kedia S, Addagalla S, Garg SK, et al. Endoscopic and clinical responses to anti-tubercular therapy can differentiate intestinal tuberculosis from Crohn's disease. Aliment Pharmacol Ther. 2017;45(1):27-36.", doi: "10.1111/apt.13840", tag: "Retrospective study with prospective validation" },
+        { n: 114, text: "Jullien S, Jain S, Ryan H, Ahuja V. Six-month therapy for abdominal tuberculosis. Cochrane Database Syst Rev. 2016;11(11):CD012163.", doi: "10.1002/14651858.CD012163.pub2", tag: "Systematic review of RCTs (Cochrane)" },
+        { n: 115, text: "Tanoglu A, Erdem H, Friedland JS, Almajid FM, Batirel A, Kulzhanova S, et al. Clinicopathological profile of gastrointestinal tuberculosis: a multinational ID-IRI study. Eur J Clin Microbiol Infect Dis. 2020;39(3):493-500.", doi: "10.1007/s10096-019-03749-y", tag: "Multinational retrospective study (incl. Saudi Arabia)" },
+      ],
+    },
+    {
+      title: "Case 10 — Peritoneal TB",
+      items: [
+        { n: 116, text: "Sanai FM, Bzeizi KI. Systematic review: tuberculous peritonitis--presenting features, diagnostic strategies and treatment. Aliment Pharmacol Ther. 2005;22(8):685-700.", doi: "10.1111/j.1365-2036.2005.02645.x", tag: "Systematic review (Riyadh, Saudi Arabia)" },
+        { n: 117, text: "Liu Q, Zhang Q, Guan Q, Xu JF, Shi QL. Abdominopelvic tuberculosis mimicking advanced ovarian cancer and pelvic inflammatory disease: a series of 28 female cases. Arch Gynecol Obstet. 2014;289(3):623-9.", doi: "10.1007/s00404-013-3034-2", tag: "Retrospective case series" },
+        { n: 118, text: "Mahajan M, Prasad ML, Kumar P, Kumar A, Chatterjee N, Singh S, et al. An Updated Systematic Review and Meta-Analysis for the Diagnostic Test Accuracy of Ascitic Fluid Adenosine Deaminase in Tuberculous Peritonitis. Infect Chemother. 2023;55(2):264-277.", doi: "10.3947/ic.2023.0014", tag: "Systematic review and meta-analysis" },
+        { n: 119, text: "Hossain J, al-Aska AK, al Mofleh I. Laparoscopy in tuberculous peritonitis. J R Soc Med. 1992;85(2):89-91.", doi: "10.1177/014107689208500212", tag: "Case series (Riyadh, Saudi Arabia)" },
+        { n: 120, text: "Sun J, Zhang H, Song Z, Jin L, Yang J, Gu J, et al. The negative impact of increasing age and underlying cirrhosis on the sensitivity of adenosine deaminase in the diagnosis of tuberculous peritonitis: a cross-sectional study in eastern China. Int J Infect Dis. 2021;110:204-212.", doi: "10.1016/j.ijid.2021.07.061", tag: "Cross-sectional study" },
+        { n: 121, text: "Waness A, Al Shohaib S. Tuberculous peritonitis associated with peritoneal dialysis. Saudi J Kidney Dis Transpl. 2012;23(1):44-7.", url: "https://pubmed.ncbi.nlm.nih.gov/22237217/", tag: "Retrospective cohort (Jeddah, Saudi Arabia)" },
       ],
     },
   ],

@@ -34,6 +34,11 @@ const GROUP_TITLES = {
   3: "Case 3 — Miliary TB / HIV / LAM",
   4: "Case 4 — Lymphadenopathy / EBUS",
   5: "Case 5 — Occupational exposure / LTBI",
+  6: "Case 6 — Pleural TB",
+  7: "Case 7 — Spinal TB",
+  8: "Case 8 — TB meningitis",
+  9: "Case 9 — Intestinal TB",
+  10: "Case 10 — Peritoneal TB",
   start: "Start here questions",
 };
 const STAGE_FIELDS = ["context", "question", "reveal", "pearl", "revealExtra"];
