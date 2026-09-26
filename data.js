@@ -953,7 +953,7 @@ const CASES = [
     hubDescription:
       "Fever, night sweats, and mediastinal lymphadenopathy with no lung findings — working through a broad differential and choosing how to biopsy.",
     vignette:
-      "29-year-old expatriate construction worker, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. CT chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
+      "29-year-old expatriate construction worker from India, living in Saudi Arabia, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. CT chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
       img(4, "stage1", "ct-lymphadenopathy", "Bilateral hilar and mediastinal lymphadenopathy without parenchymal lung lesion"),
     stages: [
       {
@@ -961,14 +961,29 @@ const CASES = [
         question:
           "Given this presentation, what do you pursue first, specifically — and why wouldn't a standard TB sputum workup be your starting point here?",
         reveal: `
+          <p><em>Why his origin matters:</em> India has the largest TB burden of any country ${cite(36)}, which raises his pre-test probability for TB.</p>
+          <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
-            <li><strong>The procedure:</strong> EBUS-TBNA (endobronchial ultrasound-guided transbronchial needle aspiration) of the largest and most accessible node station, sending material for both microbiology (AFB smear, mycobacterial culture, NAAT/PCR) and cytopathology (looking specifically for granulomas — necrotizing vs non-necrotizing) — with flow cytometry sent as well, given lymphoma sits on the differential.</li>
-            <li><strong>Why not sputum:</strong> there is no parenchymal lesion and no cough here — isolated nodal disease has nothing for a sputum sample to reflect. Tissue is the only way to actually distinguish the three leading possibilities.</li>
-            <li>Differential to hold: TB lymphadenitis, sarcoidosis, lymphoma (Hodgkin or non-Hodgkin) — with metastatic malignancy and fungal lymphadenitis as less likely alternatives depending on epidemiologic context.</li>
-            <li>Send a fungal stain and culture from the same EBUS-TBNA specimen rather than leaving fungal lymphadenitis as an untested differential item — it adds no extra procedure, just an additional order on tissue you already have.</li>
-          </ol>`,
+            <li><strong>TB lymphadenitis</strong>
+              <ul><li><strong>EBUS-TBNA</strong> of the largest accessible node for <strong>AFB smear, mycobacterial culture, and NAAT</strong>, plus <strong>cytology/histology</strong> for granulomas. On extrapulmonary specimens, a positive culture or NAAT supports TB; a <strong>negative never excludes it</strong>. ${cite(34)}</li></ul>
+            </li>
+            <li><strong>Sarcoidosis</strong>
+              <ul><li>The same EBUS-TBNA looking for <strong>non-necrotizing granulomas</strong>. EBUS finds granulomas far more often than conventional bronchoscopy. ${cite(17)}</li></ul>
+            </li>
+            <li><strong>Lymphoma</strong>
+              <ul><li><strong>Flow cytometry</strong> on the same aspirate, with a low threshold for a core/tissue biopsy (see Stage 4). ${cite(20, 21, 22)}</li></ul>
+            </li>
+            <li><strong>Metastatic malignancy</strong>
+              <ul><li>Cytology on the same aspirate.</li></ul>
+            </li>
+            <li><strong>Fungal lymphadenitis (histoplasmosis)</strong>
+              <ul><li><strong>Fungal stain and culture</strong> on the same specimen. No extra procedure is needed. Histoplasmosis is reported from India, with most cases from the <strong>Gangetic plains</strong>. ${cite(62)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong>. CDC and WHO recommend routine HIV testing for everyone with presumptive TB. ${cite(33)}</p>
+          <p><strong>Why not sputum?</strong> There is no parenchymal lesion and no cough, so a sputum sample has nothing to reflect. Tissue is the only way to separate the three leading diagnoses.</p>`,
         pearl:
-          "When the disease lives in a lymph node and not in the airway or parenchyma, sputum-based testing has nothing to sample — go straight to tissue.",
+          "When the disease lives in a lymph node and not in the airway, sputum has nothing to sample. Go straight to tissue.",
       },
       {
         title: "Necrotizing granulomas, negative smear and NAAT. Now what?",
@@ -979,19 +994,23 @@ const CASES = [
           "Does this rule out TB? How do you interpret a negative smear/NAAT in this context?",
         reveal: `
           <ul>
-            <li>No — TB lymphadenitis is paucibacillary compared with cavitary pulmonary disease, and the microbiologic yield from lymph node tissue is genuinely lower than what you'd expect from a pulmonary specimen. A negative smear and NAAT do not rule it out.</li>
-            <li>Necrotizing granulomas favor TB over sarcoidosis (classically non-necrotizing, though overlap exists and necrosis is occasionally seen), but histology alone isn't fully specific either.</li>
-            <li>Adding NAAT/PCR specifically to the EBUS specimen meaningfully improves yield over cytology and culture alone — in one series, diagnostic accuracy rose from 57.1% (histology plus conventional microbiology) to 71.4% once TB-PCR was added.</li>
-            <li>In the right epidemiologic context (as here), necrotizing granulomas with a still-pending culture is often enough to start presumptive treatment rather than wait weeks for a culture result that may still come back negative given the paucibacillary yield issue above.</li>
+            <li><strong>No, this doesn't rule out TB.</strong> Lymph node TB is paucibacillary, and negative smear/NAAT results on extrapulmonary tissue are common. ${cite(34)}</li>
+            <li><strong>Necrotizing granulomas favor TB over sarcoidosis.</strong>
+              <ul>
+                <li>Sarcoidosis is defined by <strong>non-necrotizing</strong> granulomas, plus exclusion of other granulomatous causes. ${cite(67)}</li>
+                <li>In 179 patients having EBUS-TBNA in India, necrosis was seen in <strong>56% of TB</strong> but only <strong>6% of sarcoidosis</strong>. In sarcoidosis it was always focal, never extensive. Cytology alone still misclassified about <strong>29%</strong> of cases. ${cite(68)}</li>
+              </ul>
+            </li>
+            <li><strong>Adding TB-PCR to the EBUS specimen raises the yield.</strong> In 21 patients with TB lymphadenitis, EBUS-TBNA diagnostic accuracy was <strong>57.1%</strong> with histology plus conventional microbiology and <strong>71.4% once TB-PCR on the rinse fluid was added</strong> (p&lt;0.001). <strong>Nodes showing necrosis gave more positive microbiology.</strong> ${cite(19)}</li>
+            <li><strong>In the right epidemiologic context</strong> (here, a young man from India), necrotizing granulomas with a pending culture are enough to <strong>start empiric treatment</strong>. ATS/CDC/IDSA guidance is that empiric multidrug treatment is started in almost all situations in which active TB is suspected, without waiting for culture. ${cite(33)}</li>
           </ul>`,
         pearl:
-          "In lymph node TB, absence of microbiologic proof is not the same as absence of disease — histology and epidemiology are doing real diagnostic work here, not just confirming what the microbiology already showed.",
+          "In lymph node TB, the absence of microbiologic proof is not the absence of disease. Histology and epidemiology are doing real diagnostic work.",
       },
       {
-        title:
-          "The same test performs very differently across your three differentials",
+        title: "EBUS-TBNA performs very differently across the three diagnoses",
         question:
-          "If EBUS-TBNA doesn't secure a diagnosis, how does the evidence differ across TB, sarcoidosis, and lymphoma in deciding what to do next?",
+          "How does EBUS-TBNA's yield differ across TB, sarcoidosis, and lymphoma?",
         reveal: `
           <div class="table-scroll">
             <table class="data-table">
@@ -999,18 +1018,18 @@ const CASES = [
               <tbody>
                 <tr>
                   <td>Sarcoidosis</td>
-                  <td>74% overall granuloma detection vs 48% for conventional bronchoscopy (GRANULOMA trial); 84% vs 38% specifically in stage I disease ${cite(17)}</td>
-                  <td>Advantage over bronchoscopy is largest in stage I; less pronounced in stage II</td>
+                  <td>74% granuloma detection vs 48% for conventional bronchoscopy (GRANULOMA); 84% vs 38% in stage I ${cite(17)}</td>
+                  <td>The advantage is largest in stage I</td>
                 </tr>
                 <tr>
                   <td>TB lymphadenitis</td>
-                  <td>Roughly 53&ndash;82% across published series, improving to ~71% when NAAT/PCR is added to cytology and culture ${cite(18, 19)}</td>
-                  <td>Paucibacillary disease — cytology and culture alone under-detect; necrotizing granulomas without positive microbiology are still often treated presumptively</td>
+                  <td>~53&ndash;82% across series; ~71% when NAAT/PCR is added ${cite(18, 19)}</td>
+                  <td>Paucibacillary; cytology + culture alone under-detect</td>
                 </tr>
                 <tr>
-                  <td>Lymphoma (new/de novo cases)</td>
-                  <td>Pooled sensitivity ~66% in systematic review data ${cite(20)}, though a single-cohort study comparing directly against newer tissue-core techniques found standard EBUS-TBNA sensitivity as low as 14&ndash;15% in new/de novo cases ${cite(22)} — a 41% figure sometimes quoted alongside this comes from the same cohort's <em>recurrent</em>-lymphoma subgroup, not new cases, and should not be conflated with the de novo number</td>
-                  <td>Aspirate cytology alone usually cannot provide the architecture plus immunophenotype needed for WHO subtyping — a particular problem for follicular and marginal zone lymphoma, and part of why estimates vary so much across studies ${cite(21)}</td>
+                  <td>Lymphoma (new / de novo)</td>
+                  <td>Pooled sensitivity ~66% ${cite(20)}; as low as 14&ndash;15% in one multicentre de novo cohort ${cite(22)} (the 41% figure is from that cohort's <strong>recurrent</strong> lymphoma subgroup)</td>
+                  <td>Aspirate cytology rarely gives the architecture needed for subtyping ${cite(21)}</td>
                 </tr>
               </tbody>
             </table>
@@ -1018,24 +1037,75 @@ const CASES = [
           <p><em>Optional reference comparator:</em></p>
           ${img(4, "stage3", "histopath-non-necrotizing-granuloma", "Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image")}`,
         pearl:
-          "The same procedure is excellent for one item on your differential, moderate for the second, and frankly unreliable for the third — know which one you're actually most worried about before assuming EBUS-TBNA alone will settle it.",
-        revealExtra: `
-          <h4>Reveal — when standard EBUS-TBNA isn't enough:</h4>
-          <p>newer EBUS-guided tissue-core techniques (forceps or cryoprobe biopsy through the same needle tract, sometimes called EBUS-TBNB or EBUS-TBMC) obtain actual tissue architecture rather than aspirate-only cytology, and meaningfully outperform standard EBUS-TBNA for benign disease and lymphoma specifically — one meta-analysis found a pooled yield of 86% vs 78% overall ${cite(23)}, and a multicentre cohort directly comparing techniques found cryobiopsy sensitivity of 92&ndash;100% against just 14&ndash;15% for standard needle aspiration in new lymphoma cases ${cite(22)}. Worth asking whether your center has access to this before defaulting straight to a surgical biopsy.</p>`,
+          "The same procedure is excellent for one diagnosis, moderate for the second, and unreliable for the third. Know which one worries you most.",
       },
       {
-        title: "EBUS-accessible nodes are non-diagnostic. EBUS or IR next?",
+        title: "When standard EBUS-TBNA isn't enough",
+        question:
+          "If lymphoma is the concern and needle aspiration is non-diagnostic, what gets you tissue architecture?",
+        reveal: `
+          <ul>
+            <li>EBUS-guided <strong>forceps or cryoprobe biopsy</strong> through the same tract obtains tissue architecture rather than cytology alone.</li>
+            <li>Pooled diagnostic yield <strong>86% vs 78%</strong> for TBNA. ${cite(23)}</li>
+            <li>In a multicentre cohort, cryobiopsy sensitivity was <strong>92&ndash;100%</strong> vs <strong>14&ndash;15%</strong> for standard aspiration in new lymphoma. ${cite(22)}</li>
+          </ul>`,
+        pearl:
+          "For lymphoma, the question isn't \"is it malignant?\" but \"which lymphoma?\". That needs architecture, not just cells.",
+      },
+      {
+        title: "EBUS-accessible nodes are non-diagnostic, or the node is out of reach. What next?",
         question:
           "Say the EBUS-reachable nodes were non-diagnostic, or the most suspicious node sits somewhere EBUS can't reach — how do you choose between repeating EBUS, going to CT-guided (IR) biopsy, or a surgical approach?",
         reveal: `
           <ul>
-            <li>EBUS's reach is anatomically limited to nodal stations adjacent to the airway — paratracheal, subcarinal, hilar. It generally cannot reach anterior or prevascular mediastinal nodes, partly because the air-filled trachea gets in the way of the ultrasound approach to some of those stations.</li>
-            <li>CT-guided (IR) percutaneous core needle biopsy fills exactly that anatomic gap, and typically obtains a genuine tissue core rather than aspirate-only cytology — relevant if lymphoma subtyping is what you actually need.</li>
-            <li>The trade-off is safety, not just yield: EBUS-TBNA has a very low complication rate (well under 5% in most series), while CT-guided percutaneous biopsy carries a meaningfully higher complication rate — one large single-center series of 155 procedures reported complications in 13.5% of cases overall, with major pneumothorax requiring chest tube placement in 1.9% ${cite(24)}. Choosing IR isn't simply "more tissue for free."</li>
-            <li>If lymphoma remains the leading concern and EBUS-TBNA (even with flow cytometry added) is non-diagnostic: don't just repeat the same needle aspiration. Escalate to whichever option actually gets you architecture — EBUS-guided cryobiopsy/forceps biopsy where the node's location allows it, CT-guided core biopsy, or a surgical approach (mediastinoscopy or VATS lymph node biopsy) if image-guided options fail or aren't feasible.</li>
+            <li><strong>Where EBUS reaches:</strong>
+              <ul>
+                <li><strong>EBUS</strong> samples nodes against the trachea and bronchi: <strong>stations 2R/2L, 4R/4L, 7, 10 and 11&ndash;12</strong>.</li>
+                <li><strong>Through the oesophagus (EUS/EUS-B)</strong>: <strong>2L, 4L, 7, 8 and 9</strong>.</li>
+                <li><strong>Stations 5 and 6</strong> (subaortic/para-aortic) can be seen by EUS but can <strong>rarely be sampled without traversing the pulmonary artery or aorta</strong>. <strong>VATS is the method of choice</strong> for them.</li>
+              </ul>
+              No single sampling method reaches every station. ${cite(63)}
+            </li>
+            <li><strong>CT-guided (IR) core biopsy</strong> fills anatomic gaps and yields a true tissue core, which matters if lymphoma subtyping is needed.</li>
+            <li><strong>Safety trade-off:</strong>
+              <ul>
+                <li><strong>EBUS:</strong> in a systematic review of 16,181 endosonography procedures, serious adverse events occurred in <strong>0.14% overall and 0.05% with EBUS</strong>, with <strong>no deaths</strong>. ${cite(64)}</li>
+                <li><strong>CT-guided biopsy:</strong> in one series of 155 procedures, complications occurred in <strong>13.5%</strong>, with <strong>chest-tube pneumothorax in 1.9%</strong>. ${cite(24)}</li>
+              </ul>
+            </li>
+            <li><strong>If lymphoma is still the leading concern:</strong> don't just repeat the aspirate. Escalate to whichever option provides architecture (EBUS forceps/cryobiopsy, CT-guided core, or mediastinoscopy/VATS).</li>
           </ul>`,
         pearl:
-          "EBUS and IR-guided biopsy aren't really competing tools — they're complementary, and the choice is driven as much by where the concerning node physically sits as by which diagnosis on your differential worries you most.",
+          "EBUS and IR biopsy are complementary, not competing. Where the node sits, and which diagnosis you fear most, decide the tool.",
+      },
+      {
+        title: "Culture grows <em>M. tuberculosis</em>. How long, and what if the nodes get bigger?",
+        context:
+          "Culture from the EBUS specimen grows drug-susceptible <em>M. tuberculosis</em>. He starts treatment. At 10 weeks, a repeat CT shows one node has enlarged.",
+        question:
+          "How long do you treat TB lymphadenitis, and does an enlarging node mean treatment failure?",
+        reveal: `
+          <ul>
+            <li><strong>Duration:</strong> a <strong>6-month regimen</strong> is adequate for drug-susceptible TB lymphadenitis. ${cite(33)}</li>
+            <li><strong>Enlarging or new nodes during or after treatment</strong> can occur <strong>without any bacteriological relapse</strong>. This is a <strong>paradoxical reaction</strong>. ${cite(33)}</li>
+            <li><strong>How common:</strong>
+              <ul>
+                <li>In HIV-negative patients with extrapulmonary TB, paradoxical reactions occurred in <strong>25%</strong>, mostly in lymph nodes, at a <strong>median of 86 days</strong> into treatment. ${cite(65)}</li>
+                <li>Reviews report <strong>13&ndash;35%</strong> in lymph node TB. ${cite(66)}</li>
+              </ul>
+            </li>
+            <li><strong>What to do:</strong>
+              <ul>
+                <li>Confirm <strong>adherence</strong> and <strong>drug susceptibility</strong>;</li>
+                <li><strong>re-sample if in doubt</strong>. In paradoxical reactions, <strong>culture is negative</strong>, even if AFB smear or Xpert is positive (dead bacilli). ${cite(66)}</li>
+                <li><strong>Do not change or extend the regimen</strong> for enlargement alone.</li>
+                <li>Therapeutic excision is not indicated except in unusual circumstances; fluctuant nodes about to drain may be aspirated. ${cite(33)}</li>
+                <li>Corticosteroids are used for severe cases. ${cite(65)}</li>
+              </ul>
+            </li>
+          </ul>`,
+        pearl:
+          "A node that grows on treatment is usually the immune system catching up, not the drugs failing. Prove it with a negative culture before you touch the regimen.",
       },
     ],
   },
