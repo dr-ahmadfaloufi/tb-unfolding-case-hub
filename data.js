@@ -2085,6 +2085,149 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 9
+  // ============================================================
+  {
+    id: 9,
+    section: "extrapulmonary",
+    title: "26-year-old man with right lower abdominal pain, fever and weight loss",
+    hubDescription:
+      "Terminal ileal disease in a TB-endemic setting: the few features that truly separate the two main diagnoses, why TB must be excluded before immunosuppression, how long to treat, and what a clinical response does and doesn't prove.",
+    vignette:
+      "26-year-old Saudi man with 4 months of intermittent right lower abdominal pain, evening fevers, night sweats and 6 kg weight loss. Occasional loose stools, no blood. No perianal disease. CRP raised; mild anaemia.",
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><strong>Differential first</strong>, each paired with its test:</p>
+          <ol>
+            <li><strong>Intestinal (ileocaecal) TB</strong>
+              <ul>
+                <li><strong>Ileocolonoscopy with multiple biopsies</strong> for histology, AFB smear, mycobacterial culture and TB PCR/Xpert. ${cite(1)}</li>
+                <li><strong>Cross-sectional imaging</strong> (CT enterography).</li>
+                <li><strong>CXR.</strong></li>
+              </ul>
+            </li>
+            <li><strong>Crohn's disease</strong>
+              <ul><li>The same colonoscopy and biopsies, and the same CT enterography. The features that separate the two are covered in the next stage. ${cite(109)}</li></ul>
+            </li>
+            <li><strong>Intestinal lymphoma</strong>
+              <ul><li>Histology and immunohistochemistry on the biopsies.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>IGRA</strong> is supporting evidence only (see the next stage). ${cite(111)}</p>`,
+        pearl:
+          "In a TB-endemic setting, every \"Crohn's disease\" of the terminal ileum is intestinal TB until the biopsies and the CT say otherwise.",
+      },
+      {
+        title: "Biopsies inconclusive. How do you tell TB from Crohn's?",
+        context:
+          "<strong>Colonoscopy:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB PCR negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
+        question: "Does anything here settle it?",
+        reveal: `
+          <h4>Studies: features that separate intestinal TB (ITB) from Crohn's disease (CD)</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Feature / test</th><th>Favours</th><th>Accuracy</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>Caseation necrosis on biopsy; AFB smear or culture positive; <strong>necrotic nodes on CT</strong></td><td><strong>ITB</strong>: the only <strong>exclusive</strong> features, but all have poor sensitivity</td><td>&mdash;</td><td>${cite(109)}</td></tr>
+                <tr><td>Transverse ulcers; patulous ileocaecal valve; contiguous ileocaecal involvement</td><td>ITB</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
+                <tr><td>Longitudinal or aphthous ulcers; skip lesions; long segments; perianal disease</td><td>CD</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
+                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(110)}</td></tr>
+                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(110)}</td></tr>
+                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(110)}</td></tr>
+                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(111)}</td></tr>
+                <tr><td><strong>TB PCR on biopsy</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>47%</strong>, specificity <strong>95%</strong>; "negative results cannot exclude ITB"</td><td>${cite(112)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Culture (strong), plus smear, NAAT and histology (conditional), on extrapulmonary specimens. Negative results do not exclude TB</td><td>Strong / conditional</td></tr>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td>The nonspecific presentation of abdominal TB means "a high index of suspicion is an important factor in early diagnosis"</td><td>(narrative)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> the colonoscopy features and the positive IGRA lean towards TB, but <strong>none of the exclusive features is present</strong>. This is the classic unresolved case. ${cite(109)}</p>`,
+        pearl:
+          "Only caseation, AFB and necrotic nodes are exclusive to TB, and each is usually absent. Most cases are decided by weighing the whole picture, not by a single test.",
+      },
+      {
+        title: "Treat for TB, or treat for Crohn's?",
+        question:
+          "The gastroenterologist wants to start steroids for presumed Crohn's disease. What do you advise?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Pratap Mouli 2017</strong> ${cite(113)}</td><td>Retrospective, 288 patients (131 eventual CD, 157 ITB), plus a prospective validation cohort of 55 with diagnostic confusion (India)</td><td><strong>Symptomatic response to TB treatment:</strong> 94% of ITB by 3 months, but also <strong>38%</strong> of eventual CD at 3 months (64% at 2 months in validation). <strong>Endoscopic mucosal healing: 100% of ITB vs 5% of CD</strong></td></tr>
+                <tr><td><strong>Tubach 2009</strong> ${cite(76)}</td><td>French RATIO registry</td><td>TB risk with anti-TNF monoclonal antibodies is high (SIR 18.6&ndash;29.3), and none of the affected patients had received correct prophylaxis</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer</h4>
+          <ul>
+            <li><strong>Don't start immunosuppression while TB is unexcluded.</strong> A <strong>therapeutic trial of TB treatment</strong> is still needed "in a significant proportion of patients to establish the diagnosis", despite the cost of delaying a Crohn's diagnosis. ${cite(109)}</li>
+            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with LTBI treatment first. ${cite(85)}</li>
+            <li>Wait for the biopsy culture while treatment runs. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "A trial of TB treatment is reversible. Starting anti-TNF therapy on an unrecognized intestinal TB can be catastrophic. When in doubt, treat the TB first.",
+      },
+      {
+        title: "Regimen and duration",
+        context:
+          "He starts TB treatment. The biopsy culture later grows fully susceptible <em>M. tuberculosis</em>.",
+        question: "How long do you treat?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(114)}</td><td>3 RCTs, 328 adults with intestinal and peritoneal TB (Asia)</td><td><strong>6 vs 9 months:</strong> relapse 2/140 vs 0/129 (too few events to compare; very low certainty). Clinical cure <strong>no different</strong> (RR 1.02, 0.97&ndash;1.08; moderate certainty). No evidence that 6 months is inadequate</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(115)}</td><td>104 proven GI TB, 21 centres in 8 countries <strong>including Saudi Arabia</strong></td><td>Terminal ileum the commonest site (44%). Biopsy culture positive in 87% of those cultured; PCR positive in 95% of those tested. <strong>One-third immunosuppressed. 43% diagnosed from surgical specimens.</strong> Mortality 3.8%, relapse 1.9%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6 months is adequate</strong> for intestinal or peritoneal TB</td><td>Expert opinion</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No intestinal-TB-specific recommendation; 2HRZE/4HR is the standard for drug-susceptible disease (&sect;5.5.1)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>For this patient:</strong> <strong>2HRZE/4HR (6 months).</strong> ${cite(3, 114)}</p>`,
+        pearl:
+          "Gut TB doesn't need a longer course. Six months is as good as nine in the trials we have.",
+      },
+      {
+        title: "Two months later, the pain is gone. Diagnosis confirmed?",
+        context: "At 2 months he is pain-free and gaining weight.",
+        question: "Does his clinical response confirm intestinal TB?",
+        reveal: `
+          <ul>
+            <li><strong>Not on its own.</strong> Symptoms also improved in <strong>38&ndash;64%</strong> of patients who turned out to have Crohn's disease. ${cite(113)}</li>
+            <li><strong>Mucosal healing is the discriminator:</strong> it occurred in <strong>100%</strong> of intestinal TB vs <strong>5%</strong> of Crohn's disease. <strong>Repeat colonoscopy</strong> is needed to confirm. ${cite(113)}</li>
+            <li><strong>Symptoms that persist after 3 months</strong> of TB treatment suggest Crohn's disease. ${cite(113)}</li>
+            <li>In <strong>this</strong> patient, the positive biopsy culture has already settled it. ${cite(1)}</li>
+          </ul>`,
+        pearl:
+          "In the ITB-vs-Crohn's trial of treatment, trust the mucosa, not the symptoms. A Crohn's patient can feel better on TB drugs; their ulcers rarely heal.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
