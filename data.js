@@ -1583,6 +1583,203 @@ const CASES = [
       },
     ],
   },
+
+  // ============================================================
+  // CASE 6
+  // ============================================================
+  {
+    id: 6,
+    section: "extrapulmonary",
+    title: "31-year-old man with fever and a one-sided pleural effusion",
+    hubDescription:
+      "A young man with a lymphocytic pleural effusion: what the fluid can and can't tell you, when tissue is worth getting, drainage versus steroids, and why a clean lung field doesn't mean clean sputum.",
+    vignette:
+      "31-year-old Saudi man, previously healthy, with 3 weeks of fever, dry cough and right-sided pleuritic chest pain, and increasing breathlessness over the last week. CXR: moderate right pleural effusion; no visible parenchymal lesion. HIV status unknown." +
+      img(6, "stage1", "cxr-effusion", "Unilateral right pleural effusion on chest radiograph (reference image, not this patient)"),
+    stages: [
+      {
+        title: "What do you send?",
+        question: "Given this presentation, what do you send, specifically?",
+        reveal: `
+          <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(87)}</p>
+          <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
+          <ol>
+            <li><strong>Tuberculous pleurisy</strong>
+              <ul>
+                <li><strong>Diagnostic thoracentesis:</strong> protein and LDH (to confirm an exudate by Light's criteria) ${cite(88)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
+                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(89)}</li>
+              </ul>
+            </li>
+            <li><strong>Parapneumonic effusion or empyema</strong>
+              <ul><li>Gram stain and bacterial culture on the same fluid.</li></ul>
+            </li>
+            <li><strong>Malignant effusion</strong> (lymphoma, metastatic disease)
+              <ul><li>Pleural fluid cytology; pleural biopsy if the work-up stays non-diagnostic. Among undiagnosed exudates in a high-TB-incidence setting, 82% were TB and 10% malignancy. ${cite(90)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine for everyone with presumptive TB. ${cite(3)}</p>`,
+        pearl:
+          "A clean lung field doesn't mean clean sputum. Induce sputum in suspected pleural TB: it can give you a culture, and therefore drug susceptibility, without a biopsy.",
+      },
+      {
+        title: "The fluid results",
+        context:
+          "Straw-coloured exudate, <strong>lymphocyte-predominant</strong>. <strong>ADA 78 U/L.</strong> AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> Cultures pending.",
+        question:
+          "Does a negative smear and Xpert rule out TB here? How much weight does the ADA carry?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test (pleural fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(91)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
+                <tr><td><strong>ADA</strong></td><td>5 earlier meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89&ndash;99%</td><td>88&ndash;97%</td><td>Thresholds ranged from 10 to 71 U/L</td></tr>
+                <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 22 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89%</td><td>97%</td><td>Thresholds varied widely</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(92)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
+                <tr><td><strong>NAAT (any)</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>56%</td><td>98%</td><td></td></tr>
+                <tr><td><strong>AFB smear</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td><strong>0&ndash;10%</strong></td><td>high</td><td></td></tr>
+                <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>23&ndash;58%</td><td>&gt;97%</td><td>The only route to an isolate for DST</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Measure <strong>ADA</strong> on fluid in suspected pleural TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td>Measure <strong>free IFN-&gamma;</strong> on fluid in suspected pleural TB</td><td>Conditional, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td><strong>Mycobacterial culture</strong> on extrapulmonary specimens</td><td><strong>Strong</strong>, low</td></tr>
+                <tr><td>Same ${cite(1)}</td><td><strong>AFB smear</strong> and <strong>NAAT</strong> on extrapulmonary specimens. A positive result supports TB; <strong>a negative result may not be used to exclude TB</strong></td><td>Conditional, very low</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>Xpert is recommended for extrapulmonary specimens, "however, the test has <strong>low sensitivity for pleural fluid</strong> specimens" (Chapter 3 algorithm)</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Take-home:</strong> <strong>no.</strong> In pleural fluid, a negative smear or NAAT never excludes TB. ${cite(1)} A lymphocytic exudate with a high ADA is strong <strong>supporting</strong> evidence. ATS/IDSA/CDC stress that neither ADA nor IFN-&gamma; "provide a definitive diagnosis"; they "must be interpreted in the entire clinical context". ${cite(1)}</p>`,
+        pearl:
+          "In pleural TB, the fluid is full of the immune response and almost empty of bacilli. That's why ADA performs well and the smear fails.",
+      },
+      {
+        title: "Treat now, or biopsy first?",
+        question:
+          "With a lymphocytic, high-ADA exudate and negative microbiology, do you start treatment now or get pleural tissue first?",
+        reveal: `
+          <h4>Studies: diagnostic yield of each specimen</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td>Diacon 2003 ${cite(90)}</td><td>Prospective, 51 undiagnosed exudates (82% TB), South Africa</td><td><strong>Closed needle biopsy:</strong> histology 66%, culture 48%, combined <strong>79%</strong>. <strong>Thoracoscopy:</strong> histology 100%, culture 76%, combined <strong>100%</strong>. Both 100% specific. <strong>ADA &ge;50 U/L:</strong> 95% sensitive, 89% specific. <strong>ADA + lymphocyte/neutrophil ratio &ge;0.75 + closed biopsy:</strong> 93% sensitive, 100% specific</td></tr>
+                <tr><td>Conde 2003 ${cite(89)}</td><td>Prospective, 84 pleural TB, Brazil</td><td>Pleural biopsy histology <strong>78%</strong>. Culture yield: pleural tissue <strong>62%</strong>, pleural fluid <strong>12%</strong>, induced sputum <strong>52%</strong></td></tr>
+                <tr><td>al-Quorain 1994 ${cite(87)}</td><td>Prospective, 89 pleural TB, Eastern Province, KSA</td><td>Culture or histology positive: pleural biopsy <strong>68.5%</strong>, pleural fluid <strong>10%</strong>, sputum <strong>2%</strong></td></tr>
+                <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>Pleural <strong>tissue</strong>: histology 69&ndash;97%, culture 40&ndash;58%, smear 14&ndash;39%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td><strong>Histology</strong> on specimens from suspected extrapulmonary TB. Positive and negative results are read "in the context of the clinical scenario because neither false-positive nor false-negative results are rare"</td><td>Conditional, very low</td></tr>
+                <tr><td>ATS/CDC/IDSA treatment (2016) ${cite(3)}</td><td>Empiric multidrug treatment is started in almost all situations in which active TB is suspected</td><td>(general principle)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Reasoning for this patient</h4>
+          <ul>
+            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(3, 91)}</li>
+            <li><strong>Tissue still earns its place.</strong> It is the best route to a positive <strong>culture</strong>, and so to <strong>drug-susceptibility testing</strong>; NAAT "does not produce an isolate, which is needed for DST". ${cite(1)} Tissue also excludes malignancy. Pleural biopsy was the single most useful test in the Saudi series. ${cite(87)}</li>
+            <li><strong>If the ADA were low, the fluid neutrophilic, or the patient older:</strong> go to biopsy before treating. Thoracoscopy has the highest yield where it's available. ${cite(90)}</li>
+          </ul>`,
+        pearl:
+          "High ADA is enough to start treatment; it isn't enough to get a susceptibility result. Culture of pleural tissue or induced sputum gives you both a diagnosis and a DST.",
+      },
+      {
+        title: "Treatment: how long, drain it, and steroids?",
+        context: "He starts treatment. The effusion is moderate and he is breathless.",
+        question:
+          "What regimen and duration? Should the effusion be drained? Do adjunctive corticosteroids help?",
+        reveal: `
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Ryan 2017, Cochrane</strong> ${cite(93)}</td><td>6 RCTs, 590 participants (1 trial in HIV-positive people)</td><td>Corticosteroids <strong>may speed resolution</strong>. Residual effusion reduced at 8 weeks (RR 0.54) and at 24 weeks (RR 0.35); residual pleural changes reduced (RR 0.72, ARR 16%). <strong>Low certainty.</strong> No long-term lung-function benefit shown (very low certainty). <strong>More adverse events leading to discontinuation</strong> (RR 2.78). <strong>Kaposi sarcoma 6/99 vs 0/98</strong> in the HIV trial</td></tr>
+                <tr><td><strong>Bhuniya 2012</strong> ${cite(94)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1/FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>A standard 6-month regimen is adequate</strong> for pleural TB</td><td>(narrative recommendation)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>No evidence to support routine adjunctive corticosteroids.</strong> In 4 RCTs, steroids did not reduce residual pleural thickening; in HIV-associated pleurisy they increased Kaposi sarcoma</td><td>(narrative recommendation)</td></tr>
+                <tr><td>Same ${cite(3)}</td><td><strong>Tuberculous empyema</strong> (a cavity rupturing into the pleural space): drainage, often surgical, plus chemotherapy; optimal duration not established</td><td>(narrative)</td></tr>
+                <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td><strong>2HRZE/4HR</strong> is the stated regimen for drug-susceptible <strong>pulmonary</strong> TB (&sect;5.5.1). The extrapulmonary section (&sect;5.5.3) recommends steroids <strong>only for TB meningitis and pericarditis</strong>, and says nothing specific about pleural TB</td><td>Not graded</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Answer for this patient</h4>
+          <ul>
+            <li><strong>2HRZE/4HR for 6 months.</strong> ${cite(3, 5)}</li>
+            <li><strong>Therapeutic thoracentesis</strong> to relieve his breathlessness. ${cite(94)}</li>
+            <li><strong>No routine steroids.</strong> ${cite(3)}</li>
+          </ul>
+          <p><strong>Why the two sources seem to disagree on steroids:</strong> the Cochrane review (6 trials) found a <em>possible</em> reduction in residual pleural changes, at low certainty ${cite(93)}, while ATS 2016 read 4 trials as showing no benefit ${cite(3)}. Both agree there is <strong>no proven long-term functional benefit</strong>, and there is a signal of <strong>harm</strong> (discontinuations; Kaposi sarcoma in HIV).</p>`,
+        pearl:
+          "Drain the fluid for breathlessness. Don't reach for steroids to prevent pleural thickening: the benefit is uncertain, and the harm in HIV isn't.",
+      },
+      {
+        title: "Week 3: the induced-sputum culture grows <em>M. tuberculosis</em>",
+        context:
+          "Three weeks into treatment, the induced-sputum culture sent on day 1 grows <em>M. tuberculosis</em>, fully susceptible. Repeat CXR still shows no parenchymal lesion.",
+        question: "Does this change how he is classified, and does it matter for his contacts?",
+        reveal: `
+          <ul>
+            <li><strong>Classification changes.</strong> Under the Saudi NTP Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
+            <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for LTBI" (Saudi policy, strong). ${cite(5)}</li>
+            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(89)}</li>
+            <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
+            <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
+          </ul>`,
+        pearl:
+          "\"Pleural TB is not infectious\" holds only until the sputum says otherwise. That is one more reason to induce sputum on day 1.",
+      },
+      {
+        title: "Week 8: the effusion is bigger",
+        context:
+          "Eight weeks into fully supervised treatment, he feels well. The CXR shows the right effusion has <strong>enlarged</strong>.",
+        question: "Is this treatment failure? What do you do?",
+        reveal: `
+          <p><strong>Most likely a paradoxical response, but that is a diagnosis of exclusion.</strong> It is made only after a thorough evaluation has excluded other causes, particularly <strong>treatment failure and drug resistance</strong>. New or enlarging pleural effusions are a recognised pattern. ${cite(3)} Here his isolate is fully susceptible and adherence is documented.</p>
+          <h4>How common</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Al-Majed 1996</strong> ${cite(95)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
+                <tr><td><strong>Jeon 2012</strong> ${cite(96)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>What to do</h4>
+          <ul>
+            <li><strong>Continue the same regimen.</strong> ${cite(3)}</li>
+            <li>Confirm adherence and susceptibility. ${cite(3)}</li>
+            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(95)}</li>
+            <li>Re-sample if the picture is atypical (fever returns, fluid turns purulent). ${cite(3)}</li>
+            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(95)}</li>
+          </ul>`,
+        pearl:
+          "At 2 months, a bigger effusion in a patient who feels well is usually the immune response catching up. Prove adherence and susceptibility, drain it if he's breathless, and don't change the drugs.",
+      },
+    ],
+  },
 ];
 
 // ============================================================
