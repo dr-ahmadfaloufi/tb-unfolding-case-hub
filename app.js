@@ -30,17 +30,32 @@ function initPresentationToggle() {
 
 // ---------- hub page ----------
 
+const HUB_SECTIONS = {
+  extrapulmonary: {
+    title: "Extrapulmonary TB",
+    intro: "Five cases beyond the lung: pleural, spinal, meningeal, intestinal and peritoneal TB.",
+  },
+};
+
 function renderHub() {
   const list = document.getElementById("case-list");
   if (!list) return;
-  list.innerHTML = CASES.map(
-    (c) => `
+  const card = (c) => `
     <a class="case-card" href="case.html?id=${c.id}">
       <span class="case-number">Case ${c.id}</span>
       <h2>${c.title}</h2>
       <p>${c.hubDescription}</p>
-    </a>`
-  ).join("");
+    </a>`;
+  // Cases without a `section` come first; each named section gets its own heading.
+  let html = CASES.filter((c) => !c.section).map(card).join("");
+  Object.keys(HUB_SECTIONS).forEach((key) => {
+    const cases = CASES.filter((c) => c.section === key);
+    if (!cases.length) return;
+    const s = HUB_SECTIONS[key];
+    html += `<div class="hub-section"><h2 class="hub-section-title">${s.title}</h2><p>${s.intro}</p></div>`;
+    html += cases.map(card).join("");
+  });
+  list.innerHTML = html;
 }
 
 // ---------- case page ----------

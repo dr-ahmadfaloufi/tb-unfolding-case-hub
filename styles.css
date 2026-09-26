@@ -572,6 +572,26 @@ sup.citation a:hover { text-decoration: underline; }
 
 /* ---------- responsive ---------- */
 
+/* ---------- hub sections ---------- */
+
+.hub-section {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.hub-section-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+  color: var(--accent-dark);
+}
+
+.hub-section p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
 /* ---------- start-here questions ---------- */
 
 .hub-header p a { color: var(--accent-dark); }
