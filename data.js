@@ -327,162 +327,277 @@ const CASES = [
     hubDescription:
       "A retreatment patient with adherence gaps returns with new respiratory symptoms — working through rapid resistance testing, its molecular basis and blind spots, and the trial evidence behind current regimen options.",
     vignette:
-      "42-year-old female. Completed a standard first-line TB treatment course 18 months ago, with reported adherence gaps during that course. Now presents with 2 months of recurrent cough, hemoptysis, and weight loss. No known contact with a resistant TB case on direct questioning.",
+      "42-year-old Saudi woman. Completed a standard first-line TB treatment course 18 months ago, with reported adherence gaps during that course. Now presents with 2 months of recurrent cough, hemoptysis, and weight loss. No known contact with a resistant TB case on direct questioning.",
     stages: [
       {
         title: "What do you send?",
         question:
-          "Given this retreatment history, what test do you send for, specifically?",
+          "Given this retreatment history, what do you send, specifically?",
         reveal: `
+          <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
-            <li><strong>The test:</strong> a WHO-recommended rapid molecular assay for rifampin resistance (Xpert MTB/RIF Ultra or equivalent) — sent immediately, alongside routine sputum smear microscopy, not after it.</li>
-            <li><strong>Why now, not later:</strong> it detects both <em>M. tuberculosis</em> and rifampin resistance within hours rather than the weeks culture takes — and a prior treatment course with adherence gaps is itself a major resistance risk factor, independent of a reported negative contact history.</li>
-            <li>Also send culture with full first- and second-line phenotypic DST regardless of the rapid result — molecular assays only flag specific known mutations and can miss others.</li>
-            <li>Don't anchor on relapse/resistant TB alone — the hemoptysis and prior lung disease also raise post-TB bronchiectasis with secondary bacterial infection and an aspergilloma (fungal ball) in a residual cavity. A routine bacterial sputum culture covers the first; if imaging shows a residual cavity, add Aspergillus serology.</li>
-            <li>Document the exact prior regimen, duration of interruptions, and any known exposure to a resistant source case.</li>
-          </ol>`,
-        pearl:
-          'Name the test explicitly — "a rapid molecular test for rifampin resistance" — not just "send more tests." It\'s the single most decision-changing order you make today.',
+            <li><strong>Recurrent TB (relapse or reinfection), possibly with acquired drug resistance</strong>
+              <ul>
+                <li><strong>Rapid molecular test for TB + rifampicin resistance (Xpert MTB/RIF Ultra)</strong> on the first specimen;</li>
+                <li>plus <strong>culture with full first- and second-line phenotypic DST, sent at or before the start of treatment</strong>. WHO says culture and DST should be obtained from <em>all</em> previously treated patients, for at least isoniazid and rifampicin. ${cite(29)}</li>
+                <li>Prior treatment is itself an indication for rapid molecular DST. ${cite(34)}</li>
+              </ul>
+            </li>
+            <li><strong>Post-TB bronchiectasis with secondary bacterial infection</strong>
+              <ul><li>Sputum Gram stain and routine bacterial culture.</li></ul>
+            </li>
+            <li><strong>Aspergilloma / chronic pulmonary aspergillosis in a residual cavity</strong>
+              <ul><li><strong>Aspergillus IgG</strong> if imaging shows a cavity. Aspergillus antibody is elevated in &gt;90% of CPA. ${cite(38)}</li></ul>
+            </li>
+            <li><strong>Non-tuberculous mycobacteria</strong>
+              <ul><li>Mycobacterial culture with species identification (same specimens).</li></ul>
+            </li>
+            <li><strong>Malignancy</strong>
+              <ul><li>CT chest, then tissue if a mass is seen.</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also:</strong> HIV test ${cite(33)}; document the prior regimen, the length of interruptions, and any exposure to a resistant source case.</p>`,
+        pearl: `<em>Bedside pitfall, specific to retreatment:</em> in someone treated for TB before, a positive Xpert can reflect leftover DNA from dead bacilli. In the Cochrane review, Xpert Ultra specificity fell to <strong>88.2%</strong> in people with a prior TB history, versus 95.6% overall. Always confirm with culture before calling it a new episode. ${cite(35)}`,
       },
       {
-        title: "The result, and what it's actually detecting",
+        title: "Rifampicin resistance detected: what do you do now?",
         context: "Result: MTB detected, rifampin resistance detected.",
-        question:
-          "What does this mean biologically, and what does it mean for immediate management?",
+        question: "Rifampicin resistance is detected. What do you do today?",
         reveal: `
-          <h4>Reveal — management:</h4>
           <ul>
-            <li>Treated as presumptive MDR-TB; do not start standard first-line therapy</li>
-            <li>Isolate immediately, notify the TB program</li>
-            <li>Start an empiric, guideline-based all-oral MDR regimen while awaiting full DST</li>
-            <li>Baseline workup: HIV, ECG, CBC, LFTs, visual acuity</li>
-          </ul>
-          <h4>Reveal — the molecular basis (rpoB):</h4>
-          <ul>
-            <li>Rifampin resistance is overwhelmingly caused by mutations in an 81-base-pair stretch of the <em>rpoB</em> gene (the RNA polymerase beta subunit), spanning codons 507 to 533 — the rifampin resistance-determining region (RRDR). Xpert MTB/RIF uses five overlapping probes, A through E, each covering part of this region (roughly codons 507&ndash;511, 511&ndash;518, 518&ndash;523, 523&ndash;529, and 529&ndash;533) — a probe that fails to bind signals a mutation, and therefore resistance.</li>
-            <li>Mutations at codons 531 and 533, detected by probe E, are the most common worldwide and typically confer high-level resistance; this is also why rifampin resistance is used programmatically as a surrogate marker for MDR-TB — the two usually travel together.</li>
-            <li><strong>Limitation worth knowing:</strong> mutations outside the RRDR — notably at codons 170 and 491 — are not covered by these probes, so rpoB mutations located there are missed by Xpert and Xpert Ultra. One southern African (eSwatini) study found the Ile491Phe mutation in 30% of MDR strains, associated with poor rifampin-based treatment outcomes despite testing "susceptible." If clinical suspicion stays high despite a susceptible rapid test, phenotypic DST is still warranted.</li>
-            <li>Contrast: isoniazid resistance runs through entirely different genes — <em>katG</em> for high-level resistance, the <em>inhA</em> promoter for low-level resistance with ethionamide cross-resistance — so a rifampin-resistance result tells you nothing definitive about isoniazid susceptibility on its own, even though they usually co-occur.</li>
+            <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages RR-TB and MDR-TB together as MDR/RR-TB. ${cite(29)}</li>
+            <li><strong>Why "treat as MDR":</strong> the two usually travel together. Worldwide in 2024, <strong>16% of previously treated</strong> patients had MDR/RR-TB, versus <strong>3.2% of new</strong> patients. ${cite(36)}</li>
+            <li><strong>Isolate, notify, start contact investigation.</strong> Contact management must account for the resistance pattern.</li>
+            <li><strong>Send second-line DST now, especially fluoroquinolone susceptibility.</strong> It decides between BPaLM and BPaL (next stage). Globally, <strong>18%</strong> of MDR/RR-TB is pre-XDR (fluoroquinolone-resistant). ${cite(36)}</li>
+            <li><strong>Baseline work-up before a bedaquiline/linezolid regimen:</strong>
+              <ul>
+                <li>HIV test;</li>
+                <li><strong>ECG</strong> (QT) ${cite(32)};</li>
+                <li>CBC (linezolid myelosuppression);</li>
+                <li>LFTs;</li>
+                <li>visual acuity/colour vision (linezolid optic neuropathy);</li>
+                <li>neuropathy screen: not on the Saudi manual's list, but good clinical practice given linezolid neuropathy rates in Nix-TB (81%) and ZeNix (13&ndash;38%) ${cite(5, 6)};</li>
+                <li><strong>pregnancy test</strong> (BPaLM is not recommended in pregnancy or breastfeeding; see next stage) ${cite(29)}.</li>
+              </ul>
+              The Saudi NTP Manual baseline (&sect;10.8) also includes smear, culture and DST (including second-line), CXR, renal and hepatic profile, calcium/magnesium and a baseline ECG if on bedaquiline or delamanid, thyroid function, and CBC if anaemia is suspected. ${cite(37)}
+            </li>
+            <li><strong>Monitoring (Saudi NTP Manual, Table 10.7):</strong> CBC weekly for the first month, then monthly on linezolid; visual acuity if vision changes on linezolid; ECG at 2, 4, 8, 12 and 24 weeks on bedaquiline/delamanid, stopping them if QTc &gt;500 ms; LFTs monthly on bedaquiline. ${cite(37)}</li>
           </ul>`,
-        pearl:
-          "Rifampin resistance is a proxy for MDR-TB, not a certainty — and the proxy has a known blind spot worth knowing by name.",
+        pearl: `A prior TB course with adherence gaps is the single strongest predictor of resistance. In Saudi data it carried about 7-fold odds of MDR. ${cite(46)} Rapid rifampicin testing on day one exists for exactly this patient.`,
       },
       {
-        title:
-          "Full susceptibility results and the current evidence-based regimen",
+        title: "How far can you trust this result, and what if DST disagrees?",
+        question:
+          "Xpert says rifampicin-resistant. How reliable is that, and what do you do if culture-based DST disagrees, in either direction?",
+        reveal: `
+          <ul>
+            <li><strong>Mechanism in one line:</strong> Xpert detects mutations in a short rifampicin-resistance region of <em>rpoB</em>. It reads DNA, not growth.</li>
+            <li><strong>Reliability:</strong> specificity for rifampicin resistance is <strong>99.1% (Ultra) / 98.8% (MTB/RIF)</strong>. A "detected" result is rarely wrong, but not never. ${cite(35)}</li>
+          </ul>
+          <h4>When molecular and phenotypic results disagree</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Direction</th><th>Main causes</th><th>What to do</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Xpert: RIF-resistant / DST: susceptible</strong></td>
+                  <td><strong>"Disputed" (borderline) <em>rpoB</em> mutations</strong>: real, clinically relevant low-level resistance that growth-based DST at the standard critical concentration misses. In one series only <strong>26% of isolates with such mutations tested resistant by MGIT</strong>. WHO has responded by lowering the critical concentration.</td>
+                  <td><strong>Do not de-escalate on the phenotype alone.</strong> Sequence the <em>rpoB</em> gene; treat as RR-TB if a resistance mutation is confirmed. ${cite(45)}</td>
+                </tr>
+                <tr>
+                  <td><strong>Xpert: RIF not detected / DST or clinical course: resistant</strong></td>
+                  <td><strong>Mutations outside the region Xpert reads</strong>, e.g. <em>rpoB</em> <strong>I491F</strong>. It was found in <strong>30% of MDR strains in an eSwatini study</strong>, and in <strong>15%</strong> of South African isolates labelled "isoniazid-monoresistant", which were actually MDR. <strong>Routine phenotypic DST can also call I491F susceptible.</strong></td>
+                  <td>If the patient isn't responding, or epidemiology suggests it, <strong>request sequencing</strong>. Don't let two "susceptible" results end the discussion. ${cite(42, 43)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Supporting data: in Eswatini, Xpert MTB/RIF detected only <strong>62.5%</strong> of confirmed rifampicin resistance against a composite reference, largely because of I491F. ${cite(44)}</p>
+          <h4>Resistance epidemiology: global vs Saudi</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Metric</th><th>Global</th><th>Saudi Arabia</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>MDR/RR-TB, new patients</td><td>3.2% (2024)</td><td>&mdash;</td><td>WHO Global TB Report 2025 ${cite(36)}</td></tr>
+                <tr><td>MDR/RR-TB, previously treated</td><td>16% (2024)</td><td>&mdash;</td><td>WHO Global TB Report 2025 ${cite(36)}</td></tr>
+                <tr><td>Rifampicin resistance, all tested</td><td>&mdash;</td><td>6% (95% CI 3&ndash;9), pooled</td><td>Alanazi 2026 meta-analysis ${cite(46)}</td></tr>
+                <tr><td>Isoniazid resistance, all tested</td><td>~8% INH monoresistance (range 5&ndash;11%)</td><td>15% (7&ndash;28), pooled</td><td>ATS 2019 ${cite(32)}; Alanazi 2026 ${cite(46)}</td></tr>
+                <tr><td>MDR-TB</td><td>&mdash;</td><td><strong>8%</strong> pooled (studies since 2000); <strong>national surveillance 4.4% &rarr; 2.4% (2015&rarr;2019)</strong></td><td>Alanazi 2026 ${cite(46)}; Alawi 2024 ${cite(47)}</td></tr>
+                <tr><td>Prior treatment as a risk factor</td><td>&mdash;</td><td><strong>OR 7.34</strong> for MDR</td><td>Alanazi 2026 ${cite(46)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Caveat:</em> the Saudi meta-analysis pools heterogeneous, mostly hospital-based series, so the national surveillance figure is the better population estimate.</p>`,
+        pearl:
+          "Rifampicin resistance on Xpert is highly specific. When a test result disagrees with the sequencing or with how the patient is doing, trust the sequencing and the patient.",
+      },
+      {
+        title: "Full susceptibility results: which regimen?",
         context:
           "Culture-based DST confirms resistance to both isoniazid and rifampin (MDR-TB). Fluoroquinolone susceptible, no further resistance identified.",
         question:
           "Given this susceptibility profile, what regimen and duration does current evidence support, and what studies is that based on?",
         reveal: `
-          <p>With fluoroquinolone susceptibility confirmed, current WHO guidance supports the 6-month BPaLM regimen — bedaquiline, pretomanid, linezolid 600 mg, and moxifloxacin — usable programmatically in patients aged 15 and older who have not had more than one month of prior exposure to bedaquiline, pretomanid, or linezolid.${cite(3, 4)}</p>
+          <ul>
+            <li><strong>Answer: 6-month BPaLM.</strong> For eligible patients:
+              <ul>
+                <li><strong>age &ge;14</strong>;</li>
+                <li><strong>&lt;1 month prior exposure</strong> to bedaquiline, pretomanid, linezolid or delamanid;</li>
+                <li><strong>not pregnant or breastfeeding</strong> (pretomanid safety data are lacking).</li>
+              </ul>
+              <strong>Check her pregnancy status before prescribing.</strong> ${cite(29)}
+            </li>
+            <li><strong>Doses</strong> (ATS 2025 Table 1; consistent with WHO):
+              <ul>
+                <li><strong>bedaquiline 400 mg daily &times;2 wk, then 200 mg three times/wk &times;24 wk</strong>;</li>
+                <li><strong>pretomanid 200 mg daily &times;26 wk</strong>;</li>
+                <li><strong>linezolid 600 mg daily &times;26 wk</strong> (may drop to 300 mg daily for toxicity);</li>
+                <li><strong>moxifloxacin 400 mg daily &times;26 wk</strong>. ${cite(31, 29)}</li>
+                <li>WHO also accepts <strong>bedaquiline 200 mg daily &times;8 wk, then 100 mg daily</strong> as an alternative schedule. ${cite(29)}</li>
+              </ul>
+            </li>
+          </ul>
+          <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
-              <thead><tr><th>Study</th><th>Control arm</th><th>Experimental arm</th><th>Key result</th></tr></thead>
+              <thead><tr><th>Trial</th><th>Population / design</th><th>Regimen &amp; doses</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>Nix-TB (N Engl J Med 2020) ${cite(5)}</td>
-                  <td>None — open-label, single-group study, no control arm</td>
-                  <td>BPaL: bedaquiline (standard loading/maintenance dosing) + pretomanid 200mg daily + linezolid 1200mg daily, 26 weeks</td>
-                  <td>90% favorable outcome; linezolid 1200mg linked to high toxicity (peripheral neuropathy, myelosuppression)</td>
+                  <td><strong>Nix-TB</strong>, NEJM 2020 ${cite(5)}</td>
+                  <td>XDR or treatment-intolerant/non-responsive MDR; single arm, n=109</td>
+                  <td><strong>BPaL</strong>: bedaquiline 400 mg &times;2 wk then 200 mg 3&times;/wk &times;24 wk; pretomanid 200 mg &times;26 wk; <strong>linezolid 1,200 mg daily</strong> &times;up to 26 wk</td>
+                  <td><strong>Favorable 90%</strong> (ITT). Peripheral neuropathy 81%, myelosuppression 48%</td>
                 </tr>
                 <tr>
-                  <td>ZeNix (N Engl J Med 2022) ${cite(6)}</td>
-                  <td>Reference arm: BPaL with linezolid 1200mg daily x 26 weeks (matching Nix-TB's original dosing); bedaquiline and pretomanid dosing unchanged across all arms</td>
-                  <td>Three reduced dose/duration arms: linezolid 1200mg x 9 weeks; 600mg x 26 weeks; 600mg x 9 weeks</td>
-                  <td>Favorable outcomes of 93%, 89%, 91%, and 84% respectively across the four dose/duration arms; 600mg x 26 weeks gave the best risk-benefit balance, with fewer adverse events — the dosing basis for BPaLM's 600mg linezolid today</td>
+                  <td><strong>ZeNix</strong>, NEJM 2022 ${cite(6)}</td>
+                  <td>XDR/pre-XDR or intolerant/non-responsive RR-TB; randomized, n=181</td>
+                  <td>Bedaquiline <strong>200 mg daily &times;8 wk then 100 mg daily &times;18 wk</strong>; pretomanid 200 mg &times;26 wk; <strong>linezolid 1,200 &times;26 wk / 1,200 &times;9 wk / 600 &times;26 wk / 600 &times;9 wk</strong></td>
+                  <td><strong>Favorable 93% / 89% / 91% / 84%</strong>. Neuropathy 38 / 24 / 24 / 13%. <strong>Best balance: 600 mg &times;26 wk</strong></td>
                 </tr>
                 <tr>
-                  <td>TB-PRACTECAL (N Engl J Med 2022) ${cite(7)}</td>
-                  <td>Locally-adapted standard of care, 36&ndash;96 weeks, individualized per national programme guidelines</td>
-                  <td>BPaLM: bedaquiline + pretomanid 200mg + linezolid 600mg + moxifloxacin 400mg, 24 weeks</td>
-                  <td>Unfavorable outcome in 11% (BPaLM) vs 48% (standard care)</td>
+                  <td><strong>TB-PRACTECAL</strong> (stage 2), NEJM 2022 ${cite(7)}</td>
+                  <td>RR-TB, age &ge;15; randomized vs 9&ndash;20-month standard care</td>
+                  <td><strong>BPaLM 24 wk</strong>: bedaquiline 400 mg &times;2 wk then 200 mg 3&times;/wk &times;22 wk; pretomanid 200 mg; <strong>linezolid 600 mg &times;16 wk then 300 mg &times;8 wk</strong>; moxifloxacin 400 mg. Control: individualized, per national guidelines</td>
+                  <td><strong>Unfavorable outcome (lower is better): 11% vs 48%</strong> (mITT; RD &minus;37 points). <strong>Non-inferior</strong> (margin 12 points). Grade &ge;3/serious AEs <strong>19% vs 59%</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;">TB-PRACTECAL doses are taken from WHO's description of the trial in Module 4 (2025). ${cite(29)} Pretomanid and moxifloxacin doses match the WHO/ATS BPaLM regimen.</p>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>BPaLM</strong> (6 months) rather than 9-month or longer (18-month) regimens in MDR/RR-TB</td>
+                  <td>Conditional, very low certainty</td>
                 </tr>
                 <tr>
-                  <td>WHO consolidated guidelines, Dec 2022 ${cite(4)}</td>
-                  <td>&mdash;</td>
-                  <td>BPaLM (drop moxifloxacin to BPaL if fluoroquinolone-resistant), 6 months</td>
-                  <td>Treatment success 89% vs 52% with prior standard-of-care regimens</td>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td><strong>Does not include BPaLM</strong> (it predates it). Longer regimens: all three Group A drugs (levofloxacin/moxifloxacin, bedaquiline, linezolid) + &ge;1 Group B; the "shorter MDR-TB regimen" described is the <strong>older injectable-containing</strong> one (&sect;10.5.2, Algorithm 3)</td>
+                  <td>Not graded in the manual</td>
+                </tr>
+                <tr>
+                  <td>ATS/CDC/ERS/IDSA (2025) ${cite(31)}</td>
+                  <td><strong>BPaLM</strong> for RR-TB, FQ-susceptible, age &ge;14</td>
+                  <td>Strong, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>ATS/CDC/ERS/IDSA (2025) ${cite(31)}</td>
+                  <td><strong>BPaL</strong> (no moxifloxacin) if FQ-resistant or FQ-intolerant</td>
+                  <td>Strong, very low certainty</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>If she weren't eligible for BPaLM, other shortened regimens exist (next stage).</p>
+          <p><em>Local note:</em> the Saudi NTP Manual (2021) predates BPaLM and the newer short regimens. Check your programme's current MDR-TB protocol before prescribing. ${cite(37)}</p>`,
+        pearl:
+          "BPaLM earns its place through shorter duration and far fewer serious adverse events. The one box you must tick before prescribing it to a woman of child-bearing age is pregnancy status.",
+      },
+      {
+        title: "Her pregnancy test is positive. Now what?",
+        context: "Before BPaLM is started, her <strong>pregnancy test is positive</strong>.",
+        question:
+          "BPaLM is not recommended in pregnancy. What does current evidence support instead?",
+        reveal: `
+          <h4>6-month option</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Regimen</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>BEAT Tuberculosis</strong>, NEJM 2026 ${cite(40)}</td>
+                  <td>Pragmatic RCT, South Africa, n=403, <strong>age &ge;6, pregnant/breastfeeding and FQ-resistant patients included</strong></td>
+                  <td><strong>BDLLfxC</strong> 6 months: bedaquiline + delamanid + linezolid + levofloxacin and/or clofazimine (levofloxacin dropped if FQ-resistant; clofazimine dropped if FQ-susceptible) vs 9-month local standard</td>
+                  <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>9-month options</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Regimens</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>endTB</strong>, NEJM 2025 ${cite(9)}</td>
+                  <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
+                  <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BLLfxCZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
+                  <td>Control 80.7% favorable (mITT). Risk differences: <strong>BCLLfxZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
+                </tr>
+                <tr>
+                  <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(41)}</td>
+                  <td>RCT, RR-TB without FQ/aminoglycoside resistance</td>
+                  <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control</td>
+                  <td><strong>Favorable 83% vs 71%</strong> (adjusted difference 11.0%, 2.9&ndash;19.0; non-inferior). Hearing loss 2% vs 9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(9)}</li>
+            <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (mITT). ${cite(10)}</li>
+            <li><strong>Why WHO recommends against DCMZ:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(9, 29)}</li>
+            <li><strong>Fallback: longer individualized regimen.</strong> Total <strong>18&ndash;20 months</strong> for most patients, adjusted to response. ${cite(29)}</li>
+          </ul>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>BDLLfxC</strong> 6 months in MDR/RR-TB <strong>with or without FQ resistance</strong>; usable in pregnancy/breastfeeding and in children</td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>9-month BLMZ, BLLfxCZ, BDLLfxZ</strong> over longer regimens when FQ resistance is excluded; <strong>preference order BLMZ &gt; BLLfxCZ &gt; BDLLfxZ</strong></td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>Against</strong> 9-month DCLLfxZ or DCMZ</td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>9-month all-oral regimen</strong>: bedaquiline &times;6 months + levofloxacin/moxifloxacin, ethionamide, ethambutol, high-dose isoniazid, pyrazinamide, clofazimine &times;4 (&ndash;6) months, then levofloxacin/moxifloxacin, clofazimine, ethambutol, pyrazinamide &times;5 months; <strong>ethionamide may be replaced by 2 months of linezolid 600 mg</strong></td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>WHO Module 4 (2025) ${cite(29)}</td>
+                  <td><strong>Longer regimens:</strong> 18&ndash;20 months total for most patients</td>
+                  <td>Conditional, very low certainty</td>
                 </tr>
               </tbody>
             </table>
           </div>`,
         pearl:
-          "The shorter duration and better safety margin over older regimens is exactly why BPaLM is now preferred whenever a patient qualifies — with confirmed fluoroquinolone susceptibility, this patient is a textbook candidate.",
-      },
-      {
-        title: "What if she did not qualify for BPaLM?",
-        question:
-          "Suppose prior linezolid exposure or intolerance ruled out BPaLM. What does current evidence support as an alternative, and what studies back it?",
-        reveal: `
-          <p>BPaLM/BPaL remains the WHO-prioritized regimen for all eligible patients ${cite(8)}, but two more recent trials established evidence-based alternatives for patients who are not eligible.</p>
-          <div class="table-scroll">
-            <table class="data-table">
-              <thead><tr><th>Study</th><th>Regimen</th><th>Duration</th><th>Role</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td>BEAT-Tuberculosis (WHO update, Aug 2024) ${cite(8)}</td>
-                  <td>Bedaquiline + delamanid + linezolid, combined with levofloxacin, clofazimine, or both — arm-level dosing/results not detailed in available sources</td>
-                  <td>6 months</td>
-                  <td>Alternative all-oral option for patients not eligible for BPaLM</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p><strong>endTB regimen comparison</strong> — endTB tested five experimental 9-month all-oral regimens against a single standard-of-care control, in fluoroquinolone-susceptible RR-TB ${cite(9)}. This is distinct from the related endTB-Q trial, which tested one regimen (bedaquiline-delamanid-linezolid-clofazimine) against standard care specifically for fluoroquinolone-<em>resistant</em> pre-XDR-TB ${cite(10)} — worth keeping the two straight since they answer different clinical questions.</p>
-          <div class="table-scroll">
-            <table class="data-table">
-              <thead><tr><th>Regimen</th><th>Composition</th><th>Duration</th><th>Risk difference vs control (95% CI)</th><th>Non-inferior?</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td>Control</td>
-                  <td>Standard-of-care regimen reflecting WHO guidelines in effect during the trial (individualized, longer)</td>
-                  <td>Per contemporary WHO guidance</td>
-                  <td>80.7% favorable outcome (reference)</td>
-                  <td>reference arm</td>
-                </tr>
-                <tr>
-                  <td>9BCLLfxZ</td>
-                  <td>Bedaquiline + clofazimine + linezolid + levofloxacin + pyrazinamide</td>
-                  <td>9 months</td>
-                  <td>+9.8% (0.9 to 18.7)</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>9BLMZ</td>
-                  <td>Bedaquiline + linezolid + moxifloxacin + pyrazinamide</td>
-                  <td>9 months</td>
-                  <td>+8.3% (&minus;0.8 to 17.4)</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>9BDLLfxZ</td>
-                  <td>Bedaquiline + delamanid + linezolid + levofloxacin + pyrazinamide</td>
-                  <td>9 months</td>
-                  <td>+4.6% (&minus;4.9 to 14.1)</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>9DCMZ</td>
-                  <td>Delamanid + clofazimine + moxifloxacin + pyrazinamide</td>
-                  <td>9 months</td>
-                  <td>+2.5% (&minus;7.5 to 12.5)</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>9DCLLfxZ</td>
-                  <td>Delamanid + clofazimine + linezolid + levofloxacin + pyrazinamide</td>
-                  <td>9 months</td>
-                  <td>78.8% favorable outcome — margin not met</td>
-                  <td>No — the one regimen ruled out</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>In all linezolid-containing arms, the linezolid dose was reduced at week 16 (or sooner if needed) to limit toxicity — the same dose-tapering principle as BPaLM. Grade 3 or higher hepatotoxicity occurred in 11.7% of experimental participants overall vs 7.1% of controls.</p>
-          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Guideline update (WHO Module 4, April 2025)${cite(29)}:</em> two further options were added for patients who don't qualify for BPaLM. The 6-month <strong>BDLLfxC</strong> regimen — bedaquiline, delamanid, linezolid 600&nbsp;mg, levofloxacin, and clofazimine, adapted to BDLLfx if fluoroquinolone-susceptible or BDLC if fluoroquinolone-resistant — may be used in patients with no more than one month of prior bedaquiline, delamanid, or linezolid exposure, and extends 6-month treatment to populations (e.g., children, pregnant patients) who lack safety/dosing data for pretomanid. For fluoroquinolone-susceptible RR-TB specifically, WHO now also states a preference order among the modified 9-month regimens above: BLMZ is preferred over BLLfxCZ, which is preferred over BDLLfxZ; the DCLLfxZ and DCMZ combinations are recommended against. BPaLM remains the preferred first-choice 6-month regimen for eligible patients aged 14 and older — these newer options are specifically for patients who don't qualify for it.</p>`,
-        pearl:
-          "MDR-TB management does not stop at the regimen — contact investigation has to account for the resistance pattern too. Also worth naming for fellows: 4 of 5 endTB regimens performed about as well as standard care, but at 9 months versus 18&ndash;20+ months — that duration reduction is the real headline. The one regimen that failed (9DCLLfxZ) is a useful example of why testing multiple candidate combinations in a single trial matters, rather than assuming any bedaquiline/delamanid-based combination works equally well.",
+          "When BPaLM is off the table, first ask <em>why</em>. Pregnancy points you to BDLLfxC or an endTB regimen. Linezolid intolerance removes almost every short option. The reason for ineligibility picks the regimen.",
       },
     ],
   },
