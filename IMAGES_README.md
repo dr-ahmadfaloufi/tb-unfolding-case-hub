@@ -32,10 +32,11 @@ Files must be `.jpg`. If you only have `.png`, convert or re-save as `.jpg`
 | 1 | Stage 2 | `images/case1/case1-stage2-afb-smear.jpg` | Representative AFB smear (Ziehl-Neelsen stain) — reference image, not this patient's own (negative) result | optional |
 | 1 | Stage 2 | `images/case1/case1-stage2-cxr.jpg` | Right upper lobe cavity | optional |
 | 3 | Stage 1 | `images/case3/case3-stage1-ct-miliary.jpg` | Diffuse micronodular ("miliary") pattern on CT chest | optional |
+| 3 | Stage 6 | `images/case3/case3-stage6-histopath.jpg` | Necrotizing (caseating) granulomas on biopsy histopathology | optional |
 | 4 | Stage 1 | `images/case4/case4-stage1-ct-lymphadenopathy.jpg` | Bilateral hilar and mediastinal lymphadenopathy without parenchymal lung lesion | optional |
 | 4 | Stage 2 | `images/case4/case4-stage2-histopath-necrotizing-granuloma.jpg` | Necrotizing granulomatous inflammation on EBUS-TBNA cytology | optional |
 | 4 | Stage 3 | `images/case4/case4-stage3-histopath-non-necrotizing-granuloma.jpg` | Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image | optional |
-| 5 | Stage 3 | `images/case5/case5-stage3-cxr-normal.jpg` | Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding | optional |
+| 5 | Stage 4 | `images/case5/case5-stage4-cxr-normal.jpg` | Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding | optional |
 
 Case 2 has no imaging findings described in the source text, so it has no
 placeholder slot. All slots are optional — every one degrades gracefully to
@@ -52,10 +53,11 @@ const IMAGE_AI_FLAGS = {
   "case1-stage2-afb-smear": false,
   "case1-stage2-cxr": false,
   "case3-stage1-ct-miliary": false,
+  "case3-stage6-histopath": false,
   "case4-stage1-ct-lymphadenopathy": false,
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
-  "case5-stage3-cxr-normal": false,
+  "case5-stage4-cxr-normal": false,
 };
 ```
 

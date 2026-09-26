@@ -216,11 +216,14 @@ function renderReferences() {
     const doiLink = item.doi
       ? ` <a class="doi" href="https://doi.org/${item.doi}" target="_blank" rel="noopener noreferrer">https://doi.org/${item.doi}</a>`
       : "";
+    const urlLink = !item.doi && item.url
+      ? ` <a class="doi" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.url}</a>`
+      : "";
     const tag = item.tag ? `<span class="ref-tag">[${item.tag}]</span>` : "";
     const note = item.note ? ` <span class="ref-tag">${item.note}</span>` : "";
     const idAttr = isNumbered ? ` id="ref${item.n}"` : "";
     const num = isNumbered ? `<span class="ref-num">${item.n}.</span>` : "";
-    return `<li class="ref-item"${idAttr}>${num}${item.text}${doiLink}${tag}${note}</li>`;
+    return `<li class="ref-item"${idAttr}>${num}${item.text}${doiLink}${urlLink}${tag}${note}</li>`;
   }
 
   let html = "";
