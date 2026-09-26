@@ -123,86 +123,170 @@ const CASES = [
     hubDescription:
       "A subacute cough-and-weight-loss presentation worked up with a rapid molecular test and culture — what that first result does and doesn't rule out, and the evidence behind the regimen once the full picture is in.",
     vignette:
-      "34-year-old male laborer, no known TB contact, 6 weeks productive cough, low-grade fevers, night sweats, 5 kg weight loss.",
+      "34-year-old Saudi man, a laborer who has lived in Saudi Arabia all his life with no travel abroad and no known TB contact. Six weeks of productive cough, low-grade fevers, night sweats, and 5 kg weight loss.",
     stages: [
       {
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
+          <p><strong>Differential first</strong>, most to least likely, each paired with the test that confirms or excludes it:</p>
           <ol>
-            <li><strong>The tests:</strong> sputum for AFB smear microscopy and a WHO-recommended rapid molecular test (e.g., Xpert MTB/RIF Ultra) sent together, plus a CXR.</li>
-            <li>Differential to hold in mind while results pend: pulmonary TB, non-tuberculous mycobacteria, endemic fungal infection, subacute bacterial pneumonia, malignancy.</li>
-            <li>Don't just hold the alternatives in mind — test for them: send a routine bacterial sputum culture (covers the pneumonia possibility) alongside the TB workup, and add fungal serology/urine antigen testing (e.g., Histoplasma) if the patient has lived in or traveled through an endemic area.</li>
-            <li>Send the molecular test alongside the smear, not after it — it is faster and does not need to be gated behind microscopy.</li>
-          </ol>`,
-        pearl:
-          'Name both tests explicitly and specify "sent together" — that combination is the single move that shapes everything downstream today.',
+            <li><strong>Pulmonary TB</strong>
+              <ul>
+                <li>Sputum &times;3 for <strong>AFB smear</strong>;</li>
+                <li>a <strong>rapid NAAT (e.g. Xpert MTB/RIF Ultra) on the first specimen</strong>;</li>
+                <li><strong>mycobacterial culture (liquid &plusmn; solid) with drug-susceptibility testing</strong> on every specimen;</li>
+                <li><strong>CXR</strong>.</li>
+                <li>All of these go out on day 1, not in sequence. ${cite(34)}</li>
+              </ul>
+            </li>
+            <li><strong>Subacute bacterial pneumonia / lung abscess</strong>
+              <ul><li>Sputum Gram stain and routine bacterial culture, plus blood cultures if febrile.</li></ul>
+            </li>
+            <li><strong>Non-tuberculous mycobacteria (NTM)</strong>
+              <ul><li>Covered by the same mycobacterial culture with species identification. A <strong>smear-positive, NAAT-negative</strong> result points away from TB. ${cite(34)}</li></ul>
+            </li>
+            <li><strong>Malignancy (e.g. lung cancer, lymphoma)</strong>
+              <ul><li>CT chest if the CXR shows a mass or nodes, with tissue sampling as indicated.</li></ul>
+            </li>
+            <li><strong>Chronic pulmonary aspergillosis (CPA)</strong>
+              <ul><li><strong>Aspergillus IgG</strong> <em>if imaging shows a cavity</em>. The ERS/ESCMID definition requires findings present for <strong>&ge;3 months</strong>, so CPA sits last at 6 weeks of symptoms. ${cite(38)}</li></ul>
+            </li>
+          </ol>
+          <p><strong>Also send, whatever the differential:</strong> an <strong>HIV test</strong>. CDC and WHO recommend routine HIV testing for everyone with presumptive TB. ${cite(33)}</p>`,
+        pearl: `<em>Bedside pitfall:</em> a positive AFB smear is not the same as TB. If the smear is positive but the NAAT is negative, TB becomes unlikely. Think NTM before you start four drugs and notify public health. ${cite(34)}`,
       },
       {
-        title: "Initial results, and what the rapid test actually covers",
+        title: "Initial results: isolate? treat?",
         context:
           "CXR: right upper lobe cavity. AFB smear x1: negative. Rapid molecular test: MTB detected, rifampin resistance not detected." +
           img(1, "stage2", "afb-smear", "Representative AFB smear (Ziehl-Neelsen stain) — reference image, not this patient's own (negative) result") +
           img(1, "stage2", "cxr", "Right upper lobe cavity"),
-        question:
-          'How do you manage isolation and treatment — and what does "rifampin resistance not detected" actually tell you?',
+        question: "How do you manage isolation and treatment today?",
         reveal: `
-          <h4>Reveal — management:</h4>
           <ul>
-            <li>Smear-negative does not rule out active or infectious TB — a cavitary lesion implies a high bacillary burden regardless of smear result</li>
-            <li>Place in airborne isolation now</li>
-            <li>Collect two more sputum specimens for AFB smear and mycobacterial culture — culture remains the gold standard for diagnosis and full drug susceptibility testing (DST)</li>
-            <li>Reasonable to start empiric four-drug therapy (rifampin, isoniazid, pyrazinamide, ethambutol) now rather than wait weeks for culture, given cavitary disease and a positive molecular result</li>
-            <li>Report to public health, begin contact investigation, test for HIV</li>
+            <li><strong>Airborne isolation now.</strong> A negative first smear does not rule out infectious TB, and <strong>cavitation on CXR independently predicts greater infectiousness</strong>. ${cite(28, 37)}</li>
+            <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic DST. ${cite(34)}</li>
+            <li><strong>Start treatment now</strong>, without waiting weeks for culture: cavitary disease plus a positive NAAT is enough. ${cite(33)}</li>
+            <li><strong>Report</strong> to the public health authority, <strong>start the contact investigation</strong>, and <strong>test for HIV</strong> if not already done. ${cite(33)}</li>
           </ul>
-          <h4>Reveal — what the test result actually means:</h4>
-          <ul>
-            <li>Xpert MTB/RIF and Ultra interrogate a single 81-bp region of the <em>rpoB</em> gene (the rifampin resistance-determining region, RRDR, spanning codons 507&ndash;533) — so "rifampin resistance not detected" is specifically about that one gene. It says nothing about isoniazid, which is governed by entirely different genes (<em>katG</em>, the <em>inhA</em> promoter).</li>
-            <li>Isoniazid resistance is not part of this assay's design. Detecting it needs either phenotypic culture DST (slow but definitive) or a separate rapid molecular option — a line probe assay, or the newer Xpert MTB/XDR cartridge, which unlike the original Xpert MTB/RIF also covers isoniazid, fluoroquinolones, and second-line injectables from the same specimen.</li>
-            <li>So this "reassuring" rifampin result is narrow reassurance only — isoniazid susceptibility is still genuinely unknown at this point.</li>
-          </ul>`,
-        pearl:
-          "A rifampin-susceptible result on Xpert tells you about one gene, not the whole drug panel — isoniazid resistance stays silent until culture DST comes back.",
-      },
-      {
-        title:
-          "The DST result, the mutation, and the current evidence-based regimen",
-        context:
-          "Culture positive at 3 weeks. DST: isoniazid resistant via a katG mutation; rifampin, pyrazinamide, ethambutol susceptible.",
-        question:
-          "What does the mutation tell you about the level of resistance, and what regimen/duration does current evidence support?",
-        reveal: `
-          <h4>Reveal — the mutation:</h4>
-          <p>Isoniazid resistance runs through two genes with different clinical weight: <em>katG</em> (activates isoniazid into its bactericidal form) — mutations here, especially at codon 315, typically confer high-level resistance — versus the <em>inhA</em> promoter, where mutations confer lower-level resistance but also cross-resistance to ethionamide/prothionamide. A <em>katG</em> mutation, as here, means isoniazid contributes essentially nothing to any future regimen; high-dose isoniazid strategies sometimes used for low-level <em>inhA</em>-mediated resistance do not apply in this case.</p>
-          <h4>Reveal — regimen and evidence:</h4>
-          <p>Discontinue isoniazid. Current WHO guidance for confirmed rifampin-susceptible, isoniazid-resistant TB (Hr-TB) recommends rifampin, ethambutol, pyrazinamide, and levofloxacin for 6 months.</p>
+          <h4>Guideline table: first-line regimen options for drug-susceptible pulmonary TB</h4>
           <div class="table-scroll">
             <table class="data-table">
-              <thead><tr><th>Study</th><th>Control arm</th><th>Experimental arm</th><th>Key result</th></tr></thead>
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>Fregonese et al., IPD meta-analysis (Lancet Respir Med 2018) ${cite(1)} — comparison 1</td>
-                  <td>&ge;6 months rifampicin + ethambutol + pyrazinamide (REZ), no fluoroquinolone (pooled across 33 heterogeneous cohort studies; individual dosing varied by site rather than one fixed protocol)</td>
-                  <td>REZ + a fluoroquinolone, &ge;6 months</td>
-                  <td>Adding a fluoroquinolone significantly improved treatment success (aOR 2.8, 95% CI 1.1&ndash;7.3)</td>
+                  <td>ATS/CDC/IDSA (2016) ${cite(33)}</td>
+                  <td>2 months isoniazid-rifampin-pyrazinamide-ethambutol, then 4 months isoniazid-rifampin (<strong>2HRZE/4HR</strong>)</td>
+                  <td>Standard regimen</td>
                 </tr>
                 <tr>
-                  <td>Same meta-analysis ${cite(1)} — comparison 2</td>
-                  <td>&ge;6 months REZ</td>
-                  <td>Standardized retreatment regimen: 2 months streptomycin + 3 months pyrazinamide + 8 months isoniazid/rifampicin/ethambutol</td>
-                  <td>Significantly worse treatment success with the streptomycin-containing regimen (aOR 0.4, 95% CI 0.2&ndash;0.7) — no benefit from adding an injectable</td>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td><strong>2HRZE/4HR</strong> "remains the recommended regimen"; fixed-dose combinations; <strong>daily</strong> dosing (thrice-weekly not recommended); 2HRZE/6HE to be phased out (&sect;5.5, &sect;5.7)</td>
+                  <td>Not graded in the manual</td>
                 </tr>
                 <tr>
-                  <td>WHO Hr-TB guidelines, 2018 ${cite(2)}</td>
-                  <td>&mdash; (guideline, not a trial)</td>
-                  <td>Rifampicin (~10 mg/kg) + ethambutol (~15 mg/kg) + pyrazinamide (~25 mg/kg) + levofloxacin (weight-based, typically 750&ndash;1000 mg), 6 months, no isoniazid, no injectable</td>
-                  <td>Conditional recommendation, very low certainty in the evidence</td>
+                  <td>ATS/CDC/ERS/IDSA (2025) ${cite(31)}</td>
+                  <td><strong>4-month 2HPZM/2HPM</strong> (isoniazid 300 mg + rifapentine 1,200 mg + moxifloxacin 400 mg daily &times;17 wk; pyrazinamide weight-based &times;8 wk) for age &ge;12</td>
+                  <td>Conditional, moderate certainty</td>
                 </tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          <p><strong>What this case uses:</strong> <strong>2HRZE/4HR (RIPE)</strong>, the regimen most widely used in Saudi Arabia and the <strong>Saudi national recommendation</strong> (NTP Manual 2021, &sect;5.5). ${cite(37)}</p>
+          <ul>
+            <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(37)} That wording predates the 4-month rifapentine&ndash;moxifloxacin regimen (HPZM) now endorsed by ATS 2025. ${cite(31)} Rifapentine is also not available in Saudi Arabia, so HPZM isn't a practical option in KSA either.</li>
+            <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> goes with isoniazid in anyone at risk of neuropathy (e.g. diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, pregnancy). ${cite(33)}</li>
+          </ul>`,
         pearl:
-          'This regimen is real and WHO-endorsed, but notice the evidence tier — a retrospective IPD meta-analysis, not a randomized trial, and a conditional, very-low-certainty recommendation. Compare that to the RCT-driven evidence in <a href="case.html?id=2">Case 2</a>: same question, "what does the evidence say," very different strength of evidence.',
+          "A cavity plus a positive NAAT means isolate and treat today. The negative first smear changes neither decision.",
+      },
+      {
+        title: "How far can you trust \"rifampin resistance not detected\"?",
+        question:
+          "The rapid test says rifampin resistance not detected. How much should that reassure you, and what does it <em>not</em> tell you?",
+        reveal: `
+          <ul>
+            <li><strong>What it looks at:</strong> Xpert checks only the rifampin-resistance region of one gene (<em>rpoB</em>). It does not test isoniazid at all.</li>
+            <li><strong>How accurate it is:</strong> in a Cochrane review, <strong>Xpert Ultra detected rifampin resistance with 94.9% sensitivity and 99.1% specificity</strong> (Xpert MTB/RIF: 95.3% / 98.8%; high-certainty evidence). ${cite(35)}</li>
+            <li><strong>What that means here:</strong> the same review estimates that when 10% of tested patients have rifampin resistance, Ultra <strong>misses about 5 per 1,000 tested</strong>. In a new patient in a low-resistance setting, where WHO estimates <strong>3.2% of new TB cases globally</strong> have MDR/RR-TB, a "not detected" result is <strong>highly reliable</strong>. ${cite(35, 36)}</li>
+            <li><strong>Rarely it misses resistance</strong>, and culture-based DST (or sequencing) confirms the final profile.</li>
+            <li><strong>The real open question is isoniazid.</strong> Xpert MTB/RIF says nothing about it. You need <strong>culture-based DST</strong> or a <strong>rapid molecular test for isoniazid (line probe assay)</strong>. The Saudi manual indicates this especially after prior isoniazid treatment or where isoniazid resistance is common. ${cite(37)}</li>
+          </ul>`,
+        pearl:
+          "In a new patient, \"rifampin resistance not detected\" is a result you can trust. What you still don't know is isoniazid susceptibility, and only DST will tell you.",
+      },
+      {
+        title: "The mutation",
+        context:
+          "Culture positive at 3 weeks. DST: isoniazid resistant via a <em>katG</em> mutation; rifampin, pyrazinamide, ethambutol susceptible.",
+        question:
+          "What does a <em>katG</em> mutation tell you about the level of isoniazid resistance?",
+        reveal: `
+          <p>Isoniazid resistance runs through two genes with different clinical weight:</p>
+          <ul>
+            <li><strong><em>katG</em>:</strong> mutations typically confer <strong>high-level resistance</strong>, so isoniazid contributes essentially nothing, even at high dose.</li>
+            <li><strong><em>inhA</em> promoter:</strong> mutations typically confer <strong>low-level resistance</strong> that high-dose isoniazid may overcome, <strong>plus cross-resistance to ethionamide/prothionamide</strong>.</li>
+          </ul>
+          <p>${cite(39)}</p>`,
+        pearl:
+          "Know which gene you're dealing with. With <em>katG</em>, isoniazid is gone even at high dose. With <em>inhA</em>, high-dose isoniazid may still work, but ethionamide probably won't.",
+      },
+      {
+        title: "Regimen and evidence",
+        question:
+          "What regimen and duration does current evidence support for rifampin-susceptible, isoniazid-resistant TB?",
+        reveal: `
+          <p>Stop isoniazid. Give <strong>rifampin + ethambutol + pyrazinamide + levofloxacin for 6 months</strong>. ${cite(2, 37)}</p>
+          <h4>Studies</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Study</th><th>Comparison</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>Fregonese et al., IPD meta-analysis, Lancet Respir Med 2018 ${cite(1)}, comparison 1</td>
+                  <td>&ge;6 months REZ <strong>+ a fluoroquinolone</strong> vs &ge;6 months REZ alone (33 cohort datasets)</td>
+                  <td>Treatment success improved with a fluoroquinolone (aOR 2.8, 95% CI 1.1&ndash;7.3)</td>
+                </tr>
+                <tr>
+                  <td>Same meta-analysis ${cite(1)}, comparison 2</td>
+                  <td>Standardized retreatment regimen <strong>with streptomycin</strong> vs &ge;6 months REZ</td>
+                  <td>Worse success with streptomycin (aOR 0.4, 95% CI 0.2&ndash;0.7). No benefit from adding an injectable.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>WHO Hr-TB (2018) ${cite(2)}</td>
+                  <td>6 months rifampicin + ethambutol + pyrazinamide + <strong>levofloxacin</strong>, no isoniazid required, <strong>no injectable</strong></td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>Saudi NTP Manual (2021) ${cite(37)}</td>
+                  <td>Rifampicin + ethambutol + pyrazinamide + <strong>levofloxacin for 6 months</strong>; do <strong>not</strong> add streptomycin or other injectables (&sect;10.5.1)</td>
+                  <td>Not graded in the manual</td>
+                </tr>
+                <tr>
+                  <td>ATS/CDC/ERS/IDSA DR-TB (2019) ${cite(32)}</td>
+                  <td><strong>Add a later-generation fluoroquinolone</strong> to 6 months daily rifampin + ethambutol + pyrazinamide</td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+                <tr>
+                  <td>Same, second recommendation ${cite(32)}</td>
+                  <td><strong>Pyrazinamide may be shortened to 2 months</strong> in selected patients (noncavitary, lower-burden disease, or pyrazinamide toxicity)</td>
+                  <td>Conditional, very low certainty</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Practical note:</strong> rifampin lowers <strong>moxifloxacin</strong> exposure by roughly 30%, so some experts prefer <strong>levofloxacin</strong> alongside rifampin. ${cite(32)} This patient has cavitary disease, so the pyrazinamide-shortening option does not apply.</p>`,
+        pearl:
+          "Both the WHO and ATS isoniazid-resistant regimens rest on conditional, very-low-certainty evidence from observational patient data. There are no randomized trials behind them. Know that when you defend the regimen on rounds.",
       },
       {
         title: "The timing question",
@@ -210,9 +294,23 @@ const CASES = [
           "What if isoniazid resistance is only confirmed after standard first-line therapy has already started — or what if it is strongly suspected before confirmation?",
         reveal: `
           <ul>
-            <li>If Hr-TB is confirmed after 2HRZE/4HR has already begun: continue rifampin, ethambutol, and pyrazinamide (reintroducing pyrazinamide/ethambutol if already stopped per the intensive-phase schedule), and add levofloxacin once rifampin resistance has been reliably excluded — levofloxacin needs a full 6 months, even if that means the companion drugs run longer than 6 months total.</li>
-            <li>Empiric REZ plus levofloxacin can reasonably be started before lab confirmation when Hr-TB is strongly presumed — for example, a close contact of a known Hr-TB source — provided rifampin resistance has been reliably excluded first. If DST later shows isoniazid susceptibility after all, levofloxacin is stopped and the patient completes the standard 2HRZE/4HR course instead.</li>
-            <li>Worth knowing: real-world programs do not always track the guideline exactly — one reported cohort used a 9-month regimen with an injectable in the first 3 months rather than the WHO 6-month recommendation, despite the evidence above not showing an added benefit from injectables.</li>
+            <li><strong>Confirmed after 2HRZE/4HR has started:</strong> repeat rapid rifampin testing. <strong>Once rifampin resistance is excluded, give a full 6-month course of (H)REZ-Lfx.</strong> The 6 months are driven by levofloxacin, so the companion drugs often run longer than 6 months in total. If rifampin resistance is found, switch to an MDR-TB regimen. ${cite(2)}</li>
+            <li><strong>Very late confirmation</strong> (e.g. 5 months into 2HRZE/4HR): whether to start 6 months of (H)REZ-Lfx at that point depends on the patient's clinical and microbiological status. ${cite(2)}</li>
+            <li><strong>Strongly presumed Hr-TB</strong> (e.g. a close contact of a confirmed Hr-TB source): the Hr-TB regimen may be started while DST is pending. If DST later shows isoniazid susceptibility, <strong>stop levofloxacin and complete 2HREZ/4HR</strong>. ${cite(2)}</li>
+            <li><strong>Monitoring on this regimen:</strong>
+              <ul>
+                <li><strong>Liver:</strong> monthly AST where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(2)}</li>
+                <li><strong>QT:</strong> avoid levofloxacin with known or suspected QT prolongation. Baseline-corrected QTc; watch hypokalaemia and other QT-prolonging drugs. ${cite(2)}</li>
+                <li><strong>Fluoroquinolone class warnings:</strong> tendinitis/tendon rupture, severe hypoglycaemia, mental-health effects, aortic rupture/dissection. ${cite(32)}</li>
+                <li><strong>Absorption:</strong> don't co-administer levofloxacin with antacids or other divalent-cation products. Milk restriction is not needed. ${cite(2)}</li>
+              </ul>
+            </li>
+            <li><strong>When to consider extending beyond 6 months:</strong> WHO says prolongation <strong>may be considered</strong> for <strong>extensive cavitary disease</strong> or <strong>slow smear/culture conversion</strong>. In slow converters, <strong>first rule out acquired rifampicin (and fluoroquinolone/pyrazinamide) resistance</strong>. ${cite(2)}
+              <ul>
+                <li>For comparison, in <em>drug-susceptible</em> TB, ATS/CDC/IDSA extend the continuation phase to 7 months (9 months total) when there is <strong>both</strong> cavitation <strong>and</strong> a positive 2-month culture. ${cite(33)}</li>
+              </ul>
+            </li>
+            <li>If levofloxacin can't be used (toxicity/resistance), <strong>6(H)REZ</strong> is the alternative. <strong>Do not substitute an injectable.</strong> ${cite(2)}</li>
           </ul>`,
         pearl:
           "The timing rule is simple even though the regimen's evidence is not RCT-grade — exclude rifampin resistance first, always, then decide whether levofloxacin gets added now or once confirmation lands.",
