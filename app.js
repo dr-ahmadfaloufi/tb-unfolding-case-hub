@@ -206,6 +206,133 @@ function renderCase() {
   render();
 }
 
+// ---------- start-here questions ----------
+
+function renderStart() {
+  const root = document.getElementById("start-root");
+  if (!root || typeof MCQS === "undefined") return;
+
+  const LETTERS = "ABCDE";
+  const state = {
+    current: 0,
+    selected: null,
+    checked: false,
+    results: MCQS.map(() => null), // true / false once checked
+  };
+
+  function questionHtml() {
+    const q = MCQS[state.current];
+    const isLast = state.current === MCQS.length - 1;
+
+    const options = q.options
+      .map((text, i) => {
+        let cls = "mcq-option";
+        if (state.checked) {
+          if (i === q.answer) cls += " correct";
+          else if (i === state.selected) cls += " incorrect";
+        } else if (i === state.selected) {
+          cls += " selected";
+        }
+        return `<li><button type="button" class="${cls}" data-option="${i}" ${
+          state.checked ? "disabled" : ""
+        } aria-pressed="${i === state.selected}">
+          <span class="mcq-letter">${LETTERS[i]}</span><span>${text}</span>
+        </button></li>`;
+      })
+      .join("");
+
+    let feedback = "";
+    if (state.checked) {
+      const right = state.selected === q.answer;
+      feedback = `
+        <div class="reveal-block">
+          <p class="mcq-verdict ${right ? "right" : "wrong"}">${
+            right ? "Correct" : `Not quite — the answer is ${LETTERS[q.answer]}`
+          }</p>
+          ${q.rationale}
+        </div>`;
+    }
+
+    const action = state.checked
+      ? `<button type="button" class="btn" id="mcq-next">${isLast ? "See your score" : "Next question &rarr;"}</button>`
+      : `<button type="button" class="btn" id="mcq-check" ${state.selected === null ? "disabled" : ""}>Check</button>`;
+
+    return `
+      <div class="stage-card">
+        <p class="stage-title">Question ${state.current + 1} of ${MCQS.length} &mdash; ${q.topic}</p>
+        <p class="stage-question">${q.stem}</p>
+        <ol class="mcq-options">${options}</ol>
+        ${feedback}
+        <div class="stage-actions">${action}</div>
+      </div>`;
+  }
+
+  function scoreHtml() {
+    const score = state.results.filter((r) => r === true).length;
+    const missed = state.results
+      .map((r, i) => (r ? null : `<li>Q${i + 1}. ${MCQS[i].topic}</li>`))
+      .filter(Boolean)
+      .join("");
+    return `
+      <div class="stage-card case-complete">
+        <h2>You scored ${score} of ${MCQS.length}</h2>
+        ${missed ? `<p>Worth another look:</p><ul class="mcq-missed">${missed}</ul>` : "<p>Every question right.</p>"}
+        <div class="case-complete-actions">
+          <button type="button" class="btn btn-secondary" id="mcq-retake">&#8635; Retake</button>
+          <a class="btn" href="case.html?id=1">Go to Case 1 &rarr;</a>
+          <a class="btn btn-secondary" href="index.html">Back to hub</a>
+        </div>
+      </div>`;
+  }
+
+  function render() {
+    const done = state.current >= MCQS.length;
+    root.innerHTML = done ? scoreHtml() : questionHtml();
+    attachHandlers();
+  }
+
+  function attachHandlers() {
+    root.querySelectorAll(".mcq-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.selected = parseInt(btn.getAttribute("data-option"), 10);
+        render();
+      });
+    });
+    const check = document.getElementById("mcq-check");
+    if (check) {
+      check.addEventListener("click", () => {
+        if (state.selected === null) return;
+        state.checked = true;
+        state.results[state.current] = state.selected === MCQS[state.current].answer;
+        render();
+      });
+    }
+    const next = document.getElementById("mcq-next");
+    if (next) {
+      next.addEventListener("click", () => {
+        state.current += 1;
+        state.selected = null;
+        state.checked = false;
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    const retake = document.getElementById("mcq-retake");
+    if (retake) {
+      retake.addEventListener("click", () => {
+        state.current = 0;
+        state.selected = null;
+        state.checked = false;
+        state.results = MCQS.map(() => null);
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  }
+
+  render();
+}
+
 // ---------- references page ----------
 
 function renderReferences() {
@@ -276,5 +403,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPresentationToggle();
   renderHub();
   renderCase();
+  renderStart();
   renderReferences();
 });

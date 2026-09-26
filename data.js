@@ -1556,6 +1556,232 @@ const CASES = [
   },
 ];
 
+// ============================================================
+// START HERE — introductory single-best-answer questions
+// Foundations only; no case's headline answer is tested here.
+// `answer` is the zero-based index of the correct option.
+// ============================================================
+const MCQS = [
+  {
+    topic: "Smear-positive, NAAT-negative",
+    stem:
+      "A 67-year-old woman with long-standing bronchiectasis has a chronic productive cough. Sputum AFB smear is <strong>positive</strong>; Xpert MTB/RIF Ultra on the same specimen is <strong>negative</strong>. CXR shows nodular bronchiectasis without cavitation. What is the most appropriate next step?",
+    options: [
+      "Start isoniazid, rifampin, pyrazinamide and ethambutol today",
+      "Send an IGRA to decide whether the smear reflects TB",
+      "Place her in airborne isolation and treat as smear-positive TB",
+      "Await mycobacterial culture with species identification",
+      "Arrange bronchoscopy to repeat the NAAT on lavage fluid",
+    ],
+    answer: 3,
+    rationale: `
+      <p>An AFB smear detects any acid-fast bacillus, not only <em>M. tuberculosis</em>. A smear-positive, NAAT-negative result points away from TB, and the leading alternative is non-tuberculous mycobacteria. Mycobacterial culture with species identification settles it. ${cite(1)}</p>
+      <ul>
+        <li><strong>Starting four drugs or isolating as smear-positive TB</strong> (the most tempting options) is exactly the bedside pitfall to avoid.</li>
+        <li><strong>An IGRA</strong> cannot distinguish latent from active TB, and it does not identify the organism in the sputum. ${cite(1)}</li>
+      </ul>`,
+  },
+  {
+    topic: "Who is most likely to have drug-resistant TB?",
+    stem:
+      "Four patients have newly diagnosed pulmonary TB. Which one has the highest pre-test probability of MDR/RR-TB?",
+    options: [
+      "A 25-year-old new patient with a right upper lobe cavity",
+      "A 40-year-old with diabetes and no previous TB treatment",
+      "A 55-year-old treated for TB 3 years ago, with interruptions",
+      "A 35-year-old new patient with a 3+ sputum smear grade",
+      "A 30-year-old new patient with bilateral disease on CXR",
+    ],
+    answer: 2,
+    rationale: `
+      <p>Previous treatment, especially with adherence gaps, is the strongest predictor of resistance. Worldwide in 2024, <strong>16%</strong> of previously treated patients had MDR/RR-TB, versus <strong>3.2%</strong> of new patients. ${cite(8)} In Saudi data, prior treatment carried an odds ratio of about <strong>7</strong> for MDR-TB. ${cite(16)}</p>
+      <ul>
+        <li><strong>Cavitation and a high smear grade</strong> mark bacillary burden and infectiousness, not resistance. ${cite(4, 65)}</li>
+        <li><strong>Diabetes</strong> raises the risk of progressing to disease (RR 3.11), not of resistance. ${cite(78)}</li>
+      </ul>`,
+  },
+  {
+    topic: "Which fluoroquinolone alongside rifampin?",
+    stem:
+      "A fluoroquinolone is being added to a TB regimen that will continue to include rifampin. Which choice is best supported, and why?",
+    options: [
+      "Moxifloxacin, because rifampin increases its exposure",
+      "Moxifloxacin, because it has the lowest MIC against <em>M. tuberculosis</em>",
+      "Ciprofloxacin, because it has the smallest effect on the QT interval",
+      "Levofloxacin, because it does not prolong the QT interval",
+      "Levofloxacin, because rifampin lowers moxifloxacin exposure by about 30%",
+    ],
+    answer: 4,
+    rationale: `
+      <p>Rifampin lowers moxifloxacin exposure by roughly 30%, so some experts prefer levofloxacin alongside rifampin. ${cite(12)}</p>
+      <ul>
+        <li><strong>"Levofloxacin, because it does not prolong the QT interval"</strong> (the most tempting option) has the right drug for the wrong reason. Levofloxacin should be avoided in known or suspected QT prolongation; baseline QTc and potassium still matter. ${cite(10)}</li>
+        <li><strong>"Rifampin increases moxifloxacin exposure"</strong> has the interaction the wrong way round.</li>
+      </ul>`,
+  },
+  {
+    topic: "When to add pyridoxine",
+    stem:
+      "A 38-year-old is starting 2HRZE/4HR for drug-susceptible pulmonary TB. Which feature is the clearest indication to add pyridoxine 25–50 mg/day?",
+    options: [
+      "Age over 35 years",
+      "Type 2 diabetes",
+      "Cavitary disease on CXR",
+      "A 3+ sputum smear grade",
+      "A positive IGRA",
+    ],
+    answer: 1,
+    rationale: `
+      <p>Pyridoxine is given with isoniazid to anyone at risk of neuropathy, including people with diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, or pregnancy. ${cite(3)}</p>
+      <ul>
+        <li><strong>Cavitation and smear grade</strong> reflect disease burden, not neuropathy risk.</li>
+        <li><strong>An IGRA result</strong> has no bearing on isoniazid toxicity.</li>
+      </ul>`,
+  },
+  {
+    topic: "What makes a source patient more infectious?",
+    stem:
+      "A 50-year-old man has culture-confirmed pulmonary TB. <strong>Three sputum smears were negative.</strong> Which additional finding most raises the priority of his contacts for evaluation?",
+    options: [
+      "Cavitation on his chest radiograph",
+      "Extrapulmonary involvement of cervical nodes",
+      "A positive IGRA in the index patient",
+      "His age over 50 years",
+      "A lymphocytic pleural effusion",
+    ],
+    answer: 0,
+    rationale: `
+      <p>Cavitation on CXR independently predicts greater infectiousness, even after smear results are accounted for. ${cite(4)} The Saudi NTP Manual still calls for contact investigation when the CXR shows cavities, even with three negative smears. ${cite(5)}</p>
+      <ul>
+        <li><strong>A positive IGRA</strong> (the most tempting option) reflects immune sensitisation, not how many bacilli the patient is shedding. It cannot tell latent from active TB. ${cite(1)}</li>
+      </ul>`,
+  },
+  {
+    topic: "Co-trimoxazole in HIV-associated TB",
+    stem:
+      "A 29-year-old woman with HIV (CD4 <strong>420</strong> cells/µL, on no treatment) is starting treatment for pulmonary TB. What is recommended regarding co-trimoxazole?",
+    options: [
+      "Not needed while her CD4 count stays above 200",
+      "Start only once antiretroviral therapy has begun",
+      "Start after the intensive phase of TB treatment ends",
+      "Start now and continue throughout TB treatment",
+      "Start only if her CD4 count falls below 350",
+    ],
+    answer: 3,
+    rationale: `
+      <p>WHO recommends co-trimoxazole prophylaxis for all people with HIV and active TB, <strong>regardless of CD4</strong> (strong recommendation, high certainty). ${cite(47)} The Saudi NTP Manual gives it to all HIV-positive TB patients, started as soon as possible and continued throughout TB treatment. ${cite(5)}</p>
+      <ul>
+        <li><strong>The CD4-threshold options</strong> (the most tempting) do not apply: in HIV-associated TB, no CD4 threshold is used.</li>
+      </ul>`,
+  },
+  {
+    topic: "Before starting ART at a low CD4",
+    stem:
+      "A 34-year-old man has newly diagnosed HIV (CD4 <strong>62</strong> cells/µL) and confirmed pulmonary TB. He has no headache and a normal mental state. Before he starts ART, which test is recommended?",
+    options: [
+      "Serum or plasma cryptococcal antigen",
+      "Urine lateral-flow LAM",
+      "Lumbar puncture with CSF analysis",
+      "Repeat sputum Xpert Ultra",
+    ],
+    answer: 0,
+    rationale: `
+      <p>WHO strongly recommends cryptococcal antigen (CrAg) screening before ART when CD4 is <strong>&lt;100</strong>. A positive result leads to a lumbar puncture and pre-emptive antifungal therapy. ${cite(28)}</p>
+      <ul>
+        <li><strong>Lumbar puncture</strong> (the most tempting option) is the step <em>after</em> a positive CrAg, not a routine test for everyone.</li>
+        <li><strong>LF-LAM</strong> is a TB diagnostic for people with advanced HIV being evaluated for TB. ${cite(27)} His TB is already confirmed.</li>
+      </ul>`,
+  },
+  {
+    topic: "Can't expectorate",
+    stem:
+      "A 60-year-old man has suspected pulmonary TB but <strong>cannot produce sputum</strong>. According to ATS/IDSA/CDC, what is the recommended first sampling method?",
+    options: [
+      "Bronchoscopy with bronchoalveolar lavage",
+      "Gastric aspirate",
+      "Sputum induction",
+      "Transbronchial lung biopsy",
+      "Urine NAAT",
+    ],
+    answer: 2,
+    rationale: `
+      <p>ATS/IDSA/CDC suggest <strong>sputum induction rather than bronchoscopy</strong> as the first sampling method when a patient cannot expectorate. Bronchoscopy is used if induced sputum cannot be obtained, and post-bronchoscopy sputum should also be collected (conditional recommendations). ${cite(1)}</p>
+      <ul>
+        <li><strong>Bronchoscopy</strong> (the most tempting option) is reasonable later, but not first-line.</li>
+      </ul>`,
+  },
+  {
+    topic: "Diagnosing sarcoidosis",
+    stem:
+      "EBUS-TBNA of a subcarinal node in a 42-year-old woman shows <strong>non-necrotizing</strong> granulomas. AFB smear and NAAT on the aspirate are negative; mycobacterial and fungal cultures are pending. Under the ATS sarcoidosis guideline, what else is required before diagnosing sarcoidosis?",
+    options: [
+      "A second EBUS showing the same histology",
+      "Bilateral hilar lymphadenopathy on CT",
+      "A negative IGRA",
+      "A tissue sample from a second organ",
+      "Exclusion of other causes of granulomatous inflammation",
+    ],
+    answer: 4,
+    rationale: `
+      <p>The ATS guideline defines sarcoidosis by non-necrotizing granulomas <strong>plus exclusion of other granulomatous causes</strong>. ${cite(52)} That is why the pending cultures matter: on extrapulmonary tissue, a negative smear or NAAT never excludes TB. ${cite(1)}</p>
+      <ul>
+        <li><strong>A negative IGRA</strong> (the most tempting option) does not do this job. An IGRA is a test for TB <em>infection</em> and cannot tell latent from active TB, so it cannot diagnose TB in the node; the cultures can. ${cite(1)}</li>
+      </ul>`,
+  },
+  {
+    topic: "Baseline testing in a BCG-vaccinated health worker",
+    stem:
+      "A 26-year-old physician who <strong>received BCG</strong> in childhood needs baseline testing for TB infection before starting work. Which approach do ATS/IDSA/CDC recommend?",
+    options: [
+      "A single-step tuberculin skin test",
+      "An interferon-gamma release assay",
+      "A two-step tuberculin skin test",
+      "Both a skin test and an IGRA",
+      "A chest radiograph alone",
+    ],
+    answer: 1,
+    rationale: `
+      <p>ATS/IDSA/CDC recommend an IGRA over the TST in people aged &ge;5 years with a history of BCG vaccination. TST is an acceptable alternative when IGRA is unavailable or too costly. ${cite(1)}</p>
+      <ul>
+        <li><strong>A two-step TST</strong> (the most tempting option): if a TST <em>is</em> used for staff who will be retested periodically, the Saudi NTP Manual recommends two-step testing to avoid mistaking a boosted reaction for new infection. ${cite(5)} That is a workable alternative, not the preferred test.</li>
+        <li><strong>A chest radiograph</strong> looks for disease, not infection.</li>
+      </ul>`,
+  },
+  {
+    topic: "When does TB happen after infection?",
+    stem:
+      "A household contact's IGRA converts from negative to positive. Without preventive treatment, when is her risk of developing active TB concentrated?",
+    options: [
+      "Within the first 2 weeks",
+      "Within the first 2 years",
+      "Between years 5 and 10",
+      "Between years 10 and 20",
+      "Evenly across her lifetime",
+    ],
+    answer: 1,
+    rationale: `
+      <p>Most of the lifetime risk comes early. Of eventual cases, about <strong>45% occur by 1 year, 62% by 2 years and 83% by 5 years</strong>; among Amsterdam contacts, 97% occurred within 2 years. ${cite(71)} Contact studies show incidence is highest in the first year. ${cite(75)}</p>
+      <ul>
+        <li><strong>Within the first 2 weeks</strong> would be biologically implausible, since the TST itself takes up to 6 weeks to convert. ${cite(71)}</li>
+      </ul>`,
+  },
+  {
+    topic: "TB risk with anti-TNF agents",
+    stem:
+      "In the French RATIO registry, which anti-TNF agent had the <strong>lowest</strong> standardized incidence ratio for TB?",
+    options: [
+      "Adalimumab",
+      "Etanercept",
+      "Infliximab",
+      "The risk was similar across all three",
+    ],
+    answer: 1,
+    rationale: `
+      <p>In RATIO the standardized incidence ratios were infliximab 18.6, adalimumab 29.3 and etanercept 1.8. ${cite(76)} Monoclonal anti-TNF antibodies carry a much higher risk than the soluble receptor.</p>
+      <p>None of the anti-TNF-associated cases in RATIO had received correct prophylaxis. That is why international recommendations call for screening and LTBI treatment before a biologic starts. ${cite(76, 85)}</p>`,
+  },
+];
+
 const REFERENCES = {
   groups: [
     {
