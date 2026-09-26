@@ -7,12 +7,14 @@
      node tools/renumber-refs.js --check   report only, change nothing
 
    1. Walks CASES in order (case -> vignette, then each stage's
-      context / question / reveal / pearl / revealExtra) and records
-      the order in which each cite(n) first appears.
+      context / question / reveal / pearl / revealExtra), then the
+      Start-here MCQS (stem, options, rationale), and records the
+      order in which each cite(n) first appears.
    2. Builds an old -> new number map and rewrites every cite(...)
-      inside CASES and every `n:` in REFERENCES.groups.
+      inside CASES and MCQS and every `n:` in REFERENCES.groups.
    3. Rebuilds REFERENCES.groups: one group per case, each reference
       filed under the case that cites it first, sorted by new number.
+      References first cited in MCQS get a "Start here" group.
    4. Prints the map. Exits non-zero if any reference is unused
       (listed but never cited) or missing (cited but not listed).
 
@@ -32,6 +34,7 @@ const GROUP_TITLES = {
   3: "Case 3 — Miliary TB / HIV / LAM",
   4: "Case 4 — Lymphadenopathy / EBUS",
   5: "Case 5 — Occupational exposure / LTBI",
+  start: "Start here questions",
 };
 const STAGE_FIELDS = ["context", "question", "reveal", "pearl", "revealExtra"];
 
@@ -41,28 +44,37 @@ const EOL = src.includes("\r\n") ? "\r\n" : "\n";
 // ---------- load the data the same way the browser does ----------
 const ctx = {};
 vm.createContext(ctx);
-vm.runInContext(src + "\n;this.__CASES = CASES; this.__REFS = REFERENCES;", ctx);
+vm.runInContext(
+  src +
+    '\n;this.__CASES = CASES; this.__REFS = REFERENCES; this.__MCQS = typeof MCQS === "undefined" ? [] : MCQS;',
+  ctx
+);
 const CASES = ctx.__CASES;
 const REFERENCES = ctx.__REFS;
+const MCQS = ctx.__MCQS;
 
 // ---------- 1. first-citation order ----------
-const citedIn = new Map(); // old n -> case id of first citation
+const citedIn = new Map(); // old n -> case id (or "start") of first citation
 const order = [];
 const citeRe = /references\.html#ref(\d+)"/g;
-for (const c of CASES) {
-  const texts = [c.vignette];
-  for (const s of c.stages) for (const f of STAGE_FIELDS) texts.push(s[f]);
+function record(texts, owner) {
   for (const t of texts) {
     if (!t) continue;
     for (const m of t.matchAll(citeRe)) {
       const n = Number(m[1]);
       if (!citedIn.has(n)) {
-        citedIn.set(n, c.id);
+        citedIn.set(n, owner);
         order.push(n);
       }
     }
   }
 }
+for (const c of CASES) {
+  const texts = [c.vignette];
+  for (const s of c.stages) for (const f of STAGE_FIELDS) texts.push(s[f]);
+  record(texts, c.id);
+}
+for (const mcq of MCQS) record([mcq.stem, ...mcq.options, mcq.rationale], "start");
 
 // ---------- 2. map, unused, missing ----------
 const items = REFERENCES.groups.flatMap((g) => g.items);
@@ -85,10 +97,13 @@ for (const it of items) {
 if (unused.length || missing.length) fail("Fix unused/missing references before renumbering.");
 if (CHECK_ONLY) process.exit(0);
 
-// ---------- 3. rewrite cite(...) calls inside CASES ----------
+// ---------- 3. rewrite cite(...) calls inside CASES and MCQS ----------
 const casesStart = src.indexOf("const CASES = [");
 const refsStart = src.indexOf("const REFERENCES = {");
 if (casesStart < 0 || refsStart < casesStart) fail("Could not locate CASES / REFERENCES in data.js.");
+// MCQS sits between CASES and REFERENCES, so this slice covers both.
+const mcqsAt = src.indexOf("const MCQS = [");
+if (mcqsAt >= 0 && (mcqsAt < casesStart || mcqsAt > refsStart)) fail("MCQS must sit between CASES and REFERENCES.");
 
 const casesText = src
   .slice(casesStart, refsStart)
@@ -108,10 +123,10 @@ function itemLine(it, newN) {
 }
 
 const groupsOut = [];
-for (const c of CASES) {
-  const own = order.filter((o) => citedIn.get(o) === c.id);
+for (const owner of [...CASES.map((c) => c.id), "start"]) {
+  const own = order.filter((o) => citedIn.get(o) === owner);
   if (!own.length) continue;
-  const title = GROUP_TITLES[c.id] || `Case ${c.id}`;
+  const title = GROUP_TITLES[owner] || `Case ${owner}`;
   groupsOut.push(
     [
       "    {",
