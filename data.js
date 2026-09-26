@@ -1808,7 +1808,7 @@ const CASES = [
             </li>
             <li><strong>Brucellar spondylitis</strong>
               <ul>
-                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(100)}</li>
+                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(97)}</li>
                 <li>The clinical pattern suggests one or the other, "but the definitive diagnosis depends upon bacteriological tests". ${cite(98)}</li>
               </ul>
             </li>
@@ -1835,16 +1835,16 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Feature</th><th>Tuberculous spondylitis</th><th>Brucellar spondylitis</th><th>Source</th></tr></thead>
               <tbody>
-                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(97)}</td></tr>
-                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(97)}</td></tr>
-                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(97)}</td></tr>
-                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(99)}</td></tr>
-                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(99)}</td></tr>
-                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(99)}</td></tr>
+                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(99)}</td></tr>
+                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(99)}</td></tr>
+                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(99)}</td></tr>
+                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(100)}</td></tr>
+                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(100)}</td></tr>
+                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(100)}</td></tr>
               </tbody>
             </table>
           </div>
-          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(97)}</p>
+          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(99)}</p>
           <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(98)}</p>`,
         pearl:
           "Thoracic, abscess, collapse: think TB. Lumbar, end-plate, disc: think brucella. The final word still belongs to the lab.",
@@ -2118,7 +2118,7 @@ const CASES = [
               <ul><li>Histology and immunohistochemistry on the biopsies.</li></ul>
             </li>
           </ol>
-          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>IGRA</strong> is supporting evidence only (see the next stage). ${cite(111)}</p>`,
+          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>IGRA</strong> is supporting evidence only (see the next stage). ${cite(110)}</p>`,
         pearl:
           "In a TB-endemic setting, every \"Crohn's disease\" of the terminal ileum is intestinal TB until the biopsies and the CT say otherwise.",
       },
@@ -2136,10 +2136,10 @@ const CASES = [
                 <tr><td>Caseation necrosis on biopsy; AFB smear or culture positive; <strong>necrotic nodes on CT</strong></td><td><strong>ITB</strong>: the only <strong>exclusive</strong> features, but all have poor sensitivity</td><td>&mdash;</td><td>${cite(109)}</td></tr>
                 <tr><td>Transverse ulcers; patulous ileocaecal valve; contiguous ileocaecal involvement</td><td>ITB</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
                 <tr><td>Longitudinal or aphthous ulcers; skip lesions; long segments; perianal disease</td><td>CD</td><td>(descriptive)</td><td>${cite(109)}</td></tr>
-                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(110)}</td></tr>
-                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(110)}</td></tr>
-                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(110)}</td></tr>
-                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(111)}</td></tr>
+                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(111)}</td></tr>
+                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(111)}</td></tr>
+                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(111)}</td></tr>
+                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(110)}</td></tr>
                 <tr><td><strong>TB PCR on biopsy</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>47%</strong>, specificity <strong>95%</strong>; "negative results cannot exclude ITB"</td><td>${cite(112)}</td></tr>
               </tbody>
             </table>
@@ -2720,7 +2720,7 @@ const REFERENCES = {
       ],
     },
     {
-      title: "Extrapulmonary additions (renumbered by tools/renumber-refs.js)",
+      title: "Case 6 — Pleural TB",
       items: [
         { n: 87, text: "al-Quorain A, Larbi EB, Satti MB, al-Muhanna F, Baloush A. Tuberculous pleural effusion in the eastern province of Saudi Arabia. Trop Geogr Med. 1994;46(5):298-301.", url: "https://pubmed.ncbi.nlm.nih.gov/7855916/", tag: "Prospective study (Eastern Province, Saudi Arabia)" },
         { n: 88, text: "Light RW, Macgregor MI, Luchsinger PC, Ball WC Jr. Pleural effusions: the diagnostic separation of transudates and exudates. Ann Intern Med. 1972;77(4):507-13.", doi: "10.7326/0003-4819-77-4-507", tag: "Diagnostic study (origin of Light's criteria)" },
@@ -2732,11 +2732,21 @@ const REFERENCES = {
         { n: 94, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
         { n: 95, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
         { n: 96, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
-        { n: 97, text: "Sharif HS, Aideyan OA, Clark DC, Madkour MM, Aabed MY, Mattsson TA, et al. Brucellar and tuberculous spondylitis: comparative imaging features. Radiology. 1989;171(2):419-25.", doi: "10.1148/radiology.171.2.2704806", tag: "Comparative imaging study (Riyadh, Saudi Arabia)" },
+      ],
+    },
+    {
+      title: "Case 7 — Spinal TB",
+      items: [
+        { n: 97, text: "Sadat-Ali M, al-Mousa MS, al-Salem AH. Brucellosis as a cause of backache. Trop Geogr Med. 1991;43(1-2):148-51.", url: "https://pubmed.ncbi.nlm.nih.gov/1836289/", tag: "Prospective screening study (Al-Khobar, Saudi Arabia)" },
         { n: 98, text: "Cordero M, Sánchez I. Brucellar and tuberculous spondylitis. A comparative study of their clinical features. J Bone Joint Surg Br. 1991;73(1):100-3.", doi: "10.1302/0301-620X.73B1.1991738", tag: "Comparative clinical study" },
-        { n: 99, text: "Gao M, Sun J, Jiang Z, Cui X, Liu X, Wang G, et al. Comparison of Tuberculous and Brucellar Spondylitis on Magnetic Resonance Images. Spine (Phila Pa 1976). 2017;42(2):113-121.", doi: "10.1097/BRS.0000000000001697", tag: "Retrospective cross-sectional study" },
-        { n: 100, text: "Sadat-Ali M, al-Mousa MS, al-Salem AH. Brucellosis as a cause of backache. Trop Geogr Med. 1991;43(1-2):148-51.", url: "https://pubmed.ncbi.nlm.nih.gov/1836289/", tag: "Prospective screening study (Al-Khobar, Saudi Arabia)" },
+        { n: 99, text: "Sharif HS, Aideyan OA, Clark DC, Madkour MM, Aabed MY, Mattsson TA, et al. Brucellar and tuberculous spondylitis: comparative imaging features. Radiology. 1989;171(2):419-25.", doi: "10.1148/radiology.171.2.2704806", tag: "Comparative imaging study (Riyadh, Saudi Arabia)" },
+        { n: 100, text: "Gao M, Sun J, Jiang Z, Cui X, Liu X, Wang G, et al. Comparison of Tuberculous and Brucellar Spondylitis on Magnetic Resonance Images. Spine (Phila Pa 1976). 2017;42(2):113-121.", doi: "10.1097/BRS.0000000000001697", tag: "Retrospective cross-sectional study" },
         { n: 101, text: "Ravichandran RCA, Amritanand R, Moses V, Kandagaddala M, Krishnan V, David KS, et al. Computed Tomography-Guided Spinal Biopsy in Suspected Infective Spondylodiscitis: An Institutional Review of Its Utility. Indian J Radiol Imaging. 2023;33(3):289-294.", doi: "10.1055/s-0043-1764491", tag: "Retrospective institutional review" },
+      ],
+    },
+    {
+      title: "Case 8 — TB meningitis",
+      items: [
         { n: 102, text: "Gokul BN, Paul A, Hussein I. Neurobrucellosis. Saudi Med J. 2000;21(6):577-80.", url: "https://pubmed.ncbi.nlm.nih.gov/11500711/", tag: "Case report (Saudi Arabia)" },
         { n: 103, text: "Soares CN, da Silva MTT, Lima MA. Neurobrucellosis. Curr Opin Infect Dis. 2023;36(3):192-197.", doi: "10.1097/QCO.0000000000000920", tag: "Narrative review" },
         { n: 104, text: "Thao LTP, Heemskerk AD, Geskus RB, Mai NTH, Ha DTM, Chau TTH, et al. Prognostic Models for 9-Month Mortality in Tuberculous Meningitis. Clin Infect Dis. 2018;66(4):523-532.", doi: "10.1093/cid/cix849", tag: "Prognostic modelling study" },
@@ -2744,13 +2754,23 @@ const REFERENCES = {
         { n: 106, text: "Thwaites GE, Nguyen DB, Nguyen HD, Hoang TQ, Do TT, Nguyen TC, et al. Dexamethasone for the treatment of tuberculous meningitis in adolescents and adults. N Engl J Med. 2004;351(17):1741-51.", doi: "10.1056/NEJMoa040573", tag: "Randomized placebo-controlled trial" },
         { n: 107, text: "Heemskerk AD, Bang ND, Mai NT, Chau TT, Phu NH, Loc PP, et al. Intensified Antituberculosis Therapy in Adults with Tuberculous Meningitis. N Engl J Med. 2016;374(2):124-34.", doi: "10.1056/NEJMoa1507062", tag: "Randomized placebo-controlled trial" },
         { n: 108, text: "Donovan J, Bang ND, Imran D, Nghia HDT, Burhan E, Huong DTT, et al. Adjunctive Dexamethasone for Tuberculous Meningitis in HIV-Positive Adults. N Engl J Med. 2023;389(15):1357-1367.", doi: "10.1056/NEJMoa2216218", tag: "Randomized placebo-controlled trial — ACT HIV" },
+      ],
+    },
+    {
+      title: "Case 9 — Intestinal TB",
+      items: [
         { n: 109, text: "Kedia S, Das P, Madhusudhan KS, Dattagupta S, Sharma R, Sahni P, et al. Differentiating Crohn's disease from intestinal tuberculosis. World J Gastroenterol. 2019;25(4):418-432.", doi: "10.3748/wjg.v25.i4.418", tag: "Narrative review" },
-        { n: 110, text: "Kedia S, Sharma R, Sreenivas V, Madhusudhan KS, Sharma V, Bopanna S, et al. Accuracy of computed tomographic features in differentiating intestinal tuberculosis from Crohn's disease: a systematic review with meta-analysis. Intest Res. 2017;15(2):149-159.", doi: "10.5217/ir.2017.15.2.149", tag: "Systematic review and meta-analysis" },
-        { n: 111, text: "Chen W, Fan JH, Luo W, Peng P, Su SB. Effectiveness of interferon-gamma release assays for differentiating intestinal tuberculosis from Crohn's disease: a meta-analysis. World J Gastroenterol. 2013;19(44):8133-40.", doi: "10.3748/wjg.v19.i44.8133", tag: "Meta-analysis" },
+        { n: 110, text: "Chen W, Fan JH, Luo W, Peng P, Su SB. Effectiveness of interferon-gamma release assays for differentiating intestinal tuberculosis from Crohn's disease: a meta-analysis. World J Gastroenterol. 2013;19(44):8133-40.", doi: "10.3748/wjg.v19.i44.8133", tag: "Meta-analysis" },
+        { n: 111, text: "Kedia S, Sharma R, Sreenivas V, Madhusudhan KS, Sharma V, Bopanna S, et al. Accuracy of computed tomographic features in differentiating intestinal tuberculosis from Crohn's disease: a systematic review with meta-analysis. Intest Res. 2017;15(2):149-159.", doi: "10.5217/ir.2017.15.2.149", tag: "Systematic review and meta-analysis" },
         { n: 112, text: "Jin T, Fei B, Zhang Y, He X. The diagnostic value of polymerase chain reaction for Mycobacterium tuberculosis to distinguish intestinal tuberculosis from crohn's disease: A meta-analysis. Saudi J Gastroenterol. 2017;23(1):3-10.", doi: "10.4103/1319-3767.199135", tag: "Meta-analysis" },
         { n: 113, text: "Pratap Mouli V, Munot K, Ananthakrishnan A, Kedia S, Addagalla S, Garg SK, et al. Endoscopic and clinical responses to anti-tubercular therapy can differentiate intestinal tuberculosis from Crohn's disease. Aliment Pharmacol Ther. 2017;45(1):27-36.", doi: "10.1111/apt.13840", tag: "Retrospective study with prospective validation" },
         { n: 114, text: "Jullien S, Jain S, Ryan H, Ahuja V. Six-month therapy for abdominal tuberculosis. Cochrane Database Syst Rev. 2016;11(11):CD012163.", doi: "10.1002/14651858.CD012163.pub2", tag: "Systematic review of RCTs (Cochrane)" },
         { n: 115, text: "Tanoglu A, Erdem H, Friedland JS, Almajid FM, Batirel A, Kulzhanova S, et al. Clinicopathological profile of gastrointestinal tuberculosis: a multinational ID-IRI study. Eur J Clin Microbiol Infect Dis. 2020;39(3):493-500.", doi: "10.1007/s10096-019-03749-y", tag: "Multinational retrospective study (incl. Saudi Arabia)" },
+      ],
+    },
+    {
+      title: "Case 10 — Peritoneal TB",
+      items: [
         { n: 116, text: "Sanai FM, Bzeizi KI. Systematic review: tuberculous peritonitis--presenting features, diagnostic strategies and treatment. Aliment Pharmacol Ther. 2005;22(8):685-700.", doi: "10.1111/j.1365-2036.2005.02645.x", tag: "Systematic review (Riyadh, Saudi Arabia)" },
         { n: 117, text: "Liu Q, Zhang Q, Guan Q, Xu JF, Shi QL. Abdominopelvic tuberculosis mimicking advanced ovarian cancer and pelvic inflammatory disease: a series of 28 female cases. Arch Gynecol Obstet. 2014;289(3):623-9.", doi: "10.1007/s00404-013-3034-2", tag: "Retrospective case series" },
         { n: 118, text: "Mahajan M, Prasad ML, Kumar P, Kumar A, Chatterjee N, Singh S, et al. An Updated Systematic Review and Meta-Analysis for the Diagnostic Test Accuracy of Ascitic Fluid Adenosine Deaminase in Tuberculous Peritonitis. Infect Chemother. 2023;55(2):264-277.", doi: "10.3947/ic.2023.0014", tag: "Systematic review and meta-analysis" },
