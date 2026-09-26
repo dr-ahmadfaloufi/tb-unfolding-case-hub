@@ -1,6 +1,8 @@
 /* ============================================================
    TB Unfolding Cases — content data
-   Transcribed verbatim from tb_unfolding_cases.md.
+   Content from the approved review-round-2 case drafts (Sept 2026).
+   Reference numbers follow first citation; after editing citations
+   run `node tools/renumber-refs.js` to renumber.
    cite(n) / cite(n,m) renders a footnote-style superscript
    linking to references.html.
    img(case, stage, slug, caption) renders an image placeholder
@@ -121,7 +123,7 @@ const CASES = [
     id: 1,
     title: "34-year-old laborer with 6 weeks of productive cough and weight loss",
     hubDescription:
-      "A subacute cough-and-weight-loss presentation worked up with a rapid molecular test and culture — what that first result does and doesn't rule out, and the evidence behind the regimen once the full picture is in.",
+      "A subacute cough with a cavity on CXR: the differential and its tests, what a rifampin-susceptible rapid result does and doesn't tell you, and the WHO, ATS and Saudi guidance behind the regimen once the full picture is in.",
     vignette:
       "34-year-old Saudi man, a laborer who has lived in Saudi Arabia all his life with no travel abroad and no known TB contact. Six weeks of productive cough, low-grade fevers, night sweats, and 5 kg weight loss.",
     stages: [
@@ -325,7 +327,7 @@ const CASES = [
     id: 2,
     title: "42-year-old woman with recurrent cough and hemoptysis after prior TB treatment",
     hubDescription:
-      "A retreatment patient with adherence gaps returns with new respiratory symptoms — working through rapid resistance testing, its molecular basis and blind spots, and the trial evidence behind current regimen options.",
+      "A retreatment patient with adherence gaps returns with new respiratory symptoms: rapid resistance testing, what to do when molecular and phenotypic results disagree, global vs Saudi resistance data, current short regimens, and the alternative when pregnancy rules out the first choice.",
     vignette:
       "42-year-old Saudi woman. Completed a standard first-line TB treatment course 18 months ago, with reported adherence gaps during that course. Now presents with 2 months of recurrent cough, hemoptysis, and weight loss. No known contact with a resistant TB case on direct questioning.",
     stages: [
@@ -610,7 +612,7 @@ const CASES = [
     title:
       "36-year-old man with new HIV diagnosis, fever, and progressive dyspnea",
     hubDescription:
-      "A newly diagnosed HIV patient with fever and progressive dyspnea whose initial workup keeps coming back negative — interpreting urine LAM, sputum vs BAL, and when to treat despite negative microbiology.",
+      "A newly diagnosed HIV patient with fever, progressive dyspnea and travel across South and Southeast Asia: a travel-shaped differential, interpreting urine LAM, sputum vs BAL, when to treat despite negative microbiology, and ART timing with co-trimoxazole.",
     vignette:
       "36-year-old man, newly diagnosed HIV (CD4 38 cells/µL, not yet on ART), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. CT chest shows a diffuse micronodular (\"miliary\") pattern. He has travelled through India, Vietnam, Thailand and Indonesia, where he worked on farms, including in rice paddies, and ate raw or pickled freshwater crab." +
       img(3, "stage1", "ct-miliary", 'Diffuse micronodular ("miliary") pattern on CT chest'),
@@ -951,7 +953,7 @@ const CASES = [
     id: 4,
     title: "29-year-old expatriate worker with fever, night sweats, and mediastinal lymphadenopathy",
     hubDescription:
-      "Fever, night sweats, and mediastinal lymphadenopathy with no lung findings — working through a broad differential and choosing how to biopsy.",
+      "Fever, night sweats and mediastinal lymphadenopathy with no lung findings: a broad differential, choosing how and where to biopsy, then treatment duration and paradoxical reactions.",
     vignette:
       "29-year-old expatriate construction worker from India, living in Saudi Arabia, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. CT chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
       img(4, "stage1", "ct-lymphadenopathy", "Bilateral hilar and mediastinal lymphadenopathy without parenchymal lung lesion"),
@@ -1117,7 +1119,7 @@ const CASES = [
     id: 5,
     title: "32-year-old ICU nurse with an unmasked TB exposure",
     hubDescription:
-      "A high-risk occupational TB exposure — the window period, IGRA vs TST, and short-course preventive-treatment regimens.",
+      "A high-risk occupational TB exposure: who counts as exposed, the window period, a pneumonia that isn't TB, IGRA vs TST, and short-course preventive treatment.",
     vignette:
       "32-year-old Egyptian ICU nurse at a tertiary hospital in Riyadh. She received BCG in childhood. She had an unmasked, prolonged exposure to a ventilated patient who was later confirmed to have smear-positive, NAAT-positive, cavitary pulmonary TB. The exposure happened before the patient was placed in airborne isolation. She assisted with intubation and open suctioning.",
     stages: [
