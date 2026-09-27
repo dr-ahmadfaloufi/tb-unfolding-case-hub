@@ -645,6 +645,78 @@ sup.citation a:hover { text-decoration: underline; }
 .btn:disabled { opacity: 0.45; cursor: default; }
 .btn:disabled:hover { background: var(--accent); border-color: var(--accent); }
 
+/* question grid (R3-1) */
+.mcq-grid { margin: 0 0 1rem; }
+.mcq-grid ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.mcq-chip {
+  position: relative;
+  min-width: 2.4rem;
+  height: 2.4rem;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.mcq-chip.right { border-color: #2e7d4f; background: #e7f4ec; color: #1f5a38; }
+.mcq-chip.wrong { border-color: var(--danger); background: #f8e9e9; color: var(--danger); }
+.mcq-chip.current { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mcq-chip:hover { border-color: var(--accent); }
+@media (hover: hover) {
+  .mcq-chip:hover::after {
+    content: attr(data-topic);
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%);
+    z-index: 5;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: var(--text);
+    color: #fff;
+    pointer-events: none;
+  }
+}
+
+/* per-option notes and key point (R3-2) */
+.mcq-option-note {
+  margin: 0.3rem 0 0.2rem 2rem;
+  padding: 0.45rem 0.7rem;
+  border-left: 3px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.mcq-option-note.right { border-left-color: #2e7d4f; background: #e7f4ec; }
+.mcq-option-note.wrong { border-left-color: var(--danger); background: #f8e9e9; }
+.mcq-option-note.neutral { color: var(--text-muted); }
+.mcq-keypoint {
+  margin-top: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background: var(--accent-tint);
+}
+.mcq-keypoint-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 0.2rem;
+}
+.mcq-keypoint p:first-of-type { margin-top: 0; }
+
 .mcq-missed {
   display: inline-block;
   text-align: left;

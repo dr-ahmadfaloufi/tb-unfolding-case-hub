@@ -2514,7 +2514,19 @@ const MCQS = [
       <ul>
         <li><strong>Lumbar puncture</strong> (the most tempting option) is the step <em>after</em> a positive CrAg, not a routine test for everyone.</li>
         <li><strong>LF-LAM</strong> is a TB diagnostic for people with advanced HIV being evaluated for TB. ${cite(27)} His TB is already confirmed.</li>
-      </ul>`,
+      </ul>
+      <h4>How accurate is CrAg?</h4>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Specimen</th><th>Sensitivity (95% CI)</th><th>Specificity (95% CI)</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td>Serum CrAg ${cite(122)}</td><td>99.7% (97.4&ndash;100)</td><td>94.1% (88.3&ndash;98.1)</td><td>A negative result nearly excludes cryptococcal meningitis; a positive one doesn't prove it (antigenaemia without CNS disease), so do an LP</td></tr>
+            <tr><td>CSF CrAg ${cite(122)}</td><td>98.8% (96.2&ndash;99.6)</td><td>99.3% (96.7&ndash;99.9)</td><td>Confirms cryptococcal meningitis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.9rem;">Adults living with HIV with suspected cryptococcal meningitis; reference standard CSF culture (11 studies, 3,600 participants). ${cite(122)}</p>
+      <p>In HIV-negative patients, serum CrAg is less sensitive (about 83&ndash;91% by lateral flow assay in one small single-centre study), so a negative result is less reliable for ruling out disease. ${cite(123)}</p>`,
   },
   {
     topic: "Can't expectorate",
@@ -2592,7 +2604,7 @@ const MCQS = [
   {
     topic: "TB risk with anti-TNF agents",
     stem:
-      "In the French RATIO registry, which anti-TNF agent had the <strong>lowest</strong> standardized incidence ratio for TB?",
+      "Across registry and cohort data, which anti-TNF agent carries the <strong>lowest</strong> TB risk?",
     options: [
       "Adalimumab",
       "Etanercept",
@@ -2601,8 +2613,41 @@ const MCQS = [
     ],
     answer: 1,
     rationale: `
-      <p>In RATIO the standardized incidence ratios were infliximab 18.6, adalimumab 29.3 and etanercept 1.8. ${cite(76)} Monoclonal anti-TNF antibodies carry a much higher risk than the soluble receptor.</p>
-      <p>None of the anti-TNF-associated cases in RATIO had received correct prophylaxis. That is why international recommendations call for screening and LTBI treatment before a biologic starts. ${cite(76, 85)}</p>`,
+      <p><strong>Etanercept</strong> (the soluble TNF receptor) had the lowest TB risk in each dataset below, but its risk is <strong>still raised above baseline</strong>: in RATIO its standardized incidence ratio was 1.8, and NSTC/NTCA list it among the higher-risk agents. ${cite(76, 124, 125, 126)} Monoclonal anti-TNF antibodies carry a much higher risk.</p>
+      <h4>Studies</h4>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Study</th><th>Infliximab</th><th>Adalimumab</th><th>Etanercept</th></tr></thead>
+          <tbody>
+            <tr><td>RATIO, France (Tubach 2009) ${cite(76)}</td><td>SIR 18.6</td><td>SIR 29.3</td><td>SIR 1.8</td></tr>
+            <tr><td>BSRBR, UK RA (Dixon 2010) ${cite(124)}</td><td>136/100,000 PY; adj. IRR 3.1 vs ETN</td><td>144/100,000 PY; adj. IRR 4.2</td><td>39/100,000 PY</td></tr>
+            <tr><td>South Korea claims (Jung 2015) ${cite(125)}</td><td>IRR 6.8 vs ETN</td><td>IRR 3.45</td><td>reference</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Infliximab vs adalimumab differs between studies; there is no consistent ranking. ${cite(76, 124, 125)} TB appears earliest with infliximab (BSRBR median 5.5 months vs 18.5 months with adalimumab). ${cite(124)}</p>
+      <h4>Guidelines: select biologic and small-molecule agents and TB risk (NSTC/NTCA; as of June 2022)</h4>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Risk of TB</th><th>Class</th><th>Drugs</th></tr></thead>
+          <tbody>
+            <tr><td>Higher</td><td>TNF-&alpha; inhibitors</td><td>infliximab, adalimumab, certolizumab, golimumab, etanercept (lowest of the class, but still raised ${cite(126, 76, 124, 125)})</td></tr>
+            <tr><td>Higher</td><td>JAK inhibitors</td><td>baricitinib, filgotinib, peficitinib, tofacitinib, upadacitinib</td></tr>
+            <tr><td>Higher</td><td>IL-6 blockers</td><td>sarilumab, tocilizumab</td></tr>
+            <tr><td>Potentially increased</td><td>IL-1 blockers</td><td>anakinra, canakinumab, rilonacept</td></tr>
+            <tr><td>Potentially increased</td><td>IL-17 blockers</td><td>brodalumab, ixekizumab, secukinumab</td></tr>
+            <tr><td>Potentially increased</td><td>IL-23 / IL-12-23 blockers</td><td>guselkumab, risankizumab, tildrakizumab, ustekinumab</td></tr>
+            <tr><td>Potentially increased</td><td>B-cell agents</td><td>belimumab, rituximab</td></tr>
+            <tr><td>Potentially increased</td><td>T-cell costimulation modulator</td><td>abatacept</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.9rem;">NSTC/NTCA Clinical Guide, Table 4 ${cite(126)}.</p>
+      <ul>
+        <li><strong>Steroids:</strong> the risk is dose-dependent, highest with prolonged use (prednisone equivalent &ge;15 mg/day for &ge;1 month, or &ge;2 mg/kg/day). ${cite(126)}</li>
+        <li><strong>PD-1/PD-L1 checkpoint inhibitors</strong> have been associated with progression to TB disease. ${cite(126)}</li>
+        <li><strong>Screen and treat latent TB infection before starting</strong> any of these agents. ${cite(126)} None of the anti-TNF-associated cases in RATIO had received correct prophylaxis. ${cite(76, 85)}</li>
+      </ul>`,
   },
 ];
 

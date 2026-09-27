@@ -228,57 +228,77 @@ function renderStart() {
   if (!root || typeof MCQS === "undefined") return;
 
   const LETTERS = "ABCDE";
+  const blankAnswers = () => MCQS.map(() => ({ selected: null, checked: false }));
   const state = {
     current: 0,
-    selected: null,
-    checked: false,
+    answers: blankAnswers(), // per question, so moving around keeps each question's state
     results: MCQS.map(() => null), // true / false once checked
   };
 
+  function gridHtml() {
+    const chips = MCQS.map((q, i) => {
+      const r = state.results[i];
+      const status = r === true ? "right" : r === false ? "wrong" : "untried";
+      const statusText = r === true ? "answered correctly" : r === false ? "answered incorrectly" : "not tried";
+      return `<li><button type="button" class="mcq-chip ${status}${i === state.current ? " current" : ""}" data-goto="${i}"
+        data-topic="${q.topic}" title="${q.topic}" aria-label="Question ${i + 1}: ${q.topic} (${statusText})"
+        ${i === state.current ? 'aria-current="true"' : ""}>${i + 1}</button></li>`;
+    }).join("");
+    return `<nav class="mcq-grid" aria-label="Choose a question"><ol>${chips}</ol></nav>`;
+  }
+
   function questionHtml() {
     const q = MCQS[state.current];
+    const a = state.answers[state.current];
     const isLast = state.current === MCQS.length - 1;
+    const notes = a.checked && Array.isArray(q.optionNotes) ? q.optionNotes : null;
 
     const options = q.options
       .map((text, i) => {
         let cls = "mcq-option";
-        if (state.checked) {
-          if (i === q.answer) cls += " correct";
-          else if (i === state.selected) cls += " incorrect";
-        } else if (i === state.selected) {
+        let noteCls = "neutral";
+        if (a.checked) {
+          if (i === q.answer) { cls += " correct"; noteCls = "right"; }
+          else if (i === a.selected) { cls += " incorrect"; noteCls = "wrong"; }
+        } else if (i === a.selected) {
           cls += " selected";
         }
+        const note = notes && notes[i] ? `<div class="mcq-option-note ${noteCls}">${notes[i]}</div>` : "";
         return `<li><button type="button" class="${cls}" data-option="${i}" ${
-          state.checked ? "disabled" : ""
-        } aria-pressed="${i === state.selected}">
+          a.checked ? "disabled" : ""
+        } aria-pressed="${i === a.selected}">
           <span class="mcq-letter">${LETTERS[i]}</span><span>${text}</span>
-        </button></li>`;
+        </button>${note}</li>`;
       })
       .join("");
 
     let feedback = "";
-    if (state.checked) {
-      const right = state.selected === q.answer;
+    if (a.checked) {
+      const right = a.selected === q.answer;
       feedback = `
         <div class="reveal-block">
           <p class="mcq-verdict ${right ? "right" : "wrong"}">${
             right ? "Correct" : `Not quite — the answer is ${LETTERS[q.answer]}`
           }</p>
-          ${q.rationale}
+          <div class="mcq-keypoint"><strong class="mcq-keypoint-label">Key point</strong>${q.rationale}</div>
         </div>`;
     }
 
-    const action = state.checked
+    const prev = state.current > 0
+      ? `<button type="button" class="btn btn-secondary" id="mcq-prev">&larr; Previous</button>`
+      : "";
+    const action = a.checked
       ? `<button type="button" class="btn" id="mcq-next">${isLast ? "See your score" : "Next question &rarr;"}</button>`
-      : `<button type="button" class="btn" id="mcq-check" ${state.selected === null ? "disabled" : ""}>Check</button>`;
+      : `<button type="button" class="btn" id="mcq-check" ${a.selected === null ? "disabled" : ""}>Check</button>`;
 
     return `
+      ${gridHtml()}
       <div class="stage-card">
         <p class="stage-title">Question ${state.current + 1} of ${MCQS.length} &mdash; ${q.topic}</p>
         <p class="stage-question">${q.stem}</p>
         <ol class="mcq-options">${options}</ol>
         ${feedback}
-        <div class="stage-actions">${action}</div>
+        <div class="stage-actions">${prev}${action}</div>
       </div>`;
   }
 
@@ -289,6 +309,7 @@ function renderStart() {
       .filter(Boolean)
       .join("");
     return `
+      ${gridHtml()}
       <div class="stage-card case-complete">
         <h2>You scored ${score} of ${MCQS.length}</h2>
         ${missed ? `<p>Worth another look:</p><ul class="mcq-missed">${missed}</ul>` : "<p>Every question right.</p>"}
@@ -306,41 +327,42 @@ function renderStart() {
     attachHandlers();
   }
 
+  function goTo(i) {
+    state.current = i;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   function attachHandlers() {
+    root.querySelectorAll(".mcq-chip").forEach((chip) => {
+      chip.addEventListener("click", () => goTo(parseInt(chip.getAttribute("data-goto"), 10)));
+    });
     root.querySelectorAll(".mcq-option").forEach((btn) => {
       btn.addEventListener("click", () => {
-        state.selected = parseInt(btn.getAttribute("data-option"), 10);
+        state.answers[state.current].selected = parseInt(btn.getAttribute("data-option"), 10);
         render();
       });
     });
     const check = document.getElementById("mcq-check");
     if (check) {
       check.addEventListener("click", () => {
-        if (state.selected === null) return;
-        state.checked = true;
-        state.results[state.current] = state.selected === MCQS[state.current].answer;
+        const a = state.answers[state.current];
+        if (a.selected === null) return;
+        a.checked = true;
+        state.results[state.current] = a.selected === MCQS[state.current].answer;
         render();
       });
     }
+    const prev = document.getElementById("mcq-prev");
+    if (prev) prev.addEventListener("click", () => goTo(state.current - 1));
     const next = document.getElementById("mcq-next");
-    if (next) {
-      next.addEventListener("click", () => {
-        state.current += 1;
-        state.selected = null;
-        state.checked = false;
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
+    if (next) next.addEventListener("click", () => goTo(state.current + 1));
     const retake = document.getElementById("mcq-retake");
     if (retake) {
       retake.addEventListener("click", () => {
-        state.current = 0;
-        state.selected = null;
-        state.checked = false;
+        state.answers = blankAnswers();
         state.results = MCQS.map(() => null);
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        goTo(0);
       });
     }
   }
