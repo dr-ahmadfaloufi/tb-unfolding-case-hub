@@ -572,6 +572,19 @@ sup.citation a:hover { text-decoration: underline; }
 
 /* ---------- responsive ---------- */
 
+/* text beside an image (R3-20) */
+.side-by-side {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.side-by-side > div:first-child { flex: 1 1 0; min-width: 0; }
+.side-by-side > .image-slot { flex: 0 0 45%; margin-top: 0.3rem; }
+@media (max-width: 640px) {
+  .side-by-side { flex-direction: column; }
+  .side-by-side > .image-slot { flex-basis: auto; width: 100%; }
+}
+
 /* ---------- hub sections ---------- */
 
 .hub-section {

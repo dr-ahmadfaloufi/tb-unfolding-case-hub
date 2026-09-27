@@ -30,6 +30,7 @@ const IMAGE_AI_FLAGS = {
   "case4-stage1-ct-lymphadenopathy": false,
   "case4-stage2-histopath-necrotizing-granuloma": false,
   "case4-stage3-histopath-non-necrotizing-granuloma": false,
+  "case4-stage5-node-stations": false,
   "case5-stage4-cxr-normal": false,
   "case6-stage1-cxr-effusion": false,
   "case7-stage2-spine-pathology": false,
@@ -123,6 +124,7 @@ function img(caseId, stage, slug, caption) {
   const filename = `case${caseId}-${stage}-${slug}`;
   const src = `images/case${caseId}/${filename}.jpg`;
   const isAi = IMAGE_AI_FLAGS[filename] === true;
+  const altText = caption.replace(/<[^>]*>/g, "").replace(/\[[\d,\s]*\]/g, "").replace(/"/g, "&quot;").trim();
   const captionHtml = isAi
     ? `<span class="ai-flag">AI-generated — not a real clinical photograph</span> ${caption}`
     : caption;
@@ -136,7 +138,7 @@ function img(caseId, stage, slug, caption) {
         <span class="placeholder-icon">&#128247;</span>
         <span>Image not yet added<br><code>${filename}.jpg</code></span>
       </div>
-      <img src="${src}" alt="${caption}"
+      <img src="${src}" alt="${altText}"
            onload="this.closest('.image-slot').classList.add('has-image')"
            onerror="this.onerror=null;">
       <p class="image-caption">${captionHtml}</p>
@@ -1084,22 +1086,23 @@ const CASES = [
               <tbody>
                 <tr>
                   <td>Sarcoidosis</td>
-                  <td>74% granuloma detection vs 48% for conventional bronchoscopy (GRANULOMA); 84% vs 38% in stage I ${cite(48)}</td>
+                  <td>Diagnostic yield <strong>80% vs 53%</strong> (endosonography vs bronchoscopy; GRANULOMA RCT). By stage (exploratory): <strong>stage I 84% vs 38%</strong>; stage II 77% vs 66% (not significant). Granuloma detection 74% vs 48%. ${cite(48)}</td>
                   <td>The advantage is largest in stage I</td>
                 </tr>
                 <tr>
                   <td>TB lymphadenitis</td>
-                  <td>~53&ndash;82% across series; ~71% when NAAT/PCR is added ${cite(55, 54)}</td>
+                  <td>Sensitivity <strong>59%</strong> in an unselected London cohort (culture confirmed 35%, cytology 24%) ${cite(55)}; accuracy <strong>57% &rarr; 71%</strong> when TB-PCR was added on rinse fluid ${cite(54)}</td>
                   <td>Paucibacillary; cytology + culture alone under-detect</td>
                 </tr>
                 <tr>
                   <td>Lymphoma (new / de novo)</td>
-                  <td>Pooled sensitivity ~66% ${cite(49)}; as low as 14&ndash;15% in one multicentre de novo cohort ${cite(51)} (the 41% figure is from that cohort's <strong>recurrent</strong> lymphoma subgroup)</td>
+                  <td>Pooled sensitivity <strong>67% for a new diagnosis</strong> (78% for recurrence) ${cite(49)}; about 15% in a small, selected multicentre cohort ${cite(51)}</td>
                   <td>Aspirate cytology rarely gives the architecture needed for subtyping ${cite(50)}</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Figures come from different study designs and measures (granuloma detection or diagnostic yield in an RCT, sensitivity or accuracy in cohorts, pooled sensitivity), so compare them with caution.</p>
           <p><em>Optional reference comparator:</em></p>
           ${img(4, "stage3", "histopath-non-necrotizing-granuloma", "Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image")}`,
         pearl:
@@ -1112,8 +1115,8 @@ const CASES = [
         reveal: `
           <ul>
             <li>EBUS-guided <strong>forceps or cryoprobe biopsy</strong> through the same tract obtains tissue architecture rather than cytology alone.</li>
-            <li>Pooled diagnostic yield <strong>86% vs 78%</strong> for TBNA. ${cite(56)}</li>
-            <li>In a multicentre cohort, cryobiopsy sensitivity was <strong>92&ndash;100%</strong> vs <strong>14&ndash;15%</strong> for standard aspiration in new lymphoma. ${cite(51)}</li>
+            <li>Across all diagnoses, forceps or cryoprobe biopsy gave a pooled diagnostic yield of <strong>86% vs 78%</strong> for aspiration (13 studies), at the cost of slightly more complications. ${cite(56)}</li>
+            <li>In a small, selected multicentre cohort (40 patients with confirmed lymphoma, both techniques in the same node), cryobiopsy sensitivity was <strong>92% vs 15%</strong> for aspiration in new lymphoma, and <strong>100% vs 14%</strong> in recurrence. ${cite(51)}</li>
           </ul>`,
         pearl:
           "For lymphoma, the question isn't \"is it malignant?\" but \"which lymphoma?\". That needs architecture, not just cells.",
@@ -1125,12 +1128,17 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Where EBUS reaches:</strong>
-              <ul>
-                <li><strong>EBUS</strong> samples nodes against the trachea and bronchi: <strong>stations 2R/2L, 4R/4L, 7, 10 and 11&ndash;12</strong>.</li>
-                <li><strong>Through the oesophagus (EUS/EUS-B)</strong>: <strong>2L, 4L, 7, 8 and 9</strong>.</li>
-                <li><strong>Stations 5 and 6</strong> (subaortic/para-aortic) can be seen by EUS but can <strong>rarely be sampled without traversing the pulmonary artery or aorta</strong>. <strong>VATS is the method of choice</strong> for them.</li>
-              </ul>
-              No single sampling method reaches every station. ${cite(57)}
+              <div class="side-by-side">
+                <div>
+                  <ul>
+                    <li><strong>EBUS</strong> samples nodes against the trachea and bronchi: <strong>stations 2R/2L, 4R/4L, 7, 10 and 11&ndash;12</strong>.</li>
+                    <li><strong>Through the oesophagus (EUS/EUS-B)</strong>: <strong>2L, 4L, 7, 8 and 9</strong>.</li>
+                    <li><strong>Stations 5 and 6</strong> (subaortic/para-aortic) can be seen by EUS but can <strong>rarely be sampled without traversing the pulmonary artery or aorta</strong>. <strong>VATS is the method of choice</strong> for them.</li>
+                  </ul>
+                  No single sampling method reaches every station. ${cite(57)}
+                </div>
+                ${img(4, "stage5", "node-stations", "Original schematic. Station numbering follows the IASLC lymph node map; which technique reaches each station follows the ESGE/ERS/ESTS 2015 guideline. " + cite(57))}
+              </div>
             </li>
             <li><strong>CT-guided (IR) core biopsy</strong> fills anatomic gaps and yields a true tissue core, which matters if lymphoma subtyping is needed.</li>
             <li><strong>Safety trade-off:</strong>
