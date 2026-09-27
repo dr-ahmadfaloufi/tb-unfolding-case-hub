@@ -445,6 +445,13 @@ table.data-table thead th {
 
 table.data-table tbody tr:nth-child(even) { background: rgba(11, 94, 107, 0.03); }
 
+.table-abbrev {
+  margin: -0.4rem 0 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
 /* ---------- citations ---------- */
 
 sup.citation a {

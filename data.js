@@ -146,6 +146,111 @@ function img(caseId, stage, slug, caption) {
     </div>`;
 }
 
+// One shared glossary, so each abbreviation is always expanded the same way.
+// abbrev(...keys) renders the key line under a table (R3-16). Drug letter codes:
+// "P" is rifapentine (HP, HPZM) and "Pa" is pretomanid (BPaL, BPaLM).
+const GLOSSARY = {
+  "B": "bedaquiline",
+  "C": "clofazimine",
+  "D": "delamanid",
+  "E": "ethambutol",
+  "H": "isoniazid",
+  "L": "linezolid",
+  "Lfx": "levofloxacin",
+  "M": "moxifloxacin",
+  "P": "rifapentine (in HP/HPZM)",
+  "Pa": "pretomanid (in BPaL/BPaLM)",
+  "R": "rifampicin",
+  "Z": "pyrazinamide",
+  "#": "a number before drug letters gives months of treatment (e.g. 2HRZE/4HR)",
+  "ADA": "adenosine deaminase",
+  "AE": "adverse event",
+  "AFB": "acid-fast bacilli",
+  "AIDS": "acquired immunodeficiency syndrome",
+  "aOR": "adjusted odds ratio",
+  "ARR": "absolute risk reduction",
+  "ART": "antiretroviral therapy",
+  "BAL": "bronchoalveolar lavage",
+  "CA-125": "cancer antigen 125",
+  "CAP": "community-acquired pneumonia",
+  "CD": "Crohn's disease",
+  "CD4": "CD4 T-lymphocyte count",
+  "CI": "confidence interval",
+  "CNS": "central nervous system",
+  "CrAg": "cryptococcal antigen",
+  "CrI": "credible interval",
+  "CSF": "cerebrospinal fluid",
+  "CT": "computed tomography",
+  "CXR": "chest radiograph",
+  "DR-TB": "drug-resistant TB",
+  "DST": "drug-susceptibility testing",
+  "EBUS-TBNA": "endobronchial ultrasound-guided transbronchial needle aspiration",
+  "ETN": "etanercept",
+  "FEV1": "forced expiratory volume in 1 second",
+  "FQ": "fluoroquinolone",
+  "FVC": "forced vital capacity",
+  "GCS": "Glasgow Coma Scale",
+  "GI": "gastrointestinal",
+  "GRADE": "Grading of Recommendations Assessment, Development and Evaluation",
+  "HR": "hazard ratio",
+  "Hr-TB": "isoniazid-resistant, rifampicin-susceptible TB",
+  "IFN-γ": "interferon-gamma",
+  "IGRA": "interferon-gamma release assay",
+  "IL": "interleukin",
+  "INH": "isoniazid",
+  "IPD": "individual patient data",
+  "IRIS": "immune reconstitution inflammatory syndrome",
+  "IRR": "incidence rate ratio",
+  "ITB": "intestinal TB",
+  "ITT": "intention to treat",
+  "JAK": "Janus kinase",
+  "KSA": "Kingdom of Saudi Arabia",
+  "LAM": "lipoarabinomannan",
+  "LF-LAM": "lateral-flow urine lipoarabinomannan assay",
+  "LP": "lumbar puncture",
+  "LTBI": "latent TB infection",
+  "MDR-TB": "multidrug-resistant TB",
+  "MGIT": "Mycobacteria Growth Indicator Tube",
+  "mITT": "modified intention to treat",
+  "MRC": "Medical Research Council (severity grade)",
+  "NAAT": "nucleic acid amplification test",
+  "NTP": "National Tuberculosis Programme",
+  "OR": "odds ratio",
+  "PCR": "polymerase chain reaction",
+  "PLHIV": "people living with HIV",
+  "pre-XDR-TB": "pre-extensively drug-resistant TB",
+  "PY": "person-years",
+  "RA": "rheumatoid arthritis",
+  "RCT": "randomized controlled trial",
+  "RD": "risk difference",
+  "RIF": "rifampicin",
+  "RR": "risk ratio",
+  "RR-TB": "rifampicin-resistant TB",
+  "RSV": "respiratory syncytial virus",
+  "SIR": "standardized incidence ratio",
+  "T2": "T2-weighted MRI",
+  "TBM": "TB meningitis",
+  "TNF": "tumour necrosis factor",
+  "TPT": "TB preventive treatment",
+  "TST": "tuberculin skin test",
+  "XDR-TB": "extensively drug-resistant TB",
+  "ATS": "American Thoracic Society",
+  "CDC": "US Centers for Disease Control and Prevention",
+  "ERS": "European Respiratory Society",
+  "IDSA": "Infectious Diseases Society of America",
+  "NTCA": "National Tuberculosis Controllers Association (now National Tuberculosis Coalition of America)",
+  "NSTC": "National Society of Tuberculosis Clinicians",
+};
+
+function abbrev(...keys) {
+  const order = (k) => (k === "#" ? "~" : k.toLowerCase());
+  const items = [...new Set(keys)]
+    .filter((k) => GLOSSARY[k])
+    .sort((a, b) => (order(a) < order(b) ? -1 : 1))
+    .map((k) => (k === "#" ? GLOSSARY[k] : `${k}, ${GLOSSARY[k]}`));
+  return items.length ? `<p class="table-abbrev">Abbreviations: ${items.join("; ")}.</p>` : "";
+}
+
 const CASES = [
   // ============================================================
   // CASE 1
@@ -166,10 +271,10 @@ const CASES = [
           <ol>
             <li><strong>Pulmonary TB</strong>
               <ul>
-                <li>Sputum &times;3 for <strong>AFB smear</strong>;</li>
-                <li>a <strong>rapid NAAT (e.g. Xpert MTB/RIF Ultra) on the first specimen</strong>;</li>
+                <li>Sputum &times;3 for <strong>acid-fast bacilli (AFB) smear</strong>;</li>
+                <li>a <strong>rapid nucleic acid amplification test (NAAT) (e.g. Xpert MTB/RIF Ultra) on the first specimen</strong>;</li>
                 <li><strong>mycobacterial culture (liquid &plusmn; solid) with drug-susceptibility testing</strong> on every specimen;</li>
-                <li><strong>CXR</strong>.</li>
+                <li><strong>Chest radiograph (CXR)</strong>.</li>
                 <li>All of these go out on day 1, not in sequence. ${cite(1)}</li>
               </ul>
             </li>
@@ -180,7 +285,7 @@ const CASES = [
               <ul><li>Covered by the same mycobacterial culture with species identification. A <strong>smear-positive, NAAT-negative</strong> result points away from TB. ${cite(1)}</li></ul>
             </li>
             <li><strong>Malignancy (e.g. lung cancer, lymphoma)</strong>
-              <ul><li>CT chest if the CXR shows a mass or nodes, with tissue sampling as indicated.</li></ul>
+              <ul><li>Computed tomography (CT) chest if the CXR shows a mass or nodes, with tissue sampling as indicated.</li></ul>
             </li>
             <li><strong>Chronic pulmonary aspergillosis (CPA)</strong>
               <ul><li><strong>Aspergillus IgG</strong> <em>if imaging shows a cavity</em>. The ERS/ESCMID definition requires findings present for <strong>&ge;3 months</strong>, so CPA sits last at 6 weeks of symptoms. ${cite(2)}</li></ul>
@@ -199,7 +304,7 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Airborne isolation now.</strong> A negative first smear does not rule out infectious TB, and <strong>cavitation on CXR independently predicts greater infectiousness</strong>. ${cite(4, 5)}</li>
-            <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic DST. ${cite(1)}</li>
+            <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic drug-susceptibility testing (DST). ${cite(1)}</li>
             <li><strong>Start treatment now</strong>, without waiting weeks for culture: cavitary disease plus a positive NAAT is enough. ${cite(3)}</li>
             <li><strong>Report</strong> to the public health authority, <strong>start the contact investigation</strong>, and <strong>test for HIV</strong> if not already done. ${cite(3)}</li>
           </ul>
@@ -226,14 +331,15 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p><strong>What this case uses:</strong> <strong>2HRZE/4HR (RIPE)</strong>, the regimen most widely used in Saudi Arabia and the <strong>Saudi national recommendation</strong> (NTP Manual 2021, &sect;5.5). ${cite(5)}</p>
+          ${abbrev("#", "ATS", "CDC", "E", "ERS", "H", "IDSA", "M", "NTP", "P", "R", "Z")}
+          <p><strong>What this case uses:</strong> <strong>2HRZE/4HR (RIPE)</strong>, the regimen most widely used in Saudi Arabia and the <strong>Saudi national recommendation</strong> (National Tuberculosis Programme (NTP) Manual 2021, &sect;5.5). ${cite(5)}</p>
           <ul>
             <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(5)} That wording <strong>carries over WHO's 2017 recommendation</strong>, which followed three phase III trials that failed to show non-inferiority of shorter regimens: RIFAQUIN, REMoxTB and OFLOTUB. ${cite(13)} In RIFAQUIN, the 4-month arm had an unfavourable outcome in <strong>18.2% vs 4.9%</strong> with standard treatment (per protocol). ${cite(127)}
               <ul>
-                <li><strong>Study 31/A5349</strong> (published May 2021): daily rifapentine 1,200 mg + moxifloxacin + isoniazid + pyrazinamide (<strong>2HPZM/2HPM</strong>) was <strong>non-inferior</strong> to 2HRZE/4HR (unfavourable outcome 15.5% vs 14.6%; difference 1.0 point, 95% CI &minus;2.6 to 4.5). ${cite(128, 6)}</li>
+                <li><strong>Study 31/A5349</strong> (published May 2021): daily rifapentine 1,200 mg + moxifloxacin + isoniazid + pyrazinamide (<strong>2HPZM/2HPM</strong>) was <strong>non-inferior</strong> to 2HRZE/4HR (unfavourable outcome 15.5% vs 14.6%; difference 1.0 point, 95% confidence interval (CI) &minus;2.6 to 4.5). ${cite(128, 6)}</li>
                 <li>These are <strong>different regimens</strong>: daily high-dose rifapentine, versus the older fluoroquinolone substitutions, some given intermittently. ${cite(127, 128)}</li>
                 <li>WHO now conditionally recommends the 4-month isoniazid&ndash;rifapentine&ndash;moxifloxacin&ndash;pyrazinamide regimen for people aged &ge;12 (moderate certainty; first issued in 2022) ${cite(13)}, as does ATS/CDC/ERS/IDSA 2025 ${cite(6)}.</li>
-                <li>Rifapentine is not available in Saudi Arabia, so HPZM isn't a practical option in KSA either.</li>
+                <li>Rifapentine is not available in Saudi Arabia, so HPZM isn't a practical option in Kingdom of Saudi Arabia (KSA) either.</li>
               </ul>
             </li>
             <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> goes with isoniazid in anyone at risk of neuropathy (e.g. diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, pregnancy). ${cite(3)}</li>
@@ -255,8 +361,8 @@ const CASES = [
           </ul>
           <h4>The other way round: rifampicin resistance detected in a low-risk patient</h4>
           <ul>
-            <li><strong>High MDR-TB risk</strong> (previously treated, including lost to follow-up, relapse or failure; non-converters; contacts of MDR-TB patients): the rifampicin-resistance result is taken as <strong>definitive</strong>, and an RR/MDR-TB regimen is started. ${cite(5)}</li>
-            <li><strong>Low MDR-TB risk:</strong> <strong>repeat Xpert on a second sample</strong> (FL-LPA can be used instead if available and the sample is smear-positive). ${cite(5)}
+            <li><strong>High multidrug-resistant TB (MDR-TB) risk</strong> (previously treated, including lost to follow-up, relapse or failure; non-converters; contacts of MDR-TB patients): the rifampicin-resistance result is taken as <strong>definitive</strong>, and an RR/MDR-TB regimen is started. ${cite(5)}</li>
+            <li><strong>Low MDR-TB risk:</strong> <strong>repeat Xpert on a second sample</strong> (first-line line probe assay (FL-LPA) can be used instead if available and the sample is smear-positive). ${cite(5)}
               <ul>
                 <li>If the repeat <strong>confirms</strong> rifampicin resistance &rarr; start an MDR-TB regimen.</li>
                 <li>If it <strong>does not</strong> &rarr; start first-line treatment. The second result is taken as correct: false-positive rifampicin-resistance results "are commonly due to laboratory or clerical errors and rarely to technical performance of the assay". ${cite(5)}</li>
@@ -308,6 +414,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CI", "E", "IPD", "R", "Z", "aOR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -336,6 +443,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "DR-TB", "ERS", "Hr-TB", "IDSA", "NTP")}
           <p><strong>Practical note:</strong> rifampin lowers <strong>moxifloxacin</strong> exposure by roughly 30%, so some experts prefer <strong>levofloxacin</strong> alongside rifampin. ${cite(12)} This patient has cavitary disease, so the pyrazinamide-shortening option does not apply.</p>`,
         pearl:
           "Both the WHO and ATS isoniazid-resistant regimens rest on conditional, very-low-certainty evidence from observational patient data. There are no randomized trials behind them. Know that when you defend the regimen on rounds.",
@@ -348,11 +456,11 @@ const CASES = [
           <ul>
             <li><strong>Confirmed after 2HRZE/4HR has started:</strong> repeat rapid rifampin testing. <strong>Once rifampin resistance is excluded, give a full 6-month course of (H)REZ-Lfx.</strong> The 6 months are driven by levofloxacin, so the companion drugs often run longer than 6 months in total. If rifampin resistance is found, switch to an MDR-TB regimen. ${cite(10)}</li>
             <li><strong>Very late confirmation</strong> (e.g. 5 months into 2HRZE/4HR): whether to start 6 months of (H)REZ-Lfx at that point depends on the patient's clinical and microbiological status. ${cite(10)}</li>
-            <li><strong>Strongly presumed Hr-TB</strong> (e.g. a close contact of a confirmed Hr-TB source): the Hr-TB regimen may be started while DST is pending. If DST later shows isoniazid susceptibility, <strong>stop levofloxacin and complete 2HREZ/4HR</strong>. ${cite(10)}</li>
+            <li><strong>Strongly presumed isoniazid-resistant TB (Hr-TB)</strong> (e.g. a close contact of a confirmed Hr-TB source): the Hr-TB regimen may be started while DST is pending. If DST later shows isoniazid susceptibility, <strong>stop levofloxacin and complete 2HREZ/4HR</strong>. ${cite(10)}</li>
             <li><strong>Monitoring on this regimen:</strong>
               <ul>
-                <li><strong>Liver:</strong> monthly AST where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(10)}</li>
-                <li><strong>QT:</strong> avoid levofloxacin with known or suspected QT prolongation. Baseline-corrected QTc; watch hypokalaemia and other QT-prolonging drugs. ${cite(10)}</li>
+                <li><strong>Liver:</strong> monthly aspartate aminotransferase (AST) where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(10)}</li>
+                <li><strong>QT:</strong> avoid levofloxacin with known or suspected QT prolongation. Baseline corrected QT interval (QTc); watch hypokalaemia and other QT-prolonging drugs. ${cite(10)}</li>
                 <li><strong>Fluoroquinolone class warnings:</strong> tendinitis/tendon rupture, severe hypoglycaemia, mental-health effects, aortic rupture/dissection. ${cite(12)}</li>
                 <li><strong>Absorption:</strong> don't co-administer levofloxacin with antacids or other divalent-cation products. Milk restriction is not needed. ${cite(10)}</li>
               </ul>
@@ -391,7 +499,7 @@ const CASES = [
             <li><strong>Recurrent TB (relapse or reinfection), possibly with acquired drug resistance</strong>
               <ul>
                 <li><strong>Rapid molecular test for TB + rifampicin resistance (Xpert MTB/RIF Ultra)</strong> on the first specimen;</li>
-                <li>plus <strong>culture with full first- and second-line phenotypic DST, sent at or before the start of treatment</strong>. WHO says culture and DST should be obtained from <em>all</em> previously treated patients, for at least isoniazid and rifampicin. ${cite(13)}</li>
+                <li>plus <strong>culture with full first- and second-line phenotypic drug-susceptibility testing (DST), sent at or before the start of treatment</strong>. WHO says culture and DST should be obtained from <em>all</em> previously treated patients, for at least isoniazid and rifampicin. ${cite(13)}</li>
                 <li>Prior treatment is itself an indication for rapid molecular DST. ${cite(1)}</li>
               </ul>
             </li>
@@ -399,13 +507,13 @@ const CASES = [
               <ul><li>Sputum Gram stain and routine bacterial culture.</li></ul>
             </li>
             <li><strong>Aspergilloma / chronic pulmonary aspergillosis in a residual cavity</strong>
-              <ul><li><strong>Aspergillus IgG</strong> if imaging shows a cavity. Aspergillus antibody is elevated in &gt;90% of CPA. ${cite(2)}</li></ul>
+              <ul><li><strong>Aspergillus IgG</strong> if imaging shows a cavity. Aspergillus antibody is elevated in &gt;90% of chronic pulmonary aspergillosis (CPA). ${cite(2)}</li></ul>
             </li>
             <li><strong>Non-tuberculous mycobacteria</strong>
               <ul><li>Mycobacterial culture with species identification (same specimens).</li></ul>
             </li>
             <li><strong>Malignancy</strong>
-              <ul><li>CT chest, then tissue if a mass is seen.</li></ul>
+              <ul><li>Computed tomography (CT) chest, then tissue if a mass is seen.</li></ul>
             </li>
           </ol>
           <p><strong>Also:</strong> HIV test ${cite(3)}; document the prior regimen, the length of interruptions, and any exposure to a resistant source case.</p>`,
@@ -417,23 +525,23 @@ const CASES = [
         question: "Rifampicin resistance is detected. What do you do today?",
         reveal: `
           <ul>
-            <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages RR-TB and MDR-TB together as MDR/RR-TB. ${cite(13)}</li>
+            <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages rifampicin-resistant TB (RR-TB) and multidrug-resistant TB (MDR-TB) together as MDR/RR-TB. ${cite(13)}</li>
             <li><strong>Why "treat as MDR":</strong> the two usually travel together. Worldwide in 2024, <strong>16% of previously treated</strong> patients had MDR/RR-TB, versus <strong>3.2% of new</strong> patients. ${cite(8)}</li>
             <li><strong>Isolate, notify, start contact investigation.</strong> Contact management must account for the resistance pattern.</li>
             <li><strong>Send second-line DST now, especially fluoroquinolone susceptibility.</strong> It decides between BPaLM and BPaL (next stage). Globally, <strong>18%</strong> of MDR/RR-TB is pre-XDR (fluoroquinolone-resistant). ${cite(8)}</li>
             <li><strong>Baseline work-up before a bedaquiline/linezolid regimen:</strong>
               <ul>
                 <li>HIV test;</li>
-                <li><strong>ECG</strong> (QT) ${cite(12)};</li>
-                <li>CBC (linezolid myelosuppression);</li>
-                <li>LFTs;</li>
+                <li><strong>Electrocardiogram (ECG)</strong> (QT) ${cite(12)};</li>
+                <li>Complete blood count (CBC) (linezolid myelosuppression);</li>
+                <li>Liver function tests (LFTs);</li>
                 <li>visual acuity/colour vision (linezolid optic neuropathy);</li>
                 <li>neuropathy screen: not on the Saudi manual's list, but good clinical practice given linezolid neuropathy rates in Nix-TB (81%) and ZeNix (13&ndash;38%) ${cite(14, 15)};</li>
                 <li><strong>pregnancy test</strong> (BPaLM is not recommended in pregnancy or breastfeeding; see next stage) ${cite(13)}.</li>
               </ul>
-              The Saudi NTP Manual baseline (&sect;10.8) also includes smear, culture and DST (including second-line), CXR, renal and hepatic profile, calcium/magnesium and a baseline ECG if on bedaquiline or delamanid, thyroid function, and CBC if anaemia is suspected. ${cite(5)}
+              The Saudi National Tuberculosis Programme (NTP) Manual baseline (&sect;10.8) also includes smear, culture and DST (including second-line), chest radiograph (CXR), renal and hepatic profile, calcium/magnesium and a baseline ECG if on bedaquiline or delamanid, thyroid function, and CBC if anaemia is suspected. ${cite(5)}
             </li>
-            <li><strong>Monitoring (Saudi NTP Manual, Table 10.7):</strong> CBC weekly for the first month, then monthly on linezolid; visual acuity if vision changes on linezolid; ECG at 2, 4, 8, 12 and 24 weeks on bedaquiline/delamanid, stopping them if QTc &gt;500 ms; LFTs monthly on bedaquiline. ${cite(5)}</li>
+            <li><strong>Monitoring (Saudi NTP Manual, Table 10.7):</strong> CBC weekly for the first month, then monthly on linezolid; visual acuity if vision changes on linezolid; ECG at 2, 4, 8, 12 and 24 weeks on bedaquiline/delamanid, stopping them if corrected QT interval (QTc) &gt;500 ms; LFTs monthly on bedaquiline. ${cite(5)}</li>
           </ul>
           <h4>Definitions (WHO 2021)</h4>
           <div class="table-scroll">
@@ -449,7 +557,8 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p style="color:var(--text-muted); font-size:0.9rem;">The Saudi NTP Manual (2021) still uses the older XDR definition (MDR + fluoroquinolone + second-line injectable) and has no pre-XDR category. It also defines RR-TB inconsistently (any rifampicin resistance on p.88; rifampicin-resistant and isoniazid-susceptible in the p.97 table). ${cite(5)}</p>`,
+          ${abbrev("Hr-TB", "MDR-TB", "RR-TB", "XDR-TB", "pre-XDR-TB")}
+          <p style="color:var(--text-muted); font-size:0.9rem;">The Saudi NTP Manual (2021) still uses the older extensively drug-resistant (XDR) definition (MDR + fluoroquinolone + second-line injectable) and has no pre-XDR category. It also defines RR-TB inconsistently (any rifampicin resistance on p.88; rifampicin-resistant and isoniazid-susceptible in the p.97 table). ${cite(5)}</p>`,
         pearl: `A prior TB course with adherence gaps is the single strongest predictor of resistance. In Saudi data it carried about 7-fold odds of MDR. ${cite(16)} Rapid rifampicin testing on day one exists for exactly this patient.`,
       },
       {
@@ -479,6 +588,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("DST", "MDR-TB", "MGIT", "RIF", "RR-TB")}
           <p>Supporting data: in Eswatini, Xpert MTB/RIF detected only <strong>62.5%</strong> of confirmed rifampicin resistance against a composite reference, largely because of I491F. ${cite(20)}</p>
           <h4>Resistance epidemiology: global vs Saudi</h4>
           <div class="table-scroll">
@@ -494,6 +604,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CI", "INH", "MDR-TB", "OR", "RR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;"><em>Caveat:</em> the Saudi meta-analysis pools heterogeneous, mostly hospital-based series, so the national surveillance figure is the better population estimate.</p>`,
         pearl:
           "Rifampicin resistance on Xpert is highly specific. When a test result disagrees with the sequencing or with how the patient is doing, trust the sequencing and the patient.",
@@ -550,6 +661,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("B", "CI", "ITT", "L", "M", "MDR-TB", "Pa", "RR-TB", "XDR-TB", "mITT", "pre-XDR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;">TB-PRACTECAL doses are taken from WHO's description of the trial in Module 4 (2025). ${cite(13)} Pretomanid and moxifloxacin doses match the WHO/ATS BPaLM regimen.</p>
           <p>TB-PRACTECAL enrolment stopped early (March 2021) on the advice of the independent data and safety monitoring board: the interim analysis showed a difference between arms of at least three standard deviations in favour of BPaLM, with 5 deaths on standard care vs none on BPaLM, and more data were judged extremely unlikely to change the result. ${cite(129)}</p>
           <h4>Guidelines</h4>
@@ -580,6 +692,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "B", "CDC", "ERS", "FQ", "IDSA", "L", "M", "MDR-TB", "NTP", "Pa", "RR-TB")}
           <p>If she weren't eligible for BPaLM, other shortened regimens exist (next stage).</p>
           <p><em>Local note:</em> the Saudi NTP Manual (2021) predates BPaLM and the newer short regimens. Check your programme's current MDR-TB protocol before prescribing. ${cite(5)}</p>`,
         pearl:
@@ -605,6 +718,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("AE", "B", "C", "CI", "D", "FQ", "L", "Lfx", "RCT", "RD")}
           <h4>9-month options</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -625,9 +739,10 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("B", "C", "CI", "D", "FQ", "L", "Lfx", "M", "RCT", "RR-TB", "Z", "mITT")}
           <ul>
             <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(24)}</li>
-            <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (mITT). ${cite(26)}</li>
+            <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (modified intention to treat, mITT). ${cite(26)}</li>
             <li><strong>Why WHO recommends against DCMZ:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(24, 13)}</li>
             <li><strong>Fallback: longer individualized regimen.</strong> Total <strong>18&ndash;20 months</strong> for most patients, adjusted to response. ${cite(13)}</li>
           </ul>
@@ -663,7 +778,8 @@ const CASES = [
                 </tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          ${abbrev("B", "C", "D", "FQ", "L", "Lfx", "M", "MDR-TB", "RR-TB", "Z")}`,
         pearl:
           "When BPaLM is off the table, first ask <em>why</em>. Pregnancy points you to BDLLfxC or an endTB regimen. Linezolid intolerance removes almost every short option. The reason for ineligibility picks the regimen.",
       },
@@ -680,7 +796,7 @@ const CASES = [
     hubDescription:
       "A newly diagnosed HIV patient with fever, progressive dyspnea and travel across South and Southeast Asia: a travel-shaped differential, interpreting urine LAM, sputum vs BAL, when to treat despite negative microbiology, and ART timing with co-trimoxazole.",
     vignette:
-      "36-year-old man, newly diagnosed HIV (CD4 38 cells/µL, not yet on ART), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. CT chest shows a diffuse micronodular (\"miliary\") pattern. He has travelled through India, Vietnam, Thailand and Indonesia, where he worked on farms, including in rice paddies, and ate raw or pickled freshwater crab." +
+      "36-year-old man, newly diagnosed HIV (CD4 38 cells/µL, not yet on antiretroviral therapy (ART)), admitted with 3 weeks of fever, weight loss, and progressive dyspnea. Exam notable for hepatosplenomegaly and diffuse fine crackles. Computed tomography (CT) chest shows a diffuse micronodular (\"miliary\") pattern. He has travelled through India, Vietnam, Thailand and Indonesia, where he worked on farms, including in rice paddies, and ate raw or pickled freshwater crab." +
       img(3, "stage1", "ct-miliary", 'Diffuse micronodular ("miliary") pattern on CT chest'),
     stages: [
       {
@@ -691,19 +807,19 @@ const CASES = [
           <ol>
             <li><strong>Miliary / disseminated TB</strong>
               <ul>
-                <li><strong>Sputum</strong> (induced if he cannot expectorate) for smear, <strong>NAAT</strong>, and <strong>mycobacterial culture</strong>;</li>
+                <li><strong>Sputum</strong> (induced if he cannot expectorate) for smear, <strong>nucleic acid amplification test (NAAT)</strong>, and <strong>mycobacterial culture</strong>;</li>
                 <li><strong>mycobacterial blood culture</strong>;</li>
-                <li><strong>urine LF-LAM</strong>. WHO conditionally recommends LAM in people with HIV and advanced disease (CD4 &le;100, WHO stage 3/4, or a danger sign). ${cite(27)}</li>
+                <li><strong>urine lateral-flow urine lipoarabinomannan assay (LF-LAM)</strong>. WHO conditionally recommends LAM in people with HIV and advanced disease (CD4 &le;100, WHO stage 3/4, or a danger sign). ${cite(27)}</li>
                 <li>Cultures on specimens from any other involved site. ${cite(1)}</li>
               </ul>
             </li>
             <li><strong><em>Pneumocystis jirovecii</em> pneumonia (PCP)</strong> (CD4 38, progressive dyspnea)
-              <ul><li>Induced sputum or BAL for <em>Pneumocystis</em> testing. The Saudi NTP algorithm for seriously ill people with HIV also advises considering PCP treatment alongside broad-spectrum antibiotics. ${cite(5)}</li></ul>
+              <ul><li>Induced sputum or bronchoalveolar lavage (BAL) for <em>Pneumocystis</em> testing. The Saudi National Tuberculosis Programme (NTP) algorithm for seriously ill people with HIV also advises considering PCP treatment alongside broad-spectrum antibiotics. ${cite(5)}</li></ul>
             </li>
             <li><strong>Disseminated cryptococcosis</strong>
               <ul><li><strong>Serum/plasma cryptococcal antigen (CrAg)</strong>. WHO <strong>strongly recommends CrAg screening before starting ART when CD4 &lt;100</strong>; a positive result &rarr; lumbar puncture. ${cite(28)}</li></ul>
             </li>
-            <li><strong>Disseminated NTM</strong> (typical at very low CD4)
+            <li><strong>Disseminated non-tuberculous mycobacteria (NTM)</strong> (typical at very low CD4)
               <ul><li>Mycobacterial blood culture with species identification.</li></ul>
             </li>
             <li><strong>Talaromycosis (<em>Talaromyces marneffei</em>)</strong>
@@ -775,6 +891,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CD4", "CrI", "LF-LAM")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -793,6 +910,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CD4", "CXR", "LAM", "LF-LAM", "NTP", "PLHIV")}
           <p><strong>Take-home:</strong> no. A negative LAM misses about half of TB even in the best subgroup. ${cite(36)} It must not delay further work-up, or empiric treatment in someone this sick.</p>`,
         pearl:
           "In advanced HIV, a positive LAM rules TB in; a negative one rules nothing out.",
@@ -820,6 +938,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("LAM")}
           <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized, unable to expectorate reliably) is exactly the phenotype where LAM-guided care showed benefit. ${cite(37)}</p>`,
         pearl:
           "Who gets tested changes what the evidence says as much as the test itself does. LAM's mortality benefit tracks with illness severity and CD4, not with HIV status alone.",
@@ -851,6 +970,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("BAL")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -873,7 +993,8 @@ const CASES = [
                 </tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          ${abbrev("ATS", "BAL", "CDC", "IDSA")}`,
         pearl:
           "The number of samples and the setting both change the answer. There is no universal winner, so know what is actually being compared before citing either study.",
       },
@@ -884,10 +1005,10 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Bone marrow aspirate/biopsy:</strong> smear, culture, histopathology; especially if cytopenias are present.</li>
-            <li><strong>Liver biopsy</strong> if hepatomegaly or deranged LFTs.</li>
+            <li><strong>Liver biopsy</strong> if hepatomegaly or deranged liver function tests (LFTs).</li>
             <li><strong>If bronchoscopy is done:</strong> send BAL <strong>and</strong> transbronchial biopsy.</li>
           </ul>
-          <p>For all extrapulmonary specimens: send <strong>AFB smear, mycobacterial culture, NAAT, and histology</strong>. A positive result supports TB; a negative one never excludes it. ${cite(1)}</p>`,
+          <p>For all extrapulmonary specimens: send <strong>acid-fast bacilli (AFB) smear, mycobacterial culture, NAAT, and histology</strong>. A positive result supports TB; a negative one never excludes it. ${cite(1)}</p>`,
         pearl:
           "In disseminated TB, the fastest diagnosis often comes from the organ that isn't the lung.",
       },
@@ -962,6 +1083,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("AIDS", "ART", "CD4", "HR", "IRIS", "PY", "RR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -995,12 +1117,13 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ART", "CD4", "CrAg", "NTP", "PLHIV")}
           <h4>What this means for this patient (CD4 38, no meningitis)</h4>
           <ul>
             <li>ART within 2 weeks ${cite(13, 5)};</li>
             <li><strong>co-trimoxazole now</strong> ${cite(5, 47)};</li>
             <li><strong>CrAg before ART</strong> (see Stage 1) ${cite(28)};</li>
-            <li>consider <strong>prednisone</strong> to prevent IRIS (PredART eligibility met) ${cite(44)};</li>
+            <li>consider <strong>prednisone</strong> to prevent immune reconstitution inflammatory syndrome (IRIS) (PredART eligibility met) ${cite(44)};</li>
             <li>if dolutegravir is used with rifampicin, give it <strong>twice daily</strong> ${cite(46)}.</li>
             <li><strong>Saudi vs WHO timing:</strong> for this patient (CD4 38) both say <strong>within 2 weeks</strong>. They differ <strong>above CD4 50</strong>: the Saudi NTP Manual (2021) allows <strong>up to 8 weeks</strong>, while WHO 2021 says <strong>within 2 weeks regardless of CD4</strong>. ${cite(5, 13)}</li>
             <li>INSPIRING enrolled CD4 &ge;50, so the dolutegravir evidence at his CD4 is extrapolated. ${cite(46)} If talaromycosis were confirmed, its treatment and ART timing would need separate guidance, which this case does not cover.</li>
@@ -1021,7 +1144,7 @@ const CASES = [
     hubDescription:
       "Fever, night sweats and mediastinal lymphadenopathy with no lung findings: a broad differential, choosing how and where to biopsy, then treatment duration and paradoxical reactions.",
     vignette:
-      "29-year-old expatriate construction worker from India, living in Saudi Arabia, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. CT chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
+      "29-year-old expatriate construction worker from India, living in Saudi Arabia, no significant past medical history, presents with 6 weeks of low-grade fever and night sweats. No cough, no respiratory symptoms. Computed tomography (CT) chest shows bilateral hilar and mediastinal lymphadenopathy without any parenchymal lung lesion." +
       img(4, "stage1", "ct-lymphadenopathy", "Bilateral hilar and mediastinal lymphadenopathy without parenchymal lung lesion"),
     stages: [
       {
@@ -1033,7 +1156,7 @@ const CASES = [
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>TB lymphadenitis</strong>
-              <ul><li><strong>EBUS-TBNA</strong> of the largest accessible node for <strong>AFB smear, mycobacterial culture, and NAAT</strong>, plus <strong>cytology/histology</strong> for granulomas. On extrapulmonary specimens, a positive culture or NAAT supports TB; a <strong>negative never excludes it</strong>. ${cite(1)}</li></ul>
+              <ul><li><strong>Endobronchial ultrasound-guided transbronchial needle aspiration (EBUS-TBNA)</strong> of the largest accessible node for <strong>acid-fast bacilli (AFB) smear, mycobacterial culture, and nucleic acid amplification test (NAAT)</strong>, plus <strong>cytology/histology</strong> for granulomas. On extrapulmonary specimens, a positive culture or NAAT supports TB; a <strong>negative never excludes it</strong>. ${cite(1)}</li></ul>
             </li>
             <li><strong>Sarcoidosis</strong>
               <ul><li>The same EBUS-TBNA looking for <strong>non-necrotizing granulomas</strong>. EBUS finds granulomas far more often than conventional bronchoscopy. ${cite(48)}</li></ul>
@@ -1102,7 +1225,8 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p style="color:var(--text-muted); font-size:0.9rem;">Figures come from different study designs and measures (granuloma detection or diagnostic yield in an RCT, sensitivity or accuracy in cohorts, pooled sensitivity), so compare them with caution.</p>
+          ${abbrev("EBUS-TBNA", "PCR", "RCT")}
+          <p style="color:var(--text-muted); font-size:0.9rem;">Figures come from different study designs and measures (granuloma detection or diagnostic yield in a randomized controlled trial (RCT), sensitivity or accuracy in cohorts, pooled sensitivity), so compare them with caution.</p>
           <p><em>Optional reference comparator:</em></p>
           ${img(4, "stage3", "histopath-non-necrotizing-granuloma", "Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image")}`,
         pearl:
@@ -1124,7 +1248,7 @@ const CASES = [
       {
         title: "EBUS-accessible nodes are non-diagnostic, or the node is out of reach. What next?",
         question:
-          "Say the EBUS-reachable nodes were non-diagnostic, or the most suspicious node sits somewhere EBUS can't reach — how do you choose between repeating EBUS, going to CT-guided (IR) biopsy, or a surgical approach?",
+          "Say the EBUS-reachable nodes were non-diagnostic, or the most suspicious node sits somewhere EBUS can't reach — how do you choose between repeating EBUS, going to CT-guided (interventional radiology, IR) biopsy, or a surgical approach?",
         reveal: `
           <ul>
             <li><strong>Where EBUS reaches:</strong>
@@ -1133,7 +1257,7 @@ const CASES = [
                   <ul>
                     <li><strong>EBUS</strong> samples nodes against the trachea and bronchi: <strong>stations 2R/2L, 4R/4L, 7, 10 and 11&ndash;12</strong>.</li>
                     <li><strong>Through the oesophagus (EUS/EUS-B)</strong>: <strong>2L, 4L, 7, 8 and 9</strong>.</li>
-                    <li><strong>Stations 5 and 6</strong> (subaortic/para-aortic) can be seen by EUS but can <strong>rarely be sampled without traversing the pulmonary artery or aorta</strong>. <strong>VATS is the method of choice</strong> for them.</li>
+                    <li><strong>Stations 5 and 6</strong> (subaortic/para-aortic) can be seen by endoscopic ultrasound (EUS) but can <strong>rarely be sampled without traversing the pulmonary artery or aorta</strong>. <strong>Video-assisted thoracoscopic surgery (VATS) is the method of choice</strong> for them.</li>
                   </ul>
                   No single sampling method reaches every station. ${cite(57)}
                 </div>
@@ -1193,7 +1317,7 @@ const CASES = [
     hubDescription:
       "A high-risk occupational TB exposure: who counts as exposed, the window period, a pneumonia that isn't TB, IGRA vs TST, and short-course preventive treatment.",
     vignette:
-      "32-year-old Egyptian ICU nurse at a tertiary hospital in Riyadh. She received BCG in childhood. She had an unmasked, prolonged exposure to a ventilated patient who was later confirmed to have smear-positive, NAAT-positive, cavitary pulmonary TB. The exposure happened before the patient was placed in airborne isolation. She assisted with intubation and open suctioning.",
+      "32-year-old Egyptian intensive care unit (ICU) nurse at a tertiary hospital in Riyadh. She received bacille Calmette-Guérin (BCG) in childhood. She had an unmasked, prolonged exposure to a ventilated patient who was later confirmed to have smear-positive, NAAT-positive, cavitary pulmonary TB. The exposure happened before the patient was placed in airborne isolation. She assisted with intubation and open suctioning.",
     stages: [
       {
         title: "Who counts as exposed, and what do you do now?",
@@ -1204,7 +1328,7 @@ const CASES = [
           <ul>
             <li><strong>Start:</strong> 3 months <strong>before the TB diagnosis</strong>. Start earlier if the patient reports a longer illness. ${cite(4)}
               <ul>
-                <li><strong>Saudi NTP Manual:</strong> "3 months before symptom onset or first positive finding" (&sect;14.6.3). Its definitions section uses "3 months before initiation of treatment" and calls the 3-month period "somewhat arbitrary", a general guideline (&sect;14.1). ${cite(5)}</li>
+                <li><strong>Saudi National Tuberculosis Programme (NTP) Manual:</strong> "3 months before symptom onset or first positive finding" (&sect;14.6.3). Its definitions section uses "3 months before initiation of treatment" and calls the 3-month period "somewhat arbitrary", a general guideline (&sect;14.1). ${cite(5)}</li>
                 <li><strong>Teaching point:</strong> all sources use <strong>~3 months</strong>. They differ only on the anchor (diagnosis, symptom onset, or treatment start). When in doubt, take the <strong>earliest</strong> anchor.</li>
               </ul>
             </li>
@@ -1262,6 +1386,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CXR", "NAAT", "NTCA", "NTP")}
           <p>Contact-side modifiers (these change <strong>urgency</strong>, not infectiousness):</p>
           <ul>
             <li>people with <strong>HIV</strong> progress faster than with any other known risk factor, <strong>35&ndash;162 per 1,000 person-years</strong>;</li>
@@ -1271,7 +1396,7 @@ const CASES = [
           <h4>5. What to do now ${cite(66)}</h4>
           <ul>
             <li><strong>Symptom evaluation now</strong>, for everyone exposed.</li>
-            <li><strong>Baseline IGRA or TST</strong> for those <strong>without</strong> documented prior LTBI or TB.</li>
+            <li><strong>Baseline interferon-gamma release assay (IGRA) or tuberculin skin test (TST)</strong> for those <strong>without</strong> documented prior latent TB infection (LTBI) or TB.</li>
             <li>A person with a <strong>documented prior positive</strong> test does <strong>not</strong> need another test for infection. They get a symptom evaluation, and further work-up only if there is concern for TB disease.</li>
             <li>If the baseline is negative, <strong>repeat 8&ndash;10 weeks after the last exposure</strong>, preferably with the <strong>same test type</strong>.</li>
           </ul>
@@ -1308,11 +1433,12 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CDC", "CXR", "GRADE", "LTBI", "NTCA", "NTP", "TST")}
           <p><strong>"5 days" vs "2 weeks": these answer different questions.</strong></p>
           <ul>
             <li><strong>NTCA 2024</strong> decides when a person on treatment can stop <strong>community</strong> restrictions. The guideline is explicitly for <strong>community settings</strong>. ${cite(65)}</li>
             <li><strong>CDC 2005</strong> defines the <strong>infectious period</strong> used to decide <strong>who counts as a contact</strong>. It ends only after &gt;2 weeks of effective treatment plus clinical and microbiologic response. ${cite(4)}</li>
-            <li><strong>Hospital airborne isolation</strong> follows healthcare-setting rules: for example, three consecutive negative AFB smears, 8&ndash;24 h apart, one early morning. ${cite(62)}</li>
+            <li><strong>Hospital airborne isolation</strong> follows healthcare-setting rules: for example, three consecutive negative acid-fast bacilli (AFB) smears, 8&ndash;24 h apart, one early morning. ${cite(62)}</li>
             <li>For this ICU case, the nurse's exposure was <strong>before any treatment</strong>, so the 5-day rule doesn't shorten her exposure window.</li>
             <li><strong>Before returning to a congregate setting</strong> (e.g. shelter, prison, care facility), the bar is higher: &ge;3 consecutive negative sputum smears, collected &gt;8 h apart, one early morning. This is not the hospital isolation rule. ${cite(4)}</li>
           </ul>`,
@@ -1342,7 +1468,7 @@ const CASES = [
                 <li><strong>Teaching point:</strong> with TST, a BCG-vaccinated nurse needs two-step baseline testing and careful reading. IGRA avoids both problems.</li>
               </ul>
             </li>
-            <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QFT in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(67)}</li>
+            <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QuantiFERON (QFT) in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(67)}</li>
             <li>A 2026 meta-analysis of healthcare workers found pooled positivity of <strong>22% by IGRA vs 38% by TST</strong>; <strong>TST positivity tracked BCG vaccination rates, but IGRA positivity did not</strong>. ${cite(68)}</li>
           </ul>
           <h4>Exception: window prophylaxis ${cite(4)}</h4>
@@ -1379,7 +1505,7 @@ const CASES = [
       {
         title: "Day 10: fever, cough and a lobar consolidation. Is this TB?",
         context:
-          "Ten days after the exposure she develops <strong>rhinorrhea, fever, cough and shortness of breath</strong>. SpO<sub>2</sub> is 96% on room air, she has no comorbidities, and she is managed as an outpatient. <strong>CXR shows right lower lobe consolidation.</strong>",
+          "Ten days after the exposure she develops <strong>rhinorrhea, fever, cough and shortness of breath</strong>. SpO<sub>2</sub> is 96% on room air, she has no comorbidities, and she is managed as an outpatient. <strong>Chest radiograph (CXR) shows right lower lobe consolidation.</strong>",
         question: "Does this change your TB plan? How do you manage her?",
         reveal: `
           <p><strong>Differential first</strong>, most to least likely:</p>
@@ -1406,6 +1532,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("AFB", "CAP", "CXR", "NAAT", "RSV")}
           <h4>Why TB is unlikely now ${cite(71)}</h4>
           <ul>
             <li>After infection, the TST converts within <strong>&lt;6 weeks</strong>.</li>
@@ -1414,13 +1541,13 @@ const CASES = [
           </ul>
           <h4>Management</h4>
           <ul>
-            <li><strong>Treat as CAP.</strong>
+            <li><strong>Treat as community-acquired pneumonia (CAP).</strong>
               <ul>
                 <li><strong>ATS/IDSA 2019</strong> (healthy outpatient): <strong>amoxicillin 1 g three times daily</strong> (strong); doxycycline (conditional); a macrolide only where pneumococcal macrolide resistance is &lt;25%. ${cite(70)}</li>
                 <li><strong>Saudi Thoracic Society 2025:</strong> <strong>beta-lactams first-line</strong>. In outpatients it suggests <strong>macrolides over fluoroquinolones</strong> (conditional, very low certainty). It reserves quinolones as second-line in children because TB is endemic in the region. ${cite(69)}</li>
               </ul>
             </li>
-            <li><strong>Avoid an empiric fluoroquinolone here.</strong> In a meta-analysis, empiric fluoroquinolones for pneumonia <strong>delayed TB diagnosis and treatment by ~19 days</strong> and raised the odds of <strong>fluoroquinolone-resistant <em>M. tuberculosis</em></strong> (OR <strong>2.70</strong>). ${cite(72)} This matters in anyone with a recent TB exposure.</li>
+            <li><strong>Avoid an empiric fluoroquinolone here.</strong> In a meta-analysis, empiric fluoroquinolones for pneumonia <strong>delayed TB diagnosis and treatment by ~19 days</strong> and raised the odds of <strong>fluoroquinolone-resistant <em>M. tuberculosis</em></strong> (odds ratio (OR) <strong>2.70</strong>). ${cite(72)} This matters in anyone with a recent TB exposure.</li>
             <li><strong>No airborne isolation and no TB work-up</strong> unless the course is atypical: no response to appropriate CAP treatment, cavitation, or symptoms that persist.</li>
             <li><strong>Keep the scheduled 8&ndash;10-week repeat IGRA.</strong> The pneumonia doesn't change it.</li>
           </ul>
@@ -1446,7 +1573,8 @@ const CASES = [
                 </tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          ${abbrev("ATS", "CAP", "IDSA")}`,
         pearl:
           "Don't anchor on the exposure. TB takes months, not days. A lobar pneumonia at day 10 is pneumonia, and the drug you choose for it (not a fluoroquinolone) protects the TB work-up you may need later.",
       },
@@ -1462,8 +1590,8 @@ const CASES = [
             <li>IGRA and TST cannot tell latent from active TB, so disease must be excluded before starting LTBI treatment. ${cite(1)}</li>
             <li><strong>Why it matters:</strong> preventive treatment given for unrecognized active TB under-treats the disease. Trials have not shown a significant rise in drug resistance, but that risk cannot be excluded, so active TB must be ruled out first.
               <ul>
-                <li><strong>Rifamycin regimens:</strong> a meta-analysis of 6 RCTs found <strong>no statistically significant increase</strong> in rifamycin resistance vs non-rifamycin regimens (RR 3.45, 95% CI 0.72&ndash;16.56). The wide confidence interval means a risk <strong>cannot be excluded</strong>. ${cite(73)}</li>
-                <li><strong>Isoniazid preventive therapy:</strong> 13 studies; summary RR for isoniazid resistance <strong>1.45</strong> (95% CI 0.85&ndash;2.47). The findings "do not exclude an increased risk", and the authors conclude active TB <strong>should be excluded before IPT</strong>. ${cite(74)}</li>
+                <li><strong>Rifamycin regimens:</strong> a meta-analysis of 6 randomized controlled trials (RCTs) found <strong>no statistically significant increase</strong> in rifamycin resistance vs non-rifamycin regimens (risk ratio (RR) 3.45, 95% confidence interval (CI) 0.72&ndash;16.56). The wide confidence interval means a risk <strong>cannot be excluded</strong>. ${cite(73)}</li>
+                <li><strong>Isoniazid preventive therapy:</strong> 13 studies; summary RR for isoniazid resistance <strong>1.45</strong> (95% CI 0.85&ndash;2.47). The findings "do not exclude an increased risk", and the authors conclude active TB <strong>should be excluded before isoniazid preventive therapy (IPT)</strong>. ${cite(74)}</li>
               </ul>
             </li>
           </ul>
@@ -1492,7 +1620,8 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p><strong>Takeaway:</strong> the risk is <strong>front-loaded</strong>, which is why TPT is offered promptly after a documented conversion.</p>
+          ${abbrev("IGRA", "LTBI")}
+          <p><strong>Takeaway:</strong> the risk is <strong>front-loaded</strong>, which is why TB preventive treatment (TPT) is offered promptly after a documented conversion. TPT is WHO's term ${cite(83)}; US guidance calls it treatment of LTBI ${cite(84)}.</p>
           <h4>Higher-risk groups (relative risk of progression)</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1507,7 +1636,8 @@ const CASES = [
                 <tr><td><strong>Transplant, dialysis, silicosis</strong></td><td>WHO <strong>strongly recommends</strong> systematic testing and treatment in these groups</td><td>${cite(79)}</td></tr>
               </tbody>
             </table>
-          </div>`,
+          </div>
+          ${abbrev("CDC", "CI", "JAK", "NTP", "PY", "RR", "SIR", "TNF", "TST")}`,
         pearl:
           "A conversion is a recent infection, and recent infection is when TB happens. Most of the lifetime risk arrives in the first two years, which is the window TPT is meant to close.",
       },
@@ -1539,6 +1669,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("#", "H", "P", "PY", "R")}
           <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(82, 83)}</p>
           <h4>Studies: 6H vs 9H</h4>
           <div class="table-scroll">
@@ -1563,6 +1694,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("RCT", "RR")}
           <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. That is why NTCA/CDC rates 6H strong and 9H conditional, and the Saudi manual recommends 6H. ${cite(84, 5)}</p>
           <h4>Guidelines</h4>
           <div class="table-scroll">
@@ -1579,6 +1711,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("#", "CDC", "H", "KSA", "Lfx", "MDR-TB", "NTCA", "NTP", "P", "R", "RR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;">WHO: strong = moderate-to-high certainty; conditional = low-to-moderate certainty; 6Lfx strong, moderate certainty. Saudi alternatives to 6H (low-incidence countries): strong recommendation, moderate&ndash;high-quality evidence. The 6Lfx row is not for this nurse: her source was drug-susceptible.</p>
           <h4>Her regimen</h4>
           <ul>
@@ -1606,7 +1739,7 @@ const CASES = [
             </li>
             <li><strong>Saudi policy</strong> ${cite(5)}:
               <ul>
-                <li><strong>household contacts</strong> of bacteriologically confirmed PTB "should be systematically tested and treated for LTBI" because KSA is low-incidence (strong, high&ndash;moderate);</li>
+                <li><strong>household contacts</strong> of bacteriologically confirmed pulmonary TB (PTB) "should be systematically tested and treated for LTBI" because Kingdom of Saudi Arabia (KSA) is low-incidence (strong, high&ndash;moderate);</li>
                 <li><strong>anti-TNF, dialysis, pre-transplant and silicosis</strong> patients: systematic testing and treatment (strong, low&ndash;very low);</li>
                 <li><strong>health workers and immigrants from high-burden countries:</strong> "may be considered" (conditional, low&ndash;very low);</li>
                 <li><strong>not</strong> recommended for diabetes, harmful alcohol use, smokers or underweight people alone (conditional, very low) (&sect;12);</li>
@@ -1614,7 +1747,7 @@ const CASES = [
                 <li><strong>immigrants from high-burden regions</strong> seeking long residency undergo <strong>active case finding</strong>: a first assessment in the home country and re-examination on arrival. Note this is screening for <strong>active</strong> TB, not LTBI.</li>
               </ul>
             </li>
-            <li><strong>Before any biologic or JAK inhibitor:</strong>
+            <li><strong>Before any biologic or Janus kinase (JAK) inhibitor:</strong>
               <ul>
                 <li>International recommendations agree on <strong>screening before starting</strong>: IGRA/TST plus CXR, with many advising <strong>both tests in BCG-vaccinated patients</strong>. Patients with LTBI should <strong>receive TPT before the biologic</strong>. ${cite(85)}</li>
                 <li>Why it matters: in the French RATIO registry, <strong>none</strong> of the anti-TNF-associated TB cases had received correct prophylaxis. ${cite(76)}</li>
@@ -1639,7 +1772,7 @@ const CASES = [
     hubDescription:
       "A young man with a lymphocytic pleural effusion: what the fluid can and can't tell you, when tissue is worth getting, drainage versus steroids, and why a clean lung field doesn't mean clean sputum.",
     vignette:
-      "31-year-old Saudi man, previously healthy, with 3 weeks of fever, dry cough and right-sided pleuritic chest pain, and increasing breathlessness over the last week. CXR: moderate right pleural effusion; no visible parenchymal lesion. HIV status unknown." +
+      "31-year-old Saudi man, previously healthy, with 3 weeks of fever, dry cough and right-sided pleuritic chest pain, and increasing breathlessness over the last week. Chest radiograph (CXR): moderate right pleural effusion; no visible parenchymal lesion. HIV status unknown." +
       img(6, "stage1", "cxr-effusion", "Unilateral right pleural effusion on chest radiograph (reference image, not this patient)"),
     stages: [
       {
@@ -1651,7 +1784,7 @@ const CASES = [
           <ol>
             <li><strong>Tuberculous pleurisy</strong>
               <ul>
-                <li><strong>Diagnostic thoracentesis:</strong> protein and LDH (to confirm an exudate by Light's criteria) ${cite(88)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
+                <li><strong>Diagnostic thoracentesis:</strong> protein and lactate dehydrogenase (LDH) (to confirm an exudate by Light's criteria) ${cite(88)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
                 <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(89)}</li>
               </ul>
             </li>
@@ -1688,6 +1821,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "AFB", "ATS", "CDC", "DST", "IDSA", "IFN-γ", "NAAT")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1701,7 +1835,8 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          <p><strong>Take-home:</strong> <strong>no.</strong> In pleural fluid, a negative smear or NAAT never excludes TB. ${cite(1)} A lymphocytic exudate with a high ADA is strong <strong>supporting</strong> evidence. ATS/IDSA/CDC stress that neither ADA nor IFN-&gamma; "provide a definitive diagnosis"; they "must be interpreted in the entire clinical context". ${cite(1)}</p>`,
+          ${abbrev("ADA", "AFB", "ATS", "CDC", "IDSA", "IFN-γ", "NAAT", "NTP")}
+          <p><strong>Take-home:</strong> <strong>no.</strong> In pleural fluid, a negative smear or nucleic acid amplification test (NAAT) never excludes TB. ${cite(1)} A lymphocytic exudate with a high ADA is strong <strong>supporting</strong> evidence. ATS/IDSA/CDC stress that neither ADA nor interferon-&gamma; (IFN-&gamma;) "provide a definitive diagnosis"; they "must be interpreted in the entire clinical context". ${cite(1)}</p>`,
         pearl:
           "In pleural TB, the fluid is full of the immune response and almost empty of bacilli. That's why ADA performs well and the smear fails.",
       },
@@ -1722,6 +1857,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "ATS", "CDC", "IDSA", "KSA")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1732,6 +1868,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "IDSA")}
           <h4>Reasoning for this patient</h4>
           <ul>
             <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(3, 91)}</li>
@@ -1757,6 +1894,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ARR", "FEV1", "FVC", "RCT", "RR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1769,6 +1907,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("#", "ATS", "CDC", "E", "H", "IDSA", "NTP", "R", "RCT", "Z")}
           <h4>Answer for this patient</h4>
           <ul>
             <li><strong>2HRZE/4HR for 6 months.</strong> ${cite(3, 5)}</li>
@@ -1786,8 +1925,8 @@ const CASES = [
         question: "Does this change how he is classified, and does it matter for his contacts?",
         reveal: `
           <ul>
-            <li><strong>Classification changes.</strong> Under the Saudi NTP Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
-            <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for LTBI" (Saudi policy, strong). ${cite(5)}</li>
+            <li><strong>Classification changes.</strong> Under the Saudi National Tuberculosis Programme (NTP) Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
+            <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for latent TB infection (LTBI)" (Saudi policy, strong). ${cite(5)}</li>
             <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(89)}</li>
             <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
             <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
@@ -1846,9 +1985,9 @@ const CASES = [
           <ol>
             <li><strong>Tuberculous spondylitis (Pott's disease)</strong>
               <ul>
-                <li><strong>MRI of the whole spine</strong> first.</li>
-                <li>Then <strong>image-guided biopsy</strong> of the vertebra or paravertebral collection for <strong>histology</strong>, <strong>mycobacterial culture</strong> (strong recommendation), and <strong>AFB smear and NAAT</strong> (Xpert). ${cite(1)}</li>
-                <li><strong>CXR</strong>, and sputum if the chest is abnormal.</li>
+                <li><strong>Magnetic resonance imaging (MRI) of the whole spine</strong> first.</li>
+                <li>Then <strong>image-guided biopsy</strong> of the vertebra or paravertebral collection for <strong>histology</strong>, <strong>mycobacterial culture</strong> (strong recommendation), and <strong>acid-fast bacilli (AFB) smear and nucleic acid amplification test (NAAT)</strong> (Xpert). ${cite(1)}</li>
+                <li><strong>Chest radiograph (CXR)</strong>, and sputum if the chest is abnormal.</li>
               </ul>
             </li>
             <li><strong>Brucellar spondylitis</strong>
@@ -1889,6 +2028,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("T2")}
           <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(99)}</p>
           <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(98)}</p>`,
         pearl:
@@ -1910,6 +2050,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "CT", "IDSA", "MGIT", "NAAT")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1920,10 +2061,11 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("AFB", "ATS", "CDC", "IDSA", "NAAT")}
           <p><strong>Take-home:</strong></p>
           <ul>
             <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(101)}</li>
-            <li><strong>Only a culture gives a full DST.</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
+            <li><strong>Only a culture gives full drug-susceptibility testing (DST).</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
             <li>A negative biopsy doesn't exclude TB. ${cite(1)}</li>
           </ul>`,
         pearl:
@@ -1946,6 +2088,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "IDSA", "NTP")}
           <h4>For this patient (neurologically intact, no instability)</h4>
           <ul>
             <li><strong>2HRZE, then HR, for 6&ndash;9 months in total</strong>; many would choose 9. ${cite(3)}</li>
@@ -1983,7 +2126,7 @@ const CASES = [
     hubDescription:
       "A subacute meningitis with a cranial-nerve palsy: what to send in the first lumbar puncture, why a negative Xpert shouldn't delay treatment, the steroid and intensified-treatment trials, and what changes with HIV.",
     vignette:
-      "32-year-old Saudi man with 3 weeks of headache, fever and vomiting, and 2 days of confusion. Double vision (left sixth-nerve palsy). GCS 13. Neck stiffness. No rash. HIV status unknown.",
+      "32-year-old Saudi man with 3 weeks of headache, fever and vomiting, and 2 days of confusion. Double vision (left sixth-nerve palsy). Glasgow Coma Scale (GCS) 13. Neck stiffness. No rash. HIV status unknown.",
     stages: [
       {
         title: "What do you send?",
@@ -1993,9 +2136,9 @@ const CASES = [
           <ol>
             <li><strong>Tuberculous meningitis</strong>
               <ul>
-                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>ADA</strong>; <strong>AFB smear, mycobacterial culture and Xpert Ultra</strong> on the CSF. ${cite(1, 92)}</li>
-                <li><strong>Brain MRI</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
-                <li><strong>CXR</strong>, and sputum if abnormal.</li>
+                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>adenosine deaminase (ADA)</strong>; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the cerebrospinal fluid (CSF). ${cite(1, 92)}</li>
+                <li><strong>Brain magnetic resonance imaging (MRI)</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
+                <li><strong>Chest radiograph (CXR)</strong>, and sputum if abnormal.</li>
               </ul>
             </li>
             <li><strong>Partially treated bacterial meningitis</strong>
@@ -2008,7 +2151,7 @@ const CASES = [
               <ul><li>CSF and serum cryptococcal antigen. ${cite(28)}</li></ul>
             </li>
             <li><strong>Viral meningoencephalitis</strong>
-              <ul><li>CSF viral PCR.</li></ul>
+              <ul><li>CSF viral polymerase chain reaction (PCR).</li></ul>
             </li>
           </ol>
           <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine in anyone with presumptive TB. ${cite(3)}</p>`,
@@ -2018,7 +2161,7 @@ const CASES = [
       {
         title: "CSF back, Xpert Ultra negative. Treat now?",
         context:
-          "CSF: 180 cells/µL, <strong>85% lymphocytes</strong>; protein 2.1 g/L; <strong>CSF:serum glucose 0.3</strong>; ADA 12 U/L. Gram stain negative. AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> CrAg negative. Brucella serology negative. HIV test negative.",
+          "CSF: 180 cells/µL, <strong>85% lymphocytes</strong>; protein 2.1 g/L; <strong>CSF:serum glucose 0.3</strong>; ADA 12 U/L. Gram stain negative. AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> cryptococcal antigen (CrAg) negative. Brucella serology negative. HIV test negative.",
         question:
           "Does a negative Xpert Ultra rule out TB meningitis? Do you start treatment now or wait for culture?",
         reveal: `
@@ -2034,6 +2177,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "ATS", "CDC", "CSF", "IDSA", "NAAT", "TBM")}
           <h4>What is at stake</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2044,6 +2188,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CNS", "GCS", "MRC", "TBM")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2055,6 +2200,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "ATS", "CDC", "CSF", "IDSA", "NAAT")}
           <p><strong>Take-home:</strong> <strong>no.</strong> A negative Xpert Ultra doesn't exclude TB meningitis. With this CSF, a cranial-nerve palsy and falling consciousness, <strong>start TB treatment and dexamethasone today</strong>. Don't wait weeks for a culture. ${cite(1, 3)}</p>`,
         pearl:
           "In TB meningitis, time is brain. A lymphocytic CSF with low glucose and a cranial-nerve palsy is enough to treat; a negative Xpert isn't enough to stop.",
@@ -2074,6 +2220,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("HR", "RCT", "RR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2085,6 +2232,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "CSF", "E", "H", "IDSA", "NTP", "R", "Z")}
           <p><strong>For this patient:</strong> HRZE, then HR, for <strong>9&ndash;12 months in total</strong>, plus a <strong>dexamethasone taper over 6&ndash;8 weeks</strong>. ${cite(3, 5)}</p>`,
         pearl:
           "Dexamethasone in HIV-negative TB meningitis saves lives. Higher-dose rifampin plus levofloxacin did not. The two strongest levers are still starting early and adding the steroid.",
@@ -2092,7 +2240,7 @@ const CASES = [
       {
         title: "Day 10: drowsier",
         context:
-          "On day 10 his GCS falls to 10. CT: <strong>enlarging ventricles (hydrocephalus)</strong>." +
+          "On day 10 his GCS falls to 10. Computed tomography (CT): <strong>enlarging ventricles (hydrocephalus)</strong>." +
           img(8, "stage4", "ct-hydrocephalus", "Hydrocephalus on non-contrast CT (reference image; the cause in this example is not specified)"),
         question: "What do you do?",
         reveal: `
@@ -2120,9 +2268,10 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ART", "HR", "RCT", "TBM")}
           <ul>
             <li><strong>Steroids:</strong> the best trial in HIV-positive adults showed no survival benefit. ${cite(108)} The ATS recommendation was written before that trial. ${cite(3)}</li>
-            <li><strong>ART:</strong> <strong>defer</strong> when TB meningitis is suspected. ${cite(28, 45)} The Saudi manual likewise advises caution with early ART in TB meningitis (as taught in Case 3). ${cite(5)}</li>
+            <li><strong>Antiretroviral therapy (ART):</strong> <strong>defer</strong> when TB meningitis is suspected. ${cite(28, 45)} The Saudi manual likewise advises caution with early ART in TB meningitis (as taught in Case 3). ${cite(5)}</li>
             <li><strong>Cryptococcus:</strong> check the CrAg if CD4 &lt;100. ${cite(28)}</li>
           </ul>`,
         pearl:
@@ -2141,7 +2290,7 @@ const CASES = [
     hubDescription:
       "Terminal ileal disease in a TB-endemic setting: the few features that truly separate the two main diagnoses, why TB must be excluded before immunosuppression, how long to treat, and what a clinical response does and doesn't prove.",
     vignette:
-      "26-year-old Saudi man with 4 months of intermittent right lower abdominal pain, evening fevers, night sweats and 6 kg weight loss. Occasional loose stools, no blood. No perianal disease. CRP raised; mild anaemia.",
+      "26-year-old Saudi man with 4 months of intermittent right lower abdominal pain, evening fevers, night sweats and 6 kg weight loss. Occasional loose stools, no blood. No perianal disease. C-reactive protein (CRP) raised; mild anaemia.",
     stages: [
       {
         title: "What do you send?",
@@ -2151,9 +2300,9 @@ const CASES = [
           <ol>
             <li><strong>Intestinal (ileocaecal) TB</strong>
               <ul>
-                <li><strong>Ileocolonoscopy with multiple biopsies</strong> for histology, AFB smear, mycobacterial culture and TB PCR/Xpert. ${cite(1)}</li>
-                <li><strong>Cross-sectional imaging</strong> (CT enterography).</li>
-                <li><strong>CXR.</strong></li>
+                <li><strong>Ileocolonoscopy with multiple biopsies</strong> for histology, acid-fast bacilli (AFB) smear, mycobacterial culture and TB PCR/Xpert. ${cite(1)}</li>
+                <li><strong>Cross-sectional imaging</strong> (computed tomography (CT) enterography).</li>
+                <li><strong>Chest radiograph (CXR).</strong></li>
               </ul>
             </li>
             <li><strong>Crohn's disease</strong>
@@ -2163,14 +2312,14 @@ const CASES = [
               <ul><li>Histology and immunohistochemistry on the biopsies.</li></ul>
             </li>
           </ol>
-          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>IGRA</strong> is supporting evidence only (see the next stage). ${cite(110)}</p>`,
+          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>interferon-gamma release assay (IGRA)</strong> is supporting evidence only (see the next stage). ${cite(110)}</p>`,
         pearl:
           "In a TB-endemic setting, every \"Crohn's disease\" of the terminal ileum is intestinal TB until the biopsies and the CT say otherwise.",
       },
       {
         title: "Biopsies inconclusive. How do you tell TB from Crohn's?",
         context:
-          "<strong>Colonoscopy:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB PCR negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
+          "<strong>Colonoscopy:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB polymerase chain reaction (PCR) negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
         question: "Does anything here settle it?",
         reveal: `
           <h4>Studies: features that separate intestinal TB (ITB) from Crohn's disease (CD)</h4>
@@ -2189,6 +2338,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("AFB", "CD", "CT", "IGRA", "ITB", "PCR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2199,6 +2349,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CDC", "IDSA", "NAAT")}
           <p><strong>Take-home:</strong> the colonoscopy features and the positive IGRA lean towards TB, but <strong>none of the exclusive features is present</strong>. This is the classic unresolved case. ${cite(109)}</p>`,
         pearl:
           "Only caseation, AFB and necrotic nodes are exclusive to TB, and each is usually absent. Most cases are decided by weighing the whole picture, not by a single test.",
@@ -2218,10 +2369,11 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("CD", "ITB", "SIR", "TNF")}
           <h4>Answer</h4>
           <ul>
             <li><strong>Don't start immunosuppression while TB is unexcluded.</strong> A <strong>therapeutic trial of TB treatment</strong> is still needed "in a significant proportion of patients to establish the diagnosis", despite the cost of delaying a Crohn's diagnosis. ${cite(109)}</li>
-            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with LTBI treatment first. ${cite(85)}</li>
+            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with latent TB infection (LTBI) treatment first. ${cite(85)}</li>
             <li>Wait for the biopsy culture while treatment runs. ${cite(1)}</li>
           </ul>`,
         pearl:
@@ -2243,6 +2395,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("GI", "PCR", "RCT", "RR")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2253,6 +2406,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("#", "ATS", "CDC", "E", "H", "IDSA", "NTP", "R", "Z")}
           <p><strong>For this patient:</strong> <strong>2HRZE/4HR (6 months).</strong> ${cite(3, 114)}</p>`,
         pearl:
           "Gut TB doesn't need a longer course. Six months is as good as nine in the trials we have.",
@@ -2284,7 +2438,7 @@ const CASES = [
     hubDescription:
       "Ascites, peritoneal thickening and a raised CA-125 in a young woman: what the fluid can settle, when laparoscopy beats laparotomy, six months of treatment, and two patients in whom the usual tests mislead.",
     vignette:
-      "38-year-old Saudi woman with 2 months of abdominal distension, low-grade fevers, night sweats and weight loss. Ultrasound: moderate ascites. CT: ascites with smooth peritoneal thickening and omental thickening; ovaries not clearly enlarged. <strong>Serum CA-125 raised.</strong> She has been referred to gynaecological oncology for suspected ovarian cancer." +
+      "38-year-old Saudi woman with 2 months of abdominal distension, low-grade fevers, night sweats and weight loss. Ultrasound: moderate ascites. Computed tomography (CT): ascites with smooth peritoneal thickening and omental thickening; ovaries not clearly enlarged. <strong>Serum cancer antigen 125 (CA-125) raised.</strong> She has been referred to gynaecological oncology for suspected ovarian cancer." +
       img(10, "stage1", "ct-peritonitis", "CT of wet-type tuberculous peritonitis with ascites (reference image, not this patient)"),
     stages: [
       {
@@ -2295,9 +2449,9 @@ const CASES = [
           <ol>
             <li><strong>Peritoneal TB</strong>
               <ul>
-                <li><strong>Diagnostic paracentesis:</strong> cell count and differential; <strong>serum&ndash;ascites albumin gradient (SAAG)</strong>; <strong>ADA</strong> &plusmn; free IFN-&gamma;; <strong>AFB smear, mycobacterial culture</strong> and NAAT. ${cite(1)}</li>
+                <li><strong>Diagnostic paracentesis:</strong> cell count and differential; <strong>serum&ndash;ascites albumin gradient (SAAG)</strong>; <strong>adenosine deaminase (ADA)</strong> &plusmn; free interferon-&gamma; (IFN-&gamma;); <strong>acid-fast bacilli (AFB) smear, mycobacterial culture</strong> and nucleic acid amplification test (NAAT). ${cite(1)}</li>
                 <li>Consider TB peritonitis in anyone with unexplained <strong>lymphocytic ascites</strong> and a <strong>SAAG &lt;11 g/L</strong>. ${cite(116)}</li>
-                <li><strong>CXR.</strong></li>
+                <li><strong>Chest radiograph (CXR).</strong></li>
               </ul>
             </li>
             <li><strong>Peritoneal carcinomatosis / advanced ovarian cancer</strong>
@@ -2332,6 +2486,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "ATS", "CDC", "GRADE", "IDSA", "IFN-γ")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2343,6 +2498,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ADA", "ATS", "CDC", "IDSA", "IFN-γ", "NAAT")}
           <p><strong>Take-home:</strong> lymphocytic, low-SAAG ascites with a high ADA and negative cytology makes peritoneal TB very likely. A negative smear and NAAT don't count against it. ${cite(1, 118)}</p>`,
         pearl:
           "In a young woman without cirrhosis, a high ascitic ADA is one of the most accurate tests in extrapulmonary TB. It can save her from an unnecessary cancer operation.",
@@ -2364,9 +2520,10 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("ATS", "CA-125", "CDC", "GI", "IDSA")}
           <h4>Answer</h4>
           <ul>
-            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and DST in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(116, 119, 117)}</li>
+            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and drug-susceptibility testing (DST) in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(116, 119, 117)}</li>
             <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(3, 118)}</li>
           </ul>`,
         pearl:
@@ -2387,6 +2544,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("RCT")}
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2398,6 +2556,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
+          ${abbrev("#", "ATS", "CDC", "E", "H", "IDSA", "NTP", "R", "Z")}
           <p><strong>For this patient:</strong> <strong>2HRZE/4HR</strong>, with no routine steroids. ${cite(3)}</p>`,
         pearl:
           "Peritoneal TB is treated like pulmonary TB: six months, no steroids. The hard part is getting the diagnosis without a laparotomy.",
@@ -2415,11 +2574,11 @@ const CASES = [
           </ul>
           <h4>(b) Peritoneal dialysis</h4>
           <ul>
-            <li>A <strong>Jeddah</strong> cohort of 89 CAPD patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by PCR (1), culture (2) or clinical response (1). ${cite(121)}</li>
+            <li>A <strong>Jeddah</strong> cohort of 89 continuous ambulatory peritoneal dialysis (CAPD) patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by polymerase chain reaction (PCR) (1), culture (2) or clinical response (1). ${cite(121)}</li>
             <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(121)}</li>
           </ul>`,
         pearl:
-          "In cirrhosis, a low ADA doesn't rule out TB. In a PD patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
+          "In cirrhosis, a low ADA doesn't rule out TB. In a peritoneal dialysis (PD) patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
       },
     ],
   },
@@ -2570,6 +2729,7 @@ const MCQS = [
           </tbody>
         </table>
       </div>
+      ${abbrev("CI", "CNS", "CSF", "CrAg", "LP")}
       <p style="color:var(--text-muted); font-size:0.9rem;">Adults living with HIV with suspected cryptococcal meningitis; reference standard CSF culture (11 studies, 3,600 participants). ${cite(122)}</p>
       <p>In HIV-negative patients, serum CrAg is less sensitive (about 83&ndash;91% by lateral flow assay in one small single-centre study), so a negative result is less reliable for ruling out disease. ${cite(123)}</p>`,
   },
@@ -2670,6 +2830,7 @@ const MCQS = [
           </tbody>
         </table>
       </div>
+      ${abbrev("ETN", "IRR", "PY", "RA", "SIR")}
       <p>Infliximab vs adalimumab differs between studies; there is no consistent ranking. ${cite(76, 124, 125)} TB appears earliest with infliximab (BSRBR median 5.5 months vs 18.5 months with adalimumab). ${cite(124)}</p>
       <h4>Guidelines: select biologic and small-molecule agents and TB risk (NSTC/NTCA; as of June 2022)</h4>
       <div class="table-scroll">
@@ -2687,6 +2848,7 @@ const MCQS = [
           </tbody>
         </table>
       </div>
+      ${abbrev("IL", "JAK", "TNF")}
       <p style="color:var(--text-muted); font-size:0.9rem;">NSTC/NTCA Clinical Guide, Table 4 ${cite(126)}.</p>
       <ul>
         <li><strong>Steroids:</strong> the risk is dose-dependent, highest with prolonged use (prednisone equivalent &ge;15 mg/day for &ge;1 month, or &ge;2 mg/kg/day). ${cite(126)}</li>
