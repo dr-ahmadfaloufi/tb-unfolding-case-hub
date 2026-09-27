@@ -226,7 +226,14 @@ const CASES = [
           </div>
           <p><strong>What this case uses:</strong> <strong>2HRZE/4HR (RIPE)</strong>, the regimen most widely used in Saudi Arabia and the <strong>Saudi national recommendation</strong> (NTP Manual 2021, &sect;5.5). ${cite(5)}</p>
           <ul>
-            <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(5)} That wording predates the 4-month rifapentine&ndash;moxifloxacin regimen (HPZM) now endorsed by ATS 2025. ${cite(6)} Rifapentine is also not available in Saudi Arabia, so HPZM isn't a practical option in KSA either.</li>
+            <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(5)} That wording <strong>carries over WHO's 2017 recommendation</strong>, which followed three phase III trials that failed to show non-inferiority of shorter regimens: RIFAQUIN, REMoxTB and OFLOTUB. ${cite(13)} In RIFAQUIN, the 4-month arm had an unfavourable outcome in <strong>18.2% vs 4.9%</strong> with standard treatment (per protocol). ${cite(127)}
+              <ul>
+                <li><strong>Study 31/A5349</strong> (published May 2021): daily rifapentine 1,200 mg + moxifloxacin + isoniazid + pyrazinamide (<strong>2HPZM/2HPM</strong>) was <strong>non-inferior</strong> to 2HRZE/4HR (unfavourable outcome 15.5% vs 14.6%; difference 1.0 point, 95% CI &minus;2.6 to 4.5). ${cite(128, 6)}</li>
+                <li>These are <strong>different regimens</strong>: daily high-dose rifapentine, versus the older fluoroquinolone substitutions, some given intermittently. ${cite(127, 128)}</li>
+                <li>WHO now conditionally recommends the 4-month isoniazid&ndash;rifapentine&ndash;moxifloxacin&ndash;pyrazinamide regimen for people aged &ge;12 (moderate certainty; first issued in 2022) ${cite(13)}, as does ATS/CDC/ERS/IDSA 2025 ${cite(6)}.</li>
+                <li>Rifapentine is not available in Saudi Arabia, so HPZM isn't a practical option in KSA either.</li>
+              </ul>
+            </li>
             <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> goes with isoniazid in anyone at risk of neuropathy (e.g. diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, pregnancy). ${cite(3)}</li>
           </ul>`,
         pearl:
@@ -243,7 +250,19 @@ const CASES = [
             <li><strong>What that means here:</strong> the same review estimates that when 10% of tested patients have rifampin resistance, Ultra <strong>misses about 5 per 1,000 tested</strong>. In a new patient in a low-resistance setting, where WHO estimates <strong>3.2% of new TB cases globally</strong> have MDR/RR-TB, a "not detected" result is <strong>highly reliable</strong>. ${cite(7, 8)}</li>
             <li><strong>Rarely it misses resistance</strong>, and culture-based DST (or sequencing) confirms the final profile.</li>
             <li><strong>The real open question is isoniazid.</strong> Xpert MTB/RIF says nothing about it. You need <strong>culture-based DST</strong> or a <strong>rapid molecular test for isoniazid (line probe assay)</strong>. The Saudi manual indicates this especially after prior isoniazid treatment or where isoniazid resistance is common. ${cite(5)}</li>
-          </ul>`,
+          </ul>
+          <h4>The other way round: rifampicin resistance detected in a low-risk patient</h4>
+          <ul>
+            <li><strong>High MDR-TB risk</strong> (previously treated, including lost to follow-up, relapse or failure; non-converters; contacts of MDR-TB patients): the rifampicin-resistance result is taken as <strong>definitive</strong>, and an RR/MDR-TB regimen is started. ${cite(5)}</li>
+            <li><strong>Low MDR-TB risk:</strong> <strong>repeat Xpert on a second sample</strong> (FL-LPA can be used instead if available and the sample is smear-positive). ${cite(5)}
+              <ul>
+                <li>If the repeat <strong>confirms</strong> rifampicin resistance &rarr; start an MDR-TB regimen.</li>
+                <li>If it <strong>does not</strong> &rarr; start first-line treatment. The second result is taken as correct: false-positive rifampicin-resistance results "are commonly due to laboratory or clerical errors and rarely to technical performance of the assay". ${cite(5)}</li>
+              </ul>
+            </li>
+            <li><strong>Why:</strong> even with 99.1% specificity ${cite(7)}, a low pre-test probability means a lower positive predictive value, so a single "detected" result in a low-risk patient is more likely to be wrong.</li>
+          </ul>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Saudi NTP Manual (2021), Algorithm 1, Step 3.</p>`,
         pearl:
           "In a new patient, \"rifampin resistance not detected\" is a result you can trust. What you still don't know is isoniazid susceptibility, and only DST will tell you.",
       },
