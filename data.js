@@ -432,7 +432,22 @@ const CASES = [
               The Saudi NTP Manual baseline (&sect;10.8) also includes smear, culture and DST (including second-line), CXR, renal and hepatic profile, calcium/magnesium and a baseline ECG if on bedaquiline or delamanid, thyroid function, and CBC if anaemia is suspected. ${cite(5)}
             </li>
             <li><strong>Monitoring (Saudi NTP Manual, Table 10.7):</strong> CBC weekly for the first month, then monthly on linezolid; visual acuity if vision changes on linezolid; ECG at 2, 4, 8, 12 and 24 weeks on bedaquiline/delamanid, stopping them if QTc &gt;500 ms; LFTs monthly on bedaquiline. ${cite(5)}</li>
-          </ul>`,
+          </ul>
+          <h4>Definitions (WHO 2021)</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+              <tbody>
+                <tr><td>Hr-TB</td><td>Isoniazid-resistant, rifampicin-susceptible ${cite(10)}</td></tr>
+                <tr><td>Monoresistance</td><td>Resistance to one first-line drug only ${cite(131)}</td></tr>
+                <tr><td>RR-TB</td><td>Rifampicin resistance, with or without resistance to other drugs ${cite(131)}</td></tr>
+                <tr><td>MDR-TB</td><td>Resistance to at least isoniazid and rifampicin ${cite(131)}</td></tr>
+                <tr><td>Pre-XDR-TB</td><td>MDR/RR-TB + resistance to any fluoroquinolone ${cite(130)}</td></tr>
+                <tr><td>XDR-TB</td><td>MDR/RR-TB + any fluoroquinolone + at least one of bedaquiline or linezolid ${cite(130)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;">The Saudi NTP Manual (2021) still uses the older XDR definition (MDR + fluoroquinolone + second-line injectable) and has no pre-XDR category. It also defines RR-TB inconsistently (any rifampicin resistance on p.88; rifampicin-resistant and isoniazid-susceptible in the p.97 table). ${cite(5)}</p>`,
         pearl: `A prior TB course with adherence gaps is the single strongest predictor of resistance. In Saudi data it carried about 7-fold odds of MDR. ${cite(16)} Rapid rifampicin testing on day one exists for exactly this patient.`,
       },
       {
@@ -451,7 +466,7 @@ const CASES = [
               <tbody>
                 <tr>
                   <td><strong>Xpert: RIF-resistant / DST: susceptible</strong></td>
-                  <td><strong>"Disputed" (borderline) <em>rpoB</em> mutations</strong>: real, clinically relevant low-level resistance that growth-based DST at the standard critical concentration misses. In one series only <strong>26% of isolates with such mutations tested resistant by MGIT</strong>. WHO has responded by lowering the critical concentration.</td>
+                  <td><strong>"Disputed" (borderline) <em>rpoB</em> mutations</strong>: real, clinically relevant low-level resistance that growth-based DST at the standard critical concentration misses. In one series only <strong>16 of 61 isolates (26%) with such mutations tested resistant by MGIT</strong>. ${cite(17)} Patients infected with strains carrying these mutations often fail treatment with rifampicin-based first-line regimens. ${cite(5)} WHO has responded by lowering the critical concentration for rifampicin in MGIT. ${cite(132)}</td>
                   <td><strong>Do not de-escalate on the phenotype alone.</strong> Sequence the <em>rpoB</em> gene; treat as RR-TB if a resistance mutation is confirmed. ${cite(17)}</td>
                 </tr>
                 <tr>
@@ -528,12 +543,13 @@ const CASES = [
                   <td><strong>TB-PRACTECAL</strong> (stage 2), NEJM 2022 ${cite(22)}</td>
                   <td>RR-TB, age &ge;15; randomized vs 9&ndash;20-month standard care</td>
                   <td><strong>BPaLM 24 wk</strong>: bedaquiline 400 mg &times;2 wk then 200 mg 3&times;/wk &times;22 wk; pretomanid 200 mg; <strong>linezolid 600 mg &times;16 wk then 300 mg &times;8 wk</strong>; moxifloxacin 400 mg. Control: individualized, per national guidelines</td>
-                  <td><strong>Unfavorable outcome (lower is better): 11% vs 48%</strong> (mITT; RD &minus;37 points). <strong>Non-inferior</strong> (margin 12 points). Grade &ge;3/serious AEs <strong>19% vs 59%</strong></td>
+                  <td><strong>BPaLM was non-inferior to standard care</strong> (the upper confidence limit was well inside the 12-point margin). Unfavourable outcome at 72 weeks (death, failure, discontinuation, loss to follow-up, or recurrence; lower is better): <strong>11% vs 48%</strong> (mITT; difference &minus;37 points, 96.6% CI &minus;53 to &minus;22). Per-protocol: 4% vs 12% (&minus;9 points, CI &minus;22 to 4). Grade &ge;3 or serious adverse events: <strong>19% vs 59%</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p style="color:var(--text-muted); font-size:0.9rem;">TB-PRACTECAL doses are taken from WHO's description of the trial in Module 4 (2025). ${cite(13)} Pretomanid and moxifloxacin doses match the WHO/ATS BPaLM regimen.</p>
+          <p>TB-PRACTECAL enrolment stopped early (March 2021) on the advice of the independent data and safety monitoring board: the interim analysis showed a difference between arms of at least three standard deviations in favour of BPaLM, with 5 deaths on standard care vs none on BPaLM, and more data were judged extremely unlikely to change the result. ${cite(129)}</p>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -546,17 +562,17 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>Saudi NTP Manual (2021) ${cite(5)}</td>
-                  <td><strong>Does not include BPaLM</strong> (it predates it). Longer regimens: all three Group A drugs (levofloxacin/moxifloxacin, bedaquiline, linezolid) + &ge;1 Group B; the "shorter MDR-TB regimen" described is the <strong>older injectable-containing</strong> one (&sect;10.5.2, Algorithm 3)</td>
+                  <td><strong>Does not include BPaLM</strong> (it predates it). Longer regimens (<strong>18 months or longer</strong>): all three Group A drugs (levofloxacin/moxifloxacin, bedaquiline, linezolid) + &ge;1 Group B; the "shorter MDR-TB regimen" (<strong>9&ndash;12 months</strong>) described is the <strong>older injectable-containing</strong> one (&sect;10.1, &sect;10.5.2, Algorithm 3)</td>
                   <td>Not graded in the manual</td>
                 </tr>
                 <tr>
                   <td>ATS/CDC/ERS/IDSA (2025) ${cite(6)}</td>
-                  <td><strong>BPaLM</strong> for RR-TB, FQ-susceptible, age &ge;14</td>
+                  <td><strong>6-month (26-week) BPaLM</strong> for RR-TB, FQ-susceptible, age &ge;14</td>
                   <td>Strong, very low certainty</td>
                 </tr>
                 <tr>
                   <td>ATS/CDC/ERS/IDSA (2025) ${cite(6)}</td>
-                  <td><strong>BPaL</strong> (no moxifloxacin) if FQ-resistant or FQ-intolerant</td>
+                  <td><strong>6-month (26-week) BPaL</strong> (no moxifloxacin) if FQ-resistant or FQ-intolerant</td>
                   <td>Strong, very low certainty</td>
                 </tr>
               </tbody>
@@ -581,8 +597,8 @@ const CASES = [
                 <tr>
                   <td><strong>BEAT Tuberculosis</strong>, NEJM 2026 ${cite(23)}</td>
                   <td>Pragmatic RCT, South Africa, n=403, <strong>age &ge;6, pregnant/breastfeeding and FQ-resistant patients included</strong></td>
-                  <td><strong>BDLLfxC</strong> 6 months: bedaquiline + delamanid + linezolid + levofloxacin and/or clofazimine (levofloxacin dropped if FQ-resistant; clofazimine dropped if FQ-susceptible) vs 9-month local standard</td>
-                  <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%</td>
+                  <td><strong>BDLLfxC</strong> 6 months: bedaquiline + delamanid + linezolid, <strong>plus levofloxacin (if FQ-susceptible) or clofazimine (if FQ-resistant)</strong>; both were given until the FQ result was available, then one was stopped. vs 9-month local standard</td>
+                  <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%. 85 (21%) had FQ-resistant TB; the treatment effect didn't differ by FQ resistance. 9 pregnant at enrolment + 1 during the trial; all live births (one premature)</td>
                 </tr>
               </tbody>
             </table>
@@ -600,9 +616,9 @@ const CASES = [
                 </tr>
                 <tr>
                   <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(25)}</td>
-                  <td>RCT, RR-TB without FQ/aminoglycoside resistance</td>
-                  <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control</td>
-                  <td><strong>Favorable 83% vs 71%</strong> (adjusted difference 11.0%, 2.9&ndash;19.0; non-inferior). Hearing loss 2% vs 9%</td>
+                  <td>RCT, 7 countries, age &ge;15, RR-TB without FQ/aminoglycoside resistance; <strong>n=588 randomised (517 mITT)</strong></td>
+                  <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control; also a <strong>6-month bedaquiline regimen <em>with 8 weeks of second-line injectable</em></strong> (injectable-containing)</td>
+                  <td><strong>9-month all-oral vs control:</strong> favourable <strong>162/196 (83%) vs 133/187 (71%)</strong>, adjusted difference 11.0% (95% CI 2.9&ndash;19.0); <strong>non-inferior, and superior on the prespecified test</strong>; grade 3&ndash;4 hearing loss 2% vs 9%. <strong>6-month injectable-containing regimen vs concurrent controls:</strong> <strong>122/134 (91%) vs 87/127 (69%)</strong>, adjusted difference 22.2% (13.1&ndash;31.2); grade 3&ndash;4 hearing loss 4%</td>
                 </tr>
               </tbody>
             </table>

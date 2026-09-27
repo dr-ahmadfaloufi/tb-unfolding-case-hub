@@ -364,7 +364,7 @@ body.presentation-mode {
   line-height: 1.5;
 }
 
-.pearl-box .pearl-content strong {
+.pearl-box .pearl-label {
   display: block;
   font-size: 0.72rem;
   letter-spacing: 0.07em;

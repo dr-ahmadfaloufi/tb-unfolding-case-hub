@@ -119,7 +119,7 @@ function renderCase() {
           ${stage.reveal}
           ${
             stage.pearl
-              ? `<div class="pearl-box"><span class="pearl-icon">&#128161;</span><div class="pearl-content"><strong>Pearl</strong>${stage.pearl}</div></div>`
+              ? `<div class="pearl-box"><span class="pearl-icon">&#128161;</span><div class="pearl-content"><strong class="pearl-label">Pearl</strong>${stage.pearl}</div></div>`
               : ""
           }
           ${stage.revealExtra || ""}
