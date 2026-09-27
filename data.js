@@ -1208,14 +1208,13 @@ const CASES = [
                 <li><strong>Teaching point:</strong> all sources use <strong>~3 months</strong>. They differ only on the anchor (diagnosis, symptom onset, or treatment start). When in doubt, take the <strong>earliest</strong> anchor.</li>
               </ul>
             </li>
-            <li><strong>End:</strong> only when <strong>all three</strong> apply:
+            <li><strong>End of the infectious period (for contact tracing):</strong> only when <strong>all three</strong> apply:
               <ol>
                 <li>more than 2 weeks of effective treatment (confirmed by susceptibility results);</li>
                 <li>fewer symptoms;</li>
                 <li>a microbiologic response, such as a falling smear grade.</li>
               </ol>
             </li>
-            <li>Stricter criteria apply before returning to congregate settings: &ge;3 consecutive negative sputum smears, collected &gt;8 h apart, one of them early morning. ${cite(4)}</li>
           </ul>
           <h4>2. Her exposure window</h4>
           <p>Her exposure window is the time she spent with the patient <strong>inside that infectious period, before airborne isolation and N95 use began</strong>. Once those were in place, she was no longer exposed. ${cite(4)}</p>
@@ -1315,6 +1314,7 @@ const CASES = [
             <li><strong>CDC 2005</strong> defines the <strong>infectious period</strong> used to decide <strong>who counts as a contact</strong>. It ends only after &gt;2 weeks of effective treatment plus clinical and microbiologic response. ${cite(4)}</li>
             <li><strong>Hospital airborne isolation</strong> follows healthcare-setting rules: for example, three consecutive negative AFB smears, 8&ndash;24 h apart, one early morning. ${cite(62)}</li>
             <li>For this ICU case, the nurse's exposure was <strong>before any treatment</strong>, so the 5-day rule doesn't shorten her exposure window.</li>
+            <li><strong>Before returning to a congregate setting</strong> (e.g. shelter, prison, care facility), the bar is higher: &ge;3 consecutive negative sputum smears, collected &gt;8 h apart, one early morning. This is not the hospital isolation rule. ${cite(4)}</li>
           </ul>`,
         pearl:
           "Being \"exposed\" is a time window, not an event. It starts about 3 months before diagnosis and closes when isolation begins. Define it first, then list who was inside it.",
@@ -1502,7 +1502,7 @@ const CASES = [
                 <tr><td><strong>TNF-&alpha; inhibitors (monoclonal antibodies)</strong></td><td>TB standardized incidence ratio: <strong>infliximab 18.6, adalimumab 29.3</strong></td><td>${cite(76)}</td></tr>
                 <tr><td><strong>TNF-&alpha; inhibitor (etanercept)</strong></td><td>SIR <strong>1.8</strong>, much lower</td><td>${cite(76)}</td></tr>
                 <tr><td><strong>JAK inhibitor (tofacitinib)</strong></td><td>TB was the most common opportunistic infection: <strong>0.21/100 PY</strong> overall and <strong>0.75/100 PY in high-incidence regions</strong></td><td>${cite(77)}</td></tr>
-                <tr><td><strong>Diabetes</strong></td><td><strong>RR 3.11</strong> (95% CI 2.27&ndash;4.26)</td><td>${cite(78)}</td></tr>
+                <tr><td><strong>Diabetes</strong></td><td><strong>RR 3.11</strong> (95% CI 2.27&ndash;4.26). <em>Note:</em> don't test for latent TB because of diabetes alone (Saudi NTP Manual &sect;12.2, p.118; its TST chapter lists diabetes as a moderate-risk indication under 65, &sect;13.4.2, p.129) ${cite(5)}. If latent TB is found for another reason (e.g. a contact), diabetes strengthens the case to treat ${cite(126)}.</td><td>${cite(78, 5, 126)}</td></tr>
                 <tr><td><strong>Corticosteroids</strong></td><td><strong>&ge;15 mg/day prednisone-equivalent for &ge;1 month</strong> is listed as an immunosuppression risk factor. CDC calls the benefit of a full course "less clear"</td><td>${cite(66, 4)}</td></tr>
                 <tr><td><strong>Transplant, dialysis, silicosis</strong></td><td>WHO <strong>strongly recommends</strong> systematic testing and treatment in these groups</td><td>${cite(79)}</td></tr>
               </tbody>
@@ -1540,44 +1540,46 @@ const CASES = [
             </table>
           </div>
           <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(82, 83)}</p>
-          <h4>Guidelines</h4>
+          <h4>Studies: 6H vs 9H</h4>
           <div class="table-scroll">
             <table class="data-table">
-              <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
+              <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>NTCA/CDC LTBI treatment (2020) ${cite(84)}</td>
-                  <td><strong>Preferred:</strong> short rifamycin regimens (3HP, 4R, 3HR) over 6&ndash;9 months of isoniazid</td>
-                  <td>3HP: strong, moderate. 4R: strong, moderate (HIV-negative). 3HR: conditional, very low (HIV-negative) / conditional, low (HIV-positive)</td>
+                  <td><strong>IUAT 1982</strong> ${cite(133)}</td>
+                  <td>RCT, ~28,000 adults with fibrotic lesions; isoniazid 12 / 24 / 52 weeks vs placebo; 5 years of follow-up. <strong>No 9-month arm</strong></td>
+                  <td>TB reduction <strong>21% / 65% / 75%</strong> (all assigned) and <strong>31% / 69% / 93%</strong> (completed and took &ge;80% of doses). The 52- vs 24-week difference was not significant overall; the extra gain was in lesions &gt;2 cm&sup2; (89% vs 67%). Hepatitis 0.5% vs 0.1%</td>
                 </tr>
                 <tr>
-                  <td>WHO TPT, Module 1, 2nd ed. (2024) ${cite(83)}</td>
-                  <td>6H/9H, 3HP, 3HR</td>
-                  <td><strong>Strong</strong>, moderate&ndash;high</td>
+                  <td><strong>Comstock 1999</strong> ${cite(134)}</td>
+                  <td>Reanalysis of the controlled trials</td>
+                  <td>6 months is not optimal; <strong>9&ndash;10 months appears optimal</strong>; more than 12 months is unnecessary</td>
                 </tr>
                 <tr>
-                  <td>WHO (2024) ${cite(83)}</td>
-                  <td>1HP, 4R</td>
-                  <td>Conditional, low&ndash;moderate</td>
-                </tr>
-                <tr>
-                  <td>WHO (2024) ${cite(83)}</td>
-                  <td><strong>6 months of levofloxacin (6Lfx)</strong> for contacts of <strong>MDR/RR-TB</strong>. Not for this nurse: her source was drug-susceptible</td>
-                  <td>Strong</td>
-                </tr>
-                <tr>
-                  <td>Saudi NTP Manual (2021) ${cite(5)}</td>
-                  <td><strong>6H</strong> recommended (&sect;12.5)</td>
-                  <td>Strong, high</td>
-                </tr>
-                <tr>
-                  <td>Saudi NTP Manual (2021) ${cite(5)}</td>
-                  <td>For low-incidence countries (KSA): <strong>9H, 3HP, 3&ndash;4 months HR, or 3&ndash;4 months rifampicin alone</strong> as alternatives to 6H</td>
-                  <td>Strong, moderate&ndash;high</td>
+                  <td><strong>Smieja 2000, Cochrane</strong> ${cite(135)}</td>
+                  <td>11 RCTs, 73,375 people</td>
+                  <td>6 vs 12 months not significantly different (RR 0.44 vs 0.38); hepatotoxicity 0.36% vs 0.52%</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. That is why NTCA/CDC rates 6H strong and 9H conditional, and the Saudi manual recommends 6H. ${cite(84, 5)}</p>
+          <h4>Guidelines</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Regimen</th><th>WHO 2024 ${cite(83)}</th><th>NTCA/CDC 2020 ${cite(84)}</th><th>Saudi NTP 2021 ${cite(5)}</th></tr></thead>
+              <tbody>
+                <tr><td>6H</td><td>Strong</td><td>Alternative; strong, moderate (HIV&minus;) / conditional, moderate (HIV+)</td><td><strong>Recommended</strong> (strong, high)</td></tr>
+                <tr><td>9H</td><td>Strong</td><td>Alternative; conditional, moderate</td><td>Alternative</td></tr>
+                <tr><td>3HP</td><td>Strong</td><td>Preferred; strong, moderate</td><td>Alternative (rifapentine unavailable in KSA)</td></tr>
+                <tr><td>3HR</td><td>Strong</td><td>Preferred; conditional, very low (HIV&minus;) / low (HIV+)</td><td>Alternative (3&ndash;4HR)</td></tr>
+                <tr><td>4R</td><td>Conditional</td><td>Preferred; strong, moderate (HIV&minus;)</td><td>Alternative (3&ndash;4R)</td></tr>
+                <tr><td>1HP</td><td>Conditional</td><td>Not addressed</td><td>Not listed</td></tr>
+                <tr><td>6Lfx (MDR/RR contacts)</td><td>Strong</td><td>Not addressed</td><td>Not as 6Lfx: fluoroquinolone-based preventive treatment "may be considered" for selected high-risk household contacts (conditional, very low; &sect;12.6)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.9rem;">WHO: strong = moderate-to-high certainty; conditional = low-to-moderate certainty; 6Lfx strong, moderate certainty. Saudi alternatives to 6H (low-incidence countries): strong recommendation, moderate&ndash;high-quality evidence. The 6Lfx row is not for this nurse: her source was drug-susceptible.</p>
           <h4>Her regimen</h4>
           <ul>
             <li><strong>Rifapentine is not available in Saudi Arabia.</strong> 3HP and 1HP are shown as options that exist internationally, <strong>but not what this nurse receives.</strong></li>
