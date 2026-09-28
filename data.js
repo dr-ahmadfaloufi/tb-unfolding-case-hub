@@ -33,6 +33,7 @@ const IMAGE_AI_FLAGS = {
   "case4-stage5-node-stations": false,
   "case5-stage4-cxr-normal": false,
   "case6-stage1-cxr-effusion": false,
+  "case6-stage2-light-approach": false,
   "case7-stage2-spine-pathology": false,
   "case8-stage4-ct-hydrocephalus": false,
   "case10-stage1-ct-peritonitis": false,
@@ -179,6 +180,7 @@ const GLOSSARY = {
   "CNS": "central nervous system",
   "CrAg": "cryptococcal antigen",
   "CrI": "credible interval",
+  "CRP": "C-reactive protein",
   "CSF": "cerebrospinal fluid",
   "CT": "computed tomography",
   "CXR": "chest radiograph",
@@ -206,17 +208,21 @@ const GLOSSARY = {
   "JAK": "Janus kinase",
   "KSA": "Kingdom of Saudi Arabia",
   "LAM": "lipoarabinomannan",
+  "LDH": "lactate dehydrogenase",
   "LF-LAM": "lateral-flow urine lipoarabinomannan assay",
   "LP": "lumbar puncture",
+  "LR": "likelihood ratio",
   "LTBI": "latent TB infection",
   "MDR-TB": "multidrug-resistant TB",
   "MGIT": "Mycobacteria Growth Indicator Tube",
   "mITT": "modified intention to treat",
   "MRC": "Medical Research Council (severity grade)",
   "NAAT": "nucleic acid amplification test",
+  "NT-proBNP": "N-terminal pro-B-type natriuretic peptide",
   "NTP": "National Tuberculosis Programme",
   "OR": "odds ratio",
   "PCR": "polymerase chain reaction",
+  "PE": "pulmonary embolism",
   "PLHIV": "people living with HIV",
   "pre-XDR-TB": "pre-extensively drug-resistant TB",
   "PY": "person-years",
@@ -1814,6 +1820,27 @@ const CASES = [
         question:
           "Does a negative smear and Xpert rule out TB here? How much weight does the ADA carry?",
         reveal: `
+          <h4>First: is it a transudate or an exudate?</h4>
+          <ul>
+            <li><strong>Why the split matters.</strong> Transudates are common in heart failure, cirrhosis, hypoalbuminaemia and nephrotic syndrome, and are managed by treating the cause. Exudates point to malignancy, pleural infection, pulmonary embolism or autoimmune pleuritis, and need a diagnosis. ${cite(139)} TB is among the causes of a <strong>lymphocytic</strong> effusion, and BTS names it as a treatable cause to reconsider when no diagnosis is found. ${cite(139)}</li>
+            <li><strong>Paired samples.</strong> Send blood (protein, LDH, albumin, C-reactive protein [CRP]) at the time of the tap: Light's criteria are ratios to serum values. ${cite(139)}</li>
+            <li><strong>Sensitive by design.</strong> One criterion is enough. The rule picks up about <strong>98% of exudates</strong> but labels about <strong>25% of transudates</strong> as exudates. ${cite(141)} If <strong>none</strong> is met, an exudate is very unlikely (likelihood ratio [LR] 0.04). ${cite(140)}</li>
+            <li><strong>Watch for a false exudate</strong> in heart failure (often on diuretics) and cirrhosis. Light's criteria mislabelled 29% of heart-failure and 18% of cirrhosis effusions as exudates. ${cite(142)} Serum N-terminal pro-B-type natriuretic peptide (NT-proBNP) can support heart failure (BTS, conditional). ${cite(139)}</li>
+          </ul>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Test</th><th>Exudate if</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr><td>Fluid protein &divide; serum protein</td><td>&gt; 0.5</td><td>Any <strong>one</strong> criterion is enough ${cite(98, 139)}</td></tr>
+                <tr><td>Fluid LDH &divide; serum LDH</td><td>&gt; 0.6</td><td>${cite(98, 139)}</td></tr>
+                <tr><td>Fluid LDH</td><td>&gt; &frac23; of the upper limit of normal for serum LDH</td><td>Uses your lab's reference range ${cite(139)}</td></tr>
+                <tr><td><strong>Suspected heart failure:</strong> serum albumin &minus; fluid albumin</td><td>&gt; 1.2 g/dL = <strong>really a transudate</strong></td><td>Relabelled 83% of false heart-failure exudates; protein gradient &gt; 3.1 g/dL only 55% ${cite(142)}</td></tr>
+                <tr><td><strong>Cirrhosis:</strong> fluid albumin &divide; serum albumin</td><td>&lt; 0.6 = <strong>really a transudate</strong></td><td>Relabelled 77% of false cirrhosis exudates ${cite(142)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          ${abbrev("LDH")}
+          ${img(6, "stage2", "light-approach", "Approach to a unilateral pleural effusion. Original schematic adapted from the BTS 2023 pathway (Appendix 1) and Light's criteria; false-exudate thresholds from Bielsa 2012. " + cite(98, 139, 142))}
           <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -3086,6 +3113,10 @@ const REFERENCES = {
         { n: 106, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
         { n: 137, text: "Lee J, Lee SY, Choi KJ, Lim JK, Yoo SS, Lee SY, et al. Clinical utility of CT-based bronchial aspirate TB-PCR for the rapid diagnosis of pleural tuberculosis. Tuberc Respir Dis (Seoul). 2013;75(4):150-6.", doi: "10.4046/trd.2013.75.4.150", tag: "Prospective diagnostic study" },
         { n: 138, text: "Young SL, Chua BLW, Tan QL, Leong CK, Wong JJY, Phua IGCS, et al. Pleural and parenchymal radiological characteristics of tuberculous pleuritis and correlation with microbiological and molecular diagnostic yield. BMC Pulm Med. 2025;25(1):525.", doi: "10.1186/s12890-025-03995-1", tag: "Retrospective cohort study" },
+        { n: 139, text: "Roberts ME, Rahman NM, Maskell NA, Bibby AC, Blyth KG, Corcoran JP, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023;78(Suppl 3):s1-s42.", doi: "10.1136/thorax-2022-219784", tag: "Guideline (BTS 2023)" },
+        { n: 140, text: "Wilcox ME, Chong CA, Stanbrook MB, Tricco AC, Wong C, Straus SE. Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review. JAMA. 2014;311(23):2422-31.", doi: "10.1001/jama.2014.5552", tag: "Systematic review" },
+        { n: 141, text: "Porcel JM. Identifying transudates misclassified by Light's criteria. Curr Opin Pulm Med. 2013;19(4):362-7.", doi: "10.1097/MCP.0b013e32836022dc", tag: "Review" },
+        { n: 142, text: "Bielsa S, Porcel JM, Castellote J, Mas E, Esquerda A, Light RW. Solving the Light's criteria misclassification rate of cardiac and hepatic transudates. Respirology. 2012;17(4):721-6.", doi: "10.1111/j.1440-1843.2012.02155.x", tag: "Retrospective diagnostic study" },
       ],
     },
     {
