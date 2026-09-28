@@ -1721,11 +1721,11 @@ const CASES = [
                 <tr><td>3HR</td><td>Strong</td><td>Preferred; conditional, very low (HIV&minus;) / low (HIV+)</td><td>Alternative (3&ndash;4HR)</td></tr>
                 <tr><td>4R</td><td>Conditional</td><td>Preferred; strong, moderate (HIV&minus;)</td><td>Alternative (3&ndash;4R)</td></tr>
                 <tr><td>1HP</td><td>Conditional</td><td>Not addressed</td><td>Not listed</td></tr>
-                <tr><td>6Lfx (MDR/RR contacts)</td><td>Strong</td><td>Not addressed</td><td>Not as 6Lfx: fluoroquinolone-based preventive treatment "may be considered" for selected high-risk household contacts (conditional, very low; &sect;12.6)</td></tr>
+                <tr><td>6Lfx (MDR/RR contacts)</td><td>Strong</td><td>Not addressed</td><td>Not as a fixed 6Lfx regimen. Preventive treatment "may be considered" for <strong>selected high-risk household contacts</strong> (e.g. children, immunosuppressed, people with HIV) after LTBI is confirmed. Drugs follow the source case's DST, with a later-generation fluoroquinolone as a key component unless the strain is resistant. Duration 6&ndash;12 months by clinical judgement; monitor for &ge;2 years (conditional, very low; &sect;12.6)</td></tr>
               </tbody>
             </table>
           </div>
-          ${abbrev("#", "CDC", "H", "KSA", "Lfx", "MDR-TB", "NTCA", "NTP", "P", "R", "RR-TB")}
+          ${abbrev("#", "CDC", "DST", "H", "KSA", "Lfx", "LTBI", "MDR-TB", "NTCA", "NTP", "P", "R", "RR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;">WHO: strong = moderate-to-high certainty; conditional = low-to-moderate certainty; 6Lfx strong, moderate certainty. Saudi alternatives to 6H (low-incidence countries): strong recommendation, moderate&ndash;high-quality evidence. The 6Lfx row is not for this nurse: her source was drug-susceptible.</p>
           <h4>Her regimen</h4>
           <ul>
