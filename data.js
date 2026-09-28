@@ -601,11 +601,14 @@ const CASES = [
                 <tr><td>Isoniazid resistance, all tested</td><td>~8% INH monoresistance (range 5&ndash;11%)</td><td>15% (7&ndash;28), pooled</td><td>ATS 2019 ${cite(15)}; Alanazi 2026 ${cite(20)}</td></tr>
                 <tr><td>MDR-TB</td><td>&mdash;</td><td><strong>8%</strong> pooled (studies since 2000); <strong>national surveillance 4.4% &rarr; 2.4% (2015&rarr;2019)</strong></td><td>Alanazi 2026 ${cite(20)}; Alawi 2024 ${cite(26)}</td></tr>
                 <tr><td>Prior treatment as a risk factor</td><td>&mdash;</td><td><strong>OR 7.34</strong> for MDR</td><td>Alanazi 2026 ${cite(20)}</td></tr>
+                <tr><td>Estimated MDR/RR-TB cases and deaths</td><td>390,000 cases; 150,000 deaths (2024)</td><td>&mdash;</td><td>WHO Global TB Report 2025 ${cite(11)}</td></tr>
+                <tr><td>Treatment success</td><td>MDR/RR-TB 71% (2022 cohort) vs drug-susceptible 88% (2023 cohort)</td><td>&mdash;</td><td>WHO Global TB Report 2025 ${cite(11)}</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("ATS", "CI", "INH", "MDR-TB", "OR", "RR-TB")}
-          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Caveat:</em> the Saudi meta-analysis pools heterogeneous, mostly hospital-based series, so the national surveillance figure is the better population estimate.</p>`,
+          <p style="color:var(--text-muted); font-size:0.9rem;"><em>Caveat:</em> the Saudi meta-analysis pools heterogeneous, mostly hospital-based series, so the national surveillance figure is the better population estimate.</p>
+          <p>Older, longer MDR regimens carried heavy toxicity. Grade &ge;3 or serious adverse events occurred in 59% on standard care in TB-PRACTECAL ${cite(27)}, and hearing loss in 9% with the injectable-containing control in STREAM stage 2 ${cite(31)}. This is part of why shorter all-oral regimens matter.</p>`,
         pearl:
           "Rifampicin resistance on Xpert is highly specific. When a test result disagrees with the sequencing or with how the patient is doing, trust the sequencing and the patient.",
       },
@@ -2602,6 +2605,13 @@ const MCQS = [
       "Arrange bronchoscopy to repeat the NAAT on lavage fluid",
     ],
     answer: 3,
+    optionNotes: [
+      `A smear-positive, NAAT-negative specimen points away from TB; starting four drugs risks treating NTM as TB. ${cite(1)}`,
+      `Can't separate latent from active TB and doesn't identify the organism in the sputum. ${cite(1)}`,
+      `The same pitfall as A. The negative NAAT on this smear-positive sample makes TB unlikely. ${cite(1)}`,
+      `Correct. It separates <em>M. tuberculosis</em> from NTM. ${cite(1)}`,
+      `Not needed. In a smear-positive patient a negative NAAT already makes TB unlikely, and the answer comes from culture with identification of the isolate. ${cite(1)}`,
+    ],
     rationale: `
       <p>An AFB smear detects any acid-fast bacillus, not only <em>M. tuberculosis</em>. A smear-positive, NAAT-negative result points away from TB, and the leading alternative is non-tuberculous mycobacteria. Mycobacterial culture with species identification settles it. ${cite(1)}</p>
       <ul>
@@ -2621,6 +2631,13 @@ const MCQS = [
       "A 30-year-old new patient with bilateral disease on CXR",
     ],
     answer: 2,
+    optionNotes: [
+      `Cavitation marks bacillary burden and infectiousness, not resistance. ${cite(4, 71)}`,
+      `Diabetes raises the risk of progressing to disease (RR 3.11), not of drug resistance. ${cite(87)}`,
+      `Correct. MDR/RR-TB was 16% in previously treated vs 3.2% in new patients (2024), with a Saudi odds ratio of about 7. ${cite(11, 20)}`,
+      `Smear grade reflects bacillary load, not resistance. ${cite(4, 71)}`,
+      `Like cavitation and smear grade, extent of disease speaks to burden, not resistance. As a new patient, the baseline MDR/RR risk is about 3%. ${cite(11)}`,
+    ],
     rationale: `
       <p>Previous treatment, especially with adherence gaps, is the strongest predictor of resistance. Worldwide in 2024, <strong>16%</strong> of previously treated patients had MDR/RR-TB, versus <strong>3.2%</strong> of new patients. ${cite(11)} In Saudi data, prior treatment carried an odds ratio of about <strong>7</strong> for MDR-TB. ${cite(20)}</p>
       <ul>
@@ -2640,6 +2657,13 @@ const MCQS = [
       "Levofloxacin, because rifampin lowers moxifloxacin exposure by about 30%",
     ],
     answer: 4,
+    optionNotes: [
+      `Wrong direction. Rifampin <em>lowers</em> moxifloxacin exposure by about 30%. ${cite(15)}`,
+      `Potency isn't the deciding issue here; the rifampin interaction is.`,
+      `"Ofloxacin and ciprofloxacin are considered inferior quinolones" against TB; use a later-generation agent (levofloxacin or moxifloxacin). ${cite(15)}`,
+      `Right drug, wrong reason. Levofloxacin can prolong QT; check baseline QTc and potassium. ${cite(13)}`,
+      `Correct. ${cite(15)}`,
+    ],
     rationale: `
       <p>Rifampin lowers moxifloxacin exposure by roughly 30%, so some experts prefer levofloxacin alongside rifampin. ${cite(15)}</p>
       <ul>
@@ -2659,6 +2683,13 @@ const MCQS = [
       "A positive IGRA",
     ],
     answer: 1,
+    optionNotes: [
+      `Not a listed neuropathy risk factor. ${cite(3)}`,
+      `Correct. Diabetes is a neuropathy risk with isoniazid. ${cite(3)}`,
+      `Reflects disease burden, not neuropathy risk.`,
+      `Reflects bacillary load, not neuropathy risk.`,
+      `Irrelevant to isoniazid toxicity.`,
+    ],
     rationale: `
       <p>Pyridoxine is given with isoniazid to anyone at risk of neuropathy, including people with diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, or pregnancy. ${cite(3)}</p>
       <ul>
@@ -2678,6 +2709,13 @@ const MCQS = [
       "A lymphocytic pleural effusion",
     ],
     answer: 0,
+    optionNotes: [
+      `Correct. It predicts greater infectiousness even when smears are negative; the Saudi manual still calls for contact investigation. ${cite(4, 5)}`,
+      `"With limited exceptions, only patients with pulmonary or laryngeal TB can transmit their infection." Node disease doesn't add to his infectiousness. ${cite(4)}`,
+      `Reflects immune sensitisation, not how many bacilli he sheds. ${cite(1)}`,
+      `Not a marker of infectiousness. Age matters only at the young end (transmission from children under 10 is unusual); smear, culture and cavitation are what count. ${cite(4)}`,
+      `CDC groups pleural TB with pulmonary disease for contact investigation, but he already has culture-confirmed pulmonary TB. An effusion doesn't raise infectiousness the way cavitation does. ${cite(4)}`,
+    ],
     rationale: `
       <p>Cavitation on CXR independently predicts greater infectiousness, even after smear results are accounted for. ${cite(4)} The Saudi NTP Manual still calls for contact investigation when the CXR shows cavities, even with three negative smears. ${cite(5)}</p>
       <ul>
@@ -2696,6 +2734,13 @@ const MCQS = [
       "Start only if her CD4 count falls below 350",
     ],
     answer: 3,
+    optionNotes: [
+      `No CD4 threshold applies in HIV-associated TB. ${cite(53)}`,
+      `Start now; it isn't tied to ART timing. ${cite(5, 53)}`,
+      `Start at the beginning and continue throughout TB treatment. ${cite(5)}`,
+      `Correct (WHO strong, high certainty). ${cite(53, 5)}`,
+      `Same as A; no threshold is used. ${cite(53)}`,
+    ],
     rationale: `
       <p>WHO recommends co-trimoxazole prophylaxis for all people with HIV and active TB, <strong>regardless of CD4</strong> (strong recommendation, high certainty). ${cite(53)} The Saudi NTP Manual gives it to all HIV-positive TB patients, started as soon as possible and continued throughout TB treatment. ${cite(5)}</p>
       <ul>
@@ -2713,6 +2758,12 @@ const MCQS = [
       "Repeat sputum Xpert Ultra",
     ],
     answer: 0,
+    optionNotes: [
+      `Correct. Recommended before ART when CD4 &lt;100. A negative serum CrAg nearly excludes cryptococcal meningitis (sensitivity 99.7%). ${cite(34, 132)}`,
+      `A TB test, and his TB is already confirmed. ${cite(33)}`,
+      `The step <em>after</em> a positive CrAg, not a routine test for everyone. ${cite(34)}`,
+      `TB is already confirmed; this adds nothing before ART.`,
+    ],
     rationale: `
       <p>WHO strongly recommends cryptococcal antigen (CrAg) screening before ART when CD4 is <strong>&lt;100</strong>. A positive result leads to a lumbar puncture and pre-emptive antifungal therapy. ${cite(34)}</p>
       <ul>
@@ -2745,6 +2796,13 @@ const MCQS = [
       "Urine NAAT",
     ],
     answer: 2,
+    optionNotes: [
+      `Reserved for when induced sputum can't be obtained. ${cite(1)}`,
+      `Not the recommended first step in adults; ATS/IDSA/CDC suggest sputum induction first, then bronchoscopy if that fails. ${cite(1)}`,
+      `Correct (ATS/IDSA/CDC, conditional). ${cite(1)}`,
+      `A bronchoscopic step, used only after induced sputum fails, and mainly when a rapid diagnosis is essential. ${cite(1)}`,
+      `Not a first-line specimen for pulmonary TB. Urine testing (LF-LAM) is for people with advanced HIV. ${cite(33)}`,
+    ],
     rationale: `
       <p>ATS/IDSA/CDC suggest <strong>sputum induction rather than bronchoscopy</strong> as the first sampling method when a patient cannot expectorate. Bronchoscopy is used if induced sputum cannot be obtained, and post-bronchoscopy sputum should also be collected (conditional recommendations). ${cite(1)}</p>
       <ul>
@@ -2763,6 +2821,13 @@ const MCQS = [
       "Exclusion of other causes of granulomatous inflammation",
     ],
     answer: 4,
+    optionNotes: [
+      `The same histology again doesn't exclude other granulomatous causes. ${cite(58)}`,
+      `Supports sarcoidosis but doesn't replace excluding other causes. ${cite(58)}`,
+      `A test for TB infection; it can't rule TB in or out in the node. The cultures can. ${cite(1)}`,
+      `Not required. Diagnosis rests on a compatible presentation, non-necrotizing granulomas "in one or more tissue samples", and exclusion of alternatives. ${cite(58)}`,
+      `Correct. ${cite(58)}`,
+    ],
     rationale: `
       <p>The ATS guideline defines sarcoidosis by non-necrotizing granulomas <strong>plus exclusion of other granulomatous causes</strong>. ${cite(58)} That is why the pending cultures matter: on extrapulmonary tissue, a negative smear or NAAT never excludes TB. ${cite(1)}</p>
       <ul>
@@ -2781,6 +2846,13 @@ const MCQS = [
       "A chest radiograph alone",
     ],
     answer: 1,
+    optionNotes: [
+      `BCG can cause false-positive TSTs, and staff who will be retested risk a "boosted" result later. The Saudi manual uses two-step testing when a TST is used. ${cite(1, 5)}`,
+      `Correct (ATS/IDSA/CDC, age &ge;5 with BCG). ${cite(1)}`,
+      `An acceptable alternative (Saudi approach), not the preferred test here. ${cite(5, 1)}`,
+      `Not routine. A second test is suggested only to confirm a <em>positive</em> first test in someone at low risk of infection. ${cite(1)}`,
+      `Looks for disease, not infection.`,
+    ],
     rationale: `
       <p>ATS/IDSA/CDC recommend an IGRA over the TST in people aged &ge;5 years with a history of BCG vaccination. TST is an acceptable alternative when IGRA is unavailable or too costly. ${cite(1)}</p>
       <ul>
@@ -2800,6 +2872,13 @@ const MCQS = [
       "Evenly across her lifetime",
     ],
     answer: 1,
+    optionNotes: [
+      `Biologically implausible; the TST alone takes up to 6 weeks to convert. ${cite(77)}`,
+      `Correct. About 62% of eventual cases occur by 2 years (97% among Amsterdam contacts). ${cite(77)}`,
+      `By 5 years about 83% of eventual cases have already occurred. ${cite(77)}`,
+      `Late reactivation happens but is a small share of cases. ${cite(77)}`,
+      `Risk is front-loaded, highest in the first year. ${cite(77, 81)}`,
+    ],
     rationale: `
       <p>Most of the lifetime risk comes early. Of eventual cases, about <strong>45% occur by 1 year, 62% by 2 years and 83% by 5 years</strong>; among Amsterdam contacts, 97% occurred within 2 years. ${cite(77)} Contact studies show incidence is highest in the first year. ${cite(81)}</p>
       <ul>
@@ -2817,6 +2896,12 @@ const MCQS = [
       "The risk was similar across all three",
     ],
     answer: 1,
+    optionNotes: [
+      `Highest in RATIO (SIR 29.3), but not consistently across studies; always well above etanercept. ${cite(84, 134, 135)}`,
+      `Correct, though still raised above baseline. ${cite(84, 134, 135, 86)}`,
+      `Highest in the Korean data and earliest onset (median 5.5 months), but no consistent ranking vs adalimumab. ${cite(134, 135)}`,
+      `No. The monoclonals ran about 3&ndash;7&times; the rate with etanercept. ${cite(84, 134, 135)}`,
+    ],
     rationale: `
       <p><strong>Etanercept</strong> (the soluble TNF receptor) had the lowest TB risk in each dataset below, but its risk is <strong>still raised above baseline</strong>: in RATIO its standardized incidence ratio was 1.8, and NSTC/NTCA list it among the higher-risk agents. ${cite(84, 134, 135, 86)} Monoclonal anti-TNF antibodies carry a much higher risk.</p>
       <h4>Studies</h4>
