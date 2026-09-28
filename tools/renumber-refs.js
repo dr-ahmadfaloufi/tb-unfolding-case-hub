@@ -8,7 +8,7 @@
 
    1. Walks CASES in order (case -> vignette, then each stage's
       context / question / reveal / pearl / revealExtra), then the
-      Start-here MCQS (stem, options, rationale), and records the
+      Start-here MCQS (stem, options, option notes, rationale), and records the
       order in which each cite(n) first appears.
    2. Builds an old -> new number map and rewrites every cite(...)
       inside CASES and MCQS and every `n:` in REFERENCES.groups.
@@ -79,7 +79,7 @@ for (const c of CASES) {
   for (const s of c.stages) for (const f of STAGE_FIELDS) texts.push(s[f]);
   record(texts, c.id);
 }
-for (const mcq of MCQS) record([mcq.stem, ...mcq.options, mcq.rationale], "start");
+for (const mcq of MCQS) record([mcq.stem, ...mcq.options, ...(mcq.optionNotes || []), mcq.rationale], "start");
 
 // ---------- 2. map, unused, missing ----------
 const items = REFERENCES.groups.flatMap((g) => g.items);
