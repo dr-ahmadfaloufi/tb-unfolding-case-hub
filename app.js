@@ -120,7 +120,7 @@ function renderCase() {
     const revealHtml = isRevealed
       ? `
         <div class="reveal-block">
-          ${stage.reveal}
+          ${collapsibleSections(stage.reveal)}
           ${
             stage.pearl
               ? `<div class="pearl-box"><span class="pearl-icon">&#128161;</span><div class="pearl-content"><strong class="pearl-label">Pearl</strong>${stage.pearl}</div></div>`
@@ -213,6 +213,24 @@ function renderCase() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     }
+    const toggleAllBtn = document.getElementById("toggle-sections-btn");
+    if (toggleAllBtn) {
+      const sections = [...document.querySelectorAll("details.reveal-section")];
+      const syncLabel = () => {
+        toggleAllBtn.textContent = sections.every((d) => d.open) ? "Collapse all" : "Expand all";
+      };
+      toggleAllBtn.addEventListener("click", () => {
+        const open = !sections.every((d) => d.open);
+        sections.forEach((d) => (d.open = open));
+        syncLabel();
+      });
+      sections.forEach((d) => d.addEventListener("toggle", syncLabel));
+      syncLabel();
+    }
+    // Citation links in a section heading navigate without toggling the section.
+    document.querySelectorAll("details.reveal-section > summary a").forEach((a) => {
+      a.addEventListener("click", (e) => e.stopPropagation());
+    });
     document.querySelectorAll(".stage-dot").forEach((dot) => {
       dot.addEventListener("click", () => {
         state.current = parseInt(dot.getAttribute("data-stage-index"), 10);
@@ -222,7 +240,44 @@ function renderCase() {
     });
   }
 
+  window.addEventListener("beforeprint", () => {
+    document.querySelectorAll("details.reveal-section").forEach((d) => (d.open = true));
+  });
+
   render();
+}
+
+// Long reveals (3+ top-level <h4> headings) become collapsible sections: each
+// <h4> and the content up to the next one go in a <details>, the first open.
+// Content before the first <h4> stays visible above the sections.
+function collapsibleSections(html) {
+  const tpl = document.createElement("template");
+  tpl.innerHTML = html;
+  const root = tpl.content;
+  const headings = [...root.children].filter((el) => el.tagName === "H4");
+  if (headings.length < 3) return html;
+
+  const toggle = document.createElement("div");
+  toggle.className = "reveal-sections-toggle";
+  toggle.innerHTML = `<button type="button" class="btn btn-secondary btn-small" id="toggle-sections-btn">Expand all</button>`;
+  root.insertBefore(toggle, headings[0]);
+
+  headings.forEach((h4, i) => {
+    const details = document.createElement("details");
+    details.className = "reveal-section";
+    if (i === 0) details.open = true;
+    const summary = document.createElement("summary");
+    root.insertBefore(details, h4);
+    summary.appendChild(h4);
+    details.appendChild(summary);
+    while (details.nextSibling && details.nextSibling.nodeName !== "H4") {
+      details.appendChild(details.nextSibling);
+    }
+  });
+
+  const wrap = document.createElement("div");
+  wrap.appendChild(root);
+  return wrap.innerHTML;
 }
 
 // ---------- start-here questions ----------
