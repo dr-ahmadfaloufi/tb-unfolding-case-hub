@@ -616,7 +616,7 @@ const CASES = [
           </div>
           ${abbrev("ATS", "CI", "INH", "MDR-TB", "OR", "RR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;"><em>Caveat:</em> the Saudi meta-analysis pools heterogeneous, mostly hospital-based series, so the national surveillance figure is the better population estimate.</p>
-          <p>Older, longer MDR regimens carried heavy toxicity. Grade &ge;3 or serious adverse events occurred in 59% on standard care in TB-PRACTECAL ${cite(27)}, and hearing loss in 9% with the injectable-containing control in STREAM stage 2 ${cite(31)}. This is part of why shorter all-oral regimens matter.</p>`,
+          <p>Older, longer MDR regimens carried heavy toxicity. Grade &ge;3 or serious adverse events occurred in 59% on standard care in TB-PRACTECAL ${cite(27)}, and hearing loss in 9% with the injectable-containing control in STREAM stage 2 ${cite(28)}. This is part of why shorter all-oral regimens matter.</p>`,
         pearl:
           "Rifampicin resistance on Xpert is highly specific. When a test result disagrees with the sequencing or with how the patient is doing, trust the sequencing and the patient.",
       },
@@ -674,7 +674,7 @@ const CASES = [
           </div>
           ${abbrev("B", "CI", "ITT", "L", "M", "MDR-TB", "Pa", "RR-TB", "XDR-TB", "mITT", "pre-XDR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;">TB-PRACTECAL doses are taken from WHO's description of the trial in Module 4 (2025). ${cite(7)} Pretomanid and moxifloxacin doses match the WHO/ATS BPaLM regimen.</p>
-          <p>TB-PRACTECAL enrolment stopped early (March 2021) on the advice of the independent data and safety monitoring board: the interim analysis showed a difference between arms of at least three standard deviations in favour of BPaLM, with 5 deaths on standard care vs none on BPaLM, and more data were judged extremely unlikely to change the result. ${cite(28)}</p>
+          <p>TB-PRACTECAL enrolment stopped early (March 2021) on the advice of the independent data and safety monitoring board: the interim analysis showed a difference between arms of at least three standard deviations in favour of BPaLM, with 5 deaths on standard care vs none on BPaLM, and more data were judged extremely unlikely to change the result. ${cite(29)}</p>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -721,7 +721,7 @@ const CASES = [
               <thead><tr><th>Trial</th><th>Design</th><th>Regimen</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>BEAT Tuberculosis</strong>, NEJM 2026 ${cite(29)}</td>
+                  <td><strong>BEAT Tuberculosis</strong>, NEJM 2026 ${cite(30)}</td>
                   <td>Pragmatic RCT, South Africa, n=403, <strong>age &ge;6, pregnant/breastfeeding and FQ-resistant patients included</strong></td>
                   <td><strong>BDLLfxC</strong> 6 months: bedaquiline + delamanid + linezolid, <strong>plus levofloxacin (if FQ-susceptible) or clofazimine (if FQ-resistant)</strong>; both were given until the FQ result was available, then one was stopped. vs 9-month local standard</td>
                   <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%. 85 (21%) had FQ-resistant TB; the treatment effect didn't differ by FQ resistance. 9 pregnant at enrolment + 1 during the trial; all live births (one premature)</td>
@@ -736,13 +736,13 @@ const CASES = [
               <thead><tr><th>Trial</th><th>Design</th><th>Regimens</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>endTB</strong>, NEJM 2025 ${cite(30)}</td>
+                  <td><strong>endTB</strong>, NEJM 2025 ${cite(31)}</td>
                   <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
                   <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BCLLfxZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
                   <td>Control 80.7% favorable (mITT). Risk differences: <strong>BCLLfxZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
                 </tr>
                 <tr>
-                  <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(31)}</td>
+                  <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(28)}</td>
                   <td>RCT, 7 countries, age &ge;15, RR-TB without FQ/aminoglycoside resistance; <strong>n=588 randomised (517 mITT)</strong></td>
                   <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control; also a <strong>6-month bedaquiline regimen <em>with 8 weeks of second-line injectable</em></strong> (injectable-containing)</td>
                   <td><strong>9-month all-oral vs control:</strong> favourable <strong>162/196 (83%) vs 133/187 (71%)</strong>, adjusted difference 11.0% (95% CI 2.9&ndash;19.0); <strong>non-inferior, and superior on the prespecified test</strong>; grade 3&ndash;4 hearing loss 2% vs 9%. <strong>6-month injectable-containing regimen vs concurrent controls:</strong> <strong>122/134 (91%) vs 87/127 (69%)</strong>, adjusted difference 22.2% (13.1&ndash;31.2); grade 3&ndash;4 hearing loss 4%</td>
@@ -752,9 +752,9 @@ const CASES = [
           </div>
           ${abbrev("B", "C", "CI", "D", "FQ", "L", "Lfx", "M", "RCT", "RR-TB", "Z", "mITT")}
           <ul>
-            <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(30)}</li>
+            <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(31)}</li>
             <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (modified intention to treat, mITT). ${cite(32)}</li>
-            <li><strong>Why WHO recommends against DCMZ:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(30, 7)}</li>
+            <li><strong>Why WHO recommends against DCMZ:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(31, 7)}</li>
             <li><strong>Fallback: longer individualized regimen.</strong> Total <strong>18&ndash;20 months</strong> for most patients, adjusted to response. ${cite(7)}</li>
           </ul>
           <h4>Guidelines</h4>
@@ -1389,7 +1389,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td><strong>Smear- and NAAT-negative</strong> (culture-positive or clinically diagnosed)</td>
-                  <td>Lowest; data are limited</td>
+                  <td>Lowest, but <strong>not zero</strong>: minimum transmission risk <strong>~5% (95% CI 0&ndash;11)</strong> vs ~35% with NAAT-positive patients (relative ~0.14). Based on an earlier-generation NAAT, not Xpert or Ultra; both patients who transmitted started treatment late ${cite(72)}</td>
                   <td>Lower priority, but not zero. <strong>Saudi NTP:</strong> still investigate if the CXR shows <strong>cavities</strong>, even with 3 negative smears (&sect;14.4) ${cite(5)}</td>
                 </tr>
                 <tr>
@@ -1400,14 +1400,14 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          ${abbrev("CXR", "NAAT", "NTCA", "NTP")}
+          ${abbrev("CI", "CXR", "NAAT", "NTCA", "NTP")}
           <p>Contact-side modifiers (these change <strong>urgency</strong>, not infectiousness):</p>
           <ul>
             <li>people with <strong>HIV</strong> progress faster than with any other known risk factor, <strong>35&ndash;162 per 1,000 person-years</strong>;</li>
             <li><strong>children &lt;5</strong> progress faster and get more disseminated disease. ${cite(4)}</li>
             <li>See Stage 2 for what this means in practice.</li>
           </ul>
-          <h4>5. What to do now ${cite(72)}</h4>
+          <h4>5. What to do now ${cite(73)}</h4>
           <ul>
             <li><strong>Symptom evaluation now</strong>, for everyone exposed.</li>
             <li><strong>Baseline interferon-gamma release assay (IGRA) or tuberculin skin test (TST)</strong> for those <strong>without</strong> documented prior latent TB infection (LTBI) or TB.</li>
@@ -1430,7 +1430,7 @@ const CASES = [
                   <td>Not GRADE-rated</td>
                 </tr>
                 <tr>
-                  <td>NTCA/CDC healthcare personnel (2019) ${cite(72)}</td>
+                  <td>NTCA/CDC healthcare personnel (2019) ${cite(73)}</td>
                   <td>Symptom evaluation for all exposed staff. Test those without prior LTBI/TB. Retest at 8&ndash;10 weeks, same test. No retest if documented prior positive</td>
                   <td>Not GRADE-rated</td>
                 </tr>
@@ -1467,7 +1467,7 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>No.</strong> It takes up to <strong>8&ndash;10 weeks</strong> after exposure for the immune response to become detectable. A negative test before 8 weeks cannot exclude infection. ${cite(4)}</li>
-            <li><strong>Repeat at 8&ndash;10 weeks after the last exposure</strong>, with the <strong>same test type</strong>. Switching tests makes "conversion" hard to interpret. ${cite(72)}</li>
+            <li><strong>Repeat at 8&ndash;10 weeks after the last exposure</strong>, with the <strong>same test type</strong>. Switching tests makes "conversion" hard to interpret. ${cite(73)}</li>
           </ul>
           <h4>IGRA vs TST in a BCG-vaccinated workforce</h4>
           <ul>
@@ -1482,8 +1482,8 @@ const CASES = [
                 <li><strong>Teaching point:</strong> with TST, a BCG-vaccinated nurse needs two-step baseline testing and careful reading. IGRA avoids both problems.</li>
               </ul>
             </li>
-            <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QuantiFERON (QFT) in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(73)}</li>
-            <li>A 2026 meta-analysis of healthcare workers found pooled positivity of <strong>22% by IGRA vs 38% by TST</strong>; <strong>TST positivity tracked BCG vaccination rates, but IGRA positivity did not</strong>. ${cite(74)}</li>
+            <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QuantiFERON (QFT) in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(74)}</li>
+            <li>A 2026 meta-analysis of healthcare workers found pooled positivity of <strong>22% by IGRA vs 38% by TST</strong>; <strong>TST positivity tracked BCG vaccination rates, but IGRA positivity did not</strong>. ${cite(75)}</li>
           </ul>
           <h4>Exception: window prophylaxis ${cite(4)}</h4>
           <ul>
@@ -1529,15 +1529,15 @@ const CASES = [
               <tbody>
                 <tr>
                   <td><strong>Bacterial CAP</strong> (e.g. <em>S. pneumoniae</em>)</td>
-                  <td>Clinical diagnosis plus CXR (done). Blood and sputum cultures are not routine outside severe or hospitalized cases ${cite(75)}</td>
+                  <td>Clinical diagnosis plus CXR (done). Blood and sputum cultures are not routine outside severe or hospitalized cases ${cite(76)}</td>
                 </tr>
                 <tr>
                   <td><strong>Viral pneumonia</strong> (influenza, SARS-CoV-2, RSV)</td>
-                  <td><strong>Respiratory viral NAAT</strong>, especially influenza when it is circulating ${cite(76)}</td>
+                  <td><strong>Respiratory viral NAAT</strong>, especially influenza when it is circulating ${cite(77)}</td>
                 </tr>
                 <tr>
                   <td><strong>Atypical bacterial CAP</strong> (<em>Mycoplasma</em>, <em>Chlamydophila</em>)</td>
-                  <td>Clinical; atypical testing when indicated ${cite(75)}</td>
+                  <td>Clinical; atypical testing when indicated ${cite(76)}</td>
                 </tr>
                 <tr>
                   <td><strong>Pulmonary TB</strong> (least likely at day 10)</td>
@@ -1547,7 +1547,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("AFB", "CAP", "CXR", "NAAT", "RSV")}
-          <h4>Why TB is unlikely now ${cite(77)}</h4>
+          <h4>Why TB is unlikely now ${cite(78)}</h4>
           <ul>
             <li>After infection, the TST converts within <strong>&lt;6 weeks</strong>.</li>
             <li>Active TB typically appears <strong>3&ndash;9 months</strong> later, and <strong>almost always within 2 years</strong>.</li>
@@ -1557,11 +1557,11 @@ const CASES = [
           <ul>
             <li><strong>Treat as community-acquired pneumonia (CAP).</strong>
               <ul>
-                <li><strong>ATS/IDSA 2019</strong> (healthy outpatient): <strong>amoxicillin 1 g three times daily</strong> (strong); doxycycline (conditional); a macrolide only where pneumococcal macrolide resistance is &lt;25%. ${cite(76)}</li>
-                <li><strong>Saudi Thoracic Society 2025:</strong> <strong>beta-lactams first-line</strong>. In outpatients it suggests <strong>macrolides over fluoroquinolones</strong> (conditional, very low certainty). It reserves quinolones as second-line in children because TB is endemic in the region. ${cite(75)}</li>
+                <li><strong>ATS/IDSA 2019</strong> (healthy outpatient): <strong>amoxicillin 1 g three times daily</strong> (strong); doxycycline (conditional); a macrolide only where pneumococcal macrolide resistance is &lt;25%. ${cite(77)}</li>
+                <li><strong>Saudi Thoracic Society 2025:</strong> <strong>beta-lactams first-line</strong>. In outpatients it suggests <strong>macrolides over fluoroquinolones</strong> (conditional, very low certainty). It reserves quinolones as second-line in children because TB is endemic in the region. ${cite(76)}</li>
               </ul>
             </li>
-            <li><strong>Avoid an empiric fluoroquinolone here.</strong> In a meta-analysis, empiric fluoroquinolones for pneumonia <strong>delayed TB diagnosis and treatment by ~19 days</strong> and raised the odds of <strong>fluoroquinolone-resistant <em>M. tuberculosis</em></strong> (odds ratio (OR) <strong>2.70</strong>). ${cite(78)} This matters in anyone with a recent TB exposure.</li>
+            <li><strong>Avoid an empiric fluoroquinolone here.</strong> In a meta-analysis, empiric fluoroquinolones for pneumonia <strong>delayed TB diagnosis and treatment by ~19 days</strong> and raised the odds of <strong>fluoroquinolone-resistant <em>M. tuberculosis</em></strong> (odds ratio (OR) <strong>2.70</strong>). ${cite(79)} This matters in anyone with a recent TB exposure.</li>
             <li><strong>No airborne isolation and no TB work-up</strong> unless the course is atypical: no response to appropriate CAP treatment, cavitation, or symptoms that persist.</li>
             <li><strong>Keep the scheduled 8&ndash;10-week repeat IGRA.</strong> The pneumonia doesn't change it.</li>
           </ul>
@@ -1571,17 +1571,17 @@ const CASES = [
               <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>ATS/IDSA CAP (2019) ${cite(76)}</td>
+                  <td>ATS/IDSA CAP (2019) ${cite(77)}</td>
                   <td>Healthy outpatient: amoxicillin, <strong>or</strong> doxycycline, <strong>or</strong> a macrolide if local resistance &lt;25%</td>
                   <td>Strong/moderate; conditional/low; conditional/moderate</td>
                 </tr>
                 <tr>
-                  <td>ATS/IDSA CAP (2019) ${cite(76)}</td>
+                  <td>ATS/IDSA CAP (2019) ${cite(77)}</td>
                   <td>Test for influenza with a rapid molecular assay when influenza is circulating</td>
                   <td>Strong, moderate</td>
                 </tr>
                 <tr>
-                  <td>Saudi Thoracic Society CAP (2025) ${cite(75)}</td>
+                  <td>Saudi Thoracic Society CAP (2025) ${cite(76)}</td>
                   <td>Outpatient: macrolides over fluoroquinolones; beta-lactams first-line</td>
                   <td>Conditional, very low</td>
                 </tr>
@@ -1600,12 +1600,12 @@ const CASES = [
         reveal: `
           <h4>Rule out active disease first</h4>
           <ul>
-            <li><strong>Symptom evaluation plus CXR</strong> for everyone with a new positive test, with sputum studies if either is abnormal. ${cite(72, 1)}</li>
+            <li><strong>Symptom evaluation plus CXR</strong> for everyone with a new positive test, with sputum studies if either is abnormal. ${cite(73, 1)}</li>
             <li>IGRA and TST cannot tell latent from active TB, so disease must be excluded before starting LTBI treatment. ${cite(1)}</li>
             <li><strong>Why it matters:</strong> preventive treatment given for unrecognized active TB under-treats the disease. Trials have not shown a significant rise in drug resistance, but that risk cannot be excluded, so active TB must be ruled out first.
               <ul>
-                <li><strong>Rifamycin regimens:</strong> a meta-analysis of 6 randomized controlled trials (RCTs) found <strong>no statistically significant increase</strong> in rifamycin resistance vs non-rifamycin regimens (risk ratio (RR) 3.45, 95% confidence interval (CI) 0.72&ndash;16.56). The wide confidence interval means a risk <strong>cannot be excluded</strong>. ${cite(79)}</li>
-                <li><strong>Isoniazid preventive therapy:</strong> 13 studies; summary RR for isoniazid resistance <strong>1.45</strong> (95% CI 0.85&ndash;2.47). The findings "do not exclude an increased risk", and the authors conclude active TB <strong>should be excluded before isoniazid preventive therapy (IPT)</strong>. ${cite(80)}</li>
+                <li><strong>Rifamycin regimens:</strong> a meta-analysis of 6 randomized controlled trials (RCTs) found <strong>no statistically significant increase</strong> in rifamycin resistance vs non-rifamycin regimens (risk ratio (RR) 3.45, 95% confidence interval (CI) 0.72&ndash;16.56). The wide confidence interval means a risk <strong>cannot be excluded</strong>. ${cite(80)}</li>
+                <li><strong>Isoniazid preventive therapy:</strong> 13 studies; summary RR for isoniazid resistance <strong>1.45</strong> (95% CI 0.85&ndash;2.47). The findings "do not exclude an increased risk", and the authors conclude active TB <strong>should be excluded before isoniazid preventive therapy (IPT)</strong>. ${cite(81)}</li>
               </ul>
             </li>
           </ul>
@@ -1617,37 +1617,37 @@ const CASES = [
               <tbody>
                 <tr>
                   <td>How often do close contacts get infected?</td>
-                  <td>Latent infection in <strong>28%</strong> of contacts in high-income settings and <strong>52%</strong> in low/middle-income settings. Active TB in <strong>1.4%</strong> and <strong>3.1%</strong>. <strong>Incidence is highest in the first year.</strong> ${cite(81)}</td>
+                  <td>Latent infection in <strong>28%</strong> of contacts in high-income settings and <strong>52%</strong> in low/middle-income settings. Active TB in <strong>1.4%</strong> and <strong>3.1%</strong>. <strong>Incidence is highest in the first year.</strong> ${cite(82)}</td>
                 </tr>
                 <tr>
                   <td>Healthcare workers specifically</td>
-                  <td>Pooled <strong>IGRA conversion ~8%</strong> in serially tested healthcare workers ${cite(74)}</td>
+                  <td>Pooled <strong>IGRA conversion ~8%</strong> in serially tested healthcare workers ${cite(75)}</td>
                 </tr>
                 <tr>
                   <td>Lifetime risk of disease with LTBI (healthy adult)</td>
-                  <td><strong>~5&ndash;10%</strong> (WHO estimate, as quoted by Behr 2018) ${cite(77)}</td>
+                  <td><strong>~5&ndash;10%</strong> (WHO estimate, as quoted by Behr 2018) ${cite(78)}</td>
                 </tr>
                 <tr>
                   <td><strong>When</strong> that risk falls</td>
-                  <td>Of eventual cases: <strong>45% by 1 year, 62% by 2 years, 83% by 5 years</strong> (Borgdorff). Among Amsterdam contacts, <strong>75% within 1 year and 97% within 2 years</strong> (Sloot) ${cite(77)}</td>
+                  <td>Of eventual cases: <strong>45% by 1 year, 62% by 2 years, 83% by 5 years</strong> (Borgdorff). Among Amsterdam contacts, <strong>75% within 1 year and 97% within 2 years</strong> (Sloot) ${cite(78)}</td>
                 </tr>
               </tbody>
             </table>
           </div>
           ${abbrev("IGRA", "LTBI")}
-          <p><strong>Takeaway:</strong> the risk is <strong>front-loaded</strong>, which is why TB preventive treatment (TPT) is offered promptly after a documented conversion. TPT is WHO's term ${cite(82)}; US guidance calls it treatment of LTBI ${cite(83)}.</p>
+          <p><strong>Takeaway:</strong> the risk is <strong>front-loaded</strong>, which is why TB preventive treatment (TPT) is offered promptly after a documented conversion. TPT is WHO's term ${cite(83)}; US guidance calls it treatment of LTBI ${cite(84)}.</p>
           <h4>Higher-risk groups (relative risk of progression)</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Group</th><th>Figure</th><th>Source</th></tr></thead>
               <tbody>
                 <tr><td><strong>HIV</strong></td><td><strong>35&ndash;162 per 1,000 person-years</strong>, the highest of any known factor</td><td>${cite(4)}</td></tr>
-                <tr><td><strong>TNF-&alpha; inhibitors (monoclonal antibodies)</strong></td><td>TB standardized incidence ratio: <strong>infliximab 18.6, adalimumab 29.3</strong></td><td>${cite(84)}</td></tr>
-                <tr><td><strong>TNF-&alpha; inhibitor (etanercept)</strong></td><td>SIR <strong>1.8</strong>, much lower</td><td>${cite(84)}</td></tr>
-                <tr><td><strong>JAK inhibitor (tofacitinib)</strong></td><td>TB was the most common opportunistic infection: <strong>0.21/100 PY</strong> overall and <strong>0.75/100 PY in high-incidence regions</strong></td><td>${cite(85)}</td></tr>
-                <tr><td><strong>Diabetes</strong></td><td><strong>RR 3.11</strong> (95% CI 2.27&ndash;4.26). <em>Note:</em> don't test for latent TB because of diabetes alone (Saudi NTP Manual &sect;12.2, p.118; its TST chapter lists diabetes as a moderate-risk indication under 65, &sect;13.4.2, p.129) ${cite(5)}. If latent TB is found for another reason (e.g. a contact), diabetes strengthens the case to treat ${cite(86)}.</td><td>${cite(87, 5, 86)}</td></tr>
-                <tr><td><strong>Corticosteroids</strong></td><td><strong>&ge;15 mg/day prednisone-equivalent for &ge;1 month</strong> is listed as an immunosuppression risk factor. CDC calls the benefit of a full course "less clear"</td><td>${cite(72, 4)}</td></tr>
-                <tr><td><strong>Transplant, dialysis, silicosis</strong></td><td>WHO <strong>strongly recommends</strong> systematic testing and treatment in these groups</td><td>${cite(88)}</td></tr>
+                <tr><td><strong>TNF-&alpha; inhibitors (monoclonal antibodies)</strong></td><td>TB standardized incidence ratio: <strong>infliximab 18.6, adalimumab 29.3</strong></td><td>${cite(85)}</td></tr>
+                <tr><td><strong>TNF-&alpha; inhibitor (etanercept)</strong></td><td>SIR <strong>1.8</strong>, much lower</td><td>${cite(85)}</td></tr>
+                <tr><td><strong>JAK inhibitor (tofacitinib)</strong></td><td>TB was the most common opportunistic infection: <strong>0.21/100 PY</strong> overall and <strong>0.75/100 PY in high-incidence regions</strong></td><td>${cite(86)}</td></tr>
+                <tr><td><strong>Diabetes</strong></td><td><strong>RR 3.11</strong> (95% CI 2.27&ndash;4.26). <em>Note:</em> don't test for latent TB because of diabetes alone (Saudi NTP Manual &sect;12.2, p.118; its TST chapter lists diabetes as a moderate-risk indication under 65, &sect;13.4.2, p.129) ${cite(5)}. If latent TB is found for another reason (e.g. a contact), diabetes strengthens the case to treat ${cite(87)}.</td><td>${cite(88, 5, 87)}</td></tr>
+                <tr><td><strong>Corticosteroids</strong></td><td><strong>&ge;15 mg/day prednisone-equivalent for &ge;1 month</strong> is listed as an immunosuppression risk factor. CDC calls the benefit of a full course "less clear"</td><td>${cite(73, 4)}</td></tr>
+                <tr><td><strong>Transplant, dialysis, silicosis</strong></td><td>WHO <strong>strongly recommends</strong> systematic testing and treatment in these groups</td><td>${cite(89)}</td></tr>
               </tbody>
             </table>
           </div>
@@ -1666,17 +1666,17 @@ const CASES = [
               <thead><tr><th>Study</th><th>Comparison</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td>Sterling 2011, PREVENT TB ${cite(89)}</td>
+                  <td>Sterling 2011, PREVENT TB ${cite(90)}</td>
                   <td><strong>3HP</strong> (rifapentine 900 mg + isoniazid 900 mg weekly &times;12, observed) vs <strong>9H</strong></td>
                   <td>TB <strong>0.19% vs 0.43%</strong>; non-inferior; higher completion, less hepatotoxicity</td>
                 </tr>
                 <tr>
-                  <td>Menzies 2018 ${cite(90)}</td>
+                  <td>Menzies 2018 ${cite(91)}</td>
                   <td><strong>4R</strong> (daily rifampin &times;4 months) vs <strong>9H</strong></td>
                   <td>Non-inferior; completion <strong>+15.1 points</strong>; fewer grade 3&ndash;5 adverse events</td>
                 </tr>
                 <tr>
-                  <td>Swindells 2019, BRIEF-TB ${cite(91)}</td>
+                  <td>Swindells 2019, BRIEF-TB ${cite(92)}</td>
                   <td><strong>1HP</strong> (daily rifapentine + isoniazid &times;1 month) vs <strong>9H</strong>, in <strong>people with HIV</strong></td>
                   <td>TB/death <strong>0.65 vs 0.67 per 100 PY</strong>; non-inferior; completion <strong>97% vs 90%</strong></td>
                 </tr>
@@ -1684,24 +1684,24 @@ const CASES = [
             </table>
           </div>
           ${abbrev("#", "H", "P", "PY", "R")}
-          <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(91, 82)}</p>
+          <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(92, 83)}</p>
           <h4>Studies: 6H vs 9H</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr>
-                  <td><strong>IUAT 1982</strong> ${cite(92)}</td>
+                  <td><strong>IUAT 1982</strong> ${cite(93)}</td>
                   <td>RCT, ~28,000 adults with fibrotic lesions; isoniazid 12 / 24 / 52 weeks vs placebo; 5 years of follow-up. <strong>No 9-month arm</strong></td>
                   <td>TB reduction <strong>21% / 65% / 75%</strong> (all assigned) and <strong>31% / 69% / 93%</strong> (completed and took &ge;80% of doses). The 52- vs 24-week difference was not significant overall; the extra gain was in lesions &gt;2 cm&sup2; (89% vs 67%). Hepatitis 0.5% vs 0.1%</td>
                 </tr>
                 <tr>
-                  <td><strong>Comstock 1999</strong> ${cite(93)}</td>
+                  <td><strong>Comstock 1999</strong> ${cite(94)}</td>
                   <td>Reanalysis of the controlled trials</td>
                   <td>6 months is not optimal; <strong>9&ndash;10 months appears optimal</strong>; more than 12 months is unnecessary</td>
                 </tr>
                 <tr>
-                  <td><strong>Smieja 2000, Cochrane</strong> ${cite(94)}</td>
+                  <td><strong>Smieja 2000, Cochrane</strong> ${cite(95)}</td>
                   <td>11 RCTs, 73,375 people</td>
                   <td>6 vs 12 months not significantly different (RR 0.44 vs 0.38); hepatotoxicity 0.36% vs 0.52%</td>
                 </tr>
@@ -1709,11 +1709,11 @@ const CASES = [
             </table>
           </div>
           ${abbrev("RCT", "RR")}
-          <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. That is why NTCA/CDC rates 6H strong and 9H conditional, and the Saudi manual recommends 6H. ${cite(83, 5)}</p>
+          <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. That is why NTCA/CDC rates 6H strong and 9H conditional, and the Saudi manual recommends 6H. ${cite(84, 5)}</p>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
-              <thead><tr><th>Regimen</th><th>WHO 2024 ${cite(82)}</th><th>NTCA/CDC 2020 ${cite(83)}</th><th>Saudi NTP 2021 ${cite(5)}</th></tr></thead>
+              <thead><tr><th>Regimen</th><th>WHO 2024 ${cite(83)}</th><th>NTCA/CDC 2020 ${cite(84)}</th><th>Saudi NTP 2021 ${cite(5)}</th></tr></thead>
               <tbody>
                 <tr><td>6H</td><td>Strong</td><td>Alternative; strong, moderate (HIV&minus;) / conditional, moderate (HIV+)</td><td><strong>Recommended</strong> (strong, high)</td></tr>
                 <tr><td>9H</td><td>Strong</td><td>Alternative; conditional, moderate</td><td>Alternative</td></tr>
@@ -1730,8 +1730,8 @@ const CASES = [
           <h4>Her regimen</h4>
           <ul>
             <li><strong>Rifapentine is not available in Saudi Arabia.</strong> 3HP and 1HP are shown as options that exist internationally, <strong>but not what this nurse receives.</strong></li>
-            <li><strong>This nurse: 4R</strong>, daily rifampin for 4 months. It is non-inferior to 9H, with higher completion and fewer serious adverse events ${cite(90)}, and is among the preferred short regimens ${cite(83)}.</li>
-            <li><strong>Alternative with no rifapentine: 3HR</strong>, daily isoniazid + rifampin for 3 months (WHO strong recommendation ${cite(82)}).</li>
+            <li><strong>This nurse: 4R</strong>, daily rifampin for 4 months. It is non-inferior to 9H, with higher completion and fewer serious adverse events ${cite(91)}, and is among the preferred short regimens ${cite(84)}.</li>
+            <li><strong>Alternative with no rifapentine: 3HR</strong>, daily isoniazid + rifampin for 3 months (WHO strong recommendation ${cite(83)}).</li>
             <li><strong>Dose (Saudi NTP Manual table, &sect;12.5):</strong> rifampicin <strong>10 mg/kg daily, max 600 mg</strong> (adults), for 3&ndash;4 months. For 3HR, add isoniazid 5 mg/kg, max 300 mg. ${cite(5)}</li>
             <li>Note: the Saudi manual still lists 3HP as an option ${cite(5)}, even though rifapentine is not available locally.</li>
           </ul>`,
@@ -1745,7 +1745,7 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Test only if you would treat a positive result.</strong> Guidelines advise <strong>against testing people at low risk</strong> of infection and progression. ${cite(1)}</li>
-            <li><strong>WHO</strong> (guideline for countries with incidence &lt;100/100,000, which includes Saudi Arabia) ${cite(88)}:
+            <li><strong>WHO</strong> (guideline for countries with incidence &lt;100/100,000, which includes Saudi Arabia) ${cite(89)}:
               <ul>
                 <li><strong>strongly recommends</strong> systematic testing and treatment for people with HIV; adult and child contacts; patients <strong>starting anti-TNF treatment</strong>; patients on dialysis; patients preparing for transplant; and patients with silicosis;</li>
                 <li><strong>conditionally recommends</strong> it for <strong>healthcare workers</strong>; <strong>immigrants from high-burden countries</strong>; and prisoners, homeless people and people who use drugs.</li>
@@ -1763,9 +1763,9 @@ const CASES = [
             </li>
             <li><strong>Before any biologic or Janus kinase (JAK) inhibitor:</strong>
               <ul>
-                <li>International recommendations agree on <strong>screening before starting</strong>: IGRA/TST plus CXR, with many advising <strong>both tests in BCG-vaccinated patients</strong>. Patients with LTBI should <strong>receive TPT before the biologic</strong>. ${cite(95)}</li>
-                <li>Why it matters: in the French RATIO registry, <strong>none</strong> of the anti-TNF-associated TB cases had received correct prophylaxis. ${cite(84)}</li>
-                <li><strong>How long before?</strong> Start TPT before or with the biologic. The ideal lead-in time is not standardized. Observational data suggest a <strong>concurrent start</strong> can be safe: 263 patients took isoniazid alongside tofacitinib with <strong>no TB cases</strong> ${cite(85)}, and a small Nepal cohort started adalimumab on the same day as 3HR with <strong>no reactivation</strong> ${cite(96)}.</li>
+                <li>International recommendations agree on <strong>screening before starting</strong>: IGRA/TST plus CXR, with many advising <strong>both tests in BCG-vaccinated patients</strong>. Patients with LTBI should <strong>receive TPT before the biologic</strong>. ${cite(96)}</li>
+                <li>Why it matters: in the French RATIO registry, <strong>none</strong> of the anti-TNF-associated TB cases had received correct prophylaxis. ${cite(85)}</li>
+                <li><strong>How long before?</strong> Start TPT before or with the biologic. The ideal lead-in time is not standardized. Observational data suggest a <strong>concurrent start</strong> can be safe: 263 patients took isoniazid alongside tofacitinib with <strong>no TB cases</strong> ${cite(86)}, and a small Nepal cohort started adalimumab on the same day as 3HR with <strong>no reactivation</strong> ${cite(97)}.</li>
               </ul>
             </li>
             <li><strong>Test choice</strong> (IGRA in BCG-vaccinated people; TST acceptable): see Stage 2. ${cite(1)}</li>
@@ -1793,20 +1793,20 @@ const CASES = [
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
-          <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(97)}</p>
+          <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(98)}</p>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>Tuberculous pleurisy</strong>
               <ul>
-                <li><strong>Diagnostic thoracentesis:</strong> protein and lactate dehydrogenase (LDH) (to confirm an exudate by Light's criteria) ${cite(98)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
-                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(99)} A normal CXR doesn't mean normal lungs: CT shows lung lesions in about three-quarters or more of patients. When the CT is also clear, respiratory samples rarely grow TB (bronchial aspirate 1/14 ${cite(137)}; sputum 0/5 ${cite(138)}). Bronchoscopy helps mainly when the CT shows a lesion, especially consolidation. ${cite(137)}</li>
+                <li><strong>Diagnostic thoracentesis:</strong> protein and lactate dehydrogenase (LDH) (to confirm an exudate by Light's criteria) ${cite(99)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
+                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(100)} A normal CXR doesn't mean normal lungs: CT shows lung lesions in about three-quarters or more of patients. When the CT is also clear, respiratory samples rarely grow TB (bronchial aspirate 1/14 ${cite(101)}; sputum 0/5 ${cite(102)}). Bronchoscopy helps mainly when the CT shows a lesion, especially consolidation. ${cite(101)}</li>
               </ul>
             </li>
             <li><strong>Parapneumonic effusion or empyema</strong>
               <ul><li>Gram stain and bacterial culture on the same fluid.</li></ul>
             </li>
             <li><strong>Malignant effusion</strong> (lymphoma, metastatic disease)
-              <ul><li>Pleural fluid cytology; pleural biopsy if the work-up stays non-diagnostic. Among undiagnosed exudates in a high-TB-incidence setting, 82% were TB and 10% malignancy. ${cite(100)}</li></ul>
+              <ul><li>Pleural fluid cytology; pleural biopsy if the work-up stays non-diagnostic. Among undiagnosed exudates in a high-TB-incidence setting, 82% were TB and 10% malignancy. ${cite(103)}</li></ul>
             </li>
           </ol>
           <p><strong>Also:</strong> an <strong>HIV test</strong>, which is routine for everyone with presumptive TB. ${cite(3)}</p>`,
@@ -1822,34 +1822,34 @@ const CASES = [
         reveal: `
           <h4>First: is it a transudate or an exudate?</h4>
           <ul>
-            <li><strong>Why the split matters.</strong> Transudates are common in heart failure, cirrhosis, hypoalbuminaemia and nephrotic syndrome, and are managed by treating the cause. Exudates point to malignancy, pleural infection, pulmonary embolism or autoimmune pleuritis, and need a diagnosis. ${cite(139)} TB is among the causes of a <strong>lymphocytic</strong> effusion, and BTS names it as a treatable cause to reconsider when no diagnosis is found. ${cite(139)}</li>
-            <li><strong>Paired samples.</strong> Send blood (protein, LDH, albumin, C-reactive protein [CRP]) at the time of the tap: Light's criteria are ratios to serum values. ${cite(139)}</li>
-            <li><strong>Sensitive by design.</strong> One criterion is enough. The rule picks up about <strong>98% of exudates</strong> but labels about <strong>25% of transudates</strong> as exudates. ${cite(141)} If <strong>none</strong> is met, an exudate is very unlikely (likelihood ratio [LR] 0.04). ${cite(140)}</li>
-            <li><strong>Watch for a false exudate</strong> in heart failure (often on diuretics) and cirrhosis. Light's criteria mislabelled 29% of heart-failure and 18% of cirrhosis effusions as exudates. ${cite(142)} Serum N-terminal pro-B-type natriuretic peptide (NT-proBNP) can support heart failure (BTS, conditional). ${cite(139)}</li>
+            <li><strong>Why the split matters.</strong> Transudates are common in heart failure, cirrhosis, hypoalbuminaemia and nephrotic syndrome, and are managed by treating the cause. Exudates point to malignancy, pleural infection, pulmonary embolism or autoimmune pleuritis, and need a diagnosis. ${cite(104)} TB is among the causes of a <strong>lymphocytic</strong> effusion, and BTS names it as a treatable cause to reconsider when no diagnosis is found. ${cite(104)}</li>
+            <li><strong>Paired samples.</strong> Send blood (protein, LDH, albumin, C-reactive protein [CRP]) at the time of the tap: Light's criteria are ratios to serum values. ${cite(104)}</li>
+            <li><strong>Sensitive by design.</strong> One criterion is enough. The rule picks up about <strong>98% of exudates</strong> but labels about <strong>25% of transudates</strong> as exudates. ${cite(105)} If <strong>none</strong> is met, an exudate is very unlikely (likelihood ratio [LR] 0.04). ${cite(106)}</li>
+            <li><strong>Watch for a false exudate</strong> in heart failure (often on diuretics) and cirrhosis. Light's criteria mislabelled 29% of heart-failure and 18% of cirrhosis effusions as exudates. ${cite(107)} Serum N-terminal pro-B-type natriuretic peptide (NT-proBNP) can support heart failure (BTS, conditional). ${cite(104)}</li>
           </ul>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Test</th><th>Exudate if</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td>Fluid protein &divide; serum protein</td><td>&gt; 0.5</td><td>Any <strong>one</strong> criterion is enough ${cite(98, 139)}</td></tr>
-                <tr><td>Fluid LDH &divide; serum LDH</td><td>&gt; 0.6</td><td>${cite(98, 139)}</td></tr>
-                <tr><td>Fluid LDH</td><td>&gt; &frac23; of the upper limit of normal for serum LDH</td><td>Uses your lab's reference range ${cite(139)}</td></tr>
-                <tr><td><strong>Suspected heart failure:</strong> serum albumin &minus; fluid albumin</td><td>&gt; 1.2 g/dL = <strong>really a transudate</strong></td><td>Relabelled 83% of false heart-failure exudates; protein gradient &gt; 3.1 g/dL only 55% ${cite(142)}</td></tr>
-                <tr><td><strong>Cirrhosis:</strong> fluid albumin &divide; serum albumin</td><td>&lt; 0.6 = <strong>really a transudate</strong></td><td>Relabelled 77% of false cirrhosis exudates ${cite(142)}</td></tr>
+                <tr><td>Fluid protein &divide; serum protein</td><td>&gt; 0.5</td><td>Any <strong>one</strong> criterion is enough ${cite(99, 104)}</td></tr>
+                <tr><td>Fluid LDH &divide; serum LDH</td><td>&gt; 0.6</td><td>${cite(99, 104)}</td></tr>
+                <tr><td>Fluid LDH</td><td>&gt; &frac23; of the upper limit of normal for serum LDH</td><td>Uses your lab's reference range ${cite(104)}</td></tr>
+                <tr><td><strong>Suspected heart failure:</strong> serum albumin &minus; fluid albumin</td><td>&gt; 1.2 g/dL = <strong>really a transudate</strong></td><td>Relabelled 83% of false heart-failure exudates; protein gradient &gt; 3.1 g/dL only 55% ${cite(107)}</td></tr>
+                <tr><td><strong>Cirrhosis:</strong> fluid albumin &divide; serum albumin</td><td>&lt; 0.6 = <strong>really a transudate</strong></td><td>Relabelled 77% of false cirrhosis exudates ${cite(107)}</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("LDH")}
-          ${img(6, "stage2", "light-approach", "Approach to a unilateral pleural effusion. Original schematic adapted from the BTS 2023 pathway (Appendix 1) and Light's criteria; false-exudate thresholds from Bielsa 2012. " + cite(98, 139, 142))}
+          ${img(6, "stage2", "light-approach", "Approach to a unilateral pleural effusion. Original schematic adapted from the BTS 2023 pathway (Appendix 1) and Light's criteria; false-exudate thresholds from Bielsa 2012. " + cite(99, 104, 107))}
           <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Test (pleural fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(101)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(108)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
                 <tr><td><strong>ADA</strong></td><td>5 earlier meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89&ndash;99%</td><td>88&ndash;97%</td><td>Thresholds ranged from 10 to 71 U/L</td></tr>
                 <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 22 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89%</td><td>97%</td><td>Thresholds varied widely</td></tr>
-                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(102)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(109)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
                 <tr><td><strong>NAAT (any)</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>56%</td><td>98%</td><td></td></tr>
                 <tr><td><strong>AFB smear</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td><strong>0&ndash;10%</strong></td><td>high</td><td></td></tr>
                 <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>23&ndash;58%</td><td>&gt;97%</td><td>The only route to an isolate for DST</td></tr>
@@ -1885,9 +1885,9 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td>Diacon 2003 ${cite(100)}</td><td>Prospective, 51 undiagnosed exudates (82% TB), South Africa</td><td><strong>Closed needle biopsy:</strong> histology 66%, culture 48%, combined <strong>79%</strong>. <strong>Thoracoscopy:</strong> histology 100%, culture 76%, combined <strong>100%</strong>. Both 100% specific. <strong>ADA &ge;50 U/L:</strong> 95% sensitive, 89% specific. <strong>ADA + lymphocyte/neutrophil ratio &ge;0.75 + closed biopsy:</strong> 93% sensitive, 100% specific</td></tr>
-                <tr><td>Conde 2003 ${cite(99)}</td><td>Prospective, 84 pleural TB, Brazil</td><td>Pleural biopsy histology <strong>78%</strong>. Culture yield: pleural tissue <strong>62%</strong>, pleural fluid <strong>12%</strong>, induced sputum <strong>52%</strong></td></tr>
-                <tr><td>al-Quorain 1994 ${cite(97)}</td><td>Prospective, 89 pleural TB, Eastern Province, KSA</td><td>Culture or histology positive: pleural biopsy <strong>68.5%</strong>, pleural fluid <strong>10%</strong>, sputum <strong>2%</strong></td></tr>
+                <tr><td>Diacon 2003 ${cite(103)}</td><td>Prospective, 51 undiagnosed exudates (82% TB), South Africa</td><td><strong>Closed needle biopsy:</strong> histology 66%, culture 48%, combined <strong>79%</strong>. <strong>Thoracoscopy:</strong> histology 100%, culture 76%, combined <strong>100%</strong>. Both 100% specific. <strong>ADA &ge;50 U/L:</strong> 95% sensitive, 89% specific. <strong>ADA + lymphocyte/neutrophil ratio &ge;0.75 + closed biopsy:</strong> 93% sensitive, 100% specific</td></tr>
+                <tr><td>Conde 2003 ${cite(100)}</td><td>Prospective, 84 pleural TB, Brazil</td><td>Pleural biopsy histology <strong>78%</strong>. Culture yield: pleural tissue <strong>62%</strong>, pleural fluid <strong>12%</strong>, induced sputum <strong>52%</strong></td></tr>
+                <tr><td>al-Quorain 1994 ${cite(98)}</td><td>Prospective, 89 pleural TB, Eastern Province, KSA</td><td>Culture or histology positive: pleural biopsy <strong>68.5%</strong>, pleural fluid <strong>10%</strong>, sputum <strong>2%</strong></td></tr>
                 <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>Pleural <strong>tissue</strong>: histology 69&ndash;97%, culture 40&ndash;58%, smear 14&ndash;39%</td></tr>
               </tbody>
             </table>
@@ -1906,9 +1906,9 @@ const CASES = [
           ${abbrev("ATS", "CDC", "IDSA")}
           <h4>Reasoning for this patient</h4>
           <ul>
-            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(3, 101)}</li>
-            <li><strong>Tissue still earns its place.</strong> It is the best route to a positive <strong>culture</strong>, and so to <strong>drug-susceptibility testing</strong>; NAAT "does not produce an isolate, which is needed for DST". ${cite(1)} Tissue also excludes malignancy. Pleural biopsy was the single most useful test in the Saudi series. ${cite(97)}</li>
-            <li><strong>If the ADA were low, the fluid neutrophilic, or the patient older:</strong> go to biopsy before treating. Thoracoscopy has the highest yield where it's available. ${cite(100)}</li>
+            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(3, 108)}</li>
+            <li><strong>Tissue still earns its place.</strong> It is the best route to a positive <strong>culture</strong>, and so to <strong>drug-susceptibility testing</strong>; NAAT "does not produce an isolate, which is needed for DST". ${cite(1)} Tissue also excludes malignancy. Pleural biopsy was the single most useful test in the Saudi series. ${cite(98)}</li>
+            <li><strong>If the ADA were low, the fluid neutrophilic, or the patient older:</strong> go to biopsy before treating. Thoracoscopy has the highest yield where it's available. ${cite(103)}</li>
           </ul>`,
         pearl:
           "High ADA is enough to start treatment; it isn't enough to get a susceptibility result. Culture of pleural tissue or induced sputum gives you both a diagnosis and a DST.",
@@ -1924,8 +1924,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Ryan 2017, Cochrane</strong> ${cite(103)}</td><td>6 RCTs, 590 participants (1 trial in HIV-positive people)</td><td>Corticosteroids <strong>may speed resolution</strong>. Residual effusion reduced at 8 weeks (RR 0.54) and at 24 weeks (RR 0.35); residual pleural changes reduced (RR 0.72, ARR 16%). <strong>Low certainty.</strong> No long-term lung-function benefit shown (very low certainty). <strong>More adverse events leading to discontinuation</strong> (RR 2.78). <strong>Kaposi sarcoma 6/99 vs 0/98</strong> in the HIV trial</td></tr>
-                <tr><td><strong>Bhuniya 2012</strong> ${cite(104)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1/FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
+                <tr><td><strong>Ryan 2017, Cochrane</strong> ${cite(110)}</td><td>6 RCTs, 590 participants (1 trial in HIV-positive people)</td><td>Corticosteroids <strong>may speed resolution</strong>. Residual effusion reduced at 8 weeks (RR 0.54) and at 24 weeks (RR 0.35); residual pleural changes reduced (RR 0.72, ARR 16%). <strong>Low certainty.</strong> No long-term lung-function benefit shown (very low certainty). <strong>More adverse events leading to discontinuation</strong> (RR 2.78). <strong>Kaposi sarcoma 6/99 vs 0/98</strong> in the HIV trial</td></tr>
+                <tr><td><strong>Bhuniya 2012</strong> ${cite(111)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1/FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
               </tbody>
             </table>
           </div>
@@ -1946,10 +1946,10 @@ const CASES = [
           <h4>Answer for this patient</h4>
           <ul>
             <li><strong>2HRZE/4HR for 6 months.</strong> ${cite(3, 5)}</li>
-            <li><strong>Therapeutic thoracentesis</strong> to relieve his breathlessness. ${cite(104)}</li>
+            <li><strong>Therapeutic thoracentesis</strong> to relieve his breathlessness. ${cite(111)}</li>
             <li><strong>No routine steroids.</strong> ${cite(3)}</li>
           </ul>
-          <p><strong>Why the two sources seem to disagree on steroids:</strong> the Cochrane review (6 trials) found a <em>possible</em> reduction in residual pleural changes, at low certainty ${cite(103)}, while ATS 2016 read 4 trials as showing no benefit ${cite(3)}. Both agree there is <strong>no proven long-term functional benefit</strong>, and there is a signal of <strong>harm</strong> (discontinuations; Kaposi sarcoma in HIV).</p>`,
+          <p><strong>Why the two sources seem to disagree on steroids:</strong> the Cochrane review (6 trials) found a <em>possible</em> reduction in residual pleural changes, at low certainty ${cite(110)}, while ATS 2016 read 4 trials as showing no benefit ${cite(3)}. Both agree there is <strong>no proven long-term functional benefit</strong>, and there is a signal of <strong>harm</strong> (discontinuations; Kaposi sarcoma in HIV).</p>`,
         pearl:
           "Drain the fluid for breathlessness. Don't reach for steroids to prevent pleural thickening: the benefit is uncertain, and the harm in HIV isn't.",
       },
@@ -1962,7 +1962,7 @@ const CASES = [
           <ul>
             <li><strong>Classification changes.</strong> Under the Saudi National Tuberculosis Programme (NTP) Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
             <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for latent TB infection (LTBI)" (Saudi policy, strong). ${cite(5)}</li>
-            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(99)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(137, 138)}</li>
+            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(100)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(101, 102)}</li>
             <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
             <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
           </ul>`,
@@ -1981,8 +1981,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Al-Majed 1996</strong> ${cite(105)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
-                <tr><td><strong>Jeon 2012</strong> ${cite(106)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
+                <tr><td><strong>Al-Majed 1996</strong> ${cite(112)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
+                <tr><td><strong>Jeon 2012</strong> ${cite(113)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
               </tbody>
             </table>
           </div>
@@ -1990,9 +1990,9 @@ const CASES = [
           <ul>
             <li><strong>Continue the same regimen.</strong> ${cite(3)}</li>
             <li>Confirm adherence and susceptibility. ${cite(3)}</li>
-            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(105)}</li>
+            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(112)}</li>
             <li>Re-sample if the picture is atypical (fever returns, fluid turns purulent). ${cite(3)}</li>
-            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(105)}</li>
+            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(112)}</li>
           </ul>`,
         pearl:
           "At 2 months, a bigger effusion in a patient who feels well is usually the immune response catching up. Prove adherence and susceptibility, drain it if he's breathless, and don't change the drugs.",
@@ -2027,8 +2027,8 @@ const CASES = [
             </li>
             <li><strong>Brucellar spondylitis</strong>
               <ul>
-                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(107)}</li>
-                <li>The clinical pattern suggests one or the other, "but the definitive diagnosis depends upon bacteriological tests". ${cite(108)}</li>
+                <li><strong>Brucella serology and blood cultures.</strong> In a Saudi series, 21 of 173 patients with backache and a history of raw-milk ingestion had brucellar spondylitis, and most had positive Brucella titres. ${cite(114)}</li>
+                <li>The clinical pattern suggests one or the other, "but the definitive diagnosis depends upon bacteriological tests". ${cite(115)}</li>
               </ul>
             </li>
             <li><strong>Pyogenic spondylodiscitis</strong>
@@ -2054,18 +2054,18 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Feature</th><th>Tuberculous spondylitis</th><th>Brucellar spondylitis</th><th>Source</th></tr></thead>
               <tbody>
-                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(109)}</td></tr>
-                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(109)}</td></tr>
-                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(109)}</td></tr>
-                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(110)}</td></tr>
-                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(110)}</td></tr>
-                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(110)}</td></tr>
+                <tr><td>Level</td><td><strong>Mid-thoracic</strong> (73% of lesions)</td><td><strong>Lower lumbar</strong> (68%)</td><td>Sharif 1989, Riyadh ${cite(116)}</td></tr>
+                <tr><td>Bone destruction</td><td>Vertebral destruction, <strong>gibbus in 60%</strong></td><td>Limited to the <strong>end-plates</strong></td><td>${cite(116)}</td></tr>
+                <tr><td>Paraspinal abscess</td><td><strong>14 of 15</strong> patients</td><td>Granulation tissue / localized oedema</td><td>${cite(116)}</td></tr>
+                <tr><td>Subligamentous spread &ge;3 levels</td><td><strong>54%</strong></td><td>8%</td><td>Gao 2017 ${cite(117)}</td></tr>
+                <tr><td>Vertebral collapse</td><td><strong>42%</strong></td><td>2%</td><td>${cite(117)}</td></tr>
+                <tr><td>Abnormal disc signal on T2</td><td>33%</td><td><strong>85%</strong></td><td>${cite(117)}</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("T2")}
-          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(109)}</p>
-          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(108)}</p>`,
+          <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(116)}</p>
+          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(115)}</p>`,
         pearl:
           "Thoracic, abscess, collapse: think TB. Lumbar, end-plate, disc: think brucella. The final word still belongs to the lab.",
       },
@@ -2080,7 +2080,7 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td>Ravichandran 2023 ${cite(111)}</td><td>259 CT-guided spinal biopsies, suspected infective spondylodiscitis (India)</td><td>Confirmatory in <strong>57.5%</strong> overall: histology 36.6%, Xpert 27.8%, MGIT culture 19.9%. <strong>Rifampicin resistance in 16/72 (22%) of Xpert-positives.</strong> Complications 0.3%. <strong>Prior TB treatment reduced the yield</strong></td></tr>
+                <tr><td>Ravichandran 2023 ${cite(118)}</td><td>259 CT-guided spinal biopsies, suspected infective spondylodiscitis (India)</td><td>Confirmatory in <strong>57.5%</strong> overall: histology 36.6%, Xpert 27.8%, MGIT culture 19.9%. <strong>Rifampicin resistance in 16/72 (22%) of Xpert-positives.</strong> Complications 0.3%. <strong>Prior TB treatment reduced the yield</strong></td></tr>
                 <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td>For extrapulmonary specimens, positive smear, culture or NAAT support TB; <strong>negative results "may not be used to exclude TB"</strong></td></tr>
               </tbody>
             </table>
@@ -2099,7 +2099,7 @@ const CASES = [
           ${abbrev("AFB", "ATS", "CDC", "IDSA", "NAAT")}
           <p><strong>Take-home:</strong></p>
           <ul>
-            <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(111)}</li>
+            <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(118)}</li>
             <li><strong>Only a culture gives full drug-susceptibility testing (DST).</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
             <li>A negative biopsy doesn't exclude TB. ${cite(1)}</li>
           </ul>`,
@@ -2171,7 +2171,7 @@ const CASES = [
           <ol>
             <li><strong>Tuberculous meningitis</strong>
               <ul>
-                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>adenosine deaminase (ADA)</strong>; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the cerebrospinal fluid (CSF). ${cite(1, 102)}</li>
+                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>adenosine deaminase (ADA)</strong>; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the cerebrospinal fluid (CSF). ${cite(1, 109)}</li>
                 <li><strong>Brain magnetic resonance imaging (MRI)</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
                 <li><strong>Chest radiograph (CXR)</strong>, and sputum if abnormal.</li>
               </ul>
@@ -2180,7 +2180,7 @@ const CASES = [
               <ul><li>CSF Gram stain and culture, plus blood cultures.</li></ul>
             </li>
             <li><strong>Neurobrucellosis</strong>
-              <ul><li>Brucellosis is <strong>endemic in Saudi Arabia</strong>, and neurobrucellosis can be clinically obscure. ${cite(112)} Diagnosis rests on CSF analysis, <strong>Brucella serology or culture</strong>, and response to treatment. ${cite(113)}</li></ul>
+              <ul><li>Brucellosis is <strong>endemic in Saudi Arabia</strong>, and neurobrucellosis can be clinically obscure. ${cite(119)} Diagnosis rests on CSF analysis, <strong>Brucella serology or culture</strong>, and response to treatment. ${cite(120)}</li></ul>
             </li>
             <li><strong>Cryptococcal meningitis</strong> (especially if HIV-positive)
               <ul><li>CSF and serum cryptococcal antigen. ${cite(34)}</li></ul>
@@ -2205,7 +2205,7 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Test (CSF)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(102)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(109)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
                 <tr><td>NAAT (any)</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>62%</td><td>98%</td><td>So a negative result misses about 4 in 10</td></tr>
                 <tr><td><strong>ADA</strong></td><td>Two meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>79%</td><td>91%</td><td>"Exquisitely sensitive" to threshold: at 4 U/L, sensitivity &gt;93% but specificity &lt;80%; at 8 U/L, sensitivity &lt;59% but specificity &gt;96%</td></tr>
                 <tr><td>Mycobacterial culture</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;70%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
@@ -2218,8 +2218,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td>Thao 2018 ${cite(114)}</td><td>1,699 adults, Vietnam (4 trials + 1 cohort)</td><td>9-month mortality <strong>23.0%</strong> if HIV-negative and <strong>51.3%</strong> if HIV-positive. <strong>Higher MRC grade</strong> predicted death</td></tr>
-                <tr><td>Alshehri 2024 ${cite(115)}</td><td>140 CNS-TB patients, 3 Saudi tertiary centres, 2009&ndash;2019</td><td><strong>35% poor outcome</strong> (modified Rankin). <strong>GCS &le;10</strong> at presentation and TBM/tuberculoma predicted poor outcome</td></tr>
+                <tr><td>Thao 2018 ${cite(121)}</td><td>1,699 adults, Vietnam (4 trials + 1 cohort)</td><td>9-month mortality <strong>23.0%</strong> if HIV-negative and <strong>51.3%</strong> if HIV-positive. <strong>Higher MRC grade</strong> predicted death</td></tr>
+                <tr><td>Alshehri 2024 ${cite(122)}</td><td>140 CNS-TB patients, 3 Saudi tertiary centres, 2009&ndash;2019</td><td><strong>35% poor outcome</strong> (modified Rankin). <strong>GCS &le;10</strong> at presentation and TBM/tuberculoma predicted poor outcome</td></tr>
               </tbody>
             </table>
           </div>
@@ -2250,8 +2250,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Thwaites 2004</strong>, NEJM ${cite(116)}</td><td>RCT, 545 patients &gt;14 years, Vietnam, with or without HIV</td><td><strong>Dexamethasone reduced death</strong> (RR 0.69, 0.52&ndash;0.92). It did <strong>not</strong> significantly reduce severe disability among survivors, or death-or-severe-disability. <strong>Fewer serious adverse events</strong> (26 vs 45)</td></tr>
-                <tr><td><strong>Heemskerk 2016</strong>, NEJM ${cite(117)}</td><td>RCT, 817 adults</td><td><strong>Intensified treatment</strong> (rifampin 15 mg/kg + levofloxacin 20 mg/kg for 8 weeks) vs standard: <strong>no survival benefit</strong> (HR 0.94, 0.73&ndash;1.22)</td></tr>
+                <tr><td><strong>Thwaites 2004</strong>, NEJM ${cite(123)}</td><td>RCT, 545 patients &gt;14 years, Vietnam, with or without HIV</td><td><strong>Dexamethasone reduced death</strong> (RR 0.69, 0.52&ndash;0.92). It did <strong>not</strong> significantly reduce severe disability among survivors, or death-or-severe-disability. <strong>Fewer serious adverse events</strong> (26 vs 45)</td></tr>
+                <tr><td><strong>Heemskerk 2016</strong>, NEJM ${cite(124)}</td><td>RCT, 817 adults</td><td><strong>Intensified treatment</strong> (rifampin 15 mg/kg + levofloxacin 20 mg/kg for 8 weeks) vs standard: <strong>no survival benefit</strong> (HR 0.94, 0.73&ndash;1.22)</td></tr>
               </tbody>
             </table>
           </div>
@@ -2284,7 +2284,7 @@ const CASES = [
             <li><strong>Continue the full regimen and the steroid.</strong> ${cite(3)}</li>
             <li><strong>Reassess the diagnosis:</strong> check adherence and drug susceptibility before calling it a paradoxical reaction. ${cite(3)}</li>
             <li><strong>If new or enlarging tuberculomas appear on treatment:</strong> the Saudi manual (in its paediatric section) describes paradoxical enlargement of tuberculomas. It advises continuing TB treatment and says adjuvant corticosteroids "might be useful". ${cite(5)}</li>
-            <li><strong>Prognosis:</strong> a GCS &le;10 predicted poor outcome in the Saudi series. ${cite(115)}</li>
+            <li><strong>Prognosis:</strong> a GCS &le;10 predicted poor outcome in the Saudi series. ${cite(122)}</li>
           </ul>`,
         pearl:
           "In TB meningitis, a falling GCS is hydrocephalus until the scan says otherwise. Call neurosurgery; don't change the drugs.",
@@ -2298,14 +2298,14 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Trial</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Donovan 2023, ACT HIV</strong>, NEJM ${cite(118)}</td><td>RCT, 520 HIV-positive adults with TBM (Vietnam, Indonesia)</td><td>Dexamethasone vs placebo: <strong>no survival benefit</strong> (deaths 44.1% vs 49.0%; HR 0.85, 0.66&ndash;1.10). No subgroup clearly benefited</td></tr>
+                <tr><td><strong>Donovan 2023, ACT HIV</strong>, NEJM ${cite(125)}</td><td>RCT, 520 HIV-positive adults with TBM (Vietnam, Indonesia)</td><td>Dexamethasone vs placebo: <strong>no survival benefit</strong> (deaths 44.1% vs 49.0%; HR 0.85, 0.66&ndash;1.10). No subgroup clearly benefited</td></tr>
                 <tr><td><strong>T&ouml;r&ouml;k 2011</strong>, CID ${cite(51)}</td><td>RCT, HIV-associated TBM</td><td>Immediate vs deferred ART: <strong>no survival benefit, more grade 4 adverse events</strong> with immediate ART</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("ART", "HR", "RCT", "TBM")}
           <ul>
-            <li><strong>Steroids:</strong> the best trial in HIV-positive adults showed no survival benefit. ${cite(118)} The ATS recommendation was written before that trial. ${cite(3)}</li>
+            <li><strong>Steroids:</strong> the best trial in HIV-positive adults showed no survival benefit. ${cite(125)} The ATS recommendation was written before that trial. ${cite(3)}</li>
             <li><strong>Antiretroviral therapy (ART):</strong> <strong>defer</strong> when TB meningitis is suspected. ${cite(34, 51)} The Saudi manual likewise advises caution with early ART in TB meningitis (as taught in Case 3). ${cite(5)}</li>
             <li><strong>Cryptococcus:</strong> check the CrAg if CD4 &lt;100. ${cite(34)}</li>
           </ul>`,
@@ -2341,13 +2341,13 @@ const CASES = [
               </ul>
             </li>
             <li><strong>Crohn's disease</strong>
-              <ul><li>The same colonoscopy and biopsies, and the same CT enterography. The features that separate the two are covered in the next stage. ${cite(119)}</li></ul>
+              <ul><li>The same colonoscopy and biopsies, and the same CT enterography. The features that separate the two are covered in the next stage. ${cite(126)}</li></ul>
             </li>
             <li><strong>Intestinal lymphoma</strong>
               <ul><li>Histology and immunohistochemistry on the biopsies.</li></ul>
             </li>
           </ol>
-          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>interferon-gamma release assay (IGRA)</strong> is supporting evidence only (see the next stage). ${cite(120)}</p>`,
+          <p><strong>Also:</strong> an <strong>HIV test</strong> ${cite(3)}. An <strong>interferon-gamma release assay (IGRA)</strong> is supporting evidence only (see the next stage). ${cite(127)}</p>`,
         pearl:
           "In a TB-endemic setting, every \"Crohn's disease\" of the terminal ileum is intestinal TB until the biopsies and the CT say otherwise.",
       },
@@ -2362,14 +2362,14 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Feature / test</th><th>Favours</th><th>Accuracy</th><th>Source</th></tr></thead>
               <tbody>
-                <tr><td>Caseation necrosis on biopsy; AFB smear or culture positive; <strong>necrotic nodes on CT</strong></td><td><strong>ITB</strong>: the only <strong>exclusive</strong> features, but all have poor sensitivity</td><td>&mdash;</td><td>${cite(119)}</td></tr>
-                <tr><td>Transverse ulcers; patulous ileocaecal valve; contiguous ileocaecal involvement</td><td>ITB</td><td>(descriptive)</td><td>${cite(119)}</td></tr>
-                <tr><td>Longitudinal or aphthous ulcers; skip lesions; long segments; perianal disease</td><td>CD</td><td>(descriptive)</td><td>${cite(119)}</td></tr>
-                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(121)}</td></tr>
-                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(121)}</td></tr>
-                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(121)}</td></tr>
-                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(120)}</td></tr>
-                <tr><td><strong>TB PCR on biopsy</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>47%</strong>, specificity <strong>95%</strong>; "negative results cannot exclude ITB"</td><td>${cite(122)}</td></tr>
+                <tr><td>Caseation necrosis on biopsy; AFB smear or culture positive; <strong>necrotic nodes on CT</strong></td><td><strong>ITB</strong>: the only <strong>exclusive</strong> features, but all have poor sensitivity</td><td>&mdash;</td><td>${cite(126)}</td></tr>
+                <tr><td>Transverse ulcers; patulous ileocaecal valve; contiguous ileocaecal involvement</td><td>ITB</td><td>(descriptive)</td><td>${cite(126)}</td></tr>
+                <tr><td>Longitudinal or aphthous ulcers; skip lesions; long segments; perianal disease</td><td>CD</td><td>(descriptive)</td><td>${cite(126)}</td></tr>
+                <tr><td><strong>Necrotic lymph nodes on CT</strong></td><td>ITB</td><td>Sensitivity <strong>23%</strong>, specificity <strong>100%</strong></td><td>CT meta-analysis ${cite(128)}</td></tr>
+                <tr><td><strong>Comb sign</strong></td><td>CD</td><td>Sensitivity 82%, specificity 81%</td><td>${cite(128)}</td></tr>
+                <tr><td><strong>Skip lesions</strong></td><td>CD</td><td>Sensitivity 86%, specificity 74%</td><td>${cite(128)}</td></tr>
+                <tr><td><strong>IGRA</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>74%</strong>, specificity <strong>87%</strong></td><td>${cite(127)}</td></tr>
+                <tr><td><strong>TB PCR on biopsy</strong> (ITB vs CD)</td><td>ITB if positive</td><td>Sensitivity <strong>47%</strong>, specificity <strong>95%</strong>; "negative results cannot exclude ITB"</td><td>${cite(129)}</td></tr>
               </tbody>
             </table>
           </div>
@@ -2385,7 +2385,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("ATS", "CDC", "IDSA", "NAAT")}
-          <p><strong>Take-home:</strong> the colonoscopy features and the positive IGRA lean towards TB, but <strong>none of the exclusive features is present</strong>. This is the classic unresolved case. ${cite(119)}</p>`,
+          <p><strong>Take-home:</strong> the colonoscopy features and the positive IGRA lean towards TB, but <strong>none of the exclusive features is present</strong>. This is the classic unresolved case. ${cite(126)}</p>`,
         pearl:
           "Only caseation, AFB and necrotic nodes are exclusive to TB, and each is usually absent. Most cases are decided by weighing the whole picture, not by a single test.",
       },
@@ -2399,16 +2399,16 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Pratap Mouli 2017</strong> ${cite(123)}</td><td>Retrospective, 288 patients (131 eventual CD, 157 ITB), plus a prospective validation cohort of 55 with diagnostic confusion (India)</td><td><strong>Symptomatic response to TB treatment:</strong> 94% of ITB by 3 months, but also <strong>38%</strong> of eventual CD at 3 months (64% at 2 months in validation). <strong>Endoscopic mucosal healing: 100% of ITB vs 5% of CD</strong></td></tr>
-                <tr><td><strong>Tubach 2009</strong> ${cite(84)}</td><td>French RATIO registry</td><td>TB risk with anti-TNF monoclonal antibodies is high (SIR 18.6&ndash;29.3), and none of the affected patients had received correct prophylaxis</td></tr>
+                <tr><td><strong>Pratap Mouli 2017</strong> ${cite(130)}</td><td>Retrospective, 288 patients (131 eventual CD, 157 ITB), plus a prospective validation cohort of 55 with diagnostic confusion (India)</td><td><strong>Symptomatic response to TB treatment:</strong> 94% of ITB by 3 months, but also <strong>38%</strong> of eventual CD at 3 months (64% at 2 months in validation). <strong>Endoscopic mucosal healing: 100% of ITB vs 5% of CD</strong></td></tr>
+                <tr><td><strong>Tubach 2009</strong> ${cite(85)}</td><td>French RATIO registry</td><td>TB risk with anti-TNF monoclonal antibodies is high (SIR 18.6&ndash;29.3), and none of the affected patients had received correct prophylaxis</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("CD", "ITB", "SIR", "TNF")}
           <h4>Answer</h4>
           <ul>
-            <li><strong>Don't start immunosuppression while TB is unexcluded.</strong> A <strong>therapeutic trial of TB treatment</strong> is still needed "in a significant proportion of patients to establish the diagnosis", despite the cost of delaying a Crohn's diagnosis. ${cite(119)}</li>
-            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with latent TB infection (LTBI) treatment first. ${cite(95)}</li>
+            <li><strong>Don't start immunosuppression while TB is unexcluded.</strong> A <strong>therapeutic trial of TB treatment</strong> is still needed "in a significant proportion of patients to establish the diagnosis", despite the cost of delaying a Crohn's diagnosis. ${cite(126)}</li>
+            <li><strong>Screen before any biologic.</strong> Guidelines call for TB screening before biologics, with latent TB infection (LTBI) treatment first. ${cite(96)}</li>
             <li>Wait for the biopsy culture while treatment runs. ${cite(1)}</li>
           </ul>`,
         pearl:
@@ -2425,8 +2425,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(124)}</td><td>3 RCTs, 328 adults with intestinal and peritoneal TB (Asia)</td><td><strong>6 vs 9 months:</strong> relapse 2/140 vs 0/129 (too few events to compare; very low certainty). Clinical cure <strong>no different</strong> (RR 1.02, 0.97&ndash;1.08; moderate certainty). No evidence that 6 months is inadequate</td></tr>
-                <tr><td><strong>Tanoglu 2020</strong> ${cite(125)}</td><td>104 proven GI TB, 21 centres in 8 countries <strong>including Saudi Arabia</strong></td><td>Terminal ileum the commonest site (44%). Biopsy culture positive in 87% of those cultured; PCR positive in 95% of those tested. <strong>One-third immunosuppressed. 43% diagnosed from surgical specimens.</strong> Mortality 3.8%, relapse 1.9%</td></tr>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(131)}</td><td>3 RCTs, 328 adults with intestinal and peritoneal TB (Asia)</td><td><strong>6 vs 9 months:</strong> relapse 2/140 vs 0/129 (too few events to compare; very low certainty). Clinical cure <strong>no different</strong> (RR 1.02, 0.97&ndash;1.08; moderate certainty). No evidence that 6 months is inadequate</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(132)}</td><td>104 proven GI TB, 21 centres in 8 countries <strong>including Saudi Arabia</strong></td><td>Terminal ileum the commonest site (44%). Biopsy culture positive in 87% of those cultured; PCR positive in 95% of those tested. <strong>One-third immunosuppressed. 43% diagnosed from surgical specimens.</strong> Mortality 3.8%, relapse 1.9%</td></tr>
               </tbody>
             </table>
           </div>
@@ -2442,7 +2442,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("#", "ATS", "CDC", "E", "H", "IDSA", "NTP", "R", "Z")}
-          <p><strong>For this patient:</strong> <strong>2HRZE/4HR (6 months).</strong> ${cite(3, 124)}</p>`,
+          <p><strong>For this patient:</strong> <strong>2HRZE/4HR (6 months).</strong> ${cite(3, 131)}</p>`,
         pearl:
           "Gut TB doesn't need a longer course. Six months is as good as nine in the trials we have.",
       },
@@ -2452,9 +2452,9 @@ const CASES = [
         question: "Does his clinical response confirm intestinal TB?",
         reveal: `
           <ul>
-            <li><strong>Not on its own.</strong> Symptoms also improved in <strong>38&ndash;64%</strong> of patients who turned out to have Crohn's disease. ${cite(123)}</li>
-            <li><strong>Mucosal healing is the discriminator:</strong> it occurred in <strong>100%</strong> of intestinal TB vs <strong>5%</strong> of Crohn's disease. <strong>Repeat colonoscopy</strong> is needed to confirm. ${cite(123)}</li>
-            <li><strong>Symptoms that persist after 3 months</strong> of TB treatment suggest Crohn's disease. ${cite(123)}</li>
+            <li><strong>Not on its own.</strong> Symptoms also improved in <strong>38&ndash;64%</strong> of patients who turned out to have Crohn's disease. ${cite(130)}</li>
+            <li><strong>Mucosal healing is the discriminator:</strong> it occurred in <strong>100%</strong> of intestinal TB vs <strong>5%</strong> of Crohn's disease. <strong>Repeat colonoscopy</strong> is needed to confirm. ${cite(130)}</li>
+            <li><strong>Symptoms that persist after 3 months</strong> of TB treatment suggest Crohn's disease. ${cite(130)}</li>
             <li>In <strong>this</strong> patient, the positive biopsy culture has already settled it. ${cite(1)}</li>
           </ul>`,
         pearl:
@@ -2485,18 +2485,18 @@ const CASES = [
             <li><strong>Peritoneal TB</strong>
               <ul>
                 <li><strong>Diagnostic paracentesis:</strong> cell count and differential; <strong>serum&ndash;ascites albumin gradient (SAAG)</strong>; <strong>adenosine deaminase (ADA)</strong> &plusmn; free interferon-&gamma; (IFN-&gamma;); <strong>acid-fast bacilli (AFB) smear, mycobacterial culture</strong> and nucleic acid amplification test (NAAT). ${cite(1)}</li>
-                <li>Consider TB peritonitis in anyone with unexplained <strong>lymphocytic ascites</strong> and a <strong>SAAG &lt;11 g/L</strong>. ${cite(126)}</li>
+                <li>Consider TB peritonitis in anyone with unexplained <strong>lymphocytic ascites</strong> and a <strong>SAAG &lt;11 g/L</strong>. ${cite(133)}</li>
                 <li><strong>Chest radiograph (CXR).</strong></li>
               </ul>
             </li>
             <li><strong>Peritoneal carcinomatosis / advanced ovarian cancer</strong>
               <ul>
                 <li><strong>Ascitic cytology</strong>, then tissue.</li>
-                <li><strong>A raised CA-125 does not separate them:</strong> in 28 women with abdominopelvic TB, CA-125 was raised in <strong>all 28</strong>, and half were diagnosed only at laparotomy. ${cite(127)}</li>
+                <li><strong>A raised CA-125 does not separate them:</strong> in 28 women with abdominopelvic TB, CA-125 was raised in <strong>all 28</strong>, and half were diagnosed only at laparotomy. ${cite(134)}</li>
               </ul>
             </li>
             <li><strong>Ascites from portal hypertension</strong> (cirrhosis, heart failure)
-              <ul><li>A <strong>high SAAG</strong> points here. ${cite(126)}</li></ul>
+              <ul><li>A <strong>high SAAG</strong> points here. ${cite(133)}</li></ul>
             </li>
           </ol>
           <p><strong>Also:</strong> an HIV test. ${cite(3)}</p>`,
@@ -2514,7 +2514,7 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Test (ascitic fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 20 studies, 2,291 participants ${cite(128)}</td><td><strong>90%</strong> (85&ndash;94)</td><td><strong>94%</strong> (92&ndash;95)</td><td>Very low certainty (GRADE); cut-off varied</td></tr>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 20 studies, 2,291 participants ${cite(135)}</td><td><strong>90%</strong> (85&ndash;94)</td><td><strong>94%</strong> (92&ndash;95)</td><td>Very low certainty (GRADE); cut-off varied</td></tr>
                 <tr><td>ADA</td><td>Meta-analysis of 4 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>100%</td><td>97%</td><td>Threshold 36&ndash;40 U/L</td></tr>
                 <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 6 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>93%</td><td>99%</td><td>Thresholds varied</td></tr>
                 <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;69%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
@@ -2529,12 +2529,12 @@ const CASES = [
               <tbody>
                 <tr><td>ATS/IDSA/CDC (2017) ${cite(1)}</td><td>Measure <strong>ADA</strong> and <strong>free IFN-&gamma;</strong> on fluid in suspected peritoneal TB</td><td>Conditional, low</td></tr>
                 <tr><td>Same ${cite(1)}</td><td>Culture (strong); smear and NAAT (conditional). <strong>Negative results do not exclude TB</strong></td><td>Strong / conditional</td></tr>
-                <tr><td>Sanai 2005, systematic review ${cite(126)}</td><td>Culture of ascitic fluid or peritoneal biopsy is the <strong>gold standard</strong>; <strong>low threshold for diagnostic laparoscopy</strong></td><td>(review recommendation)</td></tr>
+                <tr><td>Sanai 2005, systematic review ${cite(133)}</td><td>Culture of ascitic fluid or peritoneal biopsy is the <strong>gold standard</strong>; <strong>low threshold for diagnostic laparoscopy</strong></td><td>(review recommendation)</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("ADA", "ATS", "CDC", "IDSA", "IFN-γ", "NAAT")}
-          <p><strong>Take-home:</strong> lymphocytic, low-SAAG ascites with a high ADA and negative cytology makes peritoneal TB very likely. A negative smear and NAAT don't count against it. ${cite(1, 128)}</p>`,
+          <p><strong>Take-home:</strong> lymphocytic, low-SAAG ascites with a high ADA and negative cytology makes peritoneal TB very likely. A negative smear and NAAT don't count against it. ${cite(1, 135)}</p>`,
         pearl:
           "In a young woman without cirrhosis, a high ascitic ADA is one of the most accurate tests in extrapulmonary TB. It can save her from an unnecessary cancer operation.",
       },
@@ -2548,18 +2548,18 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Hossain 1992</strong> ${cite(129)}</td><td>82 laparoscopies, Riyadh</td><td><strong>22</strong> found peritoneal TB. Direct visualization plus peritoneal biopsy "provide the definitive tissue diagnosis". The tuberculin test was <strong>not always positive</strong></td></tr>
+                <tr><td><strong>Hossain 1992</strong> ${cite(136)}</td><td>82 laparoscopies, Riyadh</td><td><strong>22</strong> found peritoneal TB. Direct visualization plus peritoneal biopsy "provide the definitive tissue diagnosis". The tuberculin test was <strong>not always positive</strong></td></tr>
                 <tr><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>Accuracy studies</td><td><strong>Peritoneal biopsy histology: 79&ndash;100%</strong> sensitive</td></tr>
-                <tr><td><strong>Liu 2014</strong> ${cite(127)}</td><td>28 women with abdominopelvic TB and raised CA-125</td><td>Diagnosis came from <strong>laparotomy in 50%</strong> and laparoscopy in 32%. "Treatment &hellip; is totally based on medical therapy other than surgery except biopsy"</td></tr>
-                <tr><td><strong>Tanoglu 2020</strong> ${cite(125)}</td><td>104 GI TB, 8 countries including Saudi Arabia</td><td>Ascitic culture positive in <strong>11 of 19</strong> (57.9%). <strong>43%</strong> were diagnosed from surgical specimens</td></tr>
+                <tr><td><strong>Liu 2014</strong> ${cite(134)}</td><td>28 women with abdominopelvic TB and raised CA-125</td><td>Diagnosis came from <strong>laparotomy in 50%</strong> and laparoscopy in 32%. "Treatment &hellip; is totally based on medical therapy other than surgery except biopsy"</td></tr>
+                <tr><td><strong>Tanoglu 2020</strong> ${cite(132)}</td><td>104 GI TB, 8 countries including Saudi Arabia</td><td>Ascitic culture positive in <strong>11 of 19</strong> (57.9%). <strong>43%</strong> were diagnosed from surgical specimens</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("ATS", "CA-125", "CDC", "GI", "IDSA")}
           <h4>Answer</h4>
           <ul>
-            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and drug-susceptibility testing (DST) in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(126, 129, 127)}</li>
-            <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(3, 128)}</li>
+            <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and drug-susceptibility testing (DST) in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(133, 136, 134)}</li>
+            <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(3, 135)}</li>
           </ul>`,
         pearl:
           "For peritoneal TB, the laparoscope beats the laparotomy: same tissue, far less surgery. The cure is medical.",
@@ -2575,7 +2575,7 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(124)}</td><td>3 RCTs, 328 adults with intestinal <strong>and peritoneal</strong> TB</td><td><strong>6 vs 9 months:</strong> no difference in clinical cure (moderate certainty). Relapse too rare to compare</td></tr>
+                <tr><td><strong>Jullien 2016, Cochrane</strong> ${cite(131)}</td><td>3 RCTs, 328 adults with intestinal <strong>and peritoneal</strong> TB</td><td><strong>6 vs 9 months:</strong> no difference in clinical cure (moderate certainty). Relapse too rare to compare</td></tr>
               </tbody>
             </table>
           </div>
@@ -2586,7 +2586,7 @@ const CASES = [
               <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
               <tbody>
                 <tr><td>ATS/CDC/IDSA (2016) ${cite(3)}</td><td><strong>6 months</strong> is adequate for peritoneal TB. Data on <strong>adjunctive corticosteroids</strong> for TB peritonitis are <strong>limited</strong>, so they should <strong>not</strong> be prescribed routinely</td><td>Expert opinion</td></tr>
-                <tr><td>Sanai 2005 ${cite(126)}</td><td>6 months of first-line drugs in uncomplicated cases</td><td>(review recommendation)</td></tr>
+                <tr><td>Sanai 2005 ${cite(133)}</td><td>6 months of first-line drugs in uncomplicated cases</td><td>(review recommendation)</td></tr>
                 <tr><td>Saudi NTP Manual (2021) ${cite(5)}</td><td>No peritoneal-specific adult recommendation; 2HRZE/4HR standard</td><td>Not graded</td></tr>
               </tbody>
             </table>
@@ -2603,14 +2603,14 @@ const CASES = [
         reveal: `
           <h4>(a) Cirrhosis: the ADA loses sensitivity</h4>
           <ul>
-            <li>In a cross-sectional study, ADA activity and accuracy were <strong>significantly lower in cirrhotic patients</strong>, regardless of age. ADA also <strong>fell with increasing age</strong>. ${cite(130)}</li>
-            <li>A "normal" ADA in a cirrhotic patient <strong>does not reassure</strong>: go to culture and peritoneal biopsy. ${cite(130, 126)}</li>
-            <li>TB peritonitis frequently complicates end-stage liver or renal disease, which adds to the diagnostic difficulty. ${cite(126)}</li>
+            <li>In a cross-sectional study, ADA activity and accuracy were <strong>significantly lower in cirrhotic patients</strong>, regardless of age. ADA also <strong>fell with increasing age</strong>. ${cite(137)}</li>
+            <li>A "normal" ADA in a cirrhotic patient <strong>does not reassure</strong>: go to culture and peritoneal biopsy. ${cite(137, 133)}</li>
+            <li>TB peritonitis frequently complicates end-stage liver or renal disease, which adds to the diagnostic difficulty. ${cite(133)}</li>
           </ul>
           <h4>(b) Peritoneal dialysis</h4>
           <ul>
-            <li>A <strong>Jeddah</strong> cohort of 89 continuous ambulatory peritoneal dialysis (CAPD) patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by polymerase chain reaction (PCR) (1), culture (2) or clinical response (1). ${cite(131)}</li>
-            <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(131)}</li>
+            <li>A <strong>Jeddah</strong> cohort of 89 continuous ambulatory peritoneal dialysis (CAPD) patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by polymerase chain reaction (PCR) (1), culture (2) or clinical response (1). ${cite(138)}</li>
+            <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(138)}</li>
           </ul>`,
         pearl:
           "In cirrhosis, a low ADA doesn't rule out TB. In a peritoneal dialysis (PD) patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
@@ -2665,7 +2665,7 @@ const MCQS = [
     answer: 2,
     optionNotes: [
       `Cavitation marks bacillary burden and infectiousness, not resistance. ${cite(4, 71)}`,
-      `Diabetes raises the risk of progressing to disease (RR 3.11), not of drug resistance. ${cite(87)}`,
+      `Diabetes raises the risk of progressing to disease (RR 3.11), not of drug resistance. ${cite(88)}`,
       `Correct. MDR/RR-TB was 16% in previously treated vs 3.2% in new patients (2024), with a Saudi odds ratio of about 7. ${cite(11, 20)}`,
       `Smear grade reflects bacillary load, not resistance. ${cite(4, 71)}`,
       `Like cavitation and smear grade, extent of disease speaks to burden, not resistance. As a new patient, the baseline MDR/RR risk is about 3%. ${cite(11)}`,
@@ -2674,7 +2674,7 @@ const MCQS = [
       <p>Previous treatment, especially with adherence gaps, is the strongest predictor of resistance. Worldwide in 2024, <strong>16%</strong> of previously treated patients had MDR/RR-TB, versus <strong>3.2%</strong> of new patients. ${cite(11)} In Saudi data, prior treatment carried an odds ratio of about <strong>7</strong> for MDR-TB. ${cite(20)}</p>
       <ul>
         <li><strong>Cavitation and a high smear grade</strong> mark bacillary burden and infectiousness, not resistance. ${cite(4, 71)}</li>
-        <li><strong>Diabetes</strong> raises the risk of progressing to disease (RR 3.11), not of resistance. ${cite(87)}</li>
+        <li><strong>Diabetes</strong> raises the risk of progressing to disease (RR 3.11), not of resistance. ${cite(88)}</li>
       </ul>`,
   },
   {
@@ -2791,7 +2791,7 @@ const MCQS = [
     ],
     answer: 0,
     optionNotes: [
-      `Correct. Recommended before ART when CD4 &lt;100. A negative serum CrAg nearly excludes cryptococcal meningitis (sensitivity 99.7%). ${cite(34, 132)}`,
+      `Correct. Recommended before ART when CD4 &lt;100. A negative serum CrAg nearly excludes cryptococcal meningitis (sensitivity 99.7%). ${cite(34, 139)}`,
       `A TB test, and his TB is already confirmed. ${cite(33)}`,
       `The step <em>after</em> a positive CrAg, not a routine test for everyone. ${cite(34)}`,
       `TB is already confirmed; this adds nothing before ART.`,
@@ -2807,14 +2807,14 @@ const MCQS = [
         <table class="data-table">
           <thead><tr><th>Specimen</th><th>Sensitivity (95% CI)</th><th>Specificity (95% CI)</th><th>What it means</th></tr></thead>
           <tbody>
-            <tr><td>Serum CrAg ${cite(132)}</td><td>99.7% (97.4&ndash;100)</td><td>94.1% (88.3&ndash;98.1)</td><td>A negative result nearly excludes cryptococcal meningitis; a positive one doesn't prove it (antigenaemia without CNS disease), so do an LP</td></tr>
-            <tr><td>CSF CrAg ${cite(132)}</td><td>98.8% (96.2&ndash;99.6)</td><td>99.3% (96.7&ndash;99.9)</td><td>Confirms cryptococcal meningitis</td></tr>
+            <tr><td>Serum CrAg ${cite(139)}</td><td>99.7% (97.4&ndash;100)</td><td>94.1% (88.3&ndash;98.1)</td><td>A negative result nearly excludes cryptococcal meningitis; a positive one doesn't prove it (antigenaemia without CNS disease), so do an LP</td></tr>
+            <tr><td>CSF CrAg ${cite(139)}</td><td>98.8% (96.2&ndash;99.6)</td><td>99.3% (96.7&ndash;99.9)</td><td>Confirms cryptococcal meningitis</td></tr>
           </tbody>
         </table>
       </div>
       ${abbrev("CI", "CNS", "CSF", "CrAg", "LP")}
-      <p style="color:var(--text-muted); font-size:0.9rem;">Adults living with HIV with suspected cryptococcal meningitis; reference standard CSF culture (11 studies, 3,600 participants). ${cite(132)}</p>
-      <p>In HIV-negative patients, serum CrAg is less sensitive (about 83&ndash;91% by lateral flow assay in one small single-centre study), so a negative result is less reliable for ruling out disease. ${cite(133)}</p>`,
+      <p style="color:var(--text-muted); font-size:0.9rem;">Adults living with HIV with suspected cryptococcal meningitis; reference standard CSF culture (11 studies, 3,600 participants). ${cite(139)}</p>
+      <p>In HIV-negative patients, serum CrAg is less sensitive (about 83&ndash;91% by lateral flow assay in one small single-centre study), so a negative result is less reliable for ruling out disease. ${cite(140)}</p>`,
   },
   {
     topic: "Can't expectorate",
@@ -2905,16 +2905,16 @@ const MCQS = [
     ],
     answer: 1,
     optionNotes: [
-      `Biologically implausible; the TST alone takes up to 6 weeks to convert. ${cite(77)}`,
-      `Correct. About 62% of eventual cases occur by 2 years (97% among Amsterdam contacts). ${cite(77)}`,
-      `By 5 years about 83% of eventual cases have already occurred. ${cite(77)}`,
-      `Late reactivation happens but is a small share of cases. ${cite(77)}`,
-      `Risk is front-loaded, highest in the first year. ${cite(77, 81)}`,
+      `Biologically implausible; the TST alone takes up to 6 weeks to convert. ${cite(78)}`,
+      `Correct. About 62% of eventual cases occur by 2 years (97% among Amsterdam contacts). ${cite(78)}`,
+      `By 5 years about 83% of eventual cases have already occurred. ${cite(78)}`,
+      `Late reactivation happens but is a small share of cases. ${cite(78)}`,
+      `Risk is front-loaded, highest in the first year. ${cite(78, 82)}`,
     ],
     rationale: `
-      <p>Most of the lifetime risk comes early. Of eventual cases, about <strong>45% occur by 1 year, 62% by 2 years and 83% by 5 years</strong>; among Amsterdam contacts, 97% occurred within 2 years. ${cite(77)} Contact studies show incidence is highest in the first year. ${cite(81)}</p>
+      <p>Most of the lifetime risk comes early. Of eventual cases, about <strong>45% occur by 1 year, 62% by 2 years and 83% by 5 years</strong>; among Amsterdam contacts, 97% occurred within 2 years. ${cite(78)} Contact studies show incidence is highest in the first year. ${cite(82)}</p>
       <ul>
-        <li><strong>Within the first 2 weeks</strong> would be biologically implausible, since the TST itself takes up to 6 weeks to convert. ${cite(77)}</li>
+        <li><strong>Within the first 2 weeks</strong> would be biologically implausible, since the TST itself takes up to 6 weeks to convert. ${cite(78)}</li>
       </ul>`,
   },
   {
@@ -2929,32 +2929,32 @@ const MCQS = [
     ],
     answer: 1,
     optionNotes: [
-      `Highest in RATIO (SIR 29.3), but not consistently across studies; always well above etanercept. ${cite(84, 134, 135)}`,
-      `Correct, though still raised above baseline. ${cite(84, 134, 135, 86)}`,
-      `Highest in the Korean data and earliest onset (median 5.5 months), but no consistent ranking vs adalimumab. ${cite(134, 135)}`,
-      `No. The monoclonals ran about 3&ndash;7&times; the rate with etanercept. ${cite(84, 134, 135)}`,
+      `Highest in RATIO (SIR 29.3), but not consistently across studies; always well above etanercept. ${cite(85, 141, 142)}`,
+      `Correct, though still raised above baseline. ${cite(85, 141, 142, 87)}`,
+      `Highest in the Korean data and earliest onset (median 5.5 months), but no consistent ranking vs adalimumab. ${cite(141, 142)}`,
+      `No. The monoclonals ran about 3&ndash;7&times; the rate with etanercept. ${cite(85, 141, 142)}`,
     ],
     rationale: `
-      <p><strong>Etanercept</strong> (the soluble TNF receptor) had the lowest TB risk in each dataset below, but its risk is <strong>still raised above baseline</strong>: in RATIO its standardized incidence ratio was 1.8, and NSTC/NTCA list it among the higher-risk agents. ${cite(84, 134, 135, 86)} Monoclonal anti-TNF antibodies carry a much higher risk.</p>
+      <p><strong>Etanercept</strong> (the soluble TNF receptor) had the lowest TB risk in each dataset below, but its risk is <strong>still raised above baseline</strong>: in RATIO its standardized incidence ratio was 1.8, and NSTC/NTCA list it among the higher-risk agents. ${cite(85, 141, 142, 87)} Monoclonal anti-TNF antibodies carry a much higher risk.</p>
       <h4>Studies</h4>
       <div class="table-scroll">
         <table class="data-table">
           <thead><tr><th>Study</th><th>Infliximab</th><th>Adalimumab</th><th>Etanercept</th></tr></thead>
           <tbody>
-            <tr><td>RATIO, France (Tubach 2009) ${cite(84)}</td><td>SIR 18.6</td><td>SIR 29.3</td><td>SIR 1.8</td></tr>
-            <tr><td>BSRBR, UK RA (Dixon 2010) ${cite(134)}</td><td>136/100,000 PY; adj. IRR 3.1 vs ETN</td><td>144/100,000 PY; adj. IRR 4.2</td><td>39/100,000 PY</td></tr>
-            <tr><td>South Korea claims (Jung 2015) ${cite(135)}</td><td>IRR 6.8 vs ETN</td><td>IRR 3.45</td><td>reference</td></tr>
+            <tr><td>RATIO, France (Tubach 2009) ${cite(85)}</td><td>SIR 18.6</td><td>SIR 29.3</td><td>SIR 1.8</td></tr>
+            <tr><td>BSRBR, UK RA (Dixon 2010) ${cite(141)}</td><td>136/100,000 PY; adj. IRR 3.1 vs ETN</td><td>144/100,000 PY; adj. IRR 4.2</td><td>39/100,000 PY</td></tr>
+            <tr><td>South Korea claims (Jung 2015) ${cite(142)}</td><td>IRR 6.8 vs ETN</td><td>IRR 3.45</td><td>reference</td></tr>
           </tbody>
         </table>
       </div>
       ${abbrev("ETN", "IRR", "PY", "RA", "SIR")}
-      <p>Infliximab vs adalimumab differs between studies; there is no consistent ranking. ${cite(84, 134, 135)} TB appears earliest with infliximab (BSRBR median 5.5 months vs 18.5 months with adalimumab). ${cite(134)}</p>
+      <p>Infliximab vs adalimumab differs between studies; there is no consistent ranking. ${cite(85, 141, 142)} TB appears earliest with infliximab (BSRBR median 5.5 months vs 18.5 months with adalimumab). ${cite(141)}</p>
       <h4>Guidelines: select biologic and small-molecule agents and TB risk (NSTC/NTCA; as of June 2022)</h4>
       <div class="table-scroll">
         <table class="data-table">
           <thead><tr><th>Risk of TB</th><th>Class</th><th>Drugs</th></tr></thead>
           <tbody>
-            <tr><td>Higher</td><td>TNF-&alpha; inhibitors</td><td>infliximab, adalimumab, certolizumab, golimumab, etanercept (lowest of the class, but still raised ${cite(86, 84, 134, 135)})</td></tr>
+            <tr><td>Higher</td><td>TNF-&alpha; inhibitors</td><td>infliximab, adalimumab, certolizumab, golimumab, etanercept (lowest of the class, but still raised ${cite(87, 85, 141, 142)})</td></tr>
             <tr><td>Higher</td><td>JAK inhibitors</td><td>baricitinib, filgotinib, peficitinib, tofacitinib, upadacitinib</td></tr>
             <tr><td>Higher</td><td>IL-6 blockers</td><td>sarilumab, tocilizumab</td></tr>
             <tr><td>Potentially increased</td><td>IL-1 blockers</td><td>anakinra, canakinumab, rilonacept</td></tr>
@@ -2966,11 +2966,11 @@ const MCQS = [
         </table>
       </div>
       ${abbrev("IL", "JAK", "TNF")}
-      <p style="color:var(--text-muted); font-size:0.9rem;">NSTC/NTCA Clinical Guide, Table 4 ${cite(86)}.</p>
+      <p style="color:var(--text-muted); font-size:0.9rem;">NSTC/NTCA Clinical Guide, Table 4 ${cite(87)}.</p>
       <ul>
-        <li><strong>Steroids:</strong> the risk is dose-dependent, highest with prolonged use (prednisone equivalent &ge;15 mg/day for &ge;1 month, or &ge;2 mg/kg/day). ${cite(86)}</li>
-        <li><strong>PD-1/PD-L1 checkpoint inhibitors</strong> have been associated with progression to TB disease. ${cite(86)}</li>
-        <li><strong>Screen and treat latent TB infection before starting</strong> any of these agents. ${cite(86)} None of the anti-TNF-associated cases in RATIO had received correct prophylaxis. ${cite(84, 95)}</li>
+        <li><strong>Steroids:</strong> the risk is dose-dependent, highest with prolonged use (prednisone equivalent &ge;15 mg/day for &ge;1 month, or &ge;2 mg/kg/day). ${cite(87)}</li>
+        <li><strong>PD-1/PD-L1 checkpoint inhibitors</strong> have been associated with progression to TB disease. ${cite(87)}</li>
+        <li><strong>Screen and treat latent TB infection before starting</strong> any of these agents. ${cite(87)} None of the anti-TNF-associated cases in RATIO had received correct prophylaxis. ${cite(85, 96)}</li>
       </ul>`,
   },
 ];
@@ -3012,10 +3012,10 @@ const REFERENCES = {
         { n: 25, text: "Ardizzoni E, Ariza E, Mulengwa D, Mpala Q, de La Tour R, Maphalala G, et al. Thin-Layer-Agar-Based Direct Phenotypic Drug Susceptibility Testing on Sputum in Eswatini Rapidly Detects Mycobacterium tuberculosis Growth and Rifampicin Resistance Otherwise Missed by WHO-Endorsed Diagnostic Tests. Antimicrob Agents Chemother. 2021;65(6):e02263-20.", doi: "10.1128/AAC.02263-20", tag: "Diagnostic accuracy study" },
         { n: 26, text: "Alawi MM, Alserehi HA, Ali AO, Albalawi AM, Alanizi MK, Nabet FM, et al. Epidemiology of tuberculosis in Saudi Arabia following the implementation of end tuberculosis strategy: Analysis of the surveillance data 2015-2019. Saudi Med J. 2024;45(1):60-68.", doi: "10.15537/smj.2024.45.1.20230424", tag: "National surveillance data analysis (Saudi Arabia)" },
         { n: 27, text: "Nyang'wa BT, Berry C, Kazounis E, et al. A 24-week, all-oral regimen for rifampin-resistant tuberculosis. N Engl J Med. 2022;387(25):2331-2343.", doi: "10.1056/NEJMoa2117166", tag: "Randomized controlled trial — TB-PRACTECAL" },
-        { n: 28, text: "Médecins Sans Frontières. Drug-resistant tuberculosis trial ends enrolment after positive initial data. MSF; 24 March 2021.", url: "https://www.msf.org/drug-resistant-tuberculosis-trial-ends-enrolment-after-positive-initial-data", tag: "Trial-sponsor report (not peer-reviewed)" },
-        { n: 29, text: "Conradie F, Badat T, Poswa A, Rajaram S, Kooverjee S, Maartens G, et al. A Pragmatic Trial of a 6-Month Strategy for Rifampicin-Resistant Tuberculosis. N Engl J Med. 2026;394(24):2429-2439.", doi: "10.1056/NEJMoa2503687", tag: "Pragmatic randomized controlled non-inferiority trial — BEAT Tuberculosis" },
-        { n: 30, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Oral Regimens for Rifampin-Resistant, Fluoroquinolone-Susceptible Tuberculosis. N Engl J Med. 2025;392(5):468-482.", doi: "10.1056/NEJMoa2400327", tag: "Randomized controlled non-inferiority trial — endTB" },
-        { n: 31, text: "Goodall RL, Meredith SK, Nunn AJ, Bayissa A, Bhatnagar AK, Bronson G, et al. Evaluation of two short standardised regimens for the treatment of rifampicin-resistant tuberculosis (STREAM stage 2): an open-label, multicentre, randomised, non-inferiority trial. Lancet. 2022;400(10366):1858-1868.", doi: "10.1016/S0140-6736(22)02078-5", tag: "Randomized controlled non-inferiority trial — STREAM stage 2" },
+        { n: 28, text: "Goodall RL, Meredith SK, Nunn AJ, Bayissa A, Bhatnagar AK, Bronson G, et al. Evaluation of two short standardised regimens for the treatment of rifampicin-resistant tuberculosis (STREAM stage 2): an open-label, multicentre, randomised, non-inferiority trial. Lancet. 2022;400(10366):1858-1868.", doi: "10.1016/S0140-6736(22)02078-5", tag: "Randomized controlled non-inferiority trial — STREAM stage 2" },
+        { n: 29, text: "Médecins Sans Frontières. Drug-resistant tuberculosis trial ends enrolment after positive initial data. MSF; 24 March 2021.", url: "https://www.msf.org/drug-resistant-tuberculosis-trial-ends-enrolment-after-positive-initial-data", tag: "Trial-sponsor report (not peer-reviewed)" },
+        { n: 30, text: "Conradie F, Badat T, Poswa A, Rajaram S, Kooverjee S, Maartens G, et al. A Pragmatic Trial of a 6-Month Strategy for Rifampicin-Resistant Tuberculosis. N Engl J Med. 2026;394(24):2429-2439.", doi: "10.1056/NEJMoa2503687", tag: "Pragmatic randomized controlled non-inferiority trial — BEAT Tuberculosis" },
+        { n: 31, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Oral Regimens for Rifampin-Resistant, Fluoroquinolone-Susceptible Tuberculosis. N Engl J Med. 2025;392(5):468-482.", doi: "10.1056/NEJMoa2400327", tag: "Randomized controlled non-inferiority trial — endTB" },
         { n: 32, text: "Guglielmetti L, Khan U, Velásquez GE, et al. Bedaquiline, delamanid, linezolid, and clofazimine for rifampicin-resistant and fluoroquinolone-resistant tuberculosis (endTB-Q). Lancet Respir Med. 2025;13(9):809-820.", doi: "10.1016/S2213-2600(25)00194-8", tag: "Randomized controlled non-inferiority trial — endTB-Q" },
       ],
     },
@@ -3071,106 +3071,107 @@ const REFERENCES = {
         { n: 69, text: "Behr MA, Warren SA, Salamon H, Hopewell PC, Ponce de Leon A, Daley CL, et al. Transmission of Mycobacterium tuberculosis from patients smear-negative for acid-fast bacilli. Lancet. 1999;353(9151):444-9.", doi: "10.1016/S0140-6736(98)03406-0", tag: "Molecular epidemiology study" },
         { n: 70, text: "Tostmann A, Kik SV, Kalisvaart NA, Sebek MM, Verver S, Boeree MJ, et al. Tuberculosis transmission by patients with smear-negative pulmonary tuberculosis in a large cohort in the Netherlands. Clin Infect Dis. 2008;47(9):1135-42.", doi: "10.1086/591974", tag: "Molecular epidemiology cohort study" },
         { n: 71, text: "Shah M, Dansky Z, Nathavitharana R, Behm H, Brown S, Dov L, et al. National Tuberculosis Coalition of America (NTCA) Guidelines for Respiratory Isolation and Restrictions to Reduce Transmission of Pulmonary Tuberculosis in Community Settings. Clin Infect Dis. 2024. Published online 18 Apr 2024.", doi: "10.1093/cid/ciae199", tag: "Clinical practice guideline — NTCA" },
-        { n: 72, text: "Sosa LE, Njie GJ, Lobato MN, Bamrah Morris S, Buchta W, Casey ML, et al. Tuberculosis Screening, Testing, and Treatment of U.S. Health Care Personnel: Recommendations from the National Tuberculosis Controllers Association and CDC, 2019. MMWR Morb Mortal Wkly Rep. 2019;68(19):439-443.", doi: "10.15585/mmwr.mm6819a3", tag: "Clinical practice guideline — NTCA/CDC health care personnel" },
-        { n: 73, text: "Al Hajoj S, Varghese B, Datijan A, Shoukri M, Alzahrani A, Alkhenizan A, et al. Interferon Gamma Release Assay versus Tuberculin Skin Testing among Healthcare Workers of Highly Diverse Origin in a Moderate Tuberculosis Burden Country. PLoS One. 2016;11(5):e0154803.", doi: "10.1371/journal.pone.0154803", tag: "Cross-sectional study (Riyadh)" },
-        { n: 74, text: "Alahmari H, Hanson L, Kelley PG, Spong J, Milazzo A, Mnatzaganian G. Interferon-gamma release assays versus tuberculin skin test for latent tuberculosis infection positivity among healthcare workers and first responders: a systematic review and meta-analysis. Int J Infect Dis. 2026;170:108949.", doi: "10.1016/j.ijid.2026.108949", tag: "Systematic review and meta-analysis" },
-        { n: 75, text: "Alyami SMA, Alzomor O, Hassan IS, AlShamrani M, Al-Jazairi AS, Algamdi M, et al. The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of community-acquired pneumonia in children and adults. Ann Thorac Med. 2025;20(4):195-212.", doi: "10.4103/atm.atm_293_25", tag: "Clinical practice guideline — Saudi Thoracic Society CAP" },
-        { n: 76, text: "Metlay JP, Waterer GW, Long AC, Anzueto A, Brozek J, Crothers K, et al. Diagnosis and Treatment of Adults with Community-acquired Pneumonia. An Official Clinical Practice Guideline of the American Thoracic Society and Infectious Diseases Society of America. Am J Respir Crit Care Med. 2019;200(7):e45-e67.", doi: "10.1164/rccm.201908-1581ST", tag: "Clinical practice guideline — ATS/IDSA CAP" },
-        { n: 77, text: "Behr MA, Edelstein PH, Ramakrishnan L. Revisiting the timetable of tuberculosis. BMJ. 2018;362:k2738.", doi: "10.1136/bmj.k2738", tag: "Narrative review" },
-        { n: 78, text: "Chen TC, Lu PL, Lin CY, Lin WR, Chen YH. Fluoroquinolones are associated with delayed treatment and resistance in tuberculosis: a systematic review and meta-analysis. Int J Infect Dis. 2011;15(3):e211-6.", doi: "10.1016/j.ijid.2010.11.008", tag: "Systematic review and meta-analysis" },
-        { n: 79, text: "den Boon S, Matteelli A, Getahun H. Rifampicin resistance after treatment for latent tuberculous infection: a systematic review and meta-analysis. Int J Tuberc Lung Dis. 2016;20(8):1065-71.", doi: "10.5588/ijtld.15.0908", tag: "Systematic review and meta-analysis" },
-        { n: 80, text: "Balcells ME, Thomas SL, Godfrey-Faussett P, Grant AD. Isoniazid preventive therapy and risk for resistant tuberculosis. Emerg Infect Dis. 2006;12(5):744-51.", doi: "10.3201/eid1205.050681", tag: "Systematic review and meta-analysis" },
-        { n: 81, text: "Fox GJ, Barry SE, Britton WJ, Marks GB. Contact investigation for tuberculosis: a systematic review and meta-analysis. Eur Respir J. 2013;41(1):140-56.", doi: "10.1183/09031936.00070812", tag: "Systematic review and meta-analysis" },
-        { n: 82, text: "World Health Organization. WHO consolidated guidelines on tuberculosis. Module 1: prevention — tuberculosis preventive treatment, second edition. Geneva: WHO; 2024.", tag: "Clinical practice guideline — second edition" },
-        { n: 83, text: "Sterling TR, Njie G, Zenner D, et al. Guidelines for the Treatment of Latent Tuberculosis Infection: Recommendations from the National Tuberculosis Controllers Association and CDC, 2020. MMWR Recomm Rep. 2020;69(RR-1):1-11.", doi: "10.15585/mmwr.rr6901a1", tag: "Clinical practice guideline" },
-        { n: 84, text: "Tubach F, Salmon D, Ravaud P, Allanore Y, Goupille P, Bréban M, et al. Risk of tuberculosis is higher with anti-tumor necrosis factor monoclonal antibody therapy than with soluble tumor necrosis factor receptor therapy: The three-year prospective French Research Axed on Tolerance of Biotherapies registry. Arthritis Rheum. 2009;60(7):1884-94.", doi: "10.1002/art.24632", tag: "Prospective registry study — RATIO" },
-        { n: 85, text: "Winthrop KL, Park SH, Gul A, Cardiel MH, Gomez-Reino JJ, Tanaka Y, et al. Tuberculosis and other opportunistic infections in tofacitinib-treated patients with rheumatoid arthritis. Ann Rheum Dis. 2016;75(6):1133-8.", doi: "10.1136/annrheumdis-2015-207319", tag: "Pooled analysis of clinical trial data" },
-        { n: 86, text: "National Society of Tuberculosis Clinicians; National Tuberculosis Controllers Association. Testing and Treatment of Latent Tuberculosis Infection in the United States: A Clinical Guide for Health Care Providers and Public Health Programs. 3rd ed. November 2023 (updated February 2025).", url: "https://www.tbcontrollers.org/docs/NSTC/LTBI_Clinical_Guide_Feb2025_FINAL.pdf", tag: "Clinical guide — NSTC/NTCA" },
-        { n: 87, text: "Jeon CY, Murray MB. Diabetes mellitus increases the risk of active tuberculosis: a systematic review of 13 observational studies. PLoS Med. 2008;5(7):e152.", doi: "10.1371/journal.pmed.0050152", tag: "Systematic review of observational studies" },
-        { n: 88, text: "Getahun H, Matteelli A, Abubakar I, Aziz MA, Baddeley A, Barreira D, et al. Management of latent Mycobacterium tuberculosis infection: WHO guidelines for low tuberculosis burden countries. Eur Respir J. 2015;46(6):1563-76.", doi: "10.1183/13993003.01245-2015", tag: "Clinical practice guideline (WHO) — low TB-burden countries" },
-        { n: 89, text: "Sterling TR, Villarino ME, Borisov AS, Shang N, Gordin F, Bliven-Sizemore E, Hackman J, Hamilton CD, Menzies D, Kerrigan A, Weis SE, Weiner M, Wing D, Conde MB, Bozeman L, Horsburgh CR Jr, Chaisson RE; TB Trials Consortium PREVENT TB Study Team. Three months of rifapentine and isoniazid for latent tuberculosis infection. N Engl J Med. 2011;365(23):2155-2166.", doi: "10.1056/NEJMoa1104875", tag: "Randomized controlled non-inferiority trial" },
-        { n: 90, text: "Menzies D, Adjobimey M, Ruslami R, Trajman A, Sow O, Kim H, Obeng Baah J, Marks GB, Long R, Hoeppner V, Elwood K, Al-Jahdali H, Gninafon M, Apriani L, Koesoemadinata RC, Kritski A, Rolla V, Bah B, Camara A, Boakye I, Cook VJ, Goldberg H, Valiquette C, Hornby K, Dion MJ, Li PZ, Hill PC, Schwartzman K, Benedetti A. Four Months of Rifampin or Nine Months of Isoniazid for Latent Tuberculosis in Adults. N Engl J Med. 2018;379(5):440-453.", doi: "10.1056/NEJMoa1714283", tag: "Randomized controlled non-inferiority trial" },
-        { n: 91, text: "Swindells S, Ramchandani R, Gupta A, Benson CA, Leon-Cruz J, Mwelase N, et al. One Month of Rifapentine plus Isoniazid to Prevent HIV-Related Tuberculosis. N Engl J Med. 2019;380(11):1001-1011.", doi: "10.1056/NEJMoa1806808", tag: "Randomized controlled non-inferiority trial — BRIEF-TB" },
-        { n: 92, text: "International Union Against Tuberculosis Committee on Prophylaxis. Efficacy of various durations of isoniazid preventive therapy for tuberculosis: five years of follow-up in the IUAT trial. Bull World Health Organ. 1982;60(4):555-64.", url: "https://pubmed.ncbi.nlm.nih.gov/6754120/", tag: "Randomized placebo-controlled trial — IUAT" },
-        { n: 93, text: "Comstock GW. How much isoniazid is needed for prevention of tuberculosis among immunocompetent adults? Int J Tuberc Lung Dis. 1999;3(10):847-50.", url: "https://pubmed.ncbi.nlm.nih.gov/10524579/", tag: "Reanalysis of controlled trials" },
-        { n: 94, text: "Smieja MJ, Marchetti CA, Cook DJ, Smaill FM. Isoniazid for preventing tuberculosis in non-HIV infected persons. Cochrane Database Syst Rev. 2000;(2):CD001363.", doi: "10.1002/14651858.CD001363", tag: "Systematic review of RCTs (Cochrane)" },
-        { n: 95, text: "Iannone F, Cantini F, Lapadula G. Diagnosis of latent tuberculosis and prevention of reactivation in rheumatic patients receiving biologic therapy: international recommendations. J Rheumatol Suppl. 2014;91:41-6.", doi: "10.3899/jrheum.140101", tag: "Review of international recommendations" },
-        { n: 96, text: "Vaidya B, Nakarmi S. Simultaneous Adalimumab and Antitubercular Treatment for Latent Tubercular Infection: An Experience from Nepal. Int J Rheumatol. 2019;2019:2034950.", doi: "10.1155/2019/2034950", tag: "Retrospective case series" },
+        { n: 72, text: "Xie YL, Cronin WA, Proschan M, Oatis R, Cohn S, Curry SR, et al. Transmission of Mycobacterium tuberculosis from patients who are nucleic acid amplification test negative. Clin Infect Dis. 2018;67(11):1653-9.", doi: "10.1093/cid/ciy365", tag: "Molecular epidemiology study" },
+        { n: 73, text: "Sosa LE, Njie GJ, Lobato MN, Bamrah Morris S, Buchta W, Casey ML, et al. Tuberculosis Screening, Testing, and Treatment of U.S. Health Care Personnel: Recommendations from the National Tuberculosis Controllers Association and CDC, 2019. MMWR Morb Mortal Wkly Rep. 2019;68(19):439-443.", doi: "10.15585/mmwr.mm6819a3", tag: "Clinical practice guideline — NTCA/CDC health care personnel" },
+        { n: 74, text: "Al Hajoj S, Varghese B, Datijan A, Shoukri M, Alzahrani A, Alkhenizan A, et al. Interferon Gamma Release Assay versus Tuberculin Skin Testing among Healthcare Workers of Highly Diverse Origin in a Moderate Tuberculosis Burden Country. PLoS One. 2016;11(5):e0154803.", doi: "10.1371/journal.pone.0154803", tag: "Cross-sectional study (Riyadh)" },
+        { n: 75, text: "Alahmari H, Hanson L, Kelley PG, Spong J, Milazzo A, Mnatzaganian G. Interferon-gamma release assays versus tuberculin skin test for latent tuberculosis infection positivity among healthcare workers and first responders: a systematic review and meta-analysis. Int J Infect Dis. 2026;170:108949.", doi: "10.1016/j.ijid.2026.108949", tag: "Systematic review and meta-analysis" },
+        { n: 76, text: "Alyami SMA, Alzomor O, Hassan IS, AlShamrani M, Al-Jazairi AS, Algamdi M, et al. The Saudi Thoracic Society evidence-based guidelines for the diagnosis and management of community-acquired pneumonia in children and adults. Ann Thorac Med. 2025;20(4):195-212.", doi: "10.4103/atm.atm_293_25", tag: "Clinical practice guideline — Saudi Thoracic Society CAP" },
+        { n: 77, text: "Metlay JP, Waterer GW, Long AC, Anzueto A, Brozek J, Crothers K, et al. Diagnosis and Treatment of Adults with Community-acquired Pneumonia. An Official Clinical Practice Guideline of the American Thoracic Society and Infectious Diseases Society of America. Am J Respir Crit Care Med. 2019;200(7):e45-e67.", doi: "10.1164/rccm.201908-1581ST", tag: "Clinical practice guideline — ATS/IDSA CAP" },
+        { n: 78, text: "Behr MA, Edelstein PH, Ramakrishnan L. Revisiting the timetable of tuberculosis. BMJ. 2018;362:k2738.", doi: "10.1136/bmj.k2738", tag: "Narrative review" },
+        { n: 79, text: "Chen TC, Lu PL, Lin CY, Lin WR, Chen YH. Fluoroquinolones are associated with delayed treatment and resistance in tuberculosis: a systematic review and meta-analysis. Int J Infect Dis. 2011;15(3):e211-6.", doi: "10.1016/j.ijid.2010.11.008", tag: "Systematic review and meta-analysis" },
+        { n: 80, text: "den Boon S, Matteelli A, Getahun H. Rifampicin resistance after treatment for latent tuberculous infection: a systematic review and meta-analysis. Int J Tuberc Lung Dis. 2016;20(8):1065-71.", doi: "10.5588/ijtld.15.0908", tag: "Systematic review and meta-analysis" },
+        { n: 81, text: "Balcells ME, Thomas SL, Godfrey-Faussett P, Grant AD. Isoniazid preventive therapy and risk for resistant tuberculosis. Emerg Infect Dis. 2006;12(5):744-51.", doi: "10.3201/eid1205.050681", tag: "Systematic review and meta-analysis" },
+        { n: 82, text: "Fox GJ, Barry SE, Britton WJ, Marks GB. Contact investigation for tuberculosis: a systematic review and meta-analysis. Eur Respir J. 2013;41(1):140-56.", doi: "10.1183/09031936.00070812", tag: "Systematic review and meta-analysis" },
+        { n: 83, text: "World Health Organization. WHO consolidated guidelines on tuberculosis. Module 1: prevention — tuberculosis preventive treatment, second edition. Geneva: WHO; 2024.", tag: "Clinical practice guideline — second edition" },
+        { n: 84, text: "Sterling TR, Njie G, Zenner D, et al. Guidelines for the Treatment of Latent Tuberculosis Infection: Recommendations from the National Tuberculosis Controllers Association and CDC, 2020. MMWR Recomm Rep. 2020;69(RR-1):1-11.", doi: "10.15585/mmwr.rr6901a1", tag: "Clinical practice guideline" },
+        { n: 85, text: "Tubach F, Salmon D, Ravaud P, Allanore Y, Goupille P, Bréban M, et al. Risk of tuberculosis is higher with anti-tumor necrosis factor monoclonal antibody therapy than with soluble tumor necrosis factor receptor therapy: The three-year prospective French Research Axed on Tolerance of Biotherapies registry. Arthritis Rheum. 2009;60(7):1884-94.", doi: "10.1002/art.24632", tag: "Prospective registry study — RATIO" },
+        { n: 86, text: "Winthrop KL, Park SH, Gul A, Cardiel MH, Gomez-Reino JJ, Tanaka Y, et al. Tuberculosis and other opportunistic infections in tofacitinib-treated patients with rheumatoid arthritis. Ann Rheum Dis. 2016;75(6):1133-8.", doi: "10.1136/annrheumdis-2015-207319", tag: "Pooled analysis of clinical trial data" },
+        { n: 87, text: "National Society of Tuberculosis Clinicians; National Tuberculosis Controllers Association. Testing and Treatment of Latent Tuberculosis Infection in the United States: A Clinical Guide for Health Care Providers and Public Health Programs. 3rd ed. November 2023 (updated February 2025).", url: "https://www.tbcontrollers.org/docs/NSTC/LTBI_Clinical_Guide_Feb2025_FINAL.pdf", tag: "Clinical guide — NSTC/NTCA" },
+        { n: 88, text: "Jeon CY, Murray MB. Diabetes mellitus increases the risk of active tuberculosis: a systematic review of 13 observational studies. PLoS Med. 2008;5(7):e152.", doi: "10.1371/journal.pmed.0050152", tag: "Systematic review of observational studies" },
+        { n: 89, text: "Getahun H, Matteelli A, Abubakar I, Aziz MA, Baddeley A, Barreira D, et al. Management of latent Mycobacterium tuberculosis infection: WHO guidelines for low tuberculosis burden countries. Eur Respir J. 2015;46(6):1563-76.", doi: "10.1183/13993003.01245-2015", tag: "Clinical practice guideline (WHO) — low TB-burden countries" },
+        { n: 90, text: "Sterling TR, Villarino ME, Borisov AS, Shang N, Gordin F, Bliven-Sizemore E, Hackman J, Hamilton CD, Menzies D, Kerrigan A, Weis SE, Weiner M, Wing D, Conde MB, Bozeman L, Horsburgh CR Jr, Chaisson RE; TB Trials Consortium PREVENT TB Study Team. Three months of rifapentine and isoniazid for latent tuberculosis infection. N Engl J Med. 2011;365(23):2155-2166.", doi: "10.1056/NEJMoa1104875", tag: "Randomized controlled non-inferiority trial" },
+        { n: 91, text: "Menzies D, Adjobimey M, Ruslami R, Trajman A, Sow O, Kim H, Obeng Baah J, Marks GB, Long R, Hoeppner V, Elwood K, Al-Jahdali H, Gninafon M, Apriani L, Koesoemadinata RC, Kritski A, Rolla V, Bah B, Camara A, Boakye I, Cook VJ, Goldberg H, Valiquette C, Hornby K, Dion MJ, Li PZ, Hill PC, Schwartzman K, Benedetti A. Four Months of Rifampin or Nine Months of Isoniazid for Latent Tuberculosis in Adults. N Engl J Med. 2018;379(5):440-453.", doi: "10.1056/NEJMoa1714283", tag: "Randomized controlled non-inferiority trial" },
+        { n: 92, text: "Swindells S, Ramchandani R, Gupta A, Benson CA, Leon-Cruz J, Mwelase N, et al. One Month of Rifapentine plus Isoniazid to Prevent HIV-Related Tuberculosis. N Engl J Med. 2019;380(11):1001-1011.", doi: "10.1056/NEJMoa1806808", tag: "Randomized controlled non-inferiority trial — BRIEF-TB" },
+        { n: 93, text: "International Union Against Tuberculosis Committee on Prophylaxis. Efficacy of various durations of isoniazid preventive therapy for tuberculosis: five years of follow-up in the IUAT trial. Bull World Health Organ. 1982;60(4):555-64.", url: "https://pubmed.ncbi.nlm.nih.gov/6754120/", tag: "Randomized placebo-controlled trial — IUAT" },
+        { n: 94, text: "Comstock GW. How much isoniazid is needed for prevention of tuberculosis among immunocompetent adults? Int J Tuberc Lung Dis. 1999;3(10):847-50.", url: "https://pubmed.ncbi.nlm.nih.gov/10524579/", tag: "Reanalysis of controlled trials" },
+        { n: 95, text: "Smieja MJ, Marchetti CA, Cook DJ, Smaill FM. Isoniazid for preventing tuberculosis in non-HIV infected persons. Cochrane Database Syst Rev. 2000;(2):CD001363.", doi: "10.1002/14651858.CD001363", tag: "Systematic review of RCTs (Cochrane)" },
+        { n: 96, text: "Iannone F, Cantini F, Lapadula G. Diagnosis of latent tuberculosis and prevention of reactivation in rheumatic patients receiving biologic therapy: international recommendations. J Rheumatol Suppl. 2014;91:41-6.", doi: "10.3899/jrheum.140101", tag: "Review of international recommendations" },
+        { n: 97, text: "Vaidya B, Nakarmi S. Simultaneous Adalimumab and Antitubercular Treatment for Latent Tubercular Infection: An Experience from Nepal. Int J Rheumatol. 2019;2019:2034950.", doi: "10.1155/2019/2034950", tag: "Retrospective case series" },
       ],
     },
     {
       title: "Case 6 — Pleural TB",
       items: [
-        { n: 97, text: "al-Quorain A, Larbi EB, Satti MB, al-Muhanna F, Baloush A. Tuberculous pleural effusion in the eastern province of Saudi Arabia. Trop Geogr Med. 1994;46(5):298-301.", url: "https://pubmed.ncbi.nlm.nih.gov/7855916/", tag: "Prospective study (Eastern Province, Saudi Arabia)" },
-        { n: 98, text: "Light RW, Macgregor MI, Luchsinger PC, Ball WC Jr. Pleural effusions: the diagnostic separation of transudates and exudates. Ann Intern Med. 1972;77(4):507-13.", doi: "10.7326/0003-4819-77-4-507", tag: "Diagnostic study (origin of Light's criteria)" },
-        { n: 99, text: "Conde MB, Loivos AC, Rezende VM, Soares SL, Mello FC, Reingold AL, et al. Yield of sputum induction in the diagnosis of pleural tuberculosis. Am J Respir Crit Care Med. 2003;167(5):723-5.", doi: "10.1164/rccm.2111019", tag: "Prospective diagnostic study" },
-        { n: 100, text: "Diacon AH, Van de Wal BW, Wyser C, Smedema JP, Bezuidenhout J, Bolliger CT, et al. Diagnostic tools in tuberculous pleurisy: a direct comparative study. Eur Respir J. 2003;22(4):589-91.", doi: "10.1183/09031936.03.00017103a", tag: "Prospective comparative diagnostic study" },
-        { n: 101, text: "Aggarwal AN, Agarwal R, Sehgal IS, Dhooria S. Adenosine deaminase for diagnosis of tuberculous pleural effusion: A systematic review and meta-analysis. PLoS One. 2019;14(3):e0213728.", doi: "10.1371/journal.pone.0213728", tag: "Systematic review and meta-analysis" },
-        { n: 102, text: "Kohli M, Inbaraj LR, Salomon A, Scandrett K, Korobitsyn A, Ismail N, et al. Low-complexity automated nucleic acid amplification tests for extrapulmonary tuberculosis and rifampicin resistance in adults and adolescents. Cochrane Database Syst Rev. 2025;8(8):CD012768.", doi: "10.1002/14651858.CD012768.pub4", tag: "Diagnostic test accuracy systematic review (Cochrane)" },
-        { n: 103, text: "Ryan H, Yoo J, Darsini P. Corticosteroids for tuberculous pleurisy. Cochrane Database Syst Rev. 2017;3(3):CD001876.", doi: "10.1002/14651858.CD001876.pub3", tag: "Systematic review of RCTs (Cochrane)" },
-        { n: 104, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
-        { n: 105, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
-        { n: 106, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
-        { n: 137, text: "Lee J, Lee SY, Choi KJ, Lim JK, Yoo SS, Lee SY, et al. Clinical utility of CT-based bronchial aspirate TB-PCR for the rapid diagnosis of pleural tuberculosis. Tuberc Respir Dis (Seoul). 2013;75(4):150-6.", doi: "10.4046/trd.2013.75.4.150", tag: "Prospective diagnostic study" },
-        { n: 138, text: "Young SL, Chua BLW, Tan QL, Leong CK, Wong JJY, Phua IGCS, et al. Pleural and parenchymal radiological characteristics of tuberculous pleuritis and correlation with microbiological and molecular diagnostic yield. BMC Pulm Med. 2025;25(1):525.", doi: "10.1186/s12890-025-03995-1", tag: "Retrospective cohort study" },
-        { n: 139, text: "Roberts ME, Rahman NM, Maskell NA, Bibby AC, Blyth KG, Corcoran JP, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023;78(Suppl 3):s1-s42.", doi: "10.1136/thorax-2022-219784", tag: "Guideline (BTS 2023)" },
-        { n: 140, text: "Wilcox ME, Chong CA, Stanbrook MB, Tricco AC, Wong C, Straus SE. Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review. JAMA. 2014;311(23):2422-31.", doi: "10.1001/jama.2014.5552", tag: "Systematic review" },
-        { n: 141, text: "Porcel JM. Identifying transudates misclassified by Light's criteria. Curr Opin Pulm Med. 2013;19(4):362-7.", doi: "10.1097/MCP.0b013e32836022dc", tag: "Review" },
-        { n: 142, text: "Bielsa S, Porcel JM, Castellote J, Mas E, Esquerda A, Light RW. Solving the Light's criteria misclassification rate of cardiac and hepatic transudates. Respirology. 2012;17(4):721-6.", doi: "10.1111/j.1440-1843.2012.02155.x", tag: "Retrospective diagnostic study" },
+        { n: 98, text: "al-Quorain A, Larbi EB, Satti MB, al-Muhanna F, Baloush A. Tuberculous pleural effusion in the eastern province of Saudi Arabia. Trop Geogr Med. 1994;46(5):298-301.", url: "https://pubmed.ncbi.nlm.nih.gov/7855916/", tag: "Prospective study (Eastern Province, Saudi Arabia)" },
+        { n: 99, text: "Light RW, Macgregor MI, Luchsinger PC, Ball WC Jr. Pleural effusions: the diagnostic separation of transudates and exudates. Ann Intern Med. 1972;77(4):507-13.", doi: "10.7326/0003-4819-77-4-507", tag: "Diagnostic study (origin of Light's criteria)" },
+        { n: 100, text: "Conde MB, Loivos AC, Rezende VM, Soares SL, Mello FC, Reingold AL, et al. Yield of sputum induction in the diagnosis of pleural tuberculosis. Am J Respir Crit Care Med. 2003;167(5):723-5.", doi: "10.1164/rccm.2111019", tag: "Prospective diagnostic study" },
+        { n: 101, text: "Lee J, Lee SY, Choi KJ, Lim JK, Yoo SS, Lee SY, et al. Clinical utility of CT-based bronchial aspirate TB-PCR for the rapid diagnosis of pleural tuberculosis. Tuberc Respir Dis (Seoul). 2013;75(4):150-6.", doi: "10.4046/trd.2013.75.4.150", tag: "Prospective diagnostic study" },
+        { n: 102, text: "Young SL, Chua BLW, Tan QL, Leong CK, Wong JJY, Phua IGCS, et al. Pleural and parenchymal radiological characteristics of tuberculous pleuritis and correlation with microbiological and molecular diagnostic yield. BMC Pulm Med. 2025;25(1):525.", doi: "10.1186/s12890-025-03995-1", tag: "Retrospective cohort study" },
+        { n: 103, text: "Diacon AH, Van de Wal BW, Wyser C, Smedema JP, Bezuidenhout J, Bolliger CT, et al. Diagnostic tools in tuberculous pleurisy: a direct comparative study. Eur Respir J. 2003;22(4):589-91.", doi: "10.1183/09031936.03.00017103a", tag: "Prospective comparative diagnostic study" },
+        { n: 104, text: "Roberts ME, Rahman NM, Maskell NA, Bibby AC, Blyth KG, Corcoran JP, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023;78(Suppl 3):s1-s42.", doi: "10.1136/thorax-2022-219784", tag: "Guideline (BTS 2023)" },
+        { n: 105, text: "Porcel JM. Identifying transudates misclassified by Light's criteria. Curr Opin Pulm Med. 2013;19(4):362-7.", doi: "10.1097/MCP.0b013e32836022dc", tag: "Review" },
+        { n: 106, text: "Wilcox ME, Chong CA, Stanbrook MB, Tricco AC, Wong C, Straus SE. Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review. JAMA. 2014;311(23):2422-31.", doi: "10.1001/jama.2014.5552", tag: "Systematic review" },
+        { n: 107, text: "Bielsa S, Porcel JM, Castellote J, Mas E, Esquerda A, Light RW. Solving the Light's criteria misclassification rate of cardiac and hepatic transudates. Respirology. 2012;17(4):721-6.", doi: "10.1111/j.1440-1843.2012.02155.x", tag: "Retrospective diagnostic study" },
+        { n: 108, text: "Aggarwal AN, Agarwal R, Sehgal IS, Dhooria S. Adenosine deaminase for diagnosis of tuberculous pleural effusion: A systematic review and meta-analysis. PLoS One. 2019;14(3):e0213728.", doi: "10.1371/journal.pone.0213728", tag: "Systematic review and meta-analysis" },
+        { n: 109, text: "Kohli M, Inbaraj LR, Salomon A, Scandrett K, Korobitsyn A, Ismail N, et al. Low-complexity automated nucleic acid amplification tests for extrapulmonary tuberculosis and rifampicin resistance in adults and adolescents. Cochrane Database Syst Rev. 2025;8(8):CD012768.", doi: "10.1002/14651858.CD012768.pub4", tag: "Diagnostic test accuracy systematic review (Cochrane)" },
+        { n: 110, text: "Ryan H, Yoo J, Darsini P. Corticosteroids for tuberculous pleurisy. Cochrane Database Syst Rev. 2017;3(3):CD001876.", doi: "10.1002/14651858.CD001876.pub3", tag: "Systematic review of RCTs (Cochrane)" },
+        { n: 111, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
+        { n: 112, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
+        { n: 113, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
       ],
     },
     {
       title: "Case 7 — Spinal TB",
       items: [
-        { n: 107, text: "Sadat-Ali M, al-Mousa MS, al-Salem AH. Brucellosis as a cause of backache. Trop Geogr Med. 1991;43(1-2):148-51.", url: "https://pubmed.ncbi.nlm.nih.gov/1836289/", tag: "Prospective screening study (Al-Khobar, Saudi Arabia)" },
-        { n: 108, text: "Cordero M, Sánchez I. Brucellar and tuberculous spondylitis. A comparative study of their clinical features. J Bone Joint Surg Br. 1991;73(1):100-3.", doi: "10.1302/0301-620X.73B1.1991738", tag: "Comparative clinical study" },
-        { n: 109, text: "Sharif HS, Aideyan OA, Clark DC, Madkour MM, Aabed MY, Mattsson TA, et al. Brucellar and tuberculous spondylitis: comparative imaging features. Radiology. 1989;171(2):419-25.", doi: "10.1148/radiology.171.2.2704806", tag: "Comparative imaging study (Riyadh, Saudi Arabia)" },
-        { n: 110, text: "Gao M, Sun J, Jiang Z, Cui X, Liu X, Wang G, et al. Comparison of Tuberculous and Brucellar Spondylitis on Magnetic Resonance Images. Spine (Phila Pa 1976). 2017;42(2):113-121.", doi: "10.1097/BRS.0000000000001697", tag: "Retrospective cross-sectional study" },
-        { n: 111, text: "Ravichandran RCA, Amritanand R, Moses V, Kandagaddala M, Krishnan V, David KS, et al. Computed Tomography-Guided Spinal Biopsy in Suspected Infective Spondylodiscitis: An Institutional Review of Its Utility. Indian J Radiol Imaging. 2023;33(3):289-294.", doi: "10.1055/s-0043-1764491", tag: "Retrospective institutional review" },
+        { n: 114, text: "Sadat-Ali M, al-Mousa MS, al-Salem AH. Brucellosis as a cause of backache. Trop Geogr Med. 1991;43(1-2):148-51.", url: "https://pubmed.ncbi.nlm.nih.gov/1836289/", tag: "Prospective screening study (Al-Khobar, Saudi Arabia)" },
+        { n: 115, text: "Cordero M, Sánchez I. Brucellar and tuberculous spondylitis. A comparative study of their clinical features. J Bone Joint Surg Br. 1991;73(1):100-3.", doi: "10.1302/0301-620X.73B1.1991738", tag: "Comparative clinical study" },
+        { n: 116, text: "Sharif HS, Aideyan OA, Clark DC, Madkour MM, Aabed MY, Mattsson TA, et al. Brucellar and tuberculous spondylitis: comparative imaging features. Radiology. 1989;171(2):419-25.", doi: "10.1148/radiology.171.2.2704806", tag: "Comparative imaging study (Riyadh, Saudi Arabia)" },
+        { n: 117, text: "Gao M, Sun J, Jiang Z, Cui X, Liu X, Wang G, et al. Comparison of Tuberculous and Brucellar Spondylitis on Magnetic Resonance Images. Spine (Phila Pa 1976). 2017;42(2):113-121.", doi: "10.1097/BRS.0000000000001697", tag: "Retrospective cross-sectional study" },
+        { n: 118, text: "Ravichandran RCA, Amritanand R, Moses V, Kandagaddala M, Krishnan V, David KS, et al. Computed Tomography-Guided Spinal Biopsy in Suspected Infective Spondylodiscitis: An Institutional Review of Its Utility. Indian J Radiol Imaging. 2023;33(3):289-294.", doi: "10.1055/s-0043-1764491", tag: "Retrospective institutional review" },
       ],
     },
     {
       title: "Case 8 — TB meningitis",
       items: [
-        { n: 112, text: "Gokul BN, Paul A, Hussein I. Neurobrucellosis. Saudi Med J. 2000;21(6):577-80.", url: "https://pubmed.ncbi.nlm.nih.gov/11500711/", tag: "Case report (Saudi Arabia)" },
-        { n: 113, text: "Soares CN, da Silva MTT, Lima MA. Neurobrucellosis. Curr Opin Infect Dis. 2023;36(3):192-197.", doi: "10.1097/QCO.0000000000000920", tag: "Narrative review" },
-        { n: 114, text: "Thao LTP, Heemskerk AD, Geskus RB, Mai NTH, Ha DTM, Chau TTH, et al. Prognostic Models for 9-Month Mortality in Tuberculous Meningitis. Clin Infect Dis. 2018;66(4):523-532.", doi: "10.1093/cid/cix849", tag: "Prognostic modelling study" },
-        { n: 115, text: "Dhafer Alshehri F, Mahmood Okal F, Baeshen SK, Alharbi ZG, Khojah O, Alhawsawi WK, et al. Outcomes of central nervous system tuberculosis in Saudi Arabia: a multi-center study. Neurol Res. 2024;46(9):812-822.", doi: "10.1080/01616412.2024.2359262", tag: "Retrospective multicentre cohort (Saudi Arabia)" },
-        { n: 116, text: "Thwaites GE, Nguyen DB, Nguyen HD, Hoang TQ, Do TT, Nguyen TC, et al. Dexamethasone for the treatment of tuberculous meningitis in adolescents and adults. N Engl J Med. 2004;351(17):1741-51.", doi: "10.1056/NEJMoa040573", tag: "Randomized placebo-controlled trial" },
-        { n: 117, text: "Heemskerk AD, Bang ND, Mai NT, Chau TT, Phu NH, Loc PP, et al. Intensified Antituberculosis Therapy in Adults with Tuberculous Meningitis. N Engl J Med. 2016;374(2):124-34.", doi: "10.1056/NEJMoa1507062", tag: "Randomized placebo-controlled trial" },
-        { n: 118, text: "Donovan J, Bang ND, Imran D, Nghia HDT, Burhan E, Huong DTT, et al. Adjunctive Dexamethasone for Tuberculous Meningitis in HIV-Positive Adults. N Engl J Med. 2023;389(15):1357-1367.", doi: "10.1056/NEJMoa2216218", tag: "Randomized placebo-controlled trial — ACT HIV" },
+        { n: 119, text: "Gokul BN, Paul A, Hussein I. Neurobrucellosis. Saudi Med J. 2000;21(6):577-80.", url: "https://pubmed.ncbi.nlm.nih.gov/11500711/", tag: "Case report (Saudi Arabia)" },
+        { n: 120, text: "Soares CN, da Silva MTT, Lima MA. Neurobrucellosis. Curr Opin Infect Dis. 2023;36(3):192-197.", doi: "10.1097/QCO.0000000000000920", tag: "Narrative review" },
+        { n: 121, text: "Thao LTP, Heemskerk AD, Geskus RB, Mai NTH, Ha DTM, Chau TTH, et al. Prognostic Models for 9-Month Mortality in Tuberculous Meningitis. Clin Infect Dis. 2018;66(4):523-532.", doi: "10.1093/cid/cix849", tag: "Prognostic modelling study" },
+        { n: 122, text: "Dhafer Alshehri F, Mahmood Okal F, Baeshen SK, Alharbi ZG, Khojah O, Alhawsawi WK, et al. Outcomes of central nervous system tuberculosis in Saudi Arabia: a multi-center study. Neurol Res. 2024;46(9):812-822.", doi: "10.1080/01616412.2024.2359262", tag: "Retrospective multicentre cohort (Saudi Arabia)" },
+        { n: 123, text: "Thwaites GE, Nguyen DB, Nguyen HD, Hoang TQ, Do TT, Nguyen TC, et al. Dexamethasone for the treatment of tuberculous meningitis in adolescents and adults. N Engl J Med. 2004;351(17):1741-51.", doi: "10.1056/NEJMoa040573", tag: "Randomized placebo-controlled trial" },
+        { n: 124, text: "Heemskerk AD, Bang ND, Mai NT, Chau TT, Phu NH, Loc PP, et al. Intensified Antituberculosis Therapy in Adults with Tuberculous Meningitis. N Engl J Med. 2016;374(2):124-34.", doi: "10.1056/NEJMoa1507062", tag: "Randomized placebo-controlled trial" },
+        { n: 125, text: "Donovan J, Bang ND, Imran D, Nghia HDT, Burhan E, Huong DTT, et al. Adjunctive Dexamethasone for Tuberculous Meningitis in HIV-Positive Adults. N Engl J Med. 2023;389(15):1357-1367.", doi: "10.1056/NEJMoa2216218", tag: "Randomized placebo-controlled trial — ACT HIV" },
       ],
     },
     {
       title: "Case 9 — Intestinal TB",
       items: [
-        { n: 119, text: "Kedia S, Das P, Madhusudhan KS, Dattagupta S, Sharma R, Sahni P, et al. Differentiating Crohn's disease from intestinal tuberculosis. World J Gastroenterol. 2019;25(4):418-432.", doi: "10.3748/wjg.v25.i4.418", tag: "Narrative review" },
-        { n: 120, text: "Chen W, Fan JH, Luo W, Peng P, Su SB. Effectiveness of interferon-gamma release assays for differentiating intestinal tuberculosis from Crohn's disease: a meta-analysis. World J Gastroenterol. 2013;19(44):8133-40.", doi: "10.3748/wjg.v19.i44.8133", tag: "Meta-analysis" },
-        { n: 121, text: "Kedia S, Sharma R, Sreenivas V, Madhusudhan KS, Sharma V, Bopanna S, et al. Accuracy of computed tomographic features in differentiating intestinal tuberculosis from Crohn's disease: a systematic review with meta-analysis. Intest Res. 2017;15(2):149-159.", doi: "10.5217/ir.2017.15.2.149", tag: "Systematic review and meta-analysis" },
-        { n: 122, text: "Jin T, Fei B, Zhang Y, He X. The diagnostic value of polymerase chain reaction for Mycobacterium tuberculosis to distinguish intestinal tuberculosis from crohn's disease: A meta-analysis. Saudi J Gastroenterol. 2017;23(1):3-10.", doi: "10.4103/1319-3767.199135", tag: "Meta-analysis" },
-        { n: 123, text: "Pratap Mouli V, Munot K, Ananthakrishnan A, Kedia S, Addagalla S, Garg SK, et al. Endoscopic and clinical responses to anti-tubercular therapy can differentiate intestinal tuberculosis from Crohn's disease. Aliment Pharmacol Ther. 2017;45(1):27-36.", doi: "10.1111/apt.13840", tag: "Retrospective study with prospective validation" },
-        { n: 124, text: "Jullien S, Jain S, Ryan H, Ahuja V. Six-month therapy for abdominal tuberculosis. Cochrane Database Syst Rev. 2016;11(11):CD012163.", doi: "10.1002/14651858.CD012163.pub2", tag: "Systematic review of RCTs (Cochrane)" },
-        { n: 125, text: "Tanoglu A, Erdem H, Friedland JS, Almajid FM, Batirel A, Kulzhanova S, et al. Clinicopathological profile of gastrointestinal tuberculosis: a multinational ID-IRI study. Eur J Clin Microbiol Infect Dis. 2020;39(3):493-500.", doi: "10.1007/s10096-019-03749-y", tag: "Multinational retrospective study (incl. Saudi Arabia)" },
+        { n: 126, text: "Kedia S, Das P, Madhusudhan KS, Dattagupta S, Sharma R, Sahni P, et al. Differentiating Crohn's disease from intestinal tuberculosis. World J Gastroenterol. 2019;25(4):418-432.", doi: "10.3748/wjg.v25.i4.418", tag: "Narrative review" },
+        { n: 127, text: "Chen W, Fan JH, Luo W, Peng P, Su SB. Effectiveness of interferon-gamma release assays for differentiating intestinal tuberculosis from Crohn's disease: a meta-analysis. World J Gastroenterol. 2013;19(44):8133-40.", doi: "10.3748/wjg.v19.i44.8133", tag: "Meta-analysis" },
+        { n: 128, text: "Kedia S, Sharma R, Sreenivas V, Madhusudhan KS, Sharma V, Bopanna S, et al. Accuracy of computed tomographic features in differentiating intestinal tuberculosis from Crohn's disease: a systematic review with meta-analysis. Intest Res. 2017;15(2):149-159.", doi: "10.5217/ir.2017.15.2.149", tag: "Systematic review and meta-analysis" },
+        { n: 129, text: "Jin T, Fei B, Zhang Y, He X. The diagnostic value of polymerase chain reaction for Mycobacterium tuberculosis to distinguish intestinal tuberculosis from crohn's disease: A meta-analysis. Saudi J Gastroenterol. 2017;23(1):3-10.", doi: "10.4103/1319-3767.199135", tag: "Meta-analysis" },
+        { n: 130, text: "Pratap Mouli V, Munot K, Ananthakrishnan A, Kedia S, Addagalla S, Garg SK, et al. Endoscopic and clinical responses to anti-tubercular therapy can differentiate intestinal tuberculosis from Crohn's disease. Aliment Pharmacol Ther. 2017;45(1):27-36.", doi: "10.1111/apt.13840", tag: "Retrospective study with prospective validation" },
+        { n: 131, text: "Jullien S, Jain S, Ryan H, Ahuja V. Six-month therapy for abdominal tuberculosis. Cochrane Database Syst Rev. 2016;11(11):CD012163.", doi: "10.1002/14651858.CD012163.pub2", tag: "Systematic review of RCTs (Cochrane)" },
+        { n: 132, text: "Tanoglu A, Erdem H, Friedland JS, Almajid FM, Batirel A, Kulzhanova S, et al. Clinicopathological profile of gastrointestinal tuberculosis: a multinational ID-IRI study. Eur J Clin Microbiol Infect Dis. 2020;39(3):493-500.", doi: "10.1007/s10096-019-03749-y", tag: "Multinational retrospective study (incl. Saudi Arabia)" },
       ],
     },
     {
       title: "Case 10 — Peritoneal TB",
       items: [
-        { n: 126, text: "Sanai FM, Bzeizi KI. Systematic review: tuberculous peritonitis--presenting features, diagnostic strategies and treatment. Aliment Pharmacol Ther. 2005;22(8):685-700.", doi: "10.1111/j.1365-2036.2005.02645.x", tag: "Systematic review (Riyadh, Saudi Arabia)" },
-        { n: 127, text: "Liu Q, Zhang Q, Guan Q, Xu JF, Shi QL. Abdominopelvic tuberculosis mimicking advanced ovarian cancer and pelvic inflammatory disease: a series of 28 female cases. Arch Gynecol Obstet. 2014;289(3):623-9.", doi: "10.1007/s00404-013-3034-2", tag: "Retrospective case series" },
-        { n: 128, text: "Mahajan M, Prasad ML, Kumar P, Kumar A, Chatterjee N, Singh S, et al. An Updated Systematic Review and Meta-Analysis for the Diagnostic Test Accuracy of Ascitic Fluid Adenosine Deaminase in Tuberculous Peritonitis. Infect Chemother. 2023;55(2):264-277.", doi: "10.3947/ic.2023.0014", tag: "Systematic review and meta-analysis" },
-        { n: 129, text: "Hossain J, al-Aska AK, al Mofleh I. Laparoscopy in tuberculous peritonitis. J R Soc Med. 1992;85(2):89-91.", doi: "10.1177/014107689208500212", tag: "Case series (Riyadh, Saudi Arabia)" },
-        { n: 130, text: "Sun J, Zhang H, Song Z, Jin L, Yang J, Gu J, et al. The negative impact of increasing age and underlying cirrhosis on the sensitivity of adenosine deaminase in the diagnosis of tuberculous peritonitis: a cross-sectional study in eastern China. Int J Infect Dis. 2021;110:204-212.", doi: "10.1016/j.ijid.2021.07.061", tag: "Cross-sectional study" },
-        { n: 131, text: "Waness A, Al Shohaib S. Tuberculous peritonitis associated with peritoneal dialysis. Saudi J Kidney Dis Transpl. 2012;23(1):44-7.", url: "https://pubmed.ncbi.nlm.nih.gov/22237217/", tag: "Retrospective cohort (Jeddah, Saudi Arabia)" },
+        { n: 133, text: "Sanai FM, Bzeizi KI. Systematic review: tuberculous peritonitis--presenting features, diagnostic strategies and treatment. Aliment Pharmacol Ther. 2005;22(8):685-700.", doi: "10.1111/j.1365-2036.2005.02645.x", tag: "Systematic review (Riyadh, Saudi Arabia)" },
+        { n: 134, text: "Liu Q, Zhang Q, Guan Q, Xu JF, Shi QL. Abdominopelvic tuberculosis mimicking advanced ovarian cancer and pelvic inflammatory disease: a series of 28 female cases. Arch Gynecol Obstet. 2014;289(3):623-9.", doi: "10.1007/s00404-013-3034-2", tag: "Retrospective case series" },
+        { n: 135, text: "Mahajan M, Prasad ML, Kumar P, Kumar A, Chatterjee N, Singh S, et al. An Updated Systematic Review and Meta-Analysis for the Diagnostic Test Accuracy of Ascitic Fluid Adenosine Deaminase in Tuberculous Peritonitis. Infect Chemother. 2023;55(2):264-277.", doi: "10.3947/ic.2023.0014", tag: "Systematic review and meta-analysis" },
+        { n: 136, text: "Hossain J, al-Aska AK, al Mofleh I. Laparoscopy in tuberculous peritonitis. J R Soc Med. 1992;85(2):89-91.", doi: "10.1177/014107689208500212", tag: "Case series (Riyadh, Saudi Arabia)" },
+        { n: 137, text: "Sun J, Zhang H, Song Z, Jin L, Yang J, Gu J, et al. The negative impact of increasing age and underlying cirrhosis on the sensitivity of adenosine deaminase in the diagnosis of tuberculous peritonitis: a cross-sectional study in eastern China. Int J Infect Dis. 2021;110:204-212.", doi: "10.1016/j.ijid.2021.07.061", tag: "Cross-sectional study" },
+        { n: 138, text: "Waness A, Al Shohaib S. Tuberculous peritonitis associated with peritoneal dialysis. Saudi J Kidney Dis Transpl. 2012;23(1):44-7.", url: "https://pubmed.ncbi.nlm.nih.gov/22237217/", tag: "Retrospective cohort (Jeddah, Saudi Arabia)" },
       ],
     },
     {
       title: "Start here questions",
       items: [
-        { n: 132, text: "Temfack E, Rim JJB, Spijker R, Loyse A, Chiller T, Pappas PG, et al. Cryptococcal Antigen in Serum and Cerebrospinal Fluid for Detecting Cryptococcal Meningitis in Adults Living With Human Immunodeficiency Virus: Systematic Review and Meta-Analysis of Diagnostic Test Accuracy Studies. Clin Infect Dis. 2021;72(7):1268-1278.", doi: "10.1093/cid/ciaa1243", tag: "Diagnostic test accuracy systematic review and meta-analysis" },
-        { n: 133, text: "Hevey MA, George IA, Rauseo AM, Larson L, Powderly W, Spec A. Performance of the Lateral Flow Assay and the Latex Agglutination Serum Cryptococcal Antigen Test in Cryptococcal Disease in Patients with and without HIV. J Clin Microbiol. 2020;58(11):e01563-20.", doi: "10.1128/JCM.01563-20", tag: "Retrospective single-centre study" },
-        { n: 134, text: "Dixon WG, Hyrich KL, Watson KD, Lunt M, Galloway J, Ustianowski A, et al. Drug-specific risk of tuberculosis in patients with rheumatoid arthritis treated with anti-TNF therapy: results from the British Society for Rheumatology Biologics Register (BSRBR). Ann Rheum Dis. 2010;69(3):522-8.", doi: "10.1136/ard.2009.118935", tag: "Prospective national registry study — BSRBR" },
-        { n: 135, text: "Jung SM, Ju JH, Park MS, Kwok SK, Park KS, Kim HY, et al. Risk of tuberculosis in patients treated with anti-tumor necrosis factor therapy: a nationwide study in South Korea, a country with an intermediate tuberculosis burden. Int J Rheum Dis. 2015;18(3):323-30.", doi: "10.1111/1756-185X.12530", tag: "Nationwide claims-database cohort (South Korea)" },
+        { n: 139, text: "Temfack E, Rim JJB, Spijker R, Loyse A, Chiller T, Pappas PG, et al. Cryptococcal Antigen in Serum and Cerebrospinal Fluid for Detecting Cryptococcal Meningitis in Adults Living With Human Immunodeficiency Virus: Systematic Review and Meta-Analysis of Diagnostic Test Accuracy Studies. Clin Infect Dis. 2021;72(7):1268-1278.", doi: "10.1093/cid/ciaa1243", tag: "Diagnostic test accuracy systematic review and meta-analysis" },
+        { n: 140, text: "Hevey MA, George IA, Rauseo AM, Larson L, Powderly W, Spec A. Performance of the Lateral Flow Assay and the Latex Agglutination Serum Cryptococcal Antigen Test in Cryptococcal Disease in Patients with and without HIV. J Clin Microbiol. 2020;58(11):e01563-20.", doi: "10.1128/JCM.01563-20", tag: "Retrospective single-centre study" },
+        { n: 141, text: "Dixon WG, Hyrich KL, Watson KD, Lunt M, Galloway J, Ustianowski A, et al. Drug-specific risk of tuberculosis in patients with rheumatoid arthritis treated with anti-TNF therapy: results from the British Society for Rheumatology Biologics Register (BSRBR). Ann Rheum Dis. 2010;69(3):522-8.", doi: "10.1136/ard.2009.118935", tag: "Prospective national registry study — BSRBR" },
+        { n: 142, text: "Jung SM, Ju JH, Park MS, Kwok SK, Park KS, Kim HY, et al. Risk of tuberculosis in patients treated with anti-tumor necrosis factor therapy: a nationwide study in South Korea, a country with an intermediate tuberculosis burden. Int J Rheum Dis. 2015;18(3):323-30.", doi: "10.1111/1756-185X.12530", tag: "Nationwide claims-database cohort (South Korea)" },
       ],
     },
   ],
