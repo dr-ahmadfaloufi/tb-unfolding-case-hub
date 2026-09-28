@@ -31,9 +31,13 @@ function initPresentationToggle() {
 // ---------- hub page ----------
 
 const HUB_SECTIONS = {
+  pulmonary: {
+    title: "Pulmonary TB",
+    intro: "Four cases centred on the lung and on exposure: isoniazid-resistant TB, MDR-TB, HIV-associated miliary TB, and a health worker's exposure.",
+  },
   extrapulmonary: {
     title: "Extrapulmonary TB",
-    intro: "Five cases beyond the lung: pleural, spinal, meningeal, intestinal and peritoneal TB.",
+    intro: "Six cases beyond the lung: mediastinal lymph node, pleural, spinal, meningeal, intestinal and peritoneal TB.",
   },
 };
 

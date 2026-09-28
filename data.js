@@ -257,6 +257,7 @@ const CASES = [
   // ============================================================
   {
     id: 1,
+    section: "pulmonary",
     title: "34-year-old laborer with 6 weeks of productive cough and weight loss",
     hubDescription:
       "A subacute cough with a cavity on CXR: the differential and its tests, what a rifampin-susceptible rapid result does and doesn't tell you, and the WHO, ATS and Saudi guidance behind the regimen once the full picture is in.",
@@ -483,6 +484,7 @@ const CASES = [
   // ============================================================
   {
     id: 2,
+    section: "pulmonary",
     title: "42-year-old woman with recurrent cough and hemoptysis after prior TB treatment",
     hubDescription:
       "A retreatment patient with adherence gaps returns with new respiratory symptoms: rapid resistance testing, what to do when molecular and phenotypic results disagree, global vs Saudi resistance data, current short regimens, and the alternative when pregnancy rules out the first choice.",
@@ -794,6 +796,7 @@ const CASES = [
   // ============================================================
   {
     id: 3,
+    section: "pulmonary",
     title:
       "36-year-old man with new HIV diagnosis, fever, and progressive dyspnea",
     hubDescription:
@@ -1143,6 +1146,7 @@ const CASES = [
   // ============================================================
   {
     id: 4,
+    section: "extrapulmonary",
     title: "29-year-old expatriate worker with fever, night sweats, and mediastinal lymphadenopathy",
     hubDescription:
       "Fever, night sweats and mediastinal lymphadenopathy with no lung findings: a broad differential, choosing how and where to biopsy, then treatment duration and paradoxical reactions.",
@@ -1316,6 +1320,7 @@ const CASES = [
   // ============================================================
   {
     id: 5,
+    section: "pulmonary",
     title: "32-year-old ICU nurse with an unmasked TB exposure",
     hubDescription:
       "A high-risk occupational TB exposure: who counts as exposed, the window period, a pneumonia that isn't TB, IGRA vs TST, and short-course preventive treatment.",
