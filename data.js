@@ -1793,7 +1793,7 @@ const CASES = [
             <li><strong>Tuberculous pleurisy</strong>
               <ul>
                 <li><strong>Diagnostic thoracentesis:</strong> protein and lactate dehydrogenase (LDH) (to confirm an exudate by Light's criteria) ${cite(98)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
-                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(99)}</li>
+                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(99)} A normal CXR doesn't mean normal lungs: CT shows lung lesions in about three-quarters or more of patients. When the CT is also clear, respiratory samples rarely grow TB (bronchial aspirate 1/14 ${cite(137)}; sputum 0/5 ${cite(138)}). Bronchoscopy helps mainly when the CT shows a lesion, especially consolidation. ${cite(137)}</li>
               </ul>
             </li>
             <li><strong>Parapneumonic effusion or empyema</strong>
@@ -1935,7 +1935,7 @@ const CASES = [
           <ul>
             <li><strong>Classification changes.</strong> Under the Saudi National Tuberculosis Programme (NTP) Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
             <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for latent TB infection (LTBI)" (Saudi policy, strong). ${cite(5)}</li>
-            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(99)}</li>
+            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(99)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(137, 138)}</li>
             <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
             <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
           </ul>`,
@@ -3084,6 +3084,8 @@ const REFERENCES = {
         { n: 104, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
         { n: 105, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
         { n: 106, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
+        { n: 137, text: "Lee J, Lee SY, Choi KJ, Lim JK, Yoo SS, Lee SY, et al. Clinical utility of CT-based bronchial aspirate TB-PCR for the rapid diagnosis of pleural tuberculosis. Tuberc Respir Dis (Seoul). 2013;75(4):150-6.", doi: "10.4046/trd.2013.75.4.150", tag: "Prospective diagnostic study" },
+        { n: 138, text: "Young SL, Chua BLW, Tan QL, Leong CK, Wong JJY, Phua IGCS, et al. Pleural and parenchymal radiological characteristics of tuberculous pleuritis and correlation with microbiological and molecular diagnostic yield. BMC Pulm Med. 2025;25(1):525.", doi: "10.1186/s12890-025-03995-1", tag: "Retrospective cohort study" },
       ],
     },
     {
