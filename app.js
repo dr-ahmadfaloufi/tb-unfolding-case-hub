@@ -28,6 +28,21 @@ function initPresentationToggle() {
   });
 }
 
+// ---------- presenter mode (R3-43; separate from presentation mode above) ----------
+// ?presenter=1 switches it on and remembers it; ?presenter=0 switches it off.
+
+function isPresenterMode() {
+  const KEY = "tbhub-presenter";
+  const param = new URLSearchParams(window.location.search).get("presenter");
+  try {
+    if (param === "1") localStorage.setItem(KEY, "1");
+    else if (param === "0") localStorage.removeItem(KEY);
+    return localStorage.getItem(KEY) === "1";
+  } catch (e) {
+    return param === "1";
+  }
+}
+
 // ---------- hub page ----------
 
 const HUB_SECTIONS = {
@@ -84,10 +99,56 @@ function renderCase() {
 
   document.title = `Case ${caseData.id} — ${caseData.title}`;
 
+  const presenter = isPresenterMode();
+  const stageParts = caseData.stages.map((s) => splitSections(s.reveal));
+
   const state = {
     current: 0,
     revealed: caseData.stages.map(() => false),
+    shownParts: caseData.stages.map(() => 0), // presenter mode: sections revealed so far
+    pointsOpen: false, // presenter panel; closed on every new stage
   };
+
+  function resetProgress() {
+    state.current = 0;
+    state.revealed = caseData.stages.map(() => false);
+    state.shownParts = caseData.stages.map(() => 0);
+    state.pointsOpen = false;
+  }
+
+  function goToStage(i) {
+    state.current = i;
+    state.pointsOpen = false;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function pointsPanelHtml(stage) {
+    if (!presenter) return "";
+    const list = stage.points && stage.points.length
+      ? `<ol>${stage.points.map((p) => `<li>${p}</li>`).join("")}</ol>`
+      : `<p>No discussion points yet for this stage.</p>`;
+    return `
+      <div class="presenter-points${state.pointsOpen ? " open" : ""}">
+        <button type="button" class="presenter-points-toggle" id="presenter-points-btn"
+          aria-expanded="${state.pointsOpen}" aria-controls="presenter-points-body" title="Toggle with the P key">
+          ${state.pointsOpen ? "&#9662;" : "&#9656;"} Points to discuss <span class="presenter-key">P</span>
+        </button>
+        <div class="presenter-points-body" id="presenter-points-body" ${state.pointsOpen ? "" : "hidden"}>${list}</div>
+      </div>`;
+  }
+
+  function togglePoints() {
+    state.pointsOpen = !state.pointsOpen;
+    const panel = document.querySelector(".presenter-points");
+    if (!panel) return;
+    const btn = document.getElementById("presenter-points-btn");
+    const body = document.getElementById("presenter-points-body");
+    panel.classList.toggle("open", state.pointsOpen);
+    btn.setAttribute("aria-expanded", String(state.pointsOpen));
+    btn.innerHTML = `${state.pointsOpen ? "&#9662;" : "&#9656;"} Points to discuss <span class="presenter-key">P</span>`;
+    body.hidden = !state.pointsOpen;
+  }
 
   function stageNavHtml() {
     const dots = caseData.stages
@@ -117,30 +178,49 @@ function renderCase() {
       ? `<div class="stage-context">${stage.context}</div>`
       : "";
 
-    const revealHtml = isRevealed
-      ? `
+    const pearlHtml = stage.pearl
+      ? `<div class="pearl-box"><span class="pearl-icon">&#128161;</span><div class="pearl-content"><strong class="pearl-label">Pearl</strong>${stage.pearl}</div></div>`
+      : "";
+
+    // Presenter mode reveals one top-level section at a time, all open;
+    // normal mode reveals everything at once, with collapsible sections.
+    const parts = stageParts[state.current];
+    const shown = isRevealed ? parts.length : state.shownParts[state.current];
+    let revealHtml = "";
+    if (presenter && shown > 0) {
+      revealHtml = `
+        <div class="reveal-block">
+          ${parts.slice(0, shown).join("")}
+          ${isRevealed ? pearlHtml + (stage.revealExtra || "") : ""}
+        </div>`;
+    } else if (!presenter && isRevealed) {
+      revealHtml = `
         <div class="reveal-block">
           ${collapsibleSections(stage.reveal)}
-          ${
-            stage.pearl
-              ? `<div class="pearl-box"><span class="pearl-icon">&#128161;</span><div class="pearl-content"><strong class="pearl-label">Pearl</strong>${stage.pearl}</div></div>`
-              : ""
-          }
+          ${pearlHtml}
           ${stage.revealExtra || ""}
-        </div>`
-      : "";
+        </div>`;
+    }
+
+    let revealButtons = `<button type="button" class="btn" id="reveal-btn">Reveal</button>`;
+    if (presenter && parts.length > 1) {
+      revealButtons = `
+        <button type="button" class="btn" id="reveal-next-btn">Reveal next section (${shown + 1} of ${parts.length})</button>
+        <button type="button" class="btn btn-secondary" id="reveal-btn">Reveal all</button>`;
+    }
 
     const actionsHtml = isRevealed
       ? isLast
         ? ""
         : `<div class="stage-actions"><button type="button" class="btn" id="next-stage-btn">Next stage &rarr;</button></div>`
-      : `<div class="stage-actions"><button type="button" class="btn" id="reveal-btn">Reveal</button></div>`;
+      : `<div class="stage-actions">${revealButtons}</div>`;
 
     return `
       <div class="stage-card">
         <p class="stage-title">Stage ${state.current + 1} of ${caseData.stages.length} &mdash; ${stage.title}</p>
         ${contextHtml}
         <p class="stage-question">${stage.question}</p>
+        ${pointsPanelHtml(stage)}
         ${revealHtml}
         ${actionsHtml}
       </div>
@@ -182,35 +262,42 @@ function renderCase() {
     if (revealBtn) {
       revealBtn.addEventListener("click", () => {
         state.revealed[state.current] = true;
+        state.shownParts[state.current] = stageParts[state.current].length;
         render();
       });
     }
+    const revealNextBtn = document.getElementById("reveal-next-btn");
+    if (revealNextBtn) {
+      revealNextBtn.addEventListener("click", () => {
+        const i = state.current;
+        state.shownParts[i] += 1;
+        if (state.shownParts[i] >= stageParts[i].length) state.revealed[i] = true;
+        render();
+        const shownSections = document.querySelectorAll(".reveal-block > .presenter-part");
+        const last = shownSections[shownSections.length - 1];
+        if (last) last.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    const pointsBtn = document.getElementById("presenter-points-btn");
+    if (pointsBtn) pointsBtn.addEventListener("click", togglePoints);
     const nextBtn = document.getElementById("next-stage-btn");
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
-        if (state.current < caseData.stages.length - 1) {
-          state.current += 1;
-          render();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+        if (state.current < caseData.stages.length - 1) goToStage(state.current + 1);
       });
     }
     const restartBtn = document.getElementById("restart-btn");
     if (restartBtn) {
       restartBtn.addEventListener("click", () => {
-        state.current = 0;
-        state.revealed = caseData.stages.map(() => false);
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        resetProgress();
+        goToStage(0);
       });
     }
     const restartCompleteBtn = document.getElementById("restart-complete-btn");
     if (restartCompleteBtn) {
       restartCompleteBtn.addEventListener("click", () => {
-        state.current = 0;
-        state.revealed = caseData.stages.map(() => false);
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        resetProgress();
+        goToStage(0);
       });
     }
     const toggleAllBtn = document.getElementById("toggle-sections-btn");
@@ -233,9 +320,7 @@ function renderCase() {
     });
     document.querySelectorAll(".stage-dot").forEach((dot) => {
       dot.addEventListener("click", () => {
-        state.current = parseInt(dot.getAttribute("data-stage-index"), 10);
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        goToStage(parseInt(dot.getAttribute("data-stage-index"), 10));
       });
     });
   }
@@ -244,7 +329,42 @@ function renderCase() {
     document.querySelectorAll("details.reveal-section").forEach((d) => (d.open = true));
   });
 
+  if (presenter) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "p" && e.key !== "P") return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target;
+      if (t && (t.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName))) return;
+      e.preventDefault();
+      togglePoints();
+    });
+  }
+
   render();
+}
+
+// Presenter mode: split a reveal at its top-level <h4>s (the same rule as
+// collapsibleSections). Content before the first <h4> belongs to the first part.
+function splitSections(html) {
+  const tpl = document.createElement("template");
+  tpl.innerHTML = html;
+  const parts = [];
+  let current = null;
+  [...tpl.content.childNodes].forEach((node) => {
+    if (node.nodeName === "H4" && current && current.hasHeading) {
+      parts.push(current);
+      current = null;
+    }
+    if (!current) {
+      current = document.createElement("div");
+      current.className = "presenter-part";
+      current.hasHeading = false;
+    }
+    if (node.nodeName === "H4") current.hasHeading = true;
+    current.appendChild(node);
+  });
+  if (current) parts.push(current);
+  return parts.length ? parts.map((d) => d.outerHTML) : [html];
 }
 
 // Long reveals (3+ top-level <h4> headings) become collapsible sections: each

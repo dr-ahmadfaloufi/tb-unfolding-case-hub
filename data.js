@@ -276,6 +276,13 @@ const CASES = [
       {
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
+        points: [
+          "What is your differential, from most to least likely?",
+          "Which test confirms or excludes each diagnosis?",
+          "How many sputum samples, and which tests on each?",
+          "Do the tests go out together or one after another?",
+          "What else does everyone with presumptive TB need?",
+        ],
         reveal: `
           <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with the test that confirms or excludes it:</p>
@@ -313,6 +320,15 @@ const CASES = [
           img(1, "stage2", "afb-smear", "Representative AFB smear (Ziehl-Neelsen stain) — reference image, not this patient's own (negative) result") +
           img(1, "stage2", "cxr", "Right upper lobe cavity"),
         question: "How do you manage isolation and treatment today?",
+        points: [
+          "Does a negative first smear change isolation?",
+          "What makes this patient more infectious?",
+          "Start treatment now, or wait for culture?",
+          "Which first-line regimen, and what do the guidelines offer?",
+          "Why did the older 4-month fluoroquinolone regimens fail, and what changed?",
+          "Who else needs to know today?",
+          "How much does each extra smear add? Morning sample? Fluorescence vs ZN?",
+        ],
         reveal: `
           <ul>
             <li><strong>Airborne isolation now.</strong> A negative first smear does not rule out infectious TB, and <strong>cavitation on CXR independently predicts greater infectiousness</strong>. ${cite(4, 5)}</li>
@@ -381,6 +397,12 @@ const CASES = [
         title: "How far can you trust \"rifampin resistance not detected\"?",
         question:
           "The rapid test says rifampin resistance not detected. How much should that reassure you, and what does it <em>not</em> tell you?",
+        points: [
+          "What exactly does Xpert test, and what does it not test?",
+          "How accurate is the rifampicin result?",
+          "What do those numbers mean in a new patient in a low-resistance setting?",
+          "What if rifampicin resistance <em>is</em> detected? Does MDR-TB risk change what you do?",
+        ],
         reveal: `
           <ul>
             <li><strong>What it looks at:</strong> Xpert checks only the rifampin-resistance region of one gene (<em>rpoB</em>). It does not test isoniazid at all.</li>
@@ -410,6 +432,11 @@ const CASES = [
           "Culture positive at 3 weeks. DST: isoniazid resistant via a <em>katG</em> mutation; rifampin, pyrazinamide, ethambutol susceptible.",
         question:
           "What does a <em>katG</em> mutation tell you about the level of isoniazid resistance?",
+        points: [
+          "Which two genes carry isoniazid resistance?",
+          "Which one matters more clinically, and why?",
+          "Does high-dose isoniazid help?",
+        ],
         reveal: `
           <p>Isoniazid resistance runs through two genes with different clinical weight:</p>
           <h4><em>katG</em> mutations</h4>
@@ -428,6 +455,11 @@ const CASES = [
         title: "Regimen and evidence",
         question:
           "What regimen and duration does current evidence support for rifampin-susceptible, isoniazid-resistant TB?",
+        points: [
+          "Which regimen and duration for rifampicin-susceptible, isoniazid-resistant TB?",
+          "What evidence is it based on, and how strong is it?",
+          "Where do the guidelines agree or differ?",
+        ],
         reveal: `
           <p>Stop isoniazid. Give <strong>rifampin + ethambutol + pyrazinamide + levofloxacin for 6 months</strong>. ${cite(13, 5)}</p>
           <h4>Studies</h4>
@@ -486,6 +518,13 @@ const CASES = [
         title: "The timing question",
         question:
           "What if isoniazid resistance is only confirmed after standard first-line therapy has already started — or what if it is strongly suspected before confirmation?",
+        points: [
+          "Isoniazid resistance found after first-line treatment has started: what now?",
+          "What if it's found very late in treatment?",
+          "When would you start the Hr-TB regimen before confirmation?",
+          "What do you monitor on this regimen?",
+          "When would you extend beyond 6 months?",
+        ],
         reveal: `
           <h4>Resistance confirmed after first-line treatment has started</h4>
           <ul>
@@ -538,6 +577,11 @@ const CASES = [
         title: "What do you send?",
         question:
           "Given this retreatment history, what do you send, specifically?",
+        points: [
+          "What is your differential, from most to least likely?",
+          "What does prior treatment change about testing?",
+          "Which test for each diagnosis?",
+        ],
         reveal: `
           <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
@@ -570,6 +614,14 @@ const CASES = [
         title: "Rifampicin resistance detected: what do you do now?",
         context: "Result: MTB detected, rifampin resistance detected.",
         question: "Rifampicin resistance is detected. What do you do today?",
+        points: [
+          "What do you do today, before full DST?",
+          "Treat as rifampicin-resistant only, or as MDR-TB? Why?",
+          "How are monoresistance, RR, MDR, pre-XDR and XDR defined?",
+          "What do you do before starting a bedaquiline/linezolid regimen (baseline tests, including pregnancy status)?",
+          "What do you send now to choose the regimen?",
+          "How much worse are outcomes with rifampicin-resistant TB?",
+        ],
         reveal: `
           <ul>
             <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages rifampicin-resistant TB (RR-TB) and multidrug-resistant TB (MDR-TB) together as MDR/RR-TB. ${cite(7)}</li>
@@ -612,6 +664,12 @@ const CASES = [
         title: "How far can you trust this result, and what if DST disagrees?",
         question:
           "Xpert says rifampicin-resistant. How reliable is that, and what do you do if culture-based DST disagrees, in either direction?",
+        points: [
+          "How reliable is a \"rifampicin resistance detected\" result?",
+          "Xpert resistant but culture DST susceptible: why, and what do you do?",
+          "The reverse: Xpert susceptible but DST resistant?",
+          "How common is drug resistance, globally and in Saudi Arabia?",
+        ],
         reveal: `
           <ul>
             <li><strong>Mechanism in one line:</strong> Xpert detects mutations in a short rifampicin-resistance region of <em>rpoB</em>. It reads DNA, not growth.</li>
@@ -665,6 +723,13 @@ const CASES = [
           "Culture-based DST confirms resistance to both isoniazid and rifampin (MDR-TB). Fluoroquinolone susceptible, no further resistance identified.",
         question:
           "Given this susceptibility profile, what regimen and duration does current evidence support, and what studies is that based on?",
+        points: [
+          "Which regimen and duration for this susceptibility profile?",
+          "Which trials support it, and what did each show?",
+          "What do WHO, ATS and the Saudi manual recommend?",
+          "What must you check before starting BPaLM in a woman of child-bearing age?",
+          "If BPaLM isn't possible, what other short regimens are there, and which does WHO advise against?",
+        ],
         reveal: `
           <ul>
             <li><strong>Answer: 6-month BPaLM.</strong> For eligible patients:
@@ -780,6 +845,12 @@ const CASES = [
         context: "Before BPaLM is started, her <strong>pregnancy test is positive</strong>.",
         question:
           "BPaLM is not recommended in pregnancy. What does current evidence support instead?",
+        points: [
+          "Why is BPaLM not used in pregnancy?",
+          "Which short regimens have any data in pregnant women, and which trials excluded them?",
+          "What does WHO say about each option in pregnancy?",
+          "If a short regimen isn't possible, what is the fallback?",
+        ],
         reveal: `
           <h4>Which short regimens have data in pregnancy?</h4>
           <div class="table-scroll">
@@ -853,6 +924,12 @@ const CASES = [
       {
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
+        points: [
+          "What is your differential, and how does the travel history shape it?",
+          "Which test for each diagnosis?",
+          "Which tests does advanced HIV (CD4 38) add?",
+          "Which infections can't wait for results?",
+        ],
         reveal: `
           <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
@@ -914,6 +991,11 @@ const CASES = [
         context:
           "Spontaneous sputum smear x2: negative. Sputum NAAT: negative. Urine LAM: negative.",
         question: "Does a negative LAM rule out TB here?",
+        points: [
+          "How sensitive is urine LAM, and in whom?",
+          "Who should get a LAM test at all?",
+          "What does a negative result mean in this patient?",
+        ],
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -971,6 +1053,11 @@ const CASES = [
       {
         title: "What does a LAM result change clinically?",
         question: "Beyond accuracy, does LAM-guided care change outcomes?",
+        points: [
+          "Does LAM-guided care change outcomes, or only diagnosis?",
+          "In which patients was the benefit shown?",
+          "Is this patient one of them?",
+        ],
         reveal: `
           <h4>Trials</h4>
           <div class="table-scroll">
@@ -1004,6 +1091,13 @@ const CASES = [
           "Initial smear, NAAT and LAM are negative; mycobacterial cultures are pending. The clinical and radiographic picture remains highly consistent with disseminated TB.",
         question:
           "What further respiratory sampling do you pursue, and how do you weigh sputum induction against bronchoscopy with BAL?",
+        points: [
+          "Induced sputum vs bronchoscopy: which comes first, and why?",
+          "What do the comparison studies show, and why do they disagree?",
+          "What changes if miliary TB is suspected?",
+          "Is post-bronchoscopy sputum worth sending?",
+          "Can the procedure itself lower culture yield?",
+        ],
         reveal: `
           <h4>Studies</h4>
           <p>All are <strong>paired comparisons</strong> (both methods in the same patients), not randomized trials.</p>
@@ -1059,6 +1153,12 @@ const CASES = [
         title: "Beyond respiratory samples: where else do you look?",
         question:
           "Given hepatosplenomegaly and a disseminated picture, which non-respiratory samples could give the diagnosis faster?",
+        points: [
+          "Which non-respiratory samples could give the diagnosis faster?",
+          "In what order, least to most invasive?",
+          "What tests go on each specimen?",
+          "Does a granuloma prove TB here?",
+        ],
         reveal: `
           <h4>Blood and accessible lesions</h4>
           <ul>
@@ -1087,6 +1187,11 @@ const CASES = [
         title: "When do you stop testing and just treat?",
         question:
           "Given ongoing negative microbiology despite reasonable escalation, how do you decide between further invasive testing and starting empiric treatment?",
+        points: [
+          "What is the cost of waiting in advanced HIV?",
+          "Is a granuloma without a positive culture enough to treat?",
+          "What does the Saudi algorithm say for a seriously ill patient with HIV?",
+        ],
         reveal: `
           <h4>The cost of waiting</h4>
           <ul>
@@ -1116,6 +1221,13 @@ const CASES = [
         title: "TB treatment started. What about his HIV?",
         question:
           "He starts standard TB treatment. When do you start ART, what do you need to watch for, and what else must be added?",
+        points: [
+          "When do you start ART, and does CD4 change the timing?",
+          "What does the trial evidence show?",
+          "What is the exception to early ART?",
+          "What must you watch for after starting ART?",
+          "What else must be added (prophylaxis, interactions)?",
+        ],
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -1230,6 +1342,12 @@ const CASES = [
         title: "What do you pursue first, and why not sputum?",
         question:
           "Given this presentation, what do you pursue first, specifically — and why wouldn't a standard TB sputum workup be your starting point here?",
+        points: [
+          "How does his origin change the pre-test probability?",
+          "What is your differential, from most to least likely?",
+          "Why is sputum not the starting point?",
+          "What do you send from a single node sample?",
+        ],
         reveal: `
           <h4>Pre-test probability</h4>
           <p><em>Why his origin matters:</em> India has the largest TB burden of any country ${cite(11)}, which raises his pre-test probability for TB.</p>
@@ -1265,6 +1383,12 @@ const CASES = [
           img(4, "stage2", "histopath-necrotizing-granuloma", "Necrotizing granulomatous inflammation on EBUS-TBNA cytology"),
         question:
           "Does this rule out TB? How do you interpret a negative smear/NAAT in this context?",
+        points: [
+          "Does a negative smear and NAAT rule out TB in a lymph node?",
+          "What does necrosis tell you: TB or sarcoidosis?",
+          "How can you raise the yield of the same sample?",
+          "Treat now or wait for culture?",
+        ],
         reveal: `
           <h4>Does a negative smear and NAAT rule out TB?</h4>
           <ul>
@@ -1294,6 +1418,11 @@ const CASES = [
         title: "EBUS-TBNA performs very differently across the three diagnoses",
         question:
           "How does EBUS-TBNA's yield differ across TB, sarcoidosis, and lymphoma?",
+        points: [
+          "How well does EBUS-TBNA diagnose TB, sarcoidosis and lymphoma?",
+          "Why is lymphoma the hardest?",
+          "Can these numbers be compared directly?",
+        ],
         reveal: `
           <h4>Yield by diagnosis</h4>
           <div class="table-scroll">
@@ -1330,6 +1459,10 @@ const CASES = [
         title: "When standard EBUS-TBNA isn't enough",
         question:
           "If lymphoma is the concern and needle aspiration is non-diagnostic, what gets you tissue architecture?",
+        points: [
+          "What does a needle aspirate miss in lymphoma?",
+          "Which techniques get tissue architecture, and at what cost?",
+        ],
         reveal: `
           <h4>Getting tissue architecture</h4>
           <ul>
@@ -1347,6 +1480,12 @@ const CASES = [
         title: "EBUS-accessible nodes are non-diagnostic, or the node is out of reach. What next?",
         question:
           "Say the EBUS-reachable nodes were non-diagnostic, or the most suspicious node sits somewhere EBUS can't reach — how do you choose between repeating EBUS, going to CT-guided (interventional radiology, IR) biopsy, or a surgical approach?",
+        points: [
+          "Which node stations can EBUS and EUS reach?",
+          "When is CT-guided biopsy the better choice?",
+          "How do the complication rates compare?",
+          "When do you go to surgery?",
+        ],
         reveal: `
           <h4>Where EBUS and EUS reach</h4>
           <ul>
@@ -1390,6 +1529,12 @@ const CASES = [
           "Culture from the EBUS specimen grows drug-susceptible <em>M. tuberculosis</em>. He starts treatment. At 10 weeks, a repeat CT shows one node has enlarged.",
         question:
           "How long do you treat TB lymphadenitis, and does an enlarging node mean treatment failure?",
+        points: [
+          "How long do you treat TB lymphadenitis?",
+          "Do enlarging nodes mean treatment failure?",
+          "How common is this, and how do you confirm it?",
+          "What should you <em>not</em> do?",
+        ],
         reveal: `
           <h4>Duration</h4>
           <ul>
@@ -1439,6 +1584,14 @@ const CASES = [
         title: "Who counts as exposed, and what do you do now?",
         question:
           "A colleague reports the exposure. Who counts as exposed, and what do you do now?",
+        points: [
+          "When did the index patient become infectious, and when did that end?",
+          "What was her exposure window?",
+          "What raises her priority as a contact?",
+          "How infectious was the source?",
+          "What do you do now, and when do you test?",
+          "When can people mix again (community, congregate settings, hospital)?",
+        ],
         reveal: `
           <h4>1. Define the index patient's infectious period ${cite(4)}</h4>
           <ul>
@@ -1566,6 +1719,12 @@ const CASES = [
         context: "Baseline IGRA at day 3 post-exposure: negative. No symptoms.",
         question:
           "Does this rule out infection? What's next, and does the choice between TST and IGRA matter here?",
+        points: [
+          "What does a day-3 negative IGRA mean?",
+          "When should you repeat it?",
+          "IGRA or TST in a BCG-vaccinated workforce?",
+          "Who gets treatment during the window before the repeat test?",
+        ],
         reveal: `
           <ul>
             <li><strong>No.</strong> It takes up to <strong>8&ndash;10 weeks</strong> after exposure for the immune response to become detectable. A negative test before 8 weeks cannot exclude infection. ${cite(4)}</li>
@@ -1623,6 +1782,11 @@ const CASES = [
         context:
           "Ten days after the exposure she develops <strong>rhinorrhea, fever, cough and shortness of breath</strong>. SpO<sub>2</sub> is 96% on room air, she has no comorbidities, and she is managed as an outpatient. <strong>Chest radiograph (CXR) shows right lower lobe consolidation.</strong>",
         question: "Does this change your TB plan? How do you manage her?",
+        points: [
+          "How likely is TB 10 days after exposure?",
+          "How do you manage her now?",
+          "What do the guidelines say?",
+        ],
         reveal: `
           <p><strong>Differential first</strong>, most to least likely:</p>
           <div class="table-scroll">
@@ -1699,6 +1863,11 @@ const CASES = [
         context: "Nine weeks later, the repeat IGRA is positive. The CAP has resolved.",
         question:
           "What must you establish before treating, and why treat at all?",
+        points: [
+          "What must you exclude before treating infection?",
+          "What is her risk of progressing to disease, and when is it highest?",
+          "Which conditions raise that risk, and which of them mean you should test and treat?",
+        ],
         reveal: `
           <h4>Before treating</h4>
           <ul>
@@ -1761,6 +1930,12 @@ const CASES = [
         title: "Active disease excluded. Which regimen, and what's the evidence?",
         question:
           "Active disease has been excluded. Which preventive regimen do you choose, and what evidence supports it?",
+        points: [
+          "Which preventive regimens are there, and how do they compare?",
+          "6 or 9 months of isoniazid: what does the evidence show?",
+          "What do WHO, CDC/NTCA and the Saudi manual recommend?",
+          "Which regimen for her, and why?",
+        ],
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -1844,6 +2019,11 @@ const CASES = [
         title: "Zooming out: who should be tested for LTBI at all?",
         question:
           "Outside a documented exposure like this one, who should actually be tested for LTBI — and why does that question matter before you even pick a test?",
+        points: [
+          "Why test only if you would treat a positive result?",
+          "Which groups do WHO and the Saudi manual say to test and treat?",
+          "Where do they leave it optional, or advise against?",
+        ],
         reveal: `
           <h4>The principle</h4>
           <ul>
@@ -1901,6 +2081,12 @@ const CASES = [
       {
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
+        points: [
+          "How common is TB as a cause of effusion here?",
+          "What is your differential, from most to least likely?",
+          "What do you send on the pleural fluid?",
+          "Is sputum worth sending with a clear lung field?",
+        ],
         reveal: `
           <h4>Pre-test probability</h4>
           <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(98)}</p>
@@ -1930,6 +2116,12 @@ const CASES = [
           "Straw-coloured exudate, <strong>lymphocyte-predominant</strong>. <strong>ADA 78 U/L.</strong> AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> Cultures pending.",
         question:
           "Does a negative smear and Xpert rule out TB here? How much weight does the ADA carry?",
+        points: [
+          "Transudate or exudate, and how do you decide?",
+          "Does a negative smear and Xpert rule out TB?",
+          "How much weight does the ADA carry?",
+          "What do the guidelines say about ADA?",
+        ],
         reveal: `
           <h4>First: is it a transudate or an exudate?</h4>
           <ul>
@@ -1990,6 +2182,11 @@ const CASES = [
         title: "Treat now, or biopsy first?",
         question:
           "With a lymphocytic, high-ADA exudate and negative microbiology, do you start treatment now or get pleural tissue first?",
+        points: [
+          "What does each specimen add to the diagnosis?",
+          "What do the guidelines say about tissue?",
+          "Treat now or biopsy first, for this patient?",
+        ],
         reveal: `
           <h4>Studies: diagnostic yield of each specimen</h4>
           <div class="table-scroll">
@@ -2029,6 +2226,11 @@ const CASES = [
         context: "He starts treatment. The effusion is moderate and he is breathless.",
         question:
           "What regimen and duration? Should the effusion be drained? Do adjunctive corticosteroids help?",
+        points: [
+          "Which regimen and how long?",
+          "Should the effusion be drained?",
+          "Do steroids help?",
+        ],
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -2069,6 +2271,11 @@ const CASES = [
         context:
           "Three weeks into treatment, the induced-sputum culture sent on day 1 grows <em>M. tuberculosis</em>, fully susceptible. Repeat CXR still shows no parenchymal lesion.",
         question: "Does this change how he is classified, and does it matter for his contacts?",
+        points: [
+          "Does this change how he is classified?",
+          "Does it matter for his contacts?",
+          "What do you update, and who do you notify?",
+        ],
         reveal: `
           <h4>Classification, and why it matters</h4>
           <ul>
@@ -2092,6 +2299,11 @@ const CASES = [
         context:
           "Eight weeks into fully supervised treatment, he feels well. The CXR shows the right effusion has <strong>enlarged</strong>.",
         question: "Is this treatment failure? What do you do?",
+        points: [
+          "Is this treatment failure?",
+          "How common is it?",
+          "What do you do, and what don't you change?",
+        ],
         reveal: `
           <p><strong>Most likely a paradoxical response, but that is a diagnosis of exclusion.</strong> It is made only after a thorough evaluation has excluded other causes, particularly <strong>treatment failure and drug resistance</strong>. New or enlarging pleural effusions are a recognised pattern. ${cite(3)} Here his isolate is fully susceptible and adherence is documented.</p>
           <h4>How common</h4>
