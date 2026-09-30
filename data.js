@@ -330,6 +330,7 @@ const CASES = [
           "How much does each extra smear add? Morning sample? Fluorescence vs ZN?",
         ],
         reveal: `
+          <h4>Today: isolation, samples and treatment</h4>
           <ul>
             <li><strong>Airborne isolation now.</strong> A negative first smear does not rule out infectious TB, and <strong>cavitation on CXR independently predicts greater infectiousness</strong>. ${cite(4, 5)}</li>
             <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic drug-susceptibility testing (DST). ${cite(1)}
@@ -404,6 +405,7 @@ const CASES = [
           "What if rifampicin resistance <em>is</em> detected? Does MDR-TB risk change what you do?",
         ],
         reveal: `
+          <h4>If Xpert reports rifampicin resistance not detected</h4>
           <ul>
             <li><strong>What it looks at:</strong> Xpert checks only the rifampin-resistance region of one gene (<em>rpoB</em>). It does not test isoniazid at all.</li>
             <li><strong>How accurate it is:</strong> in a Cochrane review, <strong>Xpert Ultra detected rifampin resistance with 94.9% sensitivity and 99.1% specificity</strong> (Xpert MTB/RIF: 95.3% / 98.8%; high-certainty evidence). ${cite(13)}</li>
@@ -623,6 +625,7 @@ const CASES = [
           "How much worse are outcomes with rifampicin-resistant TB?",
         ],
         reveal: `
+          <h4>Today, before full DST</h4>
           <ul>
             <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages rifampicin-resistant TB (RR-TB) and multidrug-resistant TB (MDR-TB) together as MDR/RR-TB. ${cite(8)}</li>
             <li><strong>Why "treat as MDR":</strong> the two usually travel together. Worldwide in 2024, <strong>16% of previously treated</strong> patients had MDR/RR-TB, versus <strong>3.2% of new</strong> patients. ${cite(14)}</li>
