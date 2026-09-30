@@ -1813,7 +1813,7 @@ const CASES = [
           ${abbrev("AFB", "CAP", "CXR", "NAAT", "RSV")}
           <h4>How likely is TB now? ${cite(92)}</h4>
           <ul>
-            <li>After infection, the TST converts within <strong>&lt;6 weeks</strong>.</li>
+            <li>Primary infection (new tuberculin reactivity) develops within <strong>about 6 weeks</strong> of exposure.</li>
             <li>Active TB typically appears <strong>3&ndash;9 months</strong> later, and <strong>almost always within 2 years</strong>.</li>
             <li><strong>Disease 10 days after exposure would be biologically implausible.</strong></li>
           </ul>
@@ -1953,13 +1953,13 @@ const CASES = [
                 <tr>
                   <td>Swindells 2019, BRIEF-TB ${cite(106)}</td>
                   <td><strong>1HP</strong> (daily rifapentine + isoniazid &times;1 month) vs <strong>9H</strong>, in <strong>people with HIV</strong></td>
-                  <td>TB/death <strong>0.65 vs 0.67 per 100 PY</strong>; non-inferior; completion <strong>97% vs 90%</strong></td>
+                  <td>TB, TB death or death from unknown cause <strong>0.65 vs 0.67 per 100 PY</strong>; non-inferior; completion <strong>97% vs 90%</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
           ${abbrev("#", "H", "P", "PY", "R")}
-          <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. That is why WHO's recommendation for 1HP is conditional. ${cite(106, 97)}</p>
+          <p style="color:var(--text-muted); font-size:0.9rem;">BRIEF-TB enrolled only people with HIV. WHO's recommendation for 1HP is conditional (low-to-moderate certainty). ${cite(106, 97)}</p>
           <h4>Studies: 6H vs 9H</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -1992,7 +1992,7 @@ const CASES = [
               <tbody>
                 <tr><td>6H</td><td>Strong</td><td>Alternative; strong, moderate (HIV&minus;) / conditional, moderate (HIV+)</td><td><strong>Recommended</strong> (strong, high)</td></tr>
                 <tr><td>9H</td><td>Strong</td><td>Alternative; conditional, moderate</td><td>Alternative</td></tr>
-                <tr><td>3HP</td><td>Strong</td><td>Preferred; strong, moderate</td><td>Alternative (rifapentine unavailable in KSA)</td></tr>
+                <tr><td>3HP</td><td>Strong</td><td>Preferred; strong, moderate</td><td>Alternative</td></tr>
                 <tr><td>3HR</td><td>Strong</td><td>Preferred; conditional, very low (HIV&minus;) / low (HIV+)</td><td>Alternative (3&ndash;4HR)</td></tr>
                 <tr><td>4R</td><td>Conditional</td><td>Preferred; strong, moderate (HIV&minus;)</td><td>Alternative (3&ndash;4R)</td></tr>
                 <tr><td>1HP</td><td>Conditional</td><td>Not addressed</td><td>Not listed</td></tr>
@@ -2004,14 +2004,12 @@ const CASES = [
           <p style="color:var(--text-muted); font-size:0.9rem;">WHO: strong = moderate-to-high certainty; conditional = low-to-moderate certainty; 6Lfx strong, moderate certainty. Saudi alternatives to 6H (low-incidence countries): strong recommendation, moderate&ndash;high-quality evidence. The 6Lfx row is not for this nurse: her source was drug-susceptible.</p>
           <h4>Her regimen</h4>
           <ul>
-            <li><strong>Rifapentine is not available in Saudi Arabia.</strong> 3HP and 1HP are shown as options that exist internationally, <strong>but not what this nurse receives.</strong></li>
             <li><strong>This nurse: 4R</strong>, daily rifampin for 4 months. It is non-inferior to 9H, with higher completion and fewer serious adverse events ${cite(105)}, and is among the preferred short regimens ${cite(98)}.</li>
-            <li><strong>Alternative with no rifapentine: 3HR</strong>, daily isoniazid + rifampin for 3 months (WHO strong recommendation ${cite(97)}).</li>
+            <li><strong>Alternative: 3HR</strong>, daily isoniazid + rifampin for 3 months (WHO strong recommendation ${cite(97)}).</li>
             <li><strong>Dose (Saudi NTP Manual table, &sect;12.5):</strong> rifampicin <strong>10 mg/kg daily, max 600 mg</strong> (adults), for 3&ndash;4 months. For 3HR, add isoniazid 5 mg/kg, max 300 mg. ${cite(5)}</li>
-            <li>Note: the Saudi manual still lists 3HP as an option ${cite(5)}, even though rifapentine is not available locally.</li>
           </ul>`,
         pearl:
-          "Pick the best regimen you can actually get. Rifapentine isn't available here, so 4R or 3HR it is. Short rifamycin regimens are now preferred because they rest on large non-inferiority trials and are completed more often. A regimen that gets finished protects better than a longer one that doesn't.",
+          "Pick the best regimen you can actually get. Short rifamycin regimens are now preferred because they rest on large non-inferiority trials and are completed more often. A regimen that gets finished protects better than a longer one that doesn't.",
       },
       {
         title: "Zooming out: who should be tested for LTBI at all?",
