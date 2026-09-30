@@ -341,9 +341,21 @@ const CASES = [
           ${abbrev("#", "ATS", "CDC", "E", "ERS", "H", "IDSA", "M", "NTP", "P", "R", "Z")}
           <p><strong>What this case uses:</strong> <strong>2HRZE/4HR (RIPE)</strong>, the regimen most widely used in Saudi Arabia and the <strong>Saudi national recommendation</strong> (National Tuberculosis Programme (NTP) Manual 2021, &sect;5.5). ${cite(5)}</p>
           <ul>
-            <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(5)} That wording <strong>carries over WHO's 2017 recommendation</strong>, which followed three phase III trials that failed to show non-inferiority of shorter regimens: RIFAQUIN, REMoxTB and OFLOTUB. ${cite(7)} In RIFAQUIN, the 4-month arm had an unfavourable outcome in <strong>18.2% vs 4.9%</strong> with standard treatment (per protocol). ${cite(8)}
+            <li><em>Nuance:</em> the manual (2021) says "4-month fluoroquinolone-containing regimens should not be used". ${cite(5)} That wording <strong>carries over WHO's 2017 recommendation</strong>, which followed three phase III trials that failed to show non-inferiority of shorter regimens: RIFAQUIN, REMoxTB and OFLOTUB. ${cite(7)}
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead><tr><th>Trial</th><th>Design</th><th>4-month regimen tested</th><th>Result (4-month vs standard)</th><th>Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>REMoxTB</strong>, NEJM 2014 ${cite(143)}</td><td>Double-blind RCT, 1,931 randomised</td><td>Moxifloxacin in place of ethambutol, or in place of isoniazid, for 17 weeks</td><td><strong>Favourable</strong> outcome 85% and 80% vs 92% (per protocol)</td><td>Not non-inferior</td></tr>
+                    <tr><td><strong>OFLOTUB</strong>, NEJM 2014 ${cite(144)}</td><td>Open-label RCT, 1,836, 5 African countries</td><td>Gatifloxacin in place of ethambutol, continued with isoniazid and rifampicin for 4 months</td><td><strong>Unfavourable</strong> outcome 21.0% vs 17.2% (mITT; difference 3.5 points, 95% CI &minus;0.7 to 7.7; margin 6). Recurrence 14.6% vs 7.1%</td><td>Not non-inferior</td></tr>
+                    <tr><td><strong>RIFAQUIN</strong>, NEJM 2014 ${cite(8)}</td><td>RCT, 827 enrolled</td><td>Moxifloxacin daily for 2 months, then twice-weekly rifapentine 900 mg + moxifloxacin for 2 months</td><td><strong>Unfavourable</strong> outcome 18.2% vs 4.9% (per protocol); 26.9% vs 14.4% (mITT)</td><td>Not non-inferior</td></tr>
+                    <tr><td><em>For contrast:</em> <strong>Study 31/A5349</strong>, NEJM 2021 ${cite(9)}</td><td>RCT</td><td>Daily rifapentine 1,200 mg + moxifloxacin + isoniazid + pyrazinamide (2HPZM/2HPM)</td><td><strong>Unfavourable</strong> outcome 15.5% vs 14.6%; difference 1.0 point (95% CI &minus;2.6 to 4.5)</td><td><strong>Non-inferior</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              ${abbrev("CI", "H", "M", "P", "RCT", "Z", "mITT")}
+              <p>The older fluoroquinolone regimens cleared sputum faster (REMoxTB), but at 4 months more patients relapsed. ${cite(143, 144)}</p>
               <ul>
-                <li><strong>Study 31/A5349</strong> (published May 2021): daily rifapentine 1,200 mg + moxifloxacin + isoniazid + pyrazinamide (<strong>2HPZM/2HPM</strong>) was <strong>non-inferior</strong> to 2HRZE/4HR (unfavourable outcome 15.5% vs 14.6%; difference 1.0 point, 95% confidence interval (CI) &minus;2.6 to 4.5). ${cite(9, 6)}</li>
                 <li>These are <strong>different regimens</strong>: daily high-dose rifapentine, versus the older fluoroquinolone substitutions, some given intermittently. ${cite(8, 9)}</li>
                 <li>WHO now conditionally recommends the 4-month isoniazid&ndash;rifapentine&ndash;moxifloxacin&ndash;pyrazinamide regimen for people aged &ge;12 (moderate certainty; first issued in 2022) ${cite(7)}, as does ATS/CDC/ERS/IDSA 2025 ${cite(6)}.</li>
                 <li>Rifapentine is not available in Saudi Arabia, so HPZM isn't a practical option in Kingdom of Saudi Arabia (KSA) either.</li>
@@ -362,20 +374,20 @@ const CASES = [
           <ul>
             <li><strong>What it looks at:</strong> Xpert checks only the rifampin-resistance region of one gene (<em>rpoB</em>). It does not test isoniazid at all.</li>
             <li><strong>How accurate it is:</strong> in a Cochrane review, <strong>Xpert Ultra detected rifampin resistance with 94.9% sensitivity and 99.1% specificity</strong> (Xpert MTB/RIF: 95.3% / 98.8%; high-certainty evidence). ${cite(10)}</li>
-            <li><strong>What that means here:</strong> the same review estimates that when 10% of tested patients have rifampin resistance, Ultra <strong>misses about 5 per 1,000 tested</strong>. In a new patient in a low-resistance setting, where WHO estimates <strong>3.2% of new TB cases globally</strong> have MDR/RR-TB, a "not detected" result is <strong>highly reliable</strong>. ${cite(10, 11)}</li>
+            <li><strong>What that means here:</strong> in a new patient in a low-resistance setting, where WHO estimates <strong>3.2% of new TB cases globally</strong> have MDR/RR-TB ${cite(11)}, the review's pooled Ultra estimates give, per 1,000 tested, about <strong>2 resistant cases missed</strong> and about <strong>9 false "detected" results</strong>. A "not detected" result is right about <strong>99.8%</strong> of the time; a "detected" result only about <strong>78%</strong> of the time. These figures are calculated from the review's pooled estimates; the review itself doesn't state them. ${cite(10)}</li>
             <li><strong>Rarely it misses resistance</strong>, and culture-based DST (or sequencing) confirms the final profile.</li>
             <li><strong>The real open question is isoniazid.</strong> Xpert MTB/RIF says nothing about it. You need <strong>culture-based DST</strong> or a <strong>rapid molecular test for isoniazid (line probe assay)</strong>. The Saudi manual indicates this especially after prior isoniazid treatment or where isoniazid resistance is common. ${cite(5)}</li>
           </ul>
-          <h4>The other way round: rifampicin resistance detected in a low-risk patient</h4>
+          <h4>If Xpert detects rifampicin resistance</h4>
           <ul>
             <li><strong>High multidrug-resistant TB (MDR-TB) risk</strong> (previously treated, including lost to follow-up, relapse or failure; non-converters; contacts of MDR-TB patients): the rifampicin-resistance result is taken as <strong>definitive</strong>, and an RR/MDR-TB regimen is started. ${cite(5)}</li>
-            <li><strong>Low MDR-TB risk:</strong> <strong>repeat Xpert on a second sample</strong> (first-line line probe assay (FL-LPA) can be used instead if available and the sample is smear-positive). ${cite(5)}
+            <li><strong>Low MDR-TB risk:</strong> repeat <strong>Xpert MTB/RIF on a second, separate sputum specimen</strong>, not a retest of the first specimen. This is usually the second specimen collected at diagnosis. If that specimen is smear-positive and a first-line line probe assay (FL-LPA) is available, FL-LPA can confirm instead. ${cite(5)}
               <ul>
                 <li>If the repeat <strong>confirms</strong> rifampicin resistance &rarr; start an MDR-TB regimen.</li>
                 <li>If it <strong>does not</strong> &rarr; start first-line treatment. The second result is taken as correct: false-positive rifampicin-resistance results "are commonly due to laboratory or clerical errors and rarely to technical performance of the assay". ${cite(5)}</li>
               </ul>
             </li>
-            <li><strong>Why:</strong> even with 99.1% specificity ${cite(10)}, a low pre-test probability means a lower positive predictive value, so a single "detected" result in a low-risk patient is more likely to be wrong.</li>
+            <li><strong>Why:</strong> at 3.2% prevalence, about 1 in 5 "detected" results would be false (positive predictive value about 78%, calculated from the pooled estimates above). ${cite(10, 11)} A single "detected" result in a low-risk patient needs confirming.</li>
           </ul>
           <p style="color:var(--text-muted); font-size:0.9rem;">Saudi NTP Manual (2021), Algorithm 1, Step 3.</p>`,
         pearl:
