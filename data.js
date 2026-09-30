@@ -193,6 +193,7 @@ const GLOSSARY = {
   "FVC": "forced vital capacity",
   "GCS": "Glasgow Coma Scale",
   "GI": "gastrointestinal",
+  "HIV": "human immunodeficiency virus",
   "GRADE": "Grading of Recommendations Assessment, Development and Evaluation",
   "HR": "hazard ratio",
   "Hr-TB": "isoniazid-resistant, rifampicin-susceptible TB",
@@ -240,6 +241,7 @@ const GLOSSARY = {
   "TPT": "TB preventive treatment",
   "TST": "tuberculin skin test",
   "XDR-TB": "extensively drug-resistant TB",
+  "ZN": "Ziehl–Neelsen",
   "ATS": "American Thoracic Society",
   "CDC": "US Centers for Disease Control and Prevention",
   "ERS": "European Respiratory Society",
@@ -981,26 +983,28 @@ const CASES = [
           "What further respiratory sampling do you pursue, and how do you weigh sputum induction against bronchoscopy with BAL?",
         reveal: `
           <h4>Studies</h4>
+          <p>All are <strong>paired comparisons</strong> (both methods in the same patients), not randomized trials.</p>
           <div class="table-scroll">
             <table class="data-table">
-              <thead><tr><th>Study</th><th>Design</th><th>Comparison</th><th>Key result</th></tr></thead>
+              <thead><tr><th>Study</th><th>Design</th><th>Comparison</th><th>Tests compared</th><th>Key result (induced sputum vs bronchoscopy)</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>McWilliams et al., Thorax 2002 ${cite(45)}</td>
-                  <td>Prospective, 129 subjects, smear-negative or unable to expectorate</td>
-                  <td>3 induced sputum samples vs 1 bronchoscopy</td>
-                  <td>Induced sputum detected 26/27 (96%) vs bronchoscopy 14/27 (52%) of smear-negative/culture-positive cases, p&lt;0.005; ~&#8531; of the cost</td>
-                </tr>
-                <tr>
-                  <td>Musso et al., BMC Infect Dis 2025 ${cite(46)}</td>
-                  <td>Retrospective, 215 patients, low-prevalence setting</td>
-                  <td>1 induced sputum vs 1 BAL</td>
-                  <td>BAL sensitivity 84.6% vs 38.5% (both 100% specificity)</td>
-                </tr>
+                <tr><td>Anderson et al., AJRCCM 1995 ${cite(148)}</td><td>Prospective, 101 patients, Montreal; induced sputum 2&ndash;48 h before bronchoscopy</td><td>1 induced sputum vs 1 bronchoscopy</td><td>Fluorescent smear + culture</td><td>Smear 19% vs 12%; <strong>culture 77% vs 73%</strong>; cost C$22 vs C$188</td></tr>
+                <tr><td>Conde et al., AJRCCM 2000 ${cite(149)}</td><td>Prospective, 251 patients, Rio de Janeiro (17% of TB cases HIV-positive)</td><td>1 induced sputum vs BAL, same day</td><td>ZN smear + culture</td><td>HIV-negative: smear 33.8% vs 38.1%, culture 66.9% vs 74.5%. HIV-positive: smear 36% vs 40%, culture 60% vs 60%. <strong>No significant difference</strong></td></tr>
+                <tr><td>McWilliams et al., Thorax 2002 ${cite(45)}</td><td>Prospective, 129 subjects, smear-negative or unable to expectorate</td><td>3 induced sputum samples vs 1 bronchoscopy</td><td>Fluorescent smear + culture</td><td>Induced sputum detected 26/27 (96%) vs bronchoscopy 14/27 (52%) of smear-negative/culture-positive cases, p&lt;0.005; bronchoscopy smear yield zero; ~&#8531; of the cost</td></tr>
+                <tr><td>Saglam et al., J Int Med Res 2005 ${cite(150)}</td><td>Prospective, 55 patients, Turkey, all HIV-negative</td><td>1 induced sputum vs bronchial lavage 18&ndash;24 h later</td><td>ZN smear + culture</td><td>Smear 47% vs 53%; culture 63% vs 67%; no significance test reported</td></tr>
+                <tr><td>Brown et al., CID 2007 ${cite(151)}</td><td>Prospective, 140 inpatients unable to expectorate, London</td><td>Induced sputum (3&ndash;5 samples) vs BAL in 21 smear-negative patients</td><td>Auramine smear + culture</td><td>BAL added <strong>no cases</strong>: all 5 BAL-positive patients were already culture-positive on induced sputum, and BAL missed 2 induced-sputum-positive cases</td></tr>
+                <tr><td>Musso et al., BMC Infect Dis 2025 ${cite(46)}</td><td>Retrospective, 215 patients, low-prevalence setting</td><td>2 induced sputum samples vs 1 BAL</td><td>Smear + PCR/Xpert + culture</td><td>Smear 1 vs 3 patients; <strong>PCR/Xpert 5 vs 20</strong>; culture 9 vs 15. Sensitivity 38.5% vs 84.6% (both 100% specificity)</td></tr>
+                <tr><td>Luo et al., BMC Pulm Med 2020 ${cite(152)}</td><td>Meta-analysis, 5 paired studies, 586 patients</td><td>Induced sputum vs bronchoscopy</td><td>Smear + culture</td><td>Culture 72% vs 70%; smear 35% vs 38%; <strong>similar</strong></td></tr>
               </tbody>
             </table>
           </div>
-          ${abbrev("BAL")}
+          ${abbrev("BAL", "HIV", "PCR", "ZN")}
+          <ul>
+            <li>In Anderson 1995, induced-sputum culture sensitivity rose to <strong>87%</strong> when only patients with an adequate induced sample were counted. ${cite(148)}</li>
+            <li><strong>Why Musso differs:</strong> the induction was mild (2% saline, stepped up from isotonic; quality judged by eye); patients were very paucibacillary (12% had TB, after two negative sputa and negative rapid tests); BAL's advantage came mostly from PCR/Xpert (20 vs 5) rather than culture (15 vs 9); and the reference standard was built from the two tests themselves. It is the only comparison that used PCR/Xpert. ${cite(46)}</li>
+            <li><strong>Post-bronchoscopy sputum:</strong> ATS 2017 cites smear yields of 9&ndash;73% and culture yields of 35&ndash;71% (low confidence). ${cite(1)} In a London series, 4 of 57 smear-negative patients (7%) were culture-positive only on post-bronchoscopy sputum ${cite(153)}; in a prospective series of 495, adding it diagnosed 13 more patients and raised sensitivity from 77.9% to 81.9%. ${cite(154)}</li>
+            <li><strong>The anaesthetic may lower culture yield.</strong> Topical anaesthetics inhibit <em>M. tuberculosis</em>. In 10 patients with consistently culture-positive sputum, sputum coughed up after tracheal lidocaine grew <em>M. tuberculosis</em> in only 5/10 (cultured within 1 h) and 3/10 (after 24 h); after tetracaine, in none. ${cite(155)} 1% lidocaine inhibited all 10 isolates tested in vitro. ${cite(156)} The effect on modern BAL culture or Xpert yield has not been measured.</li>
+          </ul>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
