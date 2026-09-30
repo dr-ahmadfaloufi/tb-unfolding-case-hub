@@ -311,7 +311,13 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Airborne isolation now.</strong> A negative first smear does not rule out infectious TB, and <strong>cavitation on CXR independently predicts greater infectiousness</strong>. ${cite(4, 5)}</li>
-            <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic drug-susceptibility testing (DST). ${cite(1)}</li>
+            <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic drug-susceptibility testing (DST). ${cite(1)}
+              <ul>
+                <li><strong>Each extra smear adds less:</strong> the first detects about 54% of culture-confirmed cases, a second adds about 11%, and a third only 2&ndash;5%. ${cite(1)}</li>
+                <li><strong>Morning sputum:</strong> a first-morning specimen is about 12% more sensitive than a spot specimen. ${cite(1)} A later meta-analysis found no significant gain from morning collection; coaching the patient on how to produce sputum did help (odds ratio (OR) 1.6). ${cite(145)}</li>
+                <li><strong>In the laboratory:</strong> concentrated specimens add about 18% sensitivity, and fluorescence microscopy is on average about 10% more sensitive than Ziehl&ndash;Neelsen (ZN) staining. ${cite(1)}</li>
+              </ul>
+            </li>
             <li><strong>Start treatment now</strong>, without waiting weeks for culture: cavitary disease plus a positive NAAT is enough. ${cite(3)}</li>
             <li><strong>Report</strong> to the public health authority, <strong>start the contact investigation</strong>, and <strong>test for HIV</strong> if not already done. ${cite(3)}</li>
           </ul>
