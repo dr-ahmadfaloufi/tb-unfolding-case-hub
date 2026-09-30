@@ -7,11 +7,13 @@
      node tools/renumber-refs.js --check   report only, change nothing
 
    1. Walks CASES in order (case -> vignette, then each stage's
-      context / question / reveal / pearl / revealExtra), then the
+      context / question / mcq (stem, options, option notes) / reveal /
+      pearl / revealExtra, i.e. display order), then the
       Start-here MCQS (stem, options, option notes, rationale), and records the
       order in which each cite(n) first appears.
    2. Builds an old -> new number map and rewrites every cite(...)
-      inside CASES and MCQS and every `n:` in REFERENCES.groups.
+      inside CASES (stage mcq blocks included: the rewrite covers the
+      whole CASES source text) and MCQS, and every `n:` in REFERENCES.groups.
    3. Rebuilds REFERENCES.groups: one group per case, each reference
       filed under the case that cites it first, sorted by new number.
       References first cited in MCQS get a "Start here" group.
@@ -76,7 +78,12 @@ function record(texts, owner) {
 }
 for (const c of CASES) {
   const texts = [c.vignette];
-  for (const s of c.stages) for (const f of STAGE_FIELDS) texts.push(s[f]);
+  for (const s of c.stages) {
+    for (const f of STAGE_FIELDS) {
+      if (f === "reveal" && s.mcq) texts.push(s.mcq.stem, ...s.mcq.options, ...(s.mcq.optionNotes || []));
+      texts.push(s[f]);
+    }
+  }
   record(texts, c.id);
 }
 for (const mcq of MCQS) record([mcq.stem, ...mcq.options, ...(mcq.optionNotes || []), mcq.rationale], "start");
