@@ -111,7 +111,7 @@ function renderCase() {
   };
 
   function blankMcq() {
-    return { selected: null, checked: false, shown: false };
+    return { selected: null, checked: false, shown: false, skipped: false };
   }
 
   function resetProgress() {
@@ -161,6 +161,7 @@ function renderCase() {
   function stageMcqHtml(stage) {
     if (!stage.mcq) return "";
     const a = state.mcq[state.current];
+    if (a.skipped && !a.checked) return "";
     if (presenter && !a.shown) {
       return `<div class="stage-mcq"><button type="button" class="btn btn-secondary" id="mcq-show-btn">Show options</button></div>`;
     }
@@ -238,11 +239,15 @@ function renderCase() {
     }
 
     // A stage MCQ gates the reveal: Check first, then Reveal as usual.
+    // Presenter mode can skip the MCQ (it then counts as not answered).
     const mcqState = state.mcq[state.current];
-    if (stage.mcq && !mcqState.checked) {
+    if (stage.mcq && !mcqState.checked && !mcqState.skipped) {
       revealButtons = presenter && !mcqState.shown
         ? ""
         : `<button type="button" class="btn" id="stage-mcq-check" ${mcqState.selected === null ? "disabled" : ""}>Check</button>`;
+      if (presenter) {
+        revealButtons += `<button type="button" class="mcq-skip-link" id="mcq-skip-btn">Skip to reveal</button>`;
+      }
     }
 
     const actionsHtml = isRevealed
@@ -346,6 +351,13 @@ function renderCase() {
         render();
       });
     });
+    const mcqSkipBtn = document.getElementById("mcq-skip-btn");
+    if (mcqSkipBtn) {
+      mcqSkipBtn.addEventListener("click", () => {
+        state.mcq[state.current].skipped = true;
+        render();
+      });
+    }
     const mcqCheckBtn = document.getElementById("stage-mcq-check");
     if (mcqCheckBtn) {
       mcqCheckBtn.addEventListener("click", () => {

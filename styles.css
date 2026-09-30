@@ -474,6 +474,17 @@ body.presentation-mode {
 .stage-mcq { margin: 0 0 1.2rem; }
 .stage-mcq-stem { font-weight: 600; margin: 0 0 0.6rem; }
 .stage-mcq .mcq-verdict { margin: 0.8rem 0 0; }
+.mcq-skip-link {
+  align-self: center;
+  background: none;
+  border: 0;
+  padding: 0.3rem 0;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .btn {
   font-size: 1rem;
