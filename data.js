@@ -1017,8 +1017,8 @@ const CASES = [
                 <tr>
                   <td>Same review, CD4 &le;100 ${cite(45)}</td>
                   <td>Advanced HIV</td>
-                  <td>~56% (41&ndash;70%)</td>
-                  <td>not separately reported</td>
+                  <td>54% (38&ndash;69%)</td>
+                  <td>88% (77&ndash;94%)</td>
                   <td>Best-performing subgroup, and still misses about half</td>
                 </tr>
               </tbody>
@@ -1066,7 +1066,7 @@ const CASES = [
                   <td>Peter et al., Lancet 2016 ${cite(46)}</td>
                   <td>HIV-positive inpatients with suspected TB</td>
                   <td>LAM-guided treatment initiation vs standard care</td>
-                  <td>Reduced 8-week mortality; greatest benefit in the sickest, most immunosuppressed, and those unable to expectorate</td>
+                  <td>Reduced 8-week mortality (21% vs 25%; adjusted RR 0.83). The authors suggest the benefit is greatest in the sickest, most immunosuppressed, and those unable to expectorate</td>
                 </tr>
                 <tr>
                   <td>Gupta-Wright et al., STAMP, Lancet 2018 ${cite(47)}</td>
@@ -1161,7 +1161,7 @@ const CASES = [
           <h4>Blood and accessible lesions</h4>
           <ul>
             <li><strong>Mycobacterial blood culture (plus fungal blood culture):</strong> non-invasive, and suited to a CD4 of 38. In a US series of disseminated TB, blood culture grew <em>M. tuberculosis</em> about as often as bone marrow (58% vs 54%). The series was small and retrospective, and these figures are likely overestimates. ${cite(59)}</li>
-            <li><strong>Any reachable lymph node or skin lesion first:</strong> biopsies of localized disease gave the highest yield. ${cite(59)}</li>
+            <li><strong>Any reachable lymph node or skin lesion first:</strong> biopsies of localized disease had a high diagnostic yield. ${cite(59)}</li>
           </ul>
           <h4>Bone marrow and liver</h4>
           <ul>
@@ -1248,7 +1248,7 @@ const CASES = [
                   <td><strong>SAPiT</strong>, NEJM 2011 ${cite(63)}</td>
                   <td>CD4 &lt;500, smear-positive</td>
                   <td>Within 4 wk vs continuation phase</td>
-                  <td><strong>CD4 &lt;50: 8.5 vs 26.3 per 100 PY</strong>; IRIS 20.1 vs 7.7 per 100 PY</td>
+                  <td><strong>CD4 &lt;50: AIDS or death 8.5 vs 26.3 per 100 PY</strong> (P=0.06); IRIS (all patients) 20.1 vs 7.7 per 100 PY</td>
                 </tr>
                 <tr>
                   <td><strong>PredART</strong>, NEJM 2018 ${cite(64)}</td>
