@@ -172,6 +172,7 @@ const GLOSSARY = {
   "ARR": "absolute risk reduction",
   "ART": "antiretroviral therapy",
   "BAL": "bronchoalveolar lavage",
+  "BDLC": "bedaquiline, delamanid, linezolid, clofazimine",
   "CA-125": "cancer antigen 125",
   "CAP": "community-acquired pneumonia",
   "CD": "Crohn's disease",
@@ -705,6 +706,7 @@ const CASES = [
                   <td><strong>BPaLM</strong> (6 months) rather than 9-month or longer (18-month) regimens in MDR/RR-TB</td>
                   <td>Conditional, very low certainty</td>
                 </tr>
+                <tr><td>WHO Module 4 (2025) ${cite(7)}</td><td>WHO <strong>suggests against</strong> the 9-month <strong>DCLLfxZ</strong> or <strong>DCMZ</strong> regimens, compared with longer (&gt;18 months) regimens, in fluoroquinolone-susceptible MDR/RR-TB</td><td>Conditional, very low certainty</td></tr>
                 <tr>
                   <td>Saudi NTP Manual (2021) ${cite(5)}</td>
                   <td><strong>Does not include BPaLM</strong> (it predates it). Longer regimens (<strong>18 months or longer</strong>): all three Group A drugs (levofloxacin/moxifloxacin, bedaquiline, linezolid) + &ge;1 Group B; the "shorter MDR-TB regimen" (<strong>9&ndash;12 months</strong>) described is the <strong>older injectable-containing</strong> one (&sect;10.1, &sect;10.5.2, Algorithm 3)</td>
@@ -723,8 +725,34 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          ${abbrev("ATS", "B", "CDC", "ERS", "FQ", "IDSA", "L", "M", "MDR-TB", "NTP", "Pa", "RR-TB")}
-          <p>If she weren't eligible for BPaLM, other shortened regimens exist (next stage).</p>
+          ${abbrev("ATS", "B", "C", "CDC", "D", "ERS", "FQ", "IDSA", "L", "Lfx", "M", "MDR-TB", "NTP", "Pa", "RR-TB", "Z")}
+          <h4>If BPaLM isn't possible: other short regimens</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial</th><th>Design</th><th>Regimens</th><th>Key result</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>endTB</strong>, NEJM 2025 ${cite(31)}</td>
+                  <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
+                  <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BLLfxCZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
+                  <td>Control 80.7% favorable (mITT). Risk differences: <strong>BLLfxCZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
+                </tr>
+                <tr>
+                  <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(28)}</td>
+                  <td>RCT, 7 countries, age &ge;15, RR-TB without FQ/aminoglycoside resistance; <strong>n=588 randomised (517 mITT)</strong></td>
+                  <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control; also a <strong>6-month bedaquiline regimen <em>with 8 weeks of second-line injectable</em></strong> (injectable-containing)</td>
+                  <td><strong>9-month all-oral vs control:</strong> favourable <strong>162/196 (83%) vs 133/187 (71%)</strong>, adjusted difference 11.0% (95% CI 2.9&ndash;19.0); <strong>non-inferior, and superior on the prespecified test</strong>; grade 3&ndash;4 hearing loss 2% vs 9%. <strong>6-month injectable-containing regimen vs concurrent controls:</strong> <strong>122/134 (91%) vs 87/127 (69%)</strong>, adjusted difference 22.2% (13.1&ndash;31.2); grade 3&ndash;4 hearing loss 4%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          ${abbrev("B", "C", "CI", "D", "FQ", "L", "Lfx", "M", "RCT", "RR-TB", "Z", "mITT")}
+          <p>WHO writes <strong>BLLfxCZ</strong>; the endTB paper writes BCLLfxZ. They are the same regimen.</p>
+          <ul>
+            <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(31)}</li>
+            <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (modified intention to treat, mITT). ${cite(32)}</li>
+            <li><strong>WHO's position on DCMZ, and why:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(31, 7)}</li>
+          </ul>
           <p><em>Local note:</em> the Saudi NTP Manual (2021) predates BPaLM and the newer short regimens. Check your programme's current MDR-TB protocol before prescribing. ${cite(5)}</p>`,
         pearl:
           "BPaLM earns its place through shorter duration and far fewer serious adverse events. The one box you must tick before prescribing it to a woman of child-bearing age is pregnancy status.",
@@ -735,7 +763,20 @@ const CASES = [
         question:
           "BPaLM is not recommended in pregnancy. What does current evidence support instead?",
         reveal: `
-          <h4>6-month option</h4>
+          <h4>Which short regimens have data in pregnancy?</h4>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Trial (regimen)</th><th>Pregnant women</th><th>What the data show</th></tr></thead>
+              <tbody>
+                <tr><td><strong>BEAT Tuberculosis</strong> (BDLLfxC, 6 months) ${cite(30)}</td><td><strong>Enrolled</strong>, any trimester</td><td>10 pregnancies (9 at enrolment, 1 during the trial); <strong>4 received BDLLfxC</strong>; all singleton live births, one premature; one relapse in the strategy arm ${cite(30, 7)}</td></tr>
+                <tr><td><strong>endTB</strong> (9-month BLMZ, BLLfxCZ, BDLLfxZ) ${cite(31)}</td><td><strong>Excluded</strong> at enrolment</td><td>10 (1.3%) became pregnant during the trial and were retained. WHO: "no data from the endTB trial" on these regimens in pregnancy ${cite(31, 7)}</td></tr>
+                <tr><td><strong>endTB-Q</strong> (BDLC, fluoroquinolone-resistant) ${cite(32)}</td><td><strong>Excluded</strong> at enrolment</td><td>5 became pregnant during the trial ${cite(32)}</td></tr>
+                <tr><td><strong>STREAM stage 2</strong> (9-month bedaquiline regimen) ${cite(28)}</td><td><strong>Not enrolled</strong>: contraception was required for women of child-bearing potential</td><td>&mdash;</td></tr>
+              </tbody>
+            </table>
+          </div>
+          ${abbrev("B", "C", "D", "L", "Lfx", "M", "Z")}
+          <h4>The 6-month option: BDLLfxC</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Trial</th><th>Design</th><th>Regimen</th><th>Key result</th></tr></thead>
@@ -750,58 +791,14 @@ const CASES = [
             </table>
           </div>
           ${abbrev("AE", "B", "C", "CI", "D", "FQ", "L", "Lfx", "RCT", "RD")}
-          <h4>9-month options</h4>
-          <div class="table-scroll">
-            <table class="data-table">
-              <thead><tr><th>Trial</th><th>Design</th><th>Regimens</th><th>Key result</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td><strong>endTB</strong>, NEJM 2025 ${cite(31)}</td>
-                  <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
-                  <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BCLLfxZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
-                  <td>Control 80.7% favorable (mITT). Risk differences: <strong>BCLLfxZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
-                </tr>
-                <tr>
-                  <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(28)}</td>
-                  <td>RCT, 7 countries, age &ge;15, RR-TB without FQ/aminoglycoside resistance; <strong>n=588 randomised (517 mITT)</strong></td>
-                  <td><strong>9-month all-oral bedaquiline regimen</strong> vs 9-month injectable-containing control; also a <strong>6-month bedaquiline regimen <em>with 8 weeks of second-line injectable</em></strong> (injectable-containing)</td>
-                  <td><strong>9-month all-oral vs control:</strong> favourable <strong>162/196 (83%) vs 133/187 (71%)</strong>, adjusted difference 11.0% (95% CI 2.9&ndash;19.0); <strong>non-inferior, and superior on the prespecified test</strong>; grade 3&ndash;4 hearing loss 2% vs 9%. <strong>6-month injectable-containing regimen vs concurrent controls:</strong> <strong>122/134 (91%) vs 87/127 (69%)</strong>, adjusted difference 22.2% (13.1&ndash;31.2); grade 3&ndash;4 hearing loss 4%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          ${abbrev("B", "C", "CI", "D", "FQ", "L", "Lfx", "M", "RCT", "RR-TB", "Z", "mITT")}
-          <ul>
-            <li>In endTB's linezolid arms, the linezolid dose was reduced at week 16 or earlier. ${cite(31)}</li>
-            <li><strong>endTB vs endTB-Q:</strong> endTB-Q tested BDLC for <strong>FQ-resistant</strong> (pre-XDR) TB. <strong>Overall non-inferiority was not shown</strong>: favorable 87% vs 89% (modified intention to treat, mITT). ${cite(32)}</li>
-            <li><strong>Why WHO recommends against DCMZ:</strong> endTB called DCMZ non-inferior in mITT, but it failed in the per-protocol analysis and had more culture-positive unfavorable outcomes (7.5%). ${cite(31, 7)}</li>
-            <li><strong>Fallback: longer individualized regimen.</strong> Total <strong>18&ndash;20 months</strong> for most patients, adjusted to response. ${cite(7)}</li>
-          </ul>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Guideline (year)</th><th>Recommendation</th><th>Strength / certainty</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>WHO Module 4 (2025) ${cite(7)}</td>
-                  <td><strong>BDLLfxC</strong> 6 months in MDR/RR-TB <strong>with or without FQ resistance</strong>; usable in pregnancy/breastfeeding and in children</td>
-                  <td>Conditional, very low certainty</td>
-                </tr>
-                <tr>
-                  <td>WHO Module 4 (2025) ${cite(7)}</td>
-                  <td><strong>9-month BLMZ, BCLLfxZ, BDLLfxZ</strong> over longer regimens when FQ resistance is excluded; <strong>preference order BLMZ &gt; BCLLfxZ &gt; BDLLfxZ</strong></td>
-                  <td>Conditional, very low certainty</td>
-                </tr>
-                <tr>
-                  <td>WHO Module 4 (2025) ${cite(7)}</td>
-                  <td><strong>Against</strong> 9-month DCLLfxZ or DCMZ</td>
-                  <td>Conditional, very low certainty</td>
-                </tr>
-                <tr>
-                  <td>WHO Module 4 (2025) ${cite(7)}</td>
-                  <td><strong>9-month all-oral regimen</strong>: bedaquiline &times;6 months + levofloxacin/moxifloxacin, ethionamide, ethambutol, high-dose isoniazid, pyrazinamide, clofazimine &times;4 (&ndash;6) months, then levofloxacin/moxifloxacin, clofazimine, ethambutol, pyrazinamide &times;5 months; <strong>ethionamide may be replaced by 2 months of linezolid 600 mg</strong></td>
-                  <td>Conditional, very low certainty</td>
-                </tr>
+                <tr><td>WHO Module 4 (2025) ${cite(7)}</td><td>WHO <strong>suggests</strong> the 6-month <strong>BDLLfxC</strong> regimen in MDR/RR-TB with or without fluoroquinolone resistance. WHO states it is <strong>recommended for use in pregnant and breastfeeding women</strong></td><td>Conditional, very low certainty</td></tr>
+                <tr><td>WHO Module 4 (2025) ${cite(7)}</td><td>WHO <strong>suggests</strong> the 9-month <strong>BLMZ, BLLfxCZ or BDLLfxZ</strong> over longer (&gt;18 months) regimens when fluoroquinolone resistance has been excluded; BLMZ is preferred over BLLfxCZ, and BLLfxCZ over BDLLfxZ. WHO applies this to pregnant women, although endTB had no data in pregnancy</td><td>Conditional, very low certainty</td></tr>
+                <tr><td>WHO Module 4 (2025) ${cite(7)}</td><td>WHO <strong>suggests</strong> the standardized <strong>9-month all-oral regimen</strong>: bedaquiline &times;6 months + levofloxacin/moxifloxacin, ethionamide, ethambutol, high-dose isoniazid, pyrazinamide, clofazimine &times;4 (&ndash;6) months, then levofloxacin/moxifloxacin, clofazimine, ethambutol, pyrazinamide &times;5 months; <strong>ethionamide may be replaced by 2 months of linezolid 600 mg</strong>. <strong>In pregnancy, use the version with linezolid instead of ethionamide</strong></td><td>Conditional, very low certainty</td></tr>
                 <tr>
                   <td>WHO Module 4 (2025) ${cite(7)}</td>
                   <td><strong>Longer regimens:</strong> 18&ndash;20 months total for most patients</td>
@@ -810,9 +807,13 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          ${abbrev("B", "C", "D", "FQ", "L", "Lfx", "M", "MDR-TB", "RR-TB", "Z")}`,
+          ${abbrev("B", "C", "D", "FQ", "L", "Lfx", "M", "MDR-TB", "RR-TB", "Z")}
+          <p>WHO writes <strong>BLLfxCZ</strong>; the endTB paper writes BCLLfxZ. They are the same regimen.</p>
+          <ul>
+            <li><strong>Fallback: longer individualized regimen.</strong> Total <strong>18&ndash;20 months</strong> for most patients, adjusted to response. ${cite(7)}</li>
+          </ul>`,
         pearl:
-          "When BPaLM is off the table, first ask <em>why</em>. Pregnancy points you to BDLLfxC or an endTB regimen. Linezolid intolerance removes almost every short option. The reason for ineligibility picks the regimen.",
+          "In pregnancy, BDLLfxC is the only short regimen with trial data in pregnant women. WHO extends the endTB regimens to pregnancy on drug-safety grounds, not trial data.",
       },
     ],
   },
