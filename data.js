@@ -1397,7 +1397,7 @@ const CASES = [
             <li><strong>Necrotizing granulomas favor TB over sarcoidosis.</strong>
               <ul>
                 <li>Sarcoidosis is defined by <strong>non-necrotizing</strong> granulomas, plus exclusion of other granulomatous causes. ${cite(72)}</li>
-                <li>In 179 patients having EBUS-TBNA in India, necrosis was seen in <strong>56% of TB</strong> but only <strong>6% of sarcoidosis</strong>. In sarcoidosis it was always focal, never extensive. Cytology alone still misclassified about <strong>29%</strong> of cases. ${cite(73)}</li>
+                <li>In 179 patients having EBUS-TBNA in India, necrosis was seen in <strong>56% of TB</strong> but only <strong>6% of sarcoidosis</strong>. In sarcoidosis it was always focal, never extensive. Among the 135 whose samples showed granulomas, the cytologist's call on granuloma morphology was wrong in about <strong>29%</strong>. ${cite(73)}</li>
               </ul>
             </li>
           </ul>
@@ -1509,7 +1509,7 @@ const CASES = [
           <ul>
             <li><strong>Safety trade-off:</strong>
               <ul>
-                <li><strong>EBUS:</strong> in a systematic review of 16,181 endosonography procedures, serious adverse events occurred in <strong>0.14% overall and 0.05% with EBUS</strong>, with <strong>no deaths</strong>. ${cite(78)}</li>
+                <li><strong>EBUS:</strong> in a systematic review of 16,181 patients having endosonography, serious adverse events occurred in <strong>0.14% overall and 0.05% with EBUS</strong>, with <strong>no deaths</strong>. ${cite(78)}</li>
                 <li><strong>CT-guided biopsy:</strong> in one series of 155 procedures, complications occurred in <strong>13.5%</strong>, with <strong>chest-tube pneumothorax in 1.9%</strong>. ${cite(79)}</li>
               </ul>
             </li>
