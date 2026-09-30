@@ -1033,12 +1033,26 @@ const CASES = [
         question:
           "Given hepatosplenomegaly and a disseminated picture, which non-respiratory samples could give the diagnosis faster?",
         reveal: `
+          <h4>Blood and accessible lesions</h4>
           <ul>
-            <li><strong>Bone marrow aspirate/biopsy:</strong> smear, culture, histopathology; especially if cytopenias are present.</li>
-            <li><strong>Liver biopsy</strong> if hepatomegaly or deranged liver function tests (LFTs).</li>
+            <li><strong>Mycobacterial blood culture (plus fungal blood culture):</strong> non-invasive, and suited to a CD4 of 38. In a US series of disseminated TB, blood culture grew <em>M. tuberculosis</em> about as often as bone marrow (58% vs 54%). The series was small and retrospective, and these figures are likely overestimates. ${cite(146)}</li>
+            <li><strong>Any reachable lymph node or skin lesion first:</strong> biopsies of localized disease gave the highest yield. ${cite(146)}</li>
+          </ul>
+          <h4>Bone marrow and liver</h4>
+          <ul>
+            <li><strong>Bone marrow aspirate and biopsy</strong> (smear, culture, histology), especially with cytopenias. In a Riyadh series of miliary TB, it was diagnostic in 8 of 11 patients (73%). ${cite(147)}</li>
+            <li><strong>Liver biopsy</strong> if the liver is enlarged or the liver enzymes are abnormal: diagnostic in 14 of 16 patients (88%), and 13 of 14 when alkaline phosphatase was high. ${cite(147)}</li>
+          </ul>
+          <h4>At bronchoscopy</h4>
+          <ul>
             <li><strong>If bronchoscopy is done:</strong> send BAL <strong>and</strong> transbronchial biopsy.</li>
           </ul>
-          <p>For all extrapulmonary specimens: send <strong>acid-fast bacilli (AFB) smear, mycobacterial culture, NAAT, and histology</strong>. A positive result supports TB; a negative one never excludes it. ${cite(1)}</p>`,
+          <h4>What to send on every specimen, and how to read it</h4>
+          <ul>
+            <li><strong>Granulomas are not specific to TB:</strong> talaromycosis and histoplasmosis, both on this patient's travel differential, can also involve the marrow, so send fungal culture too.</li>
+          </ul>
+          <p>For all extrapulmonary specimens: send <strong>acid-fast bacilli (AFB) smear, mycobacterial culture, NAAT, and histology</strong>. A positive result supports TB; a negative one never excludes it. ${cite(1)}</p>
+          <p>Neither the ATS/IDSA/CDC nor the Saudi guideline specifically recommends marrow or liver biopsy. This is expert practice supported by case series. ${cite(1, 5)}</p>`,
         pearl:
           "In disseminated TB, the fastest diagnosis often comes from the organ that isn't the lung.",
       },
