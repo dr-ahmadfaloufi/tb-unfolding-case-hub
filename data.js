@@ -1077,7 +1077,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          ${abbrev("LAM")}
+          ${abbrev("LAM", "RR")}
           <h4>What it means for this patient</h4>
           <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized, unable to expectorate reliably) is exactly the phenotype where LAM-guided care showed benefit. ${cite(47)}</p>`,
         pearl:
