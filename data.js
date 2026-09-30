@@ -1434,7 +1434,7 @@ const CASES = [
               <tbody>
                 <tr>
                   <td>Sarcoidosis</td>
-                  <td>Diagnostic yield <strong>80% vs 53%</strong> (endosonography vs bronchoscopy; GRANULOMA RCT). By stage (exploratory): <strong>stage I 84% vs 38%</strong>; stage II 77% vs 66% (not significant). Granuloma detection 74% vs 48%. ${cite(68)}</td>
+                  <td>Granulomas found in <strong>80% vs 53%</strong> of patients with a final diagnosis of sarcoidosis (endosonography vs bronchoscopy; GRANULOMA RCT); 74% vs 48% of all randomized patients. By stage (exploratory): <strong>stage I 84% vs 38%</strong>; stage II 77% vs 66% (not significant). ${cite(68)}</td>
                   <td>The advantage is largest in stage I</td>
                 </tr>
                 <tr>
