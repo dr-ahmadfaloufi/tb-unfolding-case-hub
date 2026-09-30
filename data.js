@@ -277,6 +277,7 @@ const CASES = [
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
+          <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with the test that confirms or excludes it:</p>
           <ol>
             <li><strong>Pulmonary TB</strong>
@@ -301,6 +302,7 @@ const CASES = [
               <ul><li><strong>Aspergillus IgG</strong> <em>if imaging shows a cavity</em>. The ERS/ESCMID definition requires findings present for <strong>&ge;3 months</strong>, so CPA sits last at 6 weeks of symptoms. ${cite(2)}</li></ul>
             </li>
           </ol>
+          <h4>Also send</h4>
           <p><strong>Also send, whatever the differential:</strong> an <strong>HIV test</strong>. CDC and WHO recommend routine HIV testing for everyone with presumptive TB. ${cite(3)}</p>`,
         pearl: `<em>Bedside pitfall:</em> a positive AFB smear is not the same as TB. If the smear is positive but the NAAT is negative, TB becomes unlikely. Think NTM before you start four drugs and notify public health. ${cite(1)}`,
       },
@@ -410,8 +412,12 @@ const CASES = [
           "What does a <em>katG</em> mutation tell you about the level of isoniazid resistance?",
         reveal: `
           <p>Isoniazid resistance runs through two genes with different clinical weight:</p>
+          <h4><em>katG</em> mutations</h4>
           <ul>
             <li><strong><em>katG</em>:</strong> mutations typically confer <strong>high-level resistance</strong>, so isoniazid contributes essentially nothing, even at high dose.</li>
+          </ul>
+          <h4><em>inhA</em> promoter mutations</h4>
+          <ul>
             <li><strong><em>inhA</em> promoter:</strong> mutations typically confer <strong>low-level resistance</strong> that high-dose isoniazid may overcome, <strong>plus cross-resistance to ethionamide/prothionamide</strong>.</li>
           </ul>
           <p>${cite(12)}</p>`,
@@ -481,10 +487,17 @@ const CASES = [
         question:
           "What if isoniazid resistance is only confirmed after standard first-line therapy has already started — or what if it is strongly suspected before confirmation?",
         reveal: `
+          <h4>Resistance confirmed after first-line treatment has started</h4>
           <ul>
             <li><strong>Confirmed after 2HRZE/4HR has started:</strong> repeat rapid rifampin testing. <strong>Once rifampin resistance is excluded, give a full 6-month course of (H)REZ-Lfx.</strong> The 6 months are driven by levofloxacin, so the companion drugs often run longer than 6 months in total. If rifampin resistance is found, switch to an MDR-TB regimen. ${cite(13)}</li>
             <li><strong>Very late confirmation</strong> (e.g. 5 months into 2HRZE/4HR): whether to start 6 months of (H)REZ-Lfx at that point depends on the patient's clinical and microbiological status. ${cite(13)}</li>
+          </ul>
+          <h4>Before confirmation</h4>
+          <ul>
             <li><strong>Strongly presumed isoniazid-resistant TB (Hr-TB)</strong> (e.g. a close contact of a confirmed Hr-TB source): the Hr-TB regimen may be started while DST is pending. If DST later shows isoniazid susceptibility, <strong>stop levofloxacin and complete 2HREZ/4HR</strong>. ${cite(13)}</li>
+          </ul>
+          <h4>Monitoring on this regimen</h4>
+          <ul>
             <li><strong>Monitoring on this regimen:</strong>
               <ul>
                 <li><strong>Liver:</strong> monthly aspartate aminotransferase (AST) where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(13)}</li>
@@ -493,6 +506,9 @@ const CASES = [
                 <li><strong>Absorption:</strong> don't co-administer levofloxacin with antacids or other divalent-cation products. Milk restriction is not needed. ${cite(13)}</li>
               </ul>
             </li>
+          </ul>
+          <h4>Extending treatment, and the alternative</h4>
+          <ul>
             <li><strong>When to consider extending beyond 6 months:</strong> WHO says prolongation <strong>may be considered</strong> for <strong>extensive cavitary disease</strong> or <strong>slow smear/culture conversion</strong>. In slow converters, <strong>first rule out acquired rifampicin (and fluoroquinolone/pyrazinamide) resistance</strong>. ${cite(13)}
               <ul>
                 <li>For comparison, in <em>drug-susceptible</em> TB, ATS/CDC/IDSA extend the continuation phase to 7 months (9 months total) when there is <strong>both</strong> cavitation <strong>and</strong> a positive 2-month culture. ${cite(3)}</li>
@@ -523,6 +539,7 @@ const CASES = [
         question:
           "Given this retreatment history, what do you send, specifically?",
         reveal: `
+          <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>Recurrent TB (relapse or reinfection), possibly with acquired drug resistance</strong>
@@ -545,6 +562,7 @@ const CASES = [
               <ul><li>Computed tomography (CT) chest, then tissue if a mass is seen.</li></ul>
             </li>
           </ol>
+          <h4>Also send and document</h4>
           <p><strong>Also:</strong> HIV test ${cite(3)}; document the prior regimen, the length of interruptions, and any exposure to a resistant source case.</p>`,
         pearl: `<em>Bedside pitfall, specific to retreatment:</em> in someone treated for TB before, a positive Xpert can reflect leftover DNA from dead bacilli. In the Cochrane review, Xpert Ultra specificity fell to <strong>88.2%</strong> in people with a prior TB history, versus 95.6% overall. Always confirm with culture before calling it a new episode. ${cite(10)}`,
       },
@@ -836,6 +854,7 @@ const CASES = [
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
+          <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>Miliary / disseminated TB</strong>
@@ -885,6 +904,7 @@ const CASES = [
               <ul><li>Routine blood cultures (less likely given the 3-week subacute course).</li></ul>
             </li>
           </ol>
+          <h4>Also send</h4>
           <p><strong>Also:</strong> CD4 and HIV viral load if not already done.</p>`,
         pearl:
           "Put urine LAM in your first set of orders. In this population it can be your fastest positive result.",
@@ -952,6 +972,7 @@ const CASES = [
         title: "What does a LAM result change clinically?",
         question: "Beyond accuracy, does LAM-guided care change outcomes?",
         reveal: `
+          <h4>Trials</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Study</th><th>Population</th><th>Comparison</th><th>Key result</th></tr></thead>
@@ -972,6 +993,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("LAM")}
+          <h4>What it means for this patient</h4>
           <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized, unable to expectorate reliably) is exactly the phenotype where LAM-guided care showed benefit. ${cite(43)}</p>`,
         pearl:
           "Who gets tested changes what the evidence says as much as the test itself does. LAM's mortality benefit tracks with illness severity and CD4, not with HIV status alone.",
@@ -1066,11 +1088,18 @@ const CASES = [
         question:
           "Given ongoing negative microbiology despite reasonable escalation, how do you decide between further invasive testing and starting empiric treatment?",
         reveal: `
+          <h4>The cost of waiting</h4>
           <ul>
             <li>In disseminated TB with advanced HIV, delaying treatment carries a real mortality cost. Trial evidence ${cite(43)} supports acting on a strong clinical/radiographic picture.</li>
+          </ul>
+          <h4>Is histology enough?</h4>
+          <ul>
             <li>Necrotizing (caseating) granulomas on histopathology, even with a negative culture, are generally accepted as sufficient to treat as TB in the right clinical context. Histology still has to be read in that context, "because neither false-positive nor false-negative results are rare". ${cite(1)}
               ${img(3, "stage6", "histopath", "Necrotizing (caseating) granulomas on biopsy histopathology")}
             </li>
+          </ul>
+          <h4>Saudi algorithm for seriously ill patients with HIV</h4>
+          <ul>
             <li><strong>Saudi NTP Algorithm 4</strong> (people with HIV who are seriously ill or have CD4 &le;100): ${cite(5)}
               <ul>
                 <li><strong>"Seriously ill"</strong> = any danger sign: respiratory rate &gt;30/min, temperature &gt;39&nbsp;&deg;C, heart rate &gt;120/min, or unable to walk unaided.</li>
@@ -1202,7 +1231,9 @@ const CASES = [
         question:
           "Given this presentation, what do you pursue first, specifically — and why wouldn't a standard TB sputum workup be your starting point here?",
         reveal: `
+          <h4>Pre-test probability</h4>
           <p><em>Why his origin matters:</em> India has the largest TB burden of any country ${cite(11)}, which raises his pre-test probability for TB.</p>
+          <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>TB lymphadenitis</strong>
@@ -1222,6 +1253,7 @@ const CASES = [
             </li>
           </ol>
           <p><strong>Also:</strong> an <strong>HIV test</strong>. CDC and WHO recommend routine HIV testing for everyone with presumptive TB. ${cite(3)}</p>
+          <h4>Why not sputum?</h4>
           <p><strong>Why not sputum?</strong> There is no parenchymal lesion and no cough, so a sputum sample has nothing to reflect. Tissue is the only way to separate the three leading diagnoses.</p>`,
         pearl:
           "When the disease lives in a lymph node and not in the airway, sputum has nothing to sample. Go straight to tissue.",
@@ -1234,15 +1266,25 @@ const CASES = [
         question:
           "Does this rule out TB? How do you interpret a negative smear/NAAT in this context?",
         reveal: `
+          <h4>Does a negative smear and NAAT rule out TB?</h4>
           <ul>
             <li><strong>No, this doesn't rule out TB.</strong> Lymph node TB is paucibacillary, and negative smear/NAAT results on extrapulmonary tissue are common. ${cite(1)}</li>
+          </ul>
+          <h4>Necrosis: TB or sarcoidosis?</h4>
+          <ul>
             <li><strong>Necrotizing granulomas favor TB over sarcoidosis.</strong>
               <ul>
                 <li>Sarcoidosis is defined by <strong>non-necrotizing</strong> granulomas, plus exclusion of other granulomatous causes. ${cite(58)}</li>
                 <li>In 179 patients having EBUS-TBNA in India, necrosis was seen in <strong>56% of TB</strong> but only <strong>6% of sarcoidosis</strong>. In sarcoidosis it was always focal, never extensive. Cytology alone still misclassified about <strong>29%</strong> of cases. ${cite(59)}</li>
               </ul>
             </li>
+          </ul>
+          <h4>Raising the yield</h4>
+          <ul>
             <li><strong>Adding TB-PCR to the EBUS specimen raises the yield.</strong> In 21 patients with TB lymphadenitis, EBUS-TBNA diagnostic accuracy was <strong>57.1%</strong> with histology plus conventional microbiology and <strong>71.4% once TB-PCR on the rinse fluid was added</strong> (p&lt;0.001). <strong>Nodes showing necrosis gave more positive microbiology.</strong> ${cite(60)}</li>
+          </ul>
+          <h4>Treat now, or wait for culture?</h4>
+          <ul>
             <li><strong>In the right epidemiologic context</strong> (here, a young man from India), necrotizing granulomas with a pending culture are enough to <strong>start empiric treatment</strong>. ATS/CDC/IDSA guidance is that empiric multidrug treatment is started in almost all situations in which active TB is suspected, without waiting for culture. ${cite(3)}</li>
           </ul>`,
         pearl:
@@ -1253,6 +1295,7 @@ const CASES = [
         question:
           "How does EBUS-TBNA's yield differ across TB, sarcoidosis, and lymphoma?",
         reveal: `
+          <h4>Yield by diagnosis</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Condition</th><th>EBUS-TBNA yield</th><th>Key limitation</th></tr></thead>
@@ -1276,6 +1319,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("EBUS-TBNA", "PCR", "RCT")}
+          <h4>How to read these figures</h4>
           <p style="color:var(--text-muted); font-size:0.9rem;">Figures come from different study designs and measures (granuloma detection or diagnostic yield in a randomized controlled trial (RCT), sensitivity or accuracy in cohorts, pooled sensitivity), so compare them with caution.</p>
           <p><em>Optional reference comparator:</em></p>
           ${img(4, "stage3", "histopath-non-necrotizing-granuloma", "Non-necrotizing granuloma (sarcoidosis comparator) — optional reference image")}`,
@@ -1287,9 +1331,13 @@ const CASES = [
         question:
           "If lymphoma is the concern and needle aspiration is non-diagnostic, what gets you tissue architecture?",
         reveal: `
+          <h4>Getting tissue architecture</h4>
           <ul>
             <li>EBUS-guided <strong>forceps or cryoprobe biopsy</strong> through the same tract obtains tissue architecture rather than cytology alone.</li>
             <li>Across all diagnoses, forceps or cryoprobe biopsy gave a pooled diagnostic yield of <strong>86% vs 78%</strong> for aspiration (13 studies), at the cost of slightly more complications. ${cite(62)}</li>
+          </ul>
+          <h4>In lymphoma</h4>
+          <ul>
             <li>In a small, selected multicentre cohort (40 patients with confirmed lymphoma, both techniques in the same node), cryobiopsy sensitivity was <strong>92% vs 15%</strong> for aspiration in new lymphoma, and <strong>100% vs 14%</strong> in recurrence. ${cite(57)}</li>
           </ul>`,
         pearl:
@@ -1300,6 +1348,7 @@ const CASES = [
         question:
           "Say the EBUS-reachable nodes were non-diagnostic, or the most suspicious node sits somewhere EBUS can't reach — how do you choose between repeating EBUS, going to CT-guided (interventional radiology, IR) biopsy, or a surgical approach?",
         reveal: `
+          <h4>Where EBUS and EUS reach</h4>
           <ul>
             <li><strong>Where EBUS reaches:</strong>
               <div class="side-by-side">
@@ -1314,13 +1363,22 @@ const CASES = [
                 ${img(4, "stage5", "node-stations", "Original schematic. Station numbering follows the IASLC lymph node map; which technique reaches each station follows the ESGE/ERS/ESTS 2015 guideline. " + cite(63))}
               </div>
             </li>
+          </ul>
+          <h4>CT-guided biopsy</h4>
+          <ul>
             <li><strong>CT-guided (IR) core biopsy</strong> fills anatomic gaps and yields a true tissue core, which matters if lymphoma subtyping is needed.</li>
+          </ul>
+          <h4>Safety</h4>
+          <ul>
             <li><strong>Safety trade-off:</strong>
               <ul>
                 <li><strong>EBUS:</strong> in a systematic review of 16,181 endosonography procedures, serious adverse events occurred in <strong>0.14% overall and 0.05% with EBUS</strong>, with <strong>no deaths</strong>. ${cite(64)}</li>
                 <li><strong>CT-guided biopsy:</strong> in one series of 155 procedures, complications occurred in <strong>13.5%</strong>, with <strong>chest-tube pneumothorax in 1.9%</strong>. ${cite(65)}</li>
               </ul>
             </li>
+          </ul>
+          <h4>If lymphoma is still suspected</h4>
+          <ul>
             <li><strong>If lymphoma is still the leading concern:</strong> don't just repeat the aspirate. Escalate to whichever option provides architecture (EBUS forceps/cryobiopsy, CT-guided core, or mediastinoscopy/VATS).</li>
           </ul>`,
         pearl:
@@ -1333,8 +1391,12 @@ const CASES = [
         question:
           "How long do you treat TB lymphadenitis, and does an enlarging node mean treatment failure?",
         reveal: `
+          <h4>Duration</h4>
           <ul>
             <li><strong>Duration:</strong> a <strong>6-month regimen</strong> is adequate for drug-susceptible TB lymphadenitis. ${cite(3)}</li>
+          </ul>
+          <h4>Enlarging nodes: what and how common?</h4>
+          <ul>
             <li><strong>Enlarging or new nodes during or after treatment</strong> can occur <strong>without any bacteriological relapse</strong>. This is a <strong>paradoxical reaction</strong>. ${cite(3)}</li>
             <li><strong>How common:</strong>
               <ul>
@@ -1342,6 +1404,9 @@ const CASES = [
                 <li>Reviews report <strong>13&ndash;35%</strong> in lymph node TB. ${cite(67)}</li>
               </ul>
             </li>
+          </ul>
+          <h4>What to do</h4>
+          <ul>
             <li><strong>What to do:</strong>
               <ul>
                 <li>Confirm <strong>adherence</strong> and <strong>drug susceptibility</strong>;</li>
@@ -1522,7 +1587,7 @@ const CASES = [
             <li><strong>Saudi data</strong> from 1,595 healthcare workers at a Riyadh tertiary centre: <strong>90.6% were BCG-vaccinated</strong>; TST was positive in <strong>31.5%</strong> and QuantiFERON (QFT) in <strong>25%</strong>, with high discordance; BCG and South-East Asian origin were associated with TST positivity. ${cite(74)}</li>
             <li>A 2026 meta-analysis of healthcare workers found pooled positivity of <strong>22% by IGRA vs 38% by TST</strong>; <strong>TST positivity tracked BCG vaccination rates, but IGRA positivity did not</strong>. ${cite(75)}</li>
           </ul>
-          <h4>Exception: window prophylaxis ${cite(4)}</h4>
+          <h4>Anyone to treat before the repeat test? ${cite(4)}</h4>
           <ul>
             <li><strong>Who:</strong> exposed contacts at risk of rapid progression:
               <ul>
@@ -1584,7 +1649,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("AFB", "CAP", "CXR", "NAAT", "RSV")}
-          <h4>Why TB is unlikely now ${cite(78)}</h4>
+          <h4>How likely is TB now? ${cite(78)}</h4>
           <ul>
             <li>After infection, the TST converts within <strong>&lt;6 weeks</strong>.</li>
             <li>Active TB typically appears <strong>3&ndash;9 months</strong> later, and <strong>almost always within 2 years</strong>.</li>
@@ -1635,7 +1700,7 @@ const CASES = [
         question:
           "What must you establish before treating, and why treat at all?",
         reveal: `
-          <h4>Rule out active disease first</h4>
+          <h4>Before treating</h4>
           <ul>
             <li><strong>Symptom evaluation plus CXR</strong> for everyone with a new positive test, with sputum studies if either is abnormal. ${cite(73, 1)}</li>
             <li>IGRA and TST cannot tell latent from active TB, so disease must be excluded before starting LTBI treatment. ${cite(1)}</li>
@@ -1647,7 +1712,7 @@ const CASES = [
             </li>
           </ul>
           ${img(5, "stage4", "cxr-normal", "Normal CXR — shown here only to illustrate the active-disease-exclusion step, not a specific finding")}
-          <h4>Why treat? Her risk from here</h4>
+          <h4>Her risk from here</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Question</th><th>Evidence</th></tr></thead>
@@ -1780,8 +1845,12 @@ const CASES = [
         question:
           "Outside a documented exposure like this one, who should actually be tested for LTBI — and why does that question matter before you even pick a test?",
         reveal: `
+          <h4>The principle</h4>
           <ul>
             <li><strong>Test only if you would treat a positive result.</strong> Guidelines advise <strong>against testing people at low risk</strong> of infection and progression. ${cite(1)}</li>
+          </ul>
+          <h4>WHO and Saudi recommendations</h4>
+          <ul>
             <li><strong>WHO</strong> (guideline for countries with incidence &lt;100/100,000, which includes Saudi Arabia) ${cite(89)}:
               <ul>
                 <li><strong>strongly recommends</strong> systematic testing and treatment for people with HIV; adult and child contacts; patients <strong>starting anti-TNF treatment</strong>; patients on dialysis; patients preparing for transplant; and patients with silicosis;</li>
@@ -1798,6 +1867,9 @@ const CASES = [
                 <li><strong>immigrants from high-burden regions</strong> seeking long residency undergo <strong>active case finding</strong>: a first assessment in the home country and re-examination on arrival. Note this is screening for <strong>active</strong> TB, not LTBI.</li>
               </ul>
             </li>
+          </ul>
+          <h4>Before a biologic or JAK inhibitor</h4>
+          <ul>
             <li><strong>Before any biologic or Janus kinase (JAK) inhibitor:</strong>
               <ul>
                 <li>International recommendations agree on <strong>screening before starting</strong>: IGRA/TST plus CXR, with many advising <strong>both tests in BCG-vaccinated patients</strong>. Patients with LTBI should <strong>receive TPT before the biologic</strong>. ${cite(96)}</li>
@@ -1830,7 +1902,9 @@ const CASES = [
         title: "What do you send?",
         question: "Given this presentation, what do you send, specifically?",
         reveal: `
+          <h4>Pre-test probability</h4>
           <p><em>Why this patient:</em> in a 5-year prospective study in the Eastern Province, TB caused <strong>35.2%</strong> of all pleural effusions. Patients were young (mean age 33) and mostly men (82%). ${cite(98)}</p>
+          <h4>Differential and tests</h4>
           <p><strong>Differential first</strong>, most to least likely, each paired with its test:</p>
           <ol>
             <li><strong>Tuberculous pleurisy</strong>
@@ -1996,11 +2070,18 @@ const CASES = [
           "Three weeks into treatment, the induced-sputum culture sent on day 1 grows <em>M. tuberculosis</em>, fully susceptible. Repeat CXR still shows no parenchymal lesion.",
         question: "Does this change how he is classified, and does it matter for his contacts?",
         reveal: `
+          <h4>Classification, and why it matters</h4>
           <ul>
             <li><strong>Classification changes.</strong> Under the Saudi National Tuberculosis Programme (NTP) Manual, pleural effusion <strong>without</strong> lung abnormality is extrapulmonary TB, but a patient with <strong>both</strong> pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong> TB. ${cite(5)} A positive sputum culture shows airway involvement.</li>
             <li><strong>Why it matters:</strong> the manual describes pleural TB as "reputed to be noninfectious". ${cite(5)} A positive sputum culture moves him out of that category. Household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for latent TB infection (LTBI)" (Saudi policy, strong). ${cite(5)}</li>
+          </ul>
+          <h4>How common, and what it adds</h4>
+          <ul>
             <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(100)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(101, 102)}</li>
             <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
+          </ul>
+          <h4>What to do</h4>
+          <ul>
             <li><strong>Action:</strong> update the notification to the TB programme and start the household contact investigation.</li>
           </ul>`,
         pearl:
