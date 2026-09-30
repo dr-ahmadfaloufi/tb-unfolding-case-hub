@@ -386,7 +386,6 @@ const CASES = [
               <ul>
                 <li>These are <strong>different regimens</strong>: daily high-dose rifapentine, versus the older fluoroquinolone substitutions, some given intermittently. ${cite(11, 12)}</li>
                 <li>WHO now conditionally recommends the 4-month isoniazid&ndash;rifapentine&ndash;moxifloxacin&ndash;pyrazinamide regimen for people aged &ge;12 (moderate certainty; first issued in 2022) ${cite(8)}, as does ATS/CDC/ERS/IDSA 2025 ${cite(7)}.</li>
-                <li>Rifapentine is not available in Saudi Arabia, so HPZM isn't a practical option in Kingdom of Saudi Arabia (KSA) either.</li>
               </ul>
             </li>
             <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> goes with isoniazid in anyone at risk of neuropathy (e.g. diabetes, HIV, alcohol use, malnutrition, chronic kidney disease, pregnancy). ${cite(3)}</li>
@@ -449,7 +448,7 @@ const CASES = [
           <ul>
             <li><strong><em>inhA</em> promoter:</strong> mutations typically confer <strong>low-level resistance</strong> that high-dose isoniazid may overcome, <strong>plus cross-resistance to ethionamide/prothionamide</strong>.</li>
           </ul>
-          <p>${cite(15)}</p>`,
+          <p>${cite(15, 8)}</p>`,
         pearl:
           "Know which gene you're dealing with. With <em>katG</em>, isoniazid is gone even at high dose. With <em>inhA</em>, high-dose isoniazid may still work, but ethionamide probably won't.",
       },
@@ -539,18 +538,14 @@ const CASES = [
           </ul>
           <h4>Monitoring on this regimen</h4>
           <ul>
-            <li><strong>Monitoring on this regimen:</strong>
-              <ul>
-                <li><strong>Liver:</strong> monthly aspartate aminotransferase (AST) where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(16)}</li>
-                <li><strong>QT:</strong> avoid levofloxacin with known or suspected QT prolongation. Baseline corrected QT interval (QTc); watch hypokalaemia and other QT-prolonging drugs. ${cite(16)}</li>
-                <li><strong>Fluoroquinolone class warnings:</strong> tendinitis/tendon rupture, severe hypoglycaemia, mental-health effects, aortic rupture/dissection. ${cite(18)}</li>
-                <li><strong>Absorption:</strong> don't co-administer levofloxacin with antacids or other divalent-cation products. Milk restriction is not needed. ${cite(16)}</li>
-              </ul>
-            </li>
+            <li><strong>Liver:</strong> monthly aspartate aminotransferase (AST) where possible (prolonged pyrazinamide is hepatotoxic). If resources are limited, at least monthly for high-risk patients (viral hepatitis, heavy alcohol use). ${cite(16)}</li>
+            <li><strong>QT:</strong> avoid levofloxacin with known or suspected QT prolongation. Baseline corrected QT interval (QTc); watch hypokalaemia and other QT-prolonging drugs. ${cite(16)}</li>
+            <li><strong>Fluoroquinolone class warnings:</strong> tendinitis/tendon rupture, severe hypoglycaemia, mental-health effects, aortic rupture/dissection. ${cite(18)}</li>
+            <li><strong>Absorption:</strong> don't co-administer levofloxacin with antacids or other divalent-cation products. Milk restriction is not needed. ${cite(16)}</li>
           </ul>
           <h4>Extending treatment, and the alternative</h4>
           <ul>
-            <li><strong>When to consider extending beyond 6 months:</strong> WHO says prolongation <strong>may be considered</strong> for <strong>extensive cavitary disease</strong> or <strong>slow smear/culture conversion</strong>. In slow converters, <strong>first rule out acquired rifampicin (and fluoroquinolone/pyrazinamide) resistance</strong>. ${cite(16)}
+            <li><strong>When to consider extending beyond 6 months:</strong> WHO says prolongation <strong>may be considered</strong> for <strong>extensive disease</strong> or <strong>slow smear/culture conversion</strong>. In slow converters, <strong>first rule out acquired rifampicin (and fluoroquinolone/pyrazinamide) resistance</strong>. ${cite(16, 8)}
               <ul>
                 <li>For comparison, in <em>drug-susceptible</em> TB, ATS/CDC/IDSA extend the continuation phase to 7 months (9 months total) when there is <strong>both</strong> cavitation <strong>and</strong> a positive 2-month culture. ${cite(3)}</li>
               </ul>
