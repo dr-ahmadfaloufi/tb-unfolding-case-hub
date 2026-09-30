@@ -2234,7 +2234,7 @@ const CASES = [
               <thead><tr><th>Study</th><th>Design</th><th>Key result</th></tr></thead>
               <tbody>
                 <tr><td><strong>Ryan 2017, Cochrane</strong> ${cite(124)}</td><td>6 RCTs, 590 participants (1 trial in HIV-positive people)</td><td>Corticosteroids <strong>may speed resolution</strong>. Residual effusion reduced at 8 weeks (RR 0.54) and at 24 weeks (RR 0.35); residual pleural changes reduced (RR 0.72, ARR 16%). <strong>Low certainty.</strong> No long-term lung-function benefit shown (very low certainty). <strong>More adverse events leading to discontinuation</strong> (RR 2.78). <strong>Kaposi sarcoma 6/99 vs 0/98</strong> in the HIV trial</td></tr>
-                <tr><td><strong>Bhuniya 2012</strong> ${cite(125)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1/FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
+                <tr><td><strong>Bhuniya 2012</strong> ${cite(125)}</td><td>Randomized, open-label, 52 patients</td><td><strong>Therapeutic</strong> vs diagnostic-only thoracentesis. Better FEV1 and FVC recovery and <strong>less pleural thickening</strong> with therapeutic drainage over 6 months</td></tr>
               </tbody>
             </table>
           </div>
