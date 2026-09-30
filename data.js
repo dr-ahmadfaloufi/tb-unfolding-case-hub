@@ -1439,7 +1439,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>TB lymphadenitis</td>
-                  <td>Sensitivity <strong>59%</strong> in an unselected London cohort (culture confirmed 35%, cytology 24%) ${cite(75)}; accuracy <strong>57% &rarr; 71%</strong> when TB-PCR was added on rinse fluid ${cite(74)}</td>
+                  <td>EBUS-TBNA found <strong>32 of 54</strong> TB cases (<strong>59%</strong>) in an unselected London cohort: 19 (35%) confirmed by mycobacterial culture and 13 (24%) by cytopathology ${cite(75)}; accuracy <strong>57% &rarr; 71%</strong> when TB-PCR was added on rinse fluid ${cite(74)}</td>
                   <td>Paucibacillary; cytology + culture alone under-detect</td>
                 </tr>
                 <tr>
