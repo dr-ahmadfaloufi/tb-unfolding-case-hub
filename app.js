@@ -107,13 +107,19 @@ function renderCase() {
     revealed: caseData.stages.map(() => false),
     shownParts: caseData.stages.map(() => 0), // presenter mode: sections revealed so far
     pointsOpen: false, // presenter panel; closed on every new stage
+    mcq: caseData.stages.map(blankMcq), // stage MCQs: answer state per stage
   };
+
+  function blankMcq() {
+    return { selected: null, checked: false, shown: false, skipped: false };
+  }
 
   function resetProgress() {
     state.current = 0;
     state.revealed = caseData.stages.map(() => false);
     state.shownParts = caseData.stages.map(() => 0);
     state.pointsOpen = false;
+    state.mcq = caseData.stages.map(blankMcq);
   }
 
   function goToStage(i) {
@@ -148,6 +154,29 @@ function renderCase() {
     btn.setAttribute("aria-expanded", String(state.pointsOpen));
     btn.innerHTML = `${state.pointsOpen ? "&#9662;" : "&#9656;"} Points to discuss <span class="presenter-key">P</span>`;
     body.hidden = !state.pointsOpen;
+  }
+
+  // Optional single-best-answer MCQ between the question and the reveal.
+  // Presenter mode keeps it behind "Show options" until the room has discussed it.
+  function stageMcqHtml(stage) {
+    if (!stage.mcq) return "";
+    const a = state.mcq[state.current];
+    if (a.skipped && !a.checked) return "";
+    if (presenter && !a.shown) {
+      return `<div class="stage-mcq"><button type="button" class="btn btn-secondary" id="mcq-show-btn">Show options</button></div>`;
+    }
+    const q = stage.mcq;
+    const verdict = a.checked
+      ? `<p class="mcq-verdict ${a.selected === q.answer ? "right" : "wrong"}">${
+          a.selected === q.answer ? "Correct" : `Not quite: the best answer is ${LETTERS[q.answer]}`
+        }</p>`
+      : "";
+    return `
+      <div class="stage-mcq">
+        <p class="stage-mcq-stem">${q.stem}</p>
+        <ol class="mcq-options">${mcqOptionsHtml(q, a)}</ol>
+        ${verdict}
+      </div>`;
   }
 
   function stageNavHtml() {
@@ -209,11 +238,25 @@ function renderCase() {
         <button type="button" class="btn btn-secondary" id="reveal-btn">Reveal all</button>`;
     }
 
+    // A stage MCQ gates the reveal: Check first, then Reveal as usual.
+    // Presenter mode can skip the MCQ (it then counts as not answered).
+    const mcqState = state.mcq[state.current];
+    if (stage.mcq && !mcqState.checked && !mcqState.skipped) {
+      revealButtons = presenter && !mcqState.shown
+        ? ""
+        : `<button type="button" class="btn" id="stage-mcq-check" ${mcqState.selected === null ? "disabled" : ""}>Check</button>`;
+      if (presenter) {
+        revealButtons += `<button type="button" class="mcq-skip-link" id="mcq-skip-btn">Skip to reveal</button>`;
+      }
+    }
+
     const actionsHtml = isRevealed
       ? isLast
         ? ""
         : `<div class="stage-actions"><button type="button" class="btn" id="next-stage-btn">Next stage &rarr;</button></div>`
-      : `<div class="stage-actions">${revealButtons}</div>`;
+      : revealButtons
+        ? `<div class="stage-actions">${revealButtons}</div>`
+        : "";
 
     return `
       <div class="stage-card">
@@ -221,6 +264,7 @@ function renderCase() {
         ${contextHtml}
         <p class="stage-question">${stage.question}</p>
         ${pointsPanelHtml(stage)}
+        ${stageMcqHtml(stage)}
         ${revealHtml}
         ${actionsHtml}
       </div>
@@ -229,10 +273,26 @@ function renderCase() {
   }
 
   function caseCompleteHtml() {
+    // A stage MCQ counts as correct only if its (single, locked) checked answer was right.
+    const mcqStages = caseData.stages
+      .map((s, i) => ({ s, i }))
+      .filter(({ s }) => s.mcq);
+    const right = mcqStages.filter(({ s, i }) => state.mcq[i].checked && state.mcq[i].selected === s.mcq.answer);
+    const missed = mcqStages.filter((x) => !right.includes(x));
+    const mcqHtml = mcqStages.length
+      ? `<p>MCQs: <strong>${right.length} of ${mcqStages.length}</strong> correct</p>${
+          missed.length
+            ? `<p>Worth another look:</p><ul class="mcq-missed">${missed
+                .map(({ s, i }) => `<li>Stage ${i + 1} &mdash; ${s.title}</li>`)
+                .join("")}</ul>`
+            : ""
+        }`
+      : "";
     return `
       <div class="stage-card case-complete">
         <h2>Case complete</h2>
         <p>You've worked through all ${caseData.stages.length} stages of this case.</p>
+        ${mcqHtml}
         <div class="case-complete-actions">
           <button type="button" class="btn btn-secondary" id="restart-complete-btn">&#8635; Restart this case</button>
           <a class="btn btn-secondary" href="index.html">Back to hub</a>
@@ -276,6 +336,35 @@ function renderCase() {
         const shownSections = document.querySelectorAll(".reveal-block > .presenter-part");
         const last = shownSections[shownSections.length - 1];
         if (last) last.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    const mcqShowBtn = document.getElementById("mcq-show-btn");
+    if (mcqShowBtn) {
+      mcqShowBtn.addEventListener("click", () => {
+        state.mcq[state.current].shown = true;
+        render();
+      });
+    }
+    root.querySelectorAll(".stage-mcq .mcq-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.mcq[state.current].selected = parseInt(btn.getAttribute("data-option"), 10);
+        render();
+      });
+    });
+    const mcqSkipBtn = document.getElementById("mcq-skip-btn");
+    if (mcqSkipBtn) {
+      mcqSkipBtn.addEventListener("click", () => {
+        state.mcq[state.current].skipped = true;
+        render();
+      });
+    }
+    const mcqCheckBtn = document.getElementById("stage-mcq-check");
+    if (mcqCheckBtn) {
+      mcqCheckBtn.addEventListener("click", () => {
+        const a = state.mcq[state.current];
+        if (a.selected === null) return;
+        a.checked = true;
+        render();
       });
     }
     const pointsBtn = document.getElementById("presenter-points-btn");
@@ -402,11 +491,35 @@ function collapsibleSections(html) {
 
 // ---------- start-here questions ----------
 
+// Shared by the Start-here quiz and stage MCQs: the <li> options for question q
+// in answer state a ({ selected, checked }). Once checked, every option note shows.
+const LETTERS = "ABCDE";
+function mcqOptionsHtml(q, a) {
+  const notes = a.checked && Array.isArray(q.optionNotes) ? q.optionNotes : null;
+  return q.options
+    .map((text, i) => {
+      let cls = "mcq-option";
+      let noteCls = "neutral";
+      if (a.checked) {
+        if (i === q.answer) { cls += " correct"; noteCls = "right"; }
+        else if (i === a.selected) { cls += " incorrect"; noteCls = "wrong"; }
+      } else if (i === a.selected) {
+        cls += " selected";
+      }
+      const note = notes && notes[i] ? `<div class="mcq-option-note ${noteCls}">${notes[i]}</div>` : "";
+      return `<li><button type="button" class="${cls}" data-option="${i}" ${
+        a.checked ? "disabled" : ""
+      } aria-pressed="${i === a.selected}">
+          <span class="mcq-letter">${LETTERS[i]}</span><span>${text}</span>
+        </button>${note}</li>`;
+    })
+    .join("");
+}
+
 function renderStart() {
   const root = document.getElementById("start-root");
   if (!root || typeof MCQS === "undefined") return;
 
-  const LETTERS = "ABCDE";
   const blankAnswers = () => MCQS.map(() => ({ selected: null, checked: false }));
   const state = {
     current: 0,
@@ -430,26 +543,8 @@ function renderStart() {
     const q = MCQS[state.current];
     const a = state.answers[state.current];
     const isLast = state.current === MCQS.length - 1;
-    const notes = a.checked && Array.isArray(q.optionNotes) ? q.optionNotes : null;
 
-    const options = q.options
-      .map((text, i) => {
-        let cls = "mcq-option";
-        let noteCls = "neutral";
-        if (a.checked) {
-          if (i === q.answer) { cls += " correct"; noteCls = "right"; }
-          else if (i === a.selected) { cls += " incorrect"; noteCls = "wrong"; }
-        } else if (i === a.selected) {
-          cls += " selected";
-        }
-        const note = notes && notes[i] ? `<div class="mcq-option-note ${noteCls}">${notes[i]}</div>` : "";
-        return `<li><button type="button" class="${cls}" data-option="${i}" ${
-          a.checked ? "disabled" : ""
-        } aria-pressed="${i === a.selected}">
-          <span class="mcq-letter">${LETTERS[i]}</span><span>${text}</span>
-        </button>${note}</li>`;
-      })
-      .join("");
+    const options = mcqOptionsHtml(q, a);
 
     let feedback = "";
     if (a.checked) {
