@@ -2118,37 +2118,53 @@ const CASES = [
           "How much weight does the ADA carry?",
           "What do the guidelines say about ADA?",
         ],
+        mcq: {
+          stem: "Which interpretation of these results is best supported?",
+          options: [
+            "TB is excluded by the negative smear and Xpert Ultra.",
+            "TB is likely; the ADA supports it but is not proof.",
+            "TB is confirmed by the ADA; no more samples are needed.",
+            "No judgement is possible until the culture returns.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `In pleural fluid, smear sensitivity is 0–10% and Xpert Ultra's pooled sensitivity about 74%; a negative result never excludes TB. ${cite(1, 119)}`,
+            `<strong>Correct.</strong> Pooled ADA sensitivity 92% and specificity 90%, and a lymphocytic exudate adds weight; ATS/IDSA/CDC say ADA must be "interpreted in the entire clinical context". ${cite(120, 1)}`,
+            `ATS/IDSA/CDC: neither ADA nor IFN-γ "provide a definitive diagnosis", and ADA gives no isolate for DST. ${cite(1)}`,
+            `Pleural-fluid culture is positive in only 23–58% and takes weeks; empiric treatment is started in almost all situations in which TB is suspected. ${cite(1, 4)}`,
+          ],
+        },
         reveal: `
           <h4>First: is it a transudate or an exudate?</h4>
           <ul>
-            <li><strong>Why the split matters.</strong> Transudates are common in heart failure, cirrhosis, hypoalbuminaemia and nephrotic syndrome, and are managed by treating the cause. Exudates point to malignancy, pleural infection, pulmonary embolism or autoimmune pleuritis, and need a diagnosis. ${cite(119)} TB is among the causes of a <strong>lymphocytic</strong> effusion, and BTS names it as a treatable cause to reconsider when no diagnosis is found. ${cite(119)}</li>
-            <li><strong>Paired samples.</strong> Send blood (protein, LDH, albumin, C-reactive protein [CRP]) at the time of the tap: Light's criteria are ratios to serum values. ${cite(119)}</li>
-            <li><strong>Sensitive by design.</strong> One criterion is enough. The rule picks up about <strong>98% of exudates</strong> but labels about <strong>25% of transudates</strong> as exudates. ${cite(120)} If <strong>none</strong> is met, an exudate is very unlikely (likelihood ratio [LR] 0.04). ${cite(121)}</li>
-            <li><strong>Watch for a false exudate</strong> in heart failure (often on diuretics) and cirrhosis. Light's criteria mislabelled 29% of heart-failure and 18% of cirrhosis effusions as exudates. ${cite(122)} Serum N-terminal pro-B-type natriuretic peptide (NT-proBNP) can support heart failure (BTS, conditional). ${cite(119)}</li>
+            <li><strong>Why the split matters.</strong> Transudates are common in heart failure, cirrhosis, hypoalbuminaemia and nephrotic syndrome, and are managed by treating the cause. Exudates point to malignancy, pleural infection, pulmonary embolism or autoimmune pleuritis, and need a diagnosis. ${cite(121)} TB is among the causes of a <strong>lymphocytic</strong> effusion, and BTS names it as a treatable cause to reconsider when no diagnosis is found. ${cite(121)}</li>
+            <li><strong>Paired samples.</strong> Send blood (protein, LDH, albumin, C-reactive protein [CRP]) at the time of the tap: Light's criteria are ratios to serum values. ${cite(121)}</li>
+            <li><strong>Sensitive by design.</strong> One criterion is enough. The rule picks up about <strong>98% of exudates</strong> but labels about <strong>25% of transudates</strong> as exudates. ${cite(122)} If <strong>none</strong> is met, an exudate is very unlikely (likelihood ratio [LR] 0.04). ${cite(123)}</li>
+            <li><strong>Watch for a false exudate</strong> in heart failure (often on diuretics) and cirrhosis. Light's criteria mislabelled 29% of heart-failure and 18% of cirrhosis effusions as exudates. ${cite(124)} Serum N-terminal pro-B-type natriuretic peptide (NT-proBNP) can support heart failure (BTS, conditional). ${cite(121)}</li>
           </ul>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Test</th><th>Exudate if</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td>Fluid protein &divide; serum protein</td><td>&gt; 0.5</td><td>Any <strong>one</strong> criterion is enough ${cite(114, 119)}</td></tr>
-                <tr><td>Fluid LDH &divide; serum LDH</td><td>&gt; 0.6</td><td>${cite(114, 119)}</td></tr>
-                <tr><td>Fluid LDH</td><td>&gt; &frac23; of the upper limit of normal for serum LDH</td><td>Uses your lab's reference range ${cite(119)}</td></tr>
-                <tr><td><strong>Suspected heart failure:</strong> serum albumin &minus; fluid albumin</td><td>&gt; 1.2 g/dL = <strong>really a transudate</strong></td><td>Relabelled 83% of false heart-failure exudates; protein gradient &gt; 3.1 g/dL only 55% ${cite(122)}</td></tr>
-                <tr><td><strong>Cirrhosis:</strong> fluid albumin &divide; serum albumin</td><td>&lt; 0.6 = <strong>really a transudate</strong></td><td>Relabelled 77% of false cirrhosis exudates ${cite(122)}</td></tr>
+                <tr><td>Fluid protein &divide; serum protein</td><td>&gt; 0.5</td><td>Any <strong>one</strong> criterion is enough ${cite(114, 121)}</td></tr>
+                <tr><td>Fluid LDH &divide; serum LDH</td><td>&gt; 0.6</td><td>${cite(114, 121)}</td></tr>
+                <tr><td>Fluid LDH</td><td>&gt; &frac23; of the upper limit of normal for serum LDH</td><td>Uses your lab's reference range ${cite(121)}</td></tr>
+                <tr><td><strong>Suspected heart failure:</strong> serum albumin &minus; fluid albumin</td><td>&gt; 1.2 g/dL = <strong>really a transudate</strong></td><td>Relabelled 83% of false heart-failure exudates; protein gradient &gt; 3.1 g/dL only 55% ${cite(124)}</td></tr>
+                <tr><td><strong>Cirrhosis:</strong> fluid albumin &divide; serum albumin</td><td>&lt; 0.6 = <strong>really a transudate</strong></td><td>Relabelled 77% of false cirrhosis exudates ${cite(124)}</td></tr>
               </tbody>
             </table>
           </div>
           ${abbrev("LDH")}
-          ${img(6, "stage2", "light-approach", "Approach to a unilateral pleural effusion. Original schematic adapted from the BTS 2023 pathway (Appendix 1) and Light's criteria; false-exudate thresholds from Bielsa 2012. " + cite(114, 119, 122))}
+          ${img(6, "stage2", "light-approach", "Approach to a unilateral pleural effusion. Original schematic adapted from the BTS 2023 pathway (Appendix 1) and Light's criteria; false-exudate thresholds from Bielsa 2012. " + cite(114, 121, 124))}
           <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Test (pleural fluid)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(123)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
+                <tr><td><strong>ADA</strong></td><td>Meta-analysis, 174 studies, 27,009 patients ${cite(120)}</td><td><strong>92%</strong> (90&ndash;93)</td><td><strong>90%</strong> (88&ndash;91)</td><td>At the common 40 &plusmn; 4 IU/L threshold: 93% / 90%. All studies had a <strong>high risk of bias</strong></td></tr>
                 <tr><td><strong>ADA</strong></td><td>5 earlier meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89&ndash;99%</td><td>88&ndash;97%</td><td>Thresholds ranged from 10 to 71 U/L</td></tr>
                 <tr><td><strong>Free IFN-&gamma;</strong></td><td>Meta-analysis of 22 studies, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>89%</td><td>97%</td><td>Thresholds varied widely</td></tr>
-                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(124)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 13 studies ${cite(119)}</td><td><strong>74.0%</strong> (60.8&ndash;83.9)</td><td>88.1% (78.8&ndash;93.6)</td><td>Against culture; low / very low certainty</td></tr>
                 <tr><td><strong>NAAT (any)</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>56%</td><td>98%</td><td></td></tr>
                 <tr><td><strong>AFB smear</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td><strong>0&ndash;10%</strong></td><td>high</td><td></td></tr>
                 <tr><td><strong>Mycobacterial culture</strong></td><td>ATS/IDSA/CDC ${cite(1)}</td><td>23&ndash;58%</td><td>&gt;97%</td><td>The only route to an isolate for DST</td></tr>
@@ -2183,6 +2199,22 @@ const CASES = [
           "What do the guidelines say about tissue?",
           "Treat now or biopsy first, for this patient?",
         ],
+        mcq: {
+          stem: "For this patient, what is the best next step?",
+          options: [
+            "Withhold treatment until pleural biopsy histology returns.",
+            "Arrange thoracoscopy before starting any treatment.",
+            "Start treatment now; also get a culture for DST.",
+            "Start treatment now; no further sampling is needed.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `Biopsy-first is the route when the ADA is low, the fluid neutrophilic, or the patient older; none applies here. ${cite(118)}`,
+            `Thoracoscopy has the highest yield (100% combined), but it is for a diagnosis that stays uncertain, where available, not a prerequisite in a high-probability patient. ${cite(118)}`,
+            `<strong>Correct.</strong> A high probability of TB justifies treatment now; culture of induced sputum or pleural tissue is the route to DST, since NAAT "does not produce an isolate, which is needed for DST". ${cite(4, 120, 1)}`,
+            `ADA is not definitive and gives no isolate, and tissue also excludes malignancy; pleural biopsy was the single most useful test in the Saudi series. ${cite(1, 113)}`,
+          ],
+        },
         reveal: `
           <h4>Studies: diagnostic yield of each specimen</h4>
           <div class="table-scroll">
@@ -2210,7 +2242,7 @@ const CASES = [
           ${abbrev("ATS", "CDC", "IDSA")}
           <h4>Reasoning for this patient</h4>
           <ul>
-            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(4, 123)}</li>
+            <li>A young man in a high-prevalence setting, with a lymphocytic exudate and ADA 78, has a high probability of TB. <strong>Starting treatment now is reasonable.</strong> ${cite(4, 120)}</li>
             <li><strong>Tissue still earns its place.</strong> It is the best route to a positive <strong>culture</strong>, and so to <strong>drug-susceptibility testing</strong>; NAAT "does not produce an isolate, which is needed for DST". ${cite(1)} Tissue also excludes malignancy. Pleural biopsy was the single most useful test in the Saudi series. ${cite(113)}</li>
             <li><strong>If the ADA were low, the fluid neutrophilic, or the patient older:</strong> go to biopsy before treating. Thoracoscopy has the highest yield where it's available. ${cite(118)}</li>
           </ul>`,
@@ -2272,6 +2304,22 @@ const CASES = [
           "Does it matter for his contacts?",
           "What do you update, and who do you notify?",
         ],
+        mcq: {
+          stem: "How should he be classified now, and what follows?",
+          options: [
+            "Extrapulmonary TB; no contact investigation is needed.",
+            "Pulmonary TB; extend treatment to 9 months.",
+            "Pulmonary TB; test contacts only if a smear is positive.",
+            "Pulmonary TB; notify and investigate household contacts.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Under the Saudi NTP, a patient with both pulmonary and extrapulmonary TB is classified as <strong>pulmonary</strong>; the "reputed to be noninfectious" label no longer applies once sputum grows TB. ${cite(6)}`,
+            `A 7-month continuation phase (9 months total) is for drug-susceptible TB with <strong>both</strong> cavitation <strong>and</strong> a positive 2-month culture; neither applies. ${cite(4)}`,
+            `Smear-negative, culture-positive patients still transmit (relative transmission about 0.22–0.24 of smear-positive), and the Saudi test-and-treat policy covers all bacteriologically confirmed pulmonary TB. ${cite(84, 85, 6)}`,
+            `<strong>Correct.</strong> Update the notification; household contacts of bacteriologically confirmed pulmonary TB "should be systematically tested and treated for LTBI" (Saudi policy, strong). ${cite(6)}`,
+          ],
+        },
         reveal: `
           <h4>Classification, and why it matters</h4>
           <ul>
@@ -2300,6 +2348,22 @@ const CASES = [
           "How common is it?",
           "What do you do, and what don't you change?",
         ],
+        mcq: {
+          stem: "What is the most likely explanation, and what do you do?",
+          options: [
+            "Paradoxical response; continue the same regimen.",
+            "Treatment failure; add second-line drugs.",
+            "Paradoxical response; extend treatment to 9 months.",
+            "Paradoxical response; start corticosteroids routinely.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> Seen in about 16%, at a mean of 8.8 weeks, and 68% have no symptoms. Confirm adherence and susceptibility, and aspirate if breathless; all resolved within 1–3 months in the Riyadh series. ${cite(127, 128, 4)}`,
+            `Enlarging effusions are a recognised pattern on effective treatment; adherence is documented and the isolate fully susceptible, so failure must be excluded, not assumed. ${cite(4)}`,
+            `The regimen is continued unchanged; enlargement alone is not a reason to extend it. ${cite(4)}`,
+            `Steroids were used in 5 of 10 patients in the Riyadh series, for massive effusions; observational evidence only, not a routine. ${cite(128)}`,
+          ],
+        },
         reveal: `
           <p><strong>Most likely a paradoxical response, but that is a diagnosis of exclusion.</strong> It is made only after a thorough evaluation has excluded other causes, particularly <strong>treatment failure and drug resistance</strong>. New or enlarging pleural effusions are a recognised pattern. ${cite(4)} Here his isolate is fully susceptible and adherence is documented.</p>
           <h4>How common</h4>
@@ -2307,8 +2371,8 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Study</th><th>Setting</th><th>Key result</th></tr></thead>
               <tbody>
-                <tr><td><strong>Al-Majed 1996</strong> ${cite(127)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
-                <tr><td><strong>Jeon 2012</strong> ${cite(128)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
+                <tr><td><strong>Al-Majed 1996</strong> ${cite(128)}</td><td>Riyadh, 3 hospitals, 61 proven pleural TB</td><td>Paradoxical enlargement in <strong>16% (10/61)</strong>. 6 became massive and needed therapeutic aspiration; 5 received corticosteroids. <strong>All resolved within 1&ndash;3 months</strong>; 3 left residual pleural thickening</td></tr>
+                <tr><td><strong>Jeon 2012</strong> ${cite(127)}</td><td>Korea, multicentre, 458 HIV-negative isolated pleural TB</td><td><strong>16%</strong>, at a mean of <strong>8.8 weeks</strong>. 81% presented as enlargement of the existing effusion; <strong>68% had no symptoms</strong>. Linked to higher fluid eosinophils and lower fluid protein at diagnosis</td></tr>
               </tbody>
             </table>
           </div>
@@ -2316,9 +2380,9 @@ const CASES = [
           <ul>
             <li><strong>Continue the same regimen.</strong> ${cite(4)}</li>
             <li>Confirm adherence and susceptibility. ${cite(4)}</li>
-            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(127)}</li>
+            <li><strong>Therapeutic aspiration if breathless.</strong> ${cite(128)}</li>
             <li>Re-sample if the picture is atypical (fever returns, fluid turns purulent). ${cite(4)}</li>
-            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(127)}</li>
+            <li><strong>Steroids:</strong> used for massive paradoxical effusions in the Riyadh series. That is observational evidence only. ${cite(128)}</li>
           </ul>`,
         pearl:
           "At 2 months, a bigger effusion in a patient who feels well is usually the immune response catching up. Prove adherence and susceptibility, drain it if he's breathless, and don't change the drugs.",
@@ -2497,7 +2561,7 @@ const CASES = [
           <ol>
             <li><strong>Tuberculous meningitis</strong>
               <ul>
-                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>adenosine deaminase (ADA)</strong>; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the cerebrospinal fluid (CSF). ${cite(1, 124)}</li>
+                <li><strong>Lumbar puncture:</strong> cell count, protein and glucose (with a paired serum glucose); <strong>adenosine deaminase (ADA)</strong>; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the cerebrospinal fluid (CSF). ${cite(1, 119)}</li>
                 <li><strong>Brain magnetic resonance imaging (MRI)</strong> (hydrocephalus, basal enhancement, tuberculomas).</li>
                 <li><strong>Chest radiograph (CXR)</strong>, and sputum if abnormal.</li>
               </ul>
@@ -2531,7 +2595,7 @@ const CASES = [
             <table class="data-table">
               <thead><tr><th>Test (CSF)</th><th>Source</th><th>Sensitivity</th><th>Specificity</th><th>Note</th></tr></thead>
               <tbody>
-                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(124)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
+                <tr><td><strong>Xpert Ultra</strong></td><td>Cochrane 2025, 16 studies ${cite(119)}</td><td><strong>88.2%</strong> (83.7&ndash;91.6)</td><td>96.0% (86.8&ndash;98.9)</td><td><strong>Against culture</strong>, which itself misses paucibacillary TBM. The authors flag this reference-standard concern</td></tr>
                 <tr><td>NAAT (any)</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>62%</td><td>98%</td><td>So a negative result misses about 4 in 10</td></tr>
                 <tr><td><strong>ADA</strong></td><td>Two meta-analyses, summarised by ATS/IDSA/CDC ${cite(1)}</td><td>79%</td><td>91%</td><td>"Exquisitely sensitive" to threshold: at 4 U/L, sensitivity &gt;93% but specificity &lt;80%; at 8 U/L, sensitivity &lt;59% but specificity &gt;96%</td></tr>
                 <tr><td>Mycobacterial culture</td><td>ATS/IDSA/CDC summary ${cite(1)}</td><td>45&ndash;70%</td><td>&gt;97%</td><td>Takes weeks</td></tr>
@@ -3449,16 +3513,16 @@ const REFERENCES = {
         { n: 116, text: "Lee J, Lee SY, Choi KJ, Lim JK, Yoo SS, Lee SY, et al. Clinical utility of CT-based bronchial aspirate TB-PCR for the rapid diagnosis of pleural tuberculosis. Tuberc Respir Dis (Seoul). 2013;75(4):150-6.", doi: "10.4046/trd.2013.75.4.150", tag: "Prospective diagnostic study" },
         { n: 117, text: "Young SL, Chua BLW, Tan QL, Leong CK, Wong JJY, Phua IGCS, et al. Pleural and parenchymal radiological characteristics of tuberculous pleuritis and correlation with microbiological and molecular diagnostic yield. BMC Pulm Med. 2025;25(1):525.", doi: "10.1186/s12890-025-03995-1", tag: "Retrospective cohort study" },
         { n: 118, text: "Diacon AH, Van de Wal BW, Wyser C, Smedema JP, Bezuidenhout J, Bolliger CT, et al. Diagnostic tools in tuberculous pleurisy: a direct comparative study. Eur Respir J. 2003;22(4):589-91.", doi: "10.1183/09031936.03.00017103a", tag: "Prospective comparative diagnostic study" },
-        { n: 119, text: "Roberts ME, Rahman NM, Maskell NA, Bibby AC, Blyth KG, Corcoran JP, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023;78(Suppl 3):s1-s42.", doi: "10.1136/thorax-2022-219784", tag: "Guideline (BTS 2023)" },
-        { n: 120, text: "Porcel JM. Identifying transudates misclassified by Light's criteria. Curr Opin Pulm Med. 2013;19(4):362-7.", doi: "10.1097/MCP.0b013e32836022dc", tag: "Review" },
-        { n: 121, text: "Wilcox ME, Chong CA, Stanbrook MB, Tricco AC, Wong C, Straus SE. Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review. JAMA. 2014;311(23):2422-31.", doi: "10.1001/jama.2014.5552", tag: "Systematic review" },
-        { n: 122, text: "Bielsa S, Porcel JM, Castellote J, Mas E, Esquerda A, Light RW. Solving the Light's criteria misclassification rate of cardiac and hepatic transudates. Respirology. 2012;17(4):721-6.", doi: "10.1111/j.1440-1843.2012.02155.x", tag: "Retrospective diagnostic study" },
-        { n: 123, text: "Aggarwal AN, Agarwal R, Sehgal IS, Dhooria S. Adenosine deaminase for diagnosis of tuberculous pleural effusion: A systematic review and meta-analysis. PLoS One. 2019;14(3):e0213728.", doi: "10.1371/journal.pone.0213728", tag: "Systematic review and meta-analysis" },
-        { n: 124, text: "Kohli M, Inbaraj LR, Salomon A, Scandrett K, Korobitsyn A, Ismail N, et al. Low-complexity automated nucleic acid amplification tests for extrapulmonary tuberculosis and rifampicin resistance in adults and adolescents. Cochrane Database Syst Rev. 2025;8(8):CD012768.", doi: "10.1002/14651858.CD012768.pub4", tag: "Diagnostic test accuracy systematic review (Cochrane)" },
+        { n: 119, text: "Kohli M, Inbaraj LR, Salomon A, Scandrett K, Korobitsyn A, Ismail N, et al. Low-complexity automated nucleic acid amplification tests for extrapulmonary tuberculosis and rifampicin resistance in adults and adolescents. Cochrane Database Syst Rev. 2025;8(8):CD012768.", doi: "10.1002/14651858.CD012768.pub4", tag: "Diagnostic test accuracy systematic review (Cochrane)" },
+        { n: 120, text: "Aggarwal AN, Agarwal R, Sehgal IS, Dhooria S. Adenosine deaminase for diagnosis of tuberculous pleural effusion: A systematic review and meta-analysis. PLoS One. 2019;14(3):e0213728.", doi: "10.1371/journal.pone.0213728", tag: "Systematic review and meta-analysis" },
+        { n: 121, text: "Roberts ME, Rahman NM, Maskell NA, Bibby AC, Blyth KG, Corcoran JP, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023;78(Suppl 3):s1-s42.", doi: "10.1136/thorax-2022-219784", tag: "Guideline (BTS 2023)" },
+        { n: 122, text: "Porcel JM. Identifying transudates misclassified by Light's criteria. Curr Opin Pulm Med. 2013;19(4):362-7.", doi: "10.1097/MCP.0b013e32836022dc", tag: "Review" },
+        { n: 123, text: "Wilcox ME, Chong CA, Stanbrook MB, Tricco AC, Wong C, Straus SE. Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review. JAMA. 2014;311(23):2422-31.", doi: "10.1001/jama.2014.5552", tag: "Systematic review" },
+        { n: 124, text: "Bielsa S, Porcel JM, Castellote J, Mas E, Esquerda A, Light RW. Solving the Light's criteria misclassification rate of cardiac and hepatic transudates. Respirology. 2012;17(4):721-6.", doi: "10.1111/j.1440-1843.2012.02155.x", tag: "Retrospective diagnostic study" },
         { n: 125, text: "Ryan H, Yoo J, Darsini P. Corticosteroids for tuberculous pleurisy. Cochrane Database Syst Rev. 2017;3(3):CD001876.", doi: "10.1002/14651858.CD001876.pub3", tag: "Systematic review of RCTs (Cochrane)" },
         { n: 126, text: "Bhuniya S, Arunabha DC, Choudhury S, Saha I, Roy TS, Saha M. Role of therapeutic thoracentesis in tuberculous pleural effusion. Ann Thorac Med. 2012;7(4):215-9.", doi: "10.4103/1817-1737.102176", tag: "Randomized open-label trial" },
-        { n: 127, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
-        { n: 128, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
+        { n: 127, text: "Jeon K, Choi WI, An JS, Lim SY, Kim WJ, Park GM, et al. Paradoxical response in HIV-negative patients with pleural tuberculosis: a retrospective multicentre study. Int J Tuberc Lung Dis. 2012;16(6):846-51.", doi: "10.5588/ijtld.11.0642", tag: "Retrospective multicentre cohort study" },
+        { n: 128, text: "Al-Majed SA. Study of paradoxical response to chemotherapy in tuberculous pleural effusion. Respir Med. 1996;90(4):211-4.", doi: "10.1016/s0954-6111(96)90289-9", tag: "Retrospective study (Riyadh, Saudi Arabia)" },
       ],
     },
     {
