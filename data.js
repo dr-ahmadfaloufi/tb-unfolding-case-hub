@@ -2000,7 +2000,7 @@ const CASES = [
               </tbody>
             </table>
           </div>
-          ${abbrev("#", "CDC", "DST", "H", "KSA", "Lfx", "LTBI", "MDR-TB", "NTCA", "NTP", "P", "R", "RR-TB")}
+          ${abbrev("#", "CDC", "DST", "H", "Lfx", "LTBI", "MDR-TB", "NTCA", "NTP", "P", "R", "RR-TB")}
           <p style="color:var(--text-muted); font-size:0.9rem;">WHO: strong = moderate-to-high certainty; conditional = low-to-moderate certainty; 6Lfx strong, moderate certainty. Saudi alternatives to 6H (low-incidence countries): strong recommendation, moderate&ndash;high-quality evidence. The 6Lfx row is not for this nurse: her source was drug-susceptible.</p>
           <h4>Her regimen</h4>
           <ul>
