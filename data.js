@@ -784,7 +784,7 @@ const CASES = [
               <tbody>
                 <tr>
                   <td>WHO Module 4 (2025) ${cite(8)}</td>
-                  <td><strong>BPaLM</strong> (6 months) rather than 9-month or longer (18-month) regimens in MDR/RR-TB</td>
+                  <td>WHO <strong>suggests</strong> the 6-month <strong>BPaLM</strong> regimen rather than 9-month or longer (18-month) regimens in MDR/RR-TB</td>
                   <td>Conditional, very low certainty</td>
                 </tr>
                 <tr><td>WHO Module 4 (2025) ${cite(8)}</td><td>WHO <strong>suggests against</strong> the 9-month <strong>DCLLfxZ</strong> or <strong>DCMZ</strong> regimens, compared with longer (&gt;18 months) regimens, in fluoroquinolone-susceptible MDR/RR-TB</td><td>Conditional, very low certainty</td></tr>
@@ -816,7 +816,7 @@ const CASES = [
                   <td><strong>endTB</strong>, NEJM 2025 ${cite(33)}</td>
                   <td>Phase 3 RCT, FQ-susceptible RR-TB, age &ge;15, n=754 (699 mITT)</td>
                   <td>Five 9-month all-oral regimens vs standard care: <strong>BLMZ, BLLfxCZ, BDLLfxZ, DCMZ, DCLLfxZ</strong></td>
-                  <td>Control 80.7% favorable (mITT). Risk differences: <strong>BLLfxCZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Grade &ge;3 hepatotoxicity 11.7% overall vs 7.1% control</td>
+                  <td>Control 80.7% favorable (mITT). Risk differences: <strong>BLLfxCZ +9.8</strong> (0.9&ndash;18.7); <strong>BLMZ +8.3</strong> (&minus;0.8&ndash;17.4); <strong>BDLLfxZ +4.6</strong> (&minus;4.9&ndash;14.1); DCMZ +2.5 (&minus;7.5&ndash;12.5); DCLLfxZ <strong>not non-inferior</strong>. <strong>DCMZ failed non-inferiority in the per-protocol analysis</strong>, so the authors conclude <strong>three</strong> regimens are supported. Transient grade &ge;3 hepatotoxicity: 18% (BLMZ), 16% (BLLfxCZ), 8.7% (BDLLfxZ); WHO judges these too imprecise to compare regimens ${cite(8)}</td>
                 </tr>
                 <tr>
                   <td><strong>STREAM stage 2</strong>, Lancet 2022 ${cite(31)}</td>
@@ -872,7 +872,7 @@ const CASES = [
                   <td><strong>BEAT Tuberculosis</strong>, NEJM 2026 ${cite(35)}</td>
                   <td>Pragmatic RCT, South Africa, n=403, <strong>age &ge;6, pregnant/breastfeeding and FQ-resistant patients included</strong></td>
                   <td><strong>BDLLfxC</strong> 6 months: bedaquiline + delamanid + linezolid, <strong>plus levofloxacin (if FQ-susceptible) or clofazimine (if FQ-resistant)</strong>; both were given until the FQ result was available, then one was stopped. vs 9-month local standard</td>
-                  <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%. 85 (21%) had FQ-resistant TB; the treatment effect didn't differ by FQ resistance. 9 pregnant at enrolment + 1 during the trial; all live births (one premature)</td>
+                  <td><strong>Success 86.1% vs 86.0%</strong>; adjusted RD &minus;0.2 (95% CI &minus;6.9 to 6.5); <strong>non-inferior</strong> (margin 10). Grade &ge;3 AEs 31.2% vs 37.0%. 85 (21%) had FQ-resistant TB; the treatment effect didn't differ by FQ resistance. Pregnancy outcomes: see the table above.</td>
                 </tr>
               </tbody>
             </table>
