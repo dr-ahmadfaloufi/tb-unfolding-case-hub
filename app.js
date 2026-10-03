@@ -8,7 +8,12 @@
 function initPresentationToggle() {
   const KEY = "tbhub-presentation-mode";
   const body = document.body;
-  const saved = localStorage.getItem(KEY) === "1";
+  let saved = false;
+  try {
+    saved = localStorage.getItem(KEY) === "1";
+  } catch (e) {
+    // Storage may be unavailable; the toggle still works for this page.
+  }
   if (saved) body.classList.add("presentation-mode");
 
   const wrap = document.getElementById("presentation-toggle-wrap");
@@ -24,7 +29,11 @@ function initPresentationToggle() {
     const on = checkbox.checked;
     body.classList.toggle("presentation-mode", on);
     label.classList.toggle("active", on);
-    localStorage.setItem(KEY, on ? "1" : "0");
+    try {
+      localStorage.setItem(KEY, on ? "1" : "0");
+    } catch (e) {
+      // Keep the current page usable even when preferences cannot be saved.
+    }
   });
 }
 
@@ -268,7 +277,7 @@ function renderCase() {
         ${revealHtml}
         ${actionsHtml}
       </div>
-      ${isRevealed && isLast ? caseCompleteHtml() : ""}
+      ${state.revealed.every(Boolean) ? caseCompleteHtml() : ""}
     `;
   }
 
