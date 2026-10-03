@@ -11,3 +11,4 @@ desktop.ini
 
 # Firebase local deploy cache
 .firebase/
+node_modules/
