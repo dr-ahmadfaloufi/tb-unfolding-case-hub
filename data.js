@@ -622,7 +622,7 @@ const CASES = [
           <h4>Today, before full DST</h4>
           <ul>
             <li><strong>Treat as MDR/RR-TB.</strong> Do not start the standard first-line regimen. WHO manages rifampicin-resistant TB (RR-TB) and multidrug-resistant TB (MDR-TB) together as MDR/RR-TB. ${cite(9)}</li>
-            <li><strong>Why "treat as MDR":</strong> the two usually travel together. Worldwide in 2024, <strong>16% of previously treated</strong> patients had MDR/RR-TB, versus <strong>3.2% of new</strong> patients. ${cite(15)}</li>
+            <li><strong>Why "treat as MDR":</strong> WHO manages RR-TB and MDR-TB together as MDR/RR-TB ${cite(9)}. Prior treatment raises the risk: worldwide in 2024, <strong>16% of previously treated</strong> patients had MDR/RR-TB, versus <strong>3.2% of new</strong> patients. ${cite(15)}</li>
             <li><strong>Isolate, notify, start contact investigation.</strong> Contact management must account for the resistance pattern.</li>
             <li><strong>Send second-line DST now, especially fluoroquinolone susceptibility.</strong> It decides between BPaLM and BPaL (next stage). Globally, <strong>18%</strong> of MDR/RR-TB is pre-XDR (fluoroquinolone-resistant). ${cite(15)}</li>
             <li><strong>Baseline work-up before a bedaquiline/linezolid regimen:</strong>
@@ -639,7 +639,7 @@ const CASES = [
             </li>
             <li><strong>Monitoring (Saudi NTP Manual, Table 10.7):</strong> CBC weekly for the first month, then monthly on linezolid; visual acuity if vision changes on linezolid; ECG at 2, 4, 8, 12 and 24 weeks on bedaquiline/delamanid, stopping them if corrected QT interval (QTc) &gt;500 ms; LFTs monthly on bedaquiline. ${cite(6)}</li>
           </ul>
-          <h4>Definitions (WHO 2021)</h4>
+          <h4>Definitions (WHO)</h4>
           <div class="table-scroll">
             <table class="data-table">
               <thead><tr><th>Term</th><th>Definition</th></tr></thead>
