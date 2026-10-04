@@ -1983,7 +1983,7 @@ const CASES = [
             </table>
           </div>
           ${abbrev("RCT", "RR")}
-          <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. That is why NTCA/CDC rates 6H strong and 9H conditional, and the Saudi manual recommends 6H. ${cite(99, 6)}</p>
+          <p><strong>Takeaway:</strong> no trial has compared 6H with 9H directly. A longer course may add protection, mostly with more extensive fibrotic disease, at the cost of more hepatotoxicity and lower completion. NTCA/CDC 2020 rates 6H strong and 9H conditional; the Saudi manual recommends 6H. ${cite(99, 6)}</p>
           <h4>Guidelines</h4>
           <div class="table-scroll">
             <table class="data-table">
