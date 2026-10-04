@@ -1537,6 +1537,22 @@ const CASES = [
           "Why is sputum not the starting point?",
           "What do you send from a single node sample?",
         ],
+        mcq: {
+          stem: "No cough, no parenchymal lesion, and bilateral hilar and mediastinal nodes. What is the best first diagnostic step?",
+          options: [
+            "Three induced sputum samples for smear, NAAT and culture.",
+            "EBUS-TBNA of an accessible node for microbiology and cytology.",
+            "Empiric TB treatment and a repeat CT in two months.",
+            "Mediastinoscopy for an excisional node biopsy.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `With no parenchymal lesion and no cough, sputum has nothing to reflect; tissue is the only way to separate TB, sarcoidosis and lymphoma.`,
+            `<strong>Correct.</strong> One EBUS-TBNA gives AFB smear, culture and NAAT plus cytology/histology ${cite(1)}; EBUS finds granulomas far more often than conventional bronchoscopy ${cite(69)}.`,
+            `Sarcoidosis and lymphoma are on the differential; treating blind leaves them unexcluded.`,
+            `EBUS reaches stations 2R/2L, 4R/4L, 7, 10 and 11–12; surgery (VATS) is for nodes it can't reach, such as stations 5 and 6 ${cite(78)}.`,
+          ],
+        },
         reveal: `
           <h4>Pre-test probability</h4>
           <p><em>Why his origin matters:</em> India has the largest TB burden of any country ${cite(15)}, which raises his pre-test probability for TB.</p>
@@ -1578,6 +1594,22 @@ const CASES = [
           "How can you raise the yield of the same sample?",
           "Treat now or wait for culture?",
         ],
+        mcq: {
+          stem: "EBUS-TBNA shows necrotizing granulomas; AFB smear and NAAT are negative; culture is pending. What is the best next step?",
+          options: [
+            "Treat as sarcoidosis, since TB is now excluded.",
+            "Repeat EBUS-TBNA before any treatment.",
+            "Start empiric TB treatment while culture is pending.",
+            "Wait for the culture before deciding on treatment.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `Negative smear/NAAT on extrapulmonary tissue is common and never excludes TB ${cite(1)}. Sarcoidosis is defined by non-necrotizing granulomas ${cite(73)}; necrosis was absent in 94% of sarcoidosis ${cite(74)}.`,
+            `The picture already supports TB, and ATS/CDC/IDSA start empiric treatment without waiting for culture ${cite(4)}.`,
+            `<strong>Correct.</strong> Necrotizing granulomas in this epidemiologic context; empiric multidrug treatment is started in almost all situations in which active TB is suspected ${cite(4)}.`,
+            `Culture takes weeks; empiric treatment is started in almost all situations in which active TB is suspected ${cite(4)}.`,
+          ],
+        },
         reveal: `
           <h4>Does a negative smear and NAAT rule out TB?</h4>
           <ul>
@@ -1652,6 +1684,22 @@ const CASES = [
           "What does a needle aspirate miss in lymphoma?",
           "Which techniques get tissue architecture, and at what cost?",
         ],
+        mcq: {
+          stem: "Lymphoma is the concern and the needle aspirate is non-diagnostic. Which option gets tissue architecture with the least extra invasiveness?",
+          options: [
+            "EBUS-guided forceps or cryoprobe biopsy through the same tract.",
+            "Repeat EBUS-TBNA with more needle passes.",
+            "Flow cytometry on a repeat needle aspirate.",
+            "Mediastinoscopy as the next step for all patients.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> Cryobiopsy sensitivity 92% vs 15% for aspiration in new lymphoma ${cite(72)}; pooled yield 86% vs 78% across diagnoses ${cite(77)}.`,
+            `Aspirate cytology rarely gives the architecture needed for subtyping ${cite(71)}.`,
+            `An aspirate, even with flow cytometry, rarely gives the architecture needed for subtyping ${cite(71)}.`,
+            `Mediastinoscopy also gives architecture but is surgical; EBUS forceps or cryobiopsy uses the same tract, with slightly more complications than aspiration ${cite(77)}.`,
+          ],
+        },
         reveal: `
           <h4>Getting tissue architecture</h4>
           <ul>
@@ -1724,6 +1772,22 @@ const CASES = [
           "How common is this, and how do you confirm it?",
           "What should you <em>not</em> do?",
         ],
+        mcq: {
+          stem: "At 10 weeks of treatment for culture-confirmed, drug-susceptible TB, one node has enlarged. What is the most likely explanation and action?",
+          options: [
+            "Treatment failure; switch to an MDR-TB regimen.",
+            "Treatment failure; extend treatment to 9 months.",
+            "Possible lymphoma; excise the enlarged node.",
+            "Paradoxical reaction; confirm adherence, continue the regimen.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Enlarging nodes can occur without any bacteriological relapse ${cite(4)}; in paradoxical reactions, culture is negative ${cite(82)}.`,
+            `Don't change or extend the regimen for enlargement alone; 6 months is adequate for drug-susceptible TB lymphadenitis ${cite(4)}.`,
+            `Therapeutic excision is not indicated except in unusual circumstances ${cite(4)}.`,
+            `<strong>Correct.</strong> Paradoxical reactions occurred in 25% of HIV-negative extrapulmonary TB, mostly in nodes, at a median of 86 days ${cite(81)}; reviews report 13–35% in lymph node TB ${cite(82)}.`,
+          ],
+        },
         reveal: `
           <h4>Duration</h4>
           <ul>
