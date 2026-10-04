@@ -1978,6 +1978,22 @@ const CASES = [
           "IGRA or TST in a BCG-vaccinated workforce?",
           "Who gets treatment during the window before the repeat test?",
         ],
+        mcq: {
+          stem: "Her baseline IGRA on day 3 is negative and she has no symptoms. What is the next step?",
+          options: [
+            "She is cleared; no further testing is needed.",
+            "Repeat now with a TST to confirm the result.",
+            "Repeat the IGRA 8–10 weeks after the last exposure.",
+            "Start window prophylaxis until the repeat test.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `The immune response can take up to 8–10 weeks to become detectable; a negative test before 8 weeks cannot exclude infection ${cite(5)}.`,
+            `Switching test types makes a "conversion" hard to interpret ${cite(88)}; IGRA is preferred in BCG-vaccinated people ${cite(1)}.`,
+            `<strong>Correct.</strong> Repeat 8–10 weeks after the last exposure, with the same test type ${cite(5, 88)}.`,
+            `Window prophylaxis is for contacts at risk of rapid progression (children &lt;5, HIV, transplant, TNF-α antagonists); she is an immunocompetent adult ${cite(5)}.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>No.</strong> It takes up to <strong>8&ndash;10 weeks</strong> after exposure for the immune response to become detectable. A negative test before 8 weeks cannot exclude infection. ${cite(5)}</li>
@@ -2040,6 +2056,22 @@ const CASES = [
           "How do you manage her now?",
           "What do the guidelines say?",
         ],
+        mcq: {
+          stem: "On day 10 she has fever, cough and right lower lobe consolidation; SpO2 96%, managed as an outpatient. What is the best management?",
+          options: [
+            "Treat as CAP with amoxicillin; keep the 8–10-week IGRA.",
+            "Treat as CAP with levofloxacin; keep the 8–10-week IGRA.",
+            "Airborne isolation and sputum for AFB smear, culture and NAAT.",
+            "Start four-drug TB treatment while sputum results are pending.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> ATS/IDSA 2019: amoxicillin 1 g three times daily for a healthy outpatient (strong) ${cite(92)}. Active TB typically appears 3–9 months after infection, so disease at day 10 would be biologically implausible ${cite(93)}.`,
+            `Empiric fluoroquinolones delayed TB diagnosis by about 19 days and raised the odds of fluoroquinolone-resistant M. tuberculosis (OR 2.70) ${cite(94)}; the Saudi Thoracic Society suggests macrolides over fluoroquinolones in outpatients ${cite(91)}.`,
+            `A TB work-up is for an atypical course: no response to CAP treatment, cavitation, or persisting symptoms ${cite(93)}.`,
+            `Primary infection develops within about 6 weeks and active TB typically 3–9 months later; nothing here points to TB ${cite(93)}.`,
+          ],
+        },
         reveal: `
           <p><strong>Differential first</strong>, most to least likely:</p>
           <div class="table-scroll">
@@ -2121,6 +2153,22 @@ const CASES = [
           "What is her risk of progressing to disease, and when is it highest?",
           "Which conditions raise that risk, and which of them mean you should test and treat?",
         ],
+        mcq: {
+          stem: "Nine weeks later her repeat IGRA is positive and the CAP has resolved. What must come before preventive treatment?",
+          options: [
+            "A TST to confirm the IGRA result.",
+            "A repeat IGRA in 3 months to confirm conversion.",
+            "Sputum culture for every converter, whatever the CXR.",
+            "A symptom review and a CXR to exclude active TB.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Neither IGRA nor TST can tell latent from active TB; the step before treatment is excluding disease ${cite(1)}.`,
+            `The risk is front-loaded: 45% of eventual cases occur within 1 year (Borgdorff) ${cite(93)}, which is why TPT is offered promptly after a documented conversion.`,
+            `Sputum studies are for an abnormal symptom review or CXR ${cite(88, 1)}.`,
+            `<strong>Correct.</strong> Symptom evaluation plus CXR for every new positive test ${cite(88, 1)}. Rifamycin TPT showed no significant rise in rifamycin resistance, but the confidence interval was wide (RR 3.45, 95% CI 0.72–16.56), so disease must be excluded first ${cite(95)}.`,
+          ],
+        },
         reveal: `
           <h4>Before treating</h4>
           <ul>
@@ -2189,6 +2237,22 @@ const CASES = [
           "What do WHO, CDC/NTCA and the Saudi manual recommend?",
           "Which regimen for her, and why?",
         ],
+        mcq: {
+          stem: "Active TB is excluded, the source strain was drug-susceptible, and she is HIV-negative. Which of these regimens best fits the evidence?",
+          options: [
+            "9 months of daily isoniazid.",
+            "4 months of daily rifampicin.",
+            "6 months of daily levofloxacin.",
+            "1 month of daily rifapentine plus isoniazid.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `4R was non-inferior to 9H, with completion 15.1 points higher and fewer grade 3–5 adverse events ${cite(106)}; NTCA/CDC list 9H as an alternative (conditional) ${cite(99)}.`,
+            `<strong>Correct.</strong> Non-inferior to 9H with better completion and safety ${cite(106)}; NTCA/CDC preferred regimen (strong, moderate, HIV-negative) ${cite(99)}.`,
+            `6Lfx is for contacts of MDR/RR-TB; her source was drug-susceptible ${cite(98)}.`,
+            `BRIEF-TB enrolled only people with HIV; WHO's 1HP recommendation is conditional, and NTCA/CDC 2020 does not address it ${cite(107, 98, 99)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
