@@ -1121,6 +1121,22 @@ const CASES = [
           "Who should get a LAM test at all?",
           "What does a negative result mean in this patient?",
         ],
+        mcq: {
+          stem: "Two spontaneous sputum smears, sputum NAAT and urine LAM are all negative. What does the negative LAM mean here?",
+          options: [
+            "TB is effectively excluded at a CD4 count of 38.",
+            "TB is unlikely, and the TB work-up can stop.",
+            "A repeat LAM is needed; two negatives exclude TB.",
+            "TB remains possible, and the work-up continues.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Even with CD4 &le;100, LF-LAM sensitivity is only 54% (38–69%) ${cite(46)}.`,
+            `In the Saudi algorithm, a negative LAM means re-evaluate and test further (CXR, repeat Xpert, culture) ${cite(6)}.`,
+            `The Saudi algorithm's next step after a negative LAM is further testing (CXR, repeat Xpert, culture), not a repeat LAM ${cite(6)}.`,
+            `<strong>Correct.</strong> A positive LAM rules TB in; a negative one rules nothing out. At CD4 &le;100, sensitivity 54% and specificity 88% ${cite(46)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -1183,6 +1199,22 @@ const CASES = [
           "In which patients was the benefit shown?",
           "Is this patient one of them?",
         ],
+        mcq: {
+          stem: "What does trial evidence show for LAM-guided care in HIV-positive inpatients?",
+          options: [
+            "Lower mortality across all HIV-positive inpatients.",
+            "Lower 8-week mortality in one trial, mainly in sicker patients.",
+            "No effect on mortality in any trial or subgroup.",
+            "Benefit only in outpatients with higher CD4 counts.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `STAMP, in unselected HIV-positive inpatients, showed no reduction in overall 56-day mortality ${cite(48)}.`,
+            `<strong>Correct.</strong> Peter 2016: 8-week mortality 21% vs 25% (adjusted RR 0.83); the authors suggest the benefit is greatest in the sickest and most immunosuppressed ${cite(47)}. STAMP: benefit in high-risk prespecified subgroups, including CD4 &lt;100 ${cite(48)}.`,
+            `Peter 2016 reduced 8-week mortality ${cite(47)}.`,
+            `Both trials enrolled inpatients, and STAMP's benefit appeared at CD4 &lt;100 ${cite(47, 48)}.`,
+          ],
+        },
         reveal: `
           <h4>Trials</h4>
           <div class="table-scroll">
@@ -1223,6 +1255,22 @@ const CASES = [
           "Is post-bronchoscopy sputum worth sending?",
           "Can the procedure itself lower culture yield?",
         ],
+        mcq: {
+          stem: "Spontaneous sputum smears and NAAT are negative; cultures are pending. Per ATS/IDSA/CDC, what is the preferred next respiratory sample?",
+          options: [
+            "Induced sputum.",
+            "Bronchoscopy with BAL.",
+            "Gastric aspirate.",
+            "More spontaneous sputum only.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> ATS/IDSA/CDC suggest sputum induction rather than bronchoscopy as the first method when the patient is smear-negative (conditional) ${cite(1)}. In a meta-analysis of paired studies, culture yield was similar: 72% vs 70% ${cite(55)}.`,
+            `Bronchoscopy is for when induced sputum can't be obtained, or for suspected miliary TB with negative induced sputum and no other accessible lesion ${cite(1)}.`,
+            `In inpatients unable to expectorate, three induced sputa diagnosed more cases than three gastric washings (39% vs 30%) ${cite(53)}.`,
+            `ATS/IDSA/CDC suggest induction when the patient is smear-negative ${cite(1)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <p>All are <strong>paired comparisons</strong> (both methods in the same patients), not randomized trials.</p>
@@ -1317,6 +1365,22 @@ const CASES = [
           "Is a granuloma without a positive culture enough to treat?",
           "What does the Saudi algorithm say for a seriously ill patient with HIV?",
         ],
+        mcq: {
+          stem: "Microbiology is still negative, and he is seriously ill and not improving. What is the best approach now?",
+          options: [
+            "Withhold TB treatment until a tissue diagnosis is made.",
+            "Withhold TB treatment until mycobacterial cultures return.",
+            "Start TB treatment now and continue the work-up in parallel.",
+            "Start TB treatment now and stop all further testing.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `ATS/CDC/IDSA: empiric multidrug treatment is initiated in almost all situations in which active TB is suspected ${cite(4)}.`,
+            `Saudi Algorithm 4: a seriously ill patient who is not improving after 3–5 days starts presumptive TB treatment ${cite(6)}.`,
+            `<strong>Correct.</strong> Treat now ${cite(4, 6)}, and keep sampling: cultures give DST, and fungal cultures are still needed for the travel differential.`,
+            `Histology and cultures still matter; results must be read in context "because neither false-positive nor false-negative results are rare" ${cite(1)}.`,
+          ],
+        },
         reveal: `
           <h4>The cost of waiting</h4>
           <ul>
