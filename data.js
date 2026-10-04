@@ -2757,6 +2757,22 @@ const CASES = [
           "MRI of the whole spine has been done." +
           img(7, "stage2", "spine-pathology", "Tuberculosis of the spinal column, autopsy specimen (reference image, not this patient)"),
         question: "Does the imaging favour TB or brucella?",
+        mcq: {
+          stem: "If this is tuberculous rather than brucellar spondylitis, which MRI pattern is most likely?",
+          options: [
+            "Lower lumbar level, end-plate destruction, abnormal disc signal on T2.",
+            "Mid-thoracic level, vertebral collapse, subligamentous spread over &ge;3 levels.",
+            "Lower lumbar level, fan-shaped signal, subligamentous spread over &lt;3 levels.",
+            "Thoracic level, end-plate-only destruction, granulation tissue without abscess.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `The brucellar pattern: lower lumbar spine (68% of lesions) with destruction limited to the end-plates ${cite(131)}; abnormal T2 disc signal 85% vs 33% in TB ${cite(132)}.`,
+            `<strong>Correct.</strong> TB favours the mid-thoracic spine (73%), with gibbus (60%) and paraspinal abscesses (14 of 15) ${cite(131)}; vertebral collapse 42% vs 2%, subligamentous spread &ge;3 levels 54% vs 8% ${cite(132)}.`,
+            `Also brucellar: subligamentous spread &lt;3 levels 58% vs 23%, and a fan-shaped hyperintense signal 23% vs 0% ${cite(132)}.`,
+            `A thoracic level fits TB, but destruction limited to the end-plates with granulation tissue or oedema, rather than an abscess, is the brucellar pattern ${cite(131)}.`,
+          ],
+        },
         reveal: `
           <p><strong>MRI:</strong> destruction of <strong>T8 and T9</strong>, with disc involvement, a <strong>large paravertebral abscess</strong>, and <strong>subligamentous spread over three levels</strong>. Early vertebral collapse. The lumbar spine is normal.</p>
           <h4>Studies</h4>
@@ -2784,6 +2800,22 @@ const CASES = [
         context:
           "Brucella serology negative. Blood cultures negative. CT-guided biopsy of the paravertebral collection: granulomatous inflammation; <strong>Xpert MTB detected, rifampicin resistance not detected</strong>. Culture pending.",
         question: "Why biopsy at all, and what if the biopsy had been negative?",
+        mcq: {
+          stem: "Brucella serology and blood cultures are negative. Why biopsy before starting TB treatment?",
+          options: [
+            "Imaging is diagnostic, so the biopsy only confirms it.",
+            "Biopsy yield is the same before or after treatment starts.",
+            "Tissue gives culture and DST, and resistance is not rare.",
+            "Only a positive culture or NAAT would justify treatment.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `The pattern allows a presumptive diagnosis, "but the definitive diagnosis depends upon bacteriological tests" ${cite(130)}; lower lumbar TB is hard to tell from brucella ${cite(131)}.`,
+            `Prior antitubercular treatment reduced the biopsy yield ${cite(133)}.`,
+            `<strong>Correct.</strong> Only culture gives an isolate for full DST ${cite(1)}; in one series, rifampicin resistance was found in 16 of 72 Xpert-positive biopsies (22%) ${cite(133)}.`,
+            `Treatment can rest on histology or a clinical diagnosis. The WHO/Saudi case definition of "clinically diagnosed" TB "includes cases diagnosed on the basis of X-ray abnormalities or suggestive histology and extrapulmonary cases without laboratory confirmation" ${cite(6, 9)}. In the biopsy series, histopathology was confirmatory in 36.6% ${cite(133)}, and negative microbiology "may not be used to exclude TB" ${cite(1)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -2820,6 +2852,22 @@ const CASES = [
       {
         title: "Treatment: how long, and does he need surgery?",
         question: "What regimen and duration, and is surgery indicated?",
+        mcq: {
+          stem: "Xpert-positive spinal TB; he is neurologically intact and the spine is stable. What is the best management?",
+          options: [
+            "Surgical debridement plus 6 months of treatment.",
+            "18 months of treatment without rifampicin.",
+            "Adjunctive corticosteroids with standard treatment.",
+            "6–9 months of a rifampicin-based regimen; no surgery now.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Several trials found no added benefit of surgical debridement over chemotherapy alone; uncomplicated spinal TB is managed medically ${cite(4)}.`,
+            `6–9-month rifampicin regimens are at least as effective as 18-month regimens without rifampicin ${cite(4)}.`,
+            `Corticosteroids are considered when spinal TB comes with meningitis ${cite(4)}; the Saudi manual recommends steroids only for TB meningitis and pericarditis ${cite(6)}.`,
+            `<strong>Correct.</strong> Some experts favour 9 months because response is hard to assess ${cite(4)}.`,
+          ],
+        },
         reveal: `
           <h4>Guidelines</h4>
           <div class="table-scroll">
@@ -2849,6 +2897,22 @@ const CASES = [
         context:
           "At week 6 he reports leg weakness and difficulty walking. MRI: the paravertebral abscess is larger, with <strong>cord compression at T8</strong>. His culture has grown fully susceptible <em>M. tuberculosis</em>, and adherence is documented.",
         question: "Is this treatment failure, and what now?",
+        mcq: {
+          stem: "At week 6 he has new leg weakness; the abscess is larger with cord compression at T8. The isolate is susceptible and adherence is documented. What is the best next step?",
+          options: [
+            "Switch to a second-line regimen for presumed resistance.",
+            "Urgent spinal surgery referral; continue the same drugs.",
+            "Add corticosteroids and observe without surgery.",
+            "Stop treatment and re-biopsy before deciding.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `The isolate is susceptible and adherence is documented; paradoxical worsening is possible once failure and resistance are excluded ${cite(4)}.`,
+            `<strong>Correct.</strong> Relief of cord compression with neurological deficits, and ongoing deterioration, are listed indications for surgery (expert opinion); the drugs continue ${cite(4)}.`,
+            `Corticosteroids are for spinal TB with meningitis ${cite(4)}; cord compression with a deficit is a surgical question.`,
+            `The same drugs continue ${cite(4)}; the culture has already given a full DST.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>Paradoxical worsening is possible</strong>, but it is diagnosed only after a thorough evaluation has excluded <strong>treatment failure and drug resistance</strong>. Here the isolate is susceptible and adherence is documented. ${cite(4)}</li>
