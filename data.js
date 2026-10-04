@@ -3195,6 +3195,22 @@ const CASES = [
         context:
           "<strong>Colonoscopy:</strong> ulcers in the caecum and at the ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB polymerase chain reaction (PCR) negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
         question: "Does anything here settle it?",
+        mcq: {
+          stem: "Colonoscopy shows ulcers in the caecum and at the ileocaecal valve. Which valve appearance is most suggestive of intestinal TB rather than Crohn's disease?",
+          options: [
+            "A narrowed, stenosed ileocaecal valve.",
+            "Skip lesions with a normal ileocaecal valve.",
+            "A patulous (wide, fixed-open) ileocaecal valve.",
+            "Ileal cobblestoning with the valve spared.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `Strictures occur in both diseases and vary between studies; in the latest meta-analysis, luminal stricture favoured Crohn's disease ${cite(141)}.`,
+            `Skip lesions favour Crohn's disease (on CT, sensitivity 86%, specificity 74%) ${cite(143, 141)}.`,
+            `<strong>Correct.</strong> A patulous valve was seen in 21–51% of intestinal TB vs 0–12% of Crohn's disease across colonoscopy series. It is suggestive, not exclusive: the only exclusive features are caseation, AFB and necrotic nodes ${cite(141)}.`,
+            `Cobblestoning was seen in 17–40% of Crohn's disease vs 0–10% of intestinal TB ${cite(141)}.`,
+          ],
+        },
         reveal: `
           <p><strong>Colonoscopy in detail:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve.</p>
           <h4>Studies: features that separate intestinal TB (ITB) from Crohn's disease (CD)</h4>
@@ -3233,6 +3249,22 @@ const CASES = [
         title: "Treat for TB, or treat for Crohn's?",
         question:
           "The gastroenterologist wants to start steroids for presumed Crohn's disease. What do you advise?",
+        mcq: {
+          stem: "The gastroenterologist wants to start steroids for presumed Crohn's disease. What do you advise?",
+          options: [
+            "Hold immunosuppression and start a trial of TB treatment.",
+            "Start steroids now; add TB treatment if the culture grows.",
+            "Start steroids with isoniazid alone as TB cover.",
+            "Start an anti-TNF agent once the IGRA is repeated.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> A therapeutic trial of TB treatment is still needed in a significant proportion of patients to establish the diagnosis ${cite(141)}; 94% of ITB patients responded symptomatically by 3 months ${cite(145)}.`,
+            `TB has not been excluded, and culture takes weeks ${cite(1)}.`,
+            `Isoniazid alone is latent-TB treatment; possible active intestinal TB needs the standard four-drug regimen ${cite(4)}.`,
+            `TB risk with anti-TNF monoclonal antibodies is high (SIR 18.6–29.3) ${cite(100)}; screening and LTBI treatment come before any biologic ${cite(111)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3259,6 +3291,22 @@ const CASES = [
         context:
           "He starts TB treatment. The biopsy culture later grows fully susceptible <em>M. tuberculosis</em>.",
         question: "How long do you treat?",
+        mcq: {
+          stem: "The biopsy culture grows fully susceptible M. tuberculosis. How long do you treat?",
+          options: [
+            "9 months, because gut absorption may be poor.",
+            "12 months, as for TB meningitis.",
+            "6 months, plus adjunctive corticosteroids.",
+            "6 months of standard 2HRZE/4HR.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `6 vs 9 months: clinical cure no different (RR 1.02, 0.97–1.08); relapse 2 of 140 vs 0 of 129 ${cite(146)}.`,
+            `Expert opinion is that 6 months is adequate for intestinal or peritoneal TB ${cite(4)}.`,
+            `There is no steroid recommendation for intestinal TB, and steroids are not routine even in tuberculous peritonitis ${cite(4)}.`,
+            `<strong>Correct.</strong> ${cite(4, 146)}`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3290,6 +3338,22 @@ const CASES = [
         title: "Two months later, the pain is gone. Diagnosis confirmed?",
         context: "At 2 months he is pain-free and gaining weight.",
         question: "Does his clinical response confirm intestinal TB?",
+        mcq: {
+          stem: "Had the biopsy culture been negative, what best distinguishes intestinal TB from Crohn's disease after a trial of TB treatment?",
+          options: [
+            "Resolution of pain and fever by 2 months.",
+            "Mucosal healing on repeat colonoscopy.",
+            "A positive IGRA at baseline.",
+            "Symptom response at 6 months of treatment.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `Symptoms also improved in 38% (3 months) and 64% (2 months, validation cohort) of patients who turned out to have Crohn's disease ${cite(145)}.`,
+            `<strong>Correct.</strong> Mucosal healing in 100% of ITB vs 5% of Crohn's disease ${cite(145)}.`,
+            `IGRA is supportive only (specificity 87%) ${cite(142)}.`,
+            `Even at 6 months, 37% (derivation) and 31% (validation) of eventual Crohn's patients had a symptomatic response ${cite(145)}.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>Not on its own.</strong> Symptoms also improved in <strong>38&ndash;64%</strong> of patients who turned out to have Crohn's disease. ${cite(145)}</li>
