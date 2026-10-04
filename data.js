@@ -2745,9 +2745,10 @@ const CASES = [
       {
         title: "Biopsies inconclusive. How do you tell TB from Crohn's?",
         context:
-          "<strong>Colonoscopy:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB polymerase chain reaction (PCR) negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
+          "<strong>Colonoscopy:</strong> ulcers in the caecum and at the ileocaecal valve. <strong>Biopsies:</strong> non-caseating granulomas; AFB smear negative; TB polymerase chain reaction (PCR) negative; culture pending. <strong>CT enterography:</strong> short-segment ileocaecal thickening; enlarged mesenteric nodes without necrosis; no comb sign. <strong>IGRA positive.</strong>",
         question: "Does anything here settle it?",
         reveal: `
+          <p><strong>Colonoscopy in detail:</strong> transverse ulcers in the caecum; a patulous ileocaecal valve.</p>
           <h4>Studies: features that separate intestinal TB (ITB) from Crohn's disease (CD)</h4>
           <div class="table-scroll">
             <table class="data-table">
