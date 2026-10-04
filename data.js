@@ -2434,10 +2434,11 @@ const CASES = [
       {
         title: "The MRI",
         context:
-          "MRI: destruction of <strong>T8 and T9</strong>, with disc involvement, a <strong>large paravertebral abscess</strong>, and <strong>subligamentous spread over three levels</strong>. Early vertebral collapse. The lumbar spine is normal." +
+          "MRI of the whole spine has been done." +
           img(7, "stage2", "spine-pathology", "Tuberculosis of the spinal column, autopsy specimen (reference image, not this patient)"),
         question: "Does the imaging favour TB or brucella?",
         reveal: `
+          <p><strong>MRI:</strong> destruction of <strong>T8 and T9</strong>, with disc involvement, a <strong>large paravertebral abscess</strong>, and <strong>subligamentous spread over three levels</strong>. Early vertebral collapse. The lumbar spine is normal.</p>
           <h4>Studies</h4>
           <div class="table-scroll">
             <table class="data-table">
@@ -2454,7 +2455,7 @@ const CASES = [
           </div>
           ${abbrev("T2")}
           <p><strong>Caveat:</strong> "Lesions of tuberculous spondylitis affecting the lower lumbar spine were difficult to differentiate from those of brucellar spondylitis." ${cite(131)}</p>
-          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. Imaging raises the probability; it doesn't replace microbiology. ${cite(130)}</p>`,
+          <p><strong>Take-home:</strong> a thoracic level, a large abscess, spread across several levels and collapse all point to TB. The pattern permits a presumptive diagnosis, "but the definitive diagnosis depends upon bacteriological tests". ${cite(130, 131)}</p>`,
         pearl:
           "Thoracic, abscess, collapse: think TB. Lumbar, end-plate, disc: think brucella. The final word still belongs to the lab.",
       },
@@ -2491,9 +2492,10 @@ const CASES = [
             <li><strong>Get tissue before starting treatment.</strong> Prior treatment lowers the yield. ${cite(133)}</li>
             <li><strong>Only a culture gives full drug-susceptibility testing (DST).</strong> NAAT "does not produce an isolate, which is needed for DST". ${cite(1)}</li>
             <li>A negative biopsy doesn't exclude TB. ${cite(1)}</li>
+            <li>Treatment can still be given without microbiological confirmation. The WHO case definition used in the Saudi manual counts as "clinically diagnosed" TB "cases diagnosed on the basis of X-ray abnormalities or suggestive histology and extrapulmonary cases without laboratory confirmation" ${cite(6)}, and ATS/CDC/IDSA start empiric treatment in almost all situations in which active TB is suspected. ${cite(4)}</li>
           </ul>`,
         pearl:
-          "Biopsy first, treat second. In one referral series, one in five Xpert-positive spinal biopsies was rifampicin-resistant, and you only find that out if you sample before you treat.",
+          "Biopsy first, treat second. In one referral series, 22% of Xpert-positive spinal biopsies were rifampicin-resistant, and you only find that out if you sample before you treat.",
       },
       {
         title: "Treatment: how long, and does he need surgery?",
@@ -2515,7 +2517,7 @@ const CASES = [
           ${abbrev("ATS", "CDC", "IDSA", "NTP")}
           <h4>For this patient (neurologically intact, no instability)</h4>
           <ul>
-            <li><strong>2HRZE, then HR, for 6&ndash;9 months in total</strong>; many would choose 9. ${cite(4)}</li>
+            <li><strong>2HRZE, then HR, for 6&ndash;9 months in total</strong>; some experts favour 9 months because response is hard to assess. ${cite(4)}</li>
             <li><strong>No surgery now.</strong> ${cite(4)}</li>
             <li>Continue a DST-guided regimen once the culture returns. ${cite(1)}</li>
           </ul>`,
@@ -2530,7 +2532,7 @@ const CASES = [
         reveal: `
           <ul>
             <li><strong>Paradoxical worsening is possible</strong>, but it is diagnosed only after a thorough evaluation has excluded <strong>treatment failure and drug resistance</strong>. Here the isolate is susceptible and adherence is documented. ${cite(4)}</li>
-            <li><strong>Either way, the cord comes first.</strong> Cord compression with a new neurological deficit is one of the listed indications for surgery. <strong>Refer to spinal surgery urgently.</strong> ${cite(4)}</li>
+            <li><strong>Either way, the cord comes first.</strong> ATS/CDC/IDSA list relief of cord compression with persisting or recurrent neurological deficits, and ongoing deterioration on treatment, among the indications for surgery (expert opinion). <strong>Refer to spinal surgery urgently.</strong> ${cite(4)}</li>
             <li><strong>Continue the same drugs.</strong> ${cite(4)}</li>
             <li><strong>Duration:</strong> if hardware is placed, some experts extend treatment to 12 months. ${cite(4)}</li>
           </ul>`,
