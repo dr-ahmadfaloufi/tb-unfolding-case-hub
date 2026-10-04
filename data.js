@@ -2091,7 +2091,7 @@ const CASES = [
             <li><strong>Tuberculous pleurisy</strong>
               <ul>
                 <li><strong>Diagnostic thoracentesis:</strong> protein and lactate dehydrogenase (LDH) (to confirm an exudate by Light's criteria) ${cite(114)}; <strong>cell count and differential</strong> ${cite(1)}; <strong>adenosine deaminase (ADA)</strong>, &plusmn; free interferon-&gamma; ${cite(1)}; <strong>acid-fast bacilli (AFB) smear, mycobacterial culture and Xpert Ultra</strong> on the fluid ${cite(1)}.</li>
-                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> of those whose only CXR abnormality was the effusion. ${cite(115)} A normal CXR doesn't mean normal lungs: CT shows lung lesions in about three-quarters or more of patients. When the CT is also clear, respiratory samples rarely grow TB (bronchial aspirate 1/14 ${cite(116)}; sputum 0/5 ${cite(117)}). Bronchoscopy helps mainly when the CT shows a lesion, especially consolidation. ${cite(116)}</li>
+                <li><strong>Sputum as well, induced if he can't produce any, even with a clear lung field.</strong> Among patients with confirmed pleural TB who could not produce sputum, induced-sputum culture was positive in <strong>55%</strong> (35/64) of those whose only CXR abnormality was the effusion. ${cite(115)} A normal CXR doesn't mean normal lungs: CT shows lung lesions in about three-quarters or more of patients. When the CT is also clear, respiratory samples rarely grow TB (bronchial aspirate 1/14 ${cite(116)}; sputum 0/5 ${cite(117)}). Bronchoscopy helps mainly when the CT shows a lesion, especially consolidation. ${cite(116)}</li>
               </ul>
             </li>
             <li><strong>Parapneumonic effusion or empyema</strong>
@@ -2327,7 +2327,7 @@ const CASES = [
           </ul>
           <h4>How common, and what it adds</h4>
           <ul>
-            <li><strong>This is common, not a curiosity.</strong> In patients with suspected pleural TB who could not produce sputum, induced-sputum culture was positive in 55% of those with an otherwise normal CXR. ${cite(115)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(116, 117)}</li>
+            <li><strong>This is common, not a curiosity.</strong> Among patients with confirmed pleural TB who could not produce sputum, induced-sputum culture was positive in 55% (35/64) of those with an otherwise normal CXR. ${cite(115)} The "normal" CXR often hides lung disease that CT would show; when the CT is also clear, respiratory samples rarely grow TB. ${cite(116, 117)}</li>
             <li><strong>A bonus:</strong> the isolate gives a full DST. ${cite(1)}</li>
           </ul>
           <h4>What to do</h4>
