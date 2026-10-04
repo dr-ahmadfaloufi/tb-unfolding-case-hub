@@ -3124,7 +3124,7 @@ const MCQS = [
     ],
     answer: 1,
     optionNotes: [
-      `Not a listed neuropathy risk factor. ${cite(4)}`,
+      `Age over 35 isn't a risk factor; ATS lists advanced age, not middle age. ${cite(4)}`,
       `Correct. Diabetes is a neuropathy risk with isoniazid. ${cite(4)}`,
       `Reflects disease burden, not neuropathy risk.`,
       `Reflects bacillary load, not neuropathy risk.`,
@@ -3222,7 +3222,7 @@ const MCQS = [
       </div>
       ${abbrev("CI", "CNS", "CSF", "CrAg", "LP")}
       <p style="color:var(--text-muted); font-size:0.9rem;">Adults living with HIV with suspected cryptococcal meningitis; reference standard CSF culture (11 studies, 3,600 participants). ${cite(154)}</p>
-      <p>In HIV-negative patients, serum CrAg is less sensitive (about 83&ndash;91% by lateral flow assay in one small single-centre study), so a negative result is less reliable for ruling out disease. ${cite(155)}</p>`,
+      <p>In HIV-negative patients, serum CrAg by lateral flow assay was less sensitive in one small single-centre study (82.6% in disseminated and 90.9% in localized pulmonary disease), so a negative result is less reliable for ruling out disease. ${cite(155)}</p>`,
   },
   {
     topic: "Can't expectorate",
@@ -3340,7 +3340,7 @@ const MCQS = [
       `Highest in RATIO (SIR 29.3), but not consistently across studies; always well above etanercept. ${cite(100, 156, 157)}`,
       `Correct, though still raised above baseline. ${cite(100, 156, 157, 102)}`,
       `Highest in the Korean data and earliest onset (median 5.5 months), but no consistent ranking vs adalimumab. ${cite(156, 157)}`,
-      `No. The monoclonals ran about 3&ndash;7&times; the rate with etanercept. ${cite(100, 156, 157)}`,
+      `No. Against etanercept, the adjusted IRR was 3.1 (infliximab) and 4.2 (adalimumab) in BSRBR, and 6.8 and 3.45 in the Korean data; in RATIO the SIRs were 18.6 and 29.3 vs 1.8. ${cite(100, 156, 157)}`,
     ],
     rationale: `
       <p><strong>Etanercept</strong> (the soluble TNF receptor) had the lowest TB risk in each dataset below, but its risk is <strong>still raised above baseline</strong>: in RATIO its standardized incidence ratio was 1.8, and NSTC/NTCA list it among the higher-risk agents. ${cite(100, 156, 157, 102)} Monoclonal anti-TNF antibodies carry a much higher risk.</p>
