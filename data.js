@@ -3412,6 +3412,22 @@ const CASES = [
         context:
           "Exudative, <strong>lymphocyte-predominant</strong> ascites. <strong>SAAG 7 g/L.</strong> <strong>ADA 58 U/L.</strong> Cytology: no malignant cells. AFB smear negative; NAAT negative. Culture pending.",
         question: "How far does this take you?",
+        mcq: {
+          stem: "Exudative, lymphocytic ascites; SAAG 7 g/L; ADA 58 U/L; cytology negative; AFB smear and NAAT negative. What is the best interpretation?",
+          options: [
+            "TB is excluded by the negative smear and NAAT.",
+            "Peritoneal TB is very likely; culture still matters for DST.",
+            "Portal hypertension is likely given this SAAG.",
+            "Treat empirically; no further sampling is needed.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `Negative smear and NAAT on extrapulmonary specimens do not exclude TB ${cite(1)}.`,
+            `<strong>Correct.</strong> Ascitic ADA has pooled sensitivity 90% and specificity 94% (very low certainty) ${cite(150)}; lymphocytic ascites with a SAAG &lt;11 g/L should prompt TB ${cite(148)}. Culture of fluid or peritoneal biopsy remains the gold standard ${cite(148)}.`,
+            `A high SAAG points to portal hypertension; this SAAG is low ${cite(148)}.`,
+            `Culture of ascitic fluid or peritoneal biopsy is the gold standard and the only route to DST ${cite(148, 1)}; malignancy is still on the table.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3446,6 +3462,22 @@ const CASES = [
         title: "Laparoscopy, or treat now?",
         question:
           "Gynaecological oncology still wants tissue. Is laparoscopy needed, or can you treat on the fluid results?",
+        mcq: {
+          stem: "Because of the raised CA-125, gynaecological oncology still wants tissue. What is the best next step?",
+          options: [
+            "A staging laparotomy before any treatment.",
+            "Start treatment now; no tissue is needed.",
+            "Repeat the paracentesis and wait for culture.",
+            "Laparoscopy with peritoneal biopsy.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Treatment of abdominopelvic TB "is totally based on medical therapy other than surgery except biopsy"; in one series, half were diagnosed from laparotomy ${cite(149)}. Laparoscopy gives the same tissue without a laparotomy ${cite(151)}.`,
+            `With malignancy still a real possibility, one procedure can give histology, culture and DST ${cite(148, 151)}.`,
+            `Ascitic culture was positive in 11 of 19 (57.9%) in one series ${cite(147)}; culture sensitivity is 45–69% and results take weeks ${cite(1)}.`,
+            `<strong>Correct.</strong> Direct visualization plus peritoneal biopsy "provide the definitive tissue diagnosis" ${cite(151)}; low threshold for diagnostic laparoscopy ${cite(148)}; biopsy histology is 79–100% sensitive ${cite(1)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3473,6 +3505,22 @@ const CASES = [
         context:
           "Laparoscopy: studding of the peritoneum with tubercles. Histology: caseating granulomas. Culture later grows fully susceptible <em>M. tuberculosis</em>.",
         question: "What regimen and duration? Are adjunctive steroids needed?",
+        mcq: {
+          stem: "Caseating granulomas on biopsy; the culture grows fully susceptible M. tuberculosis. Which regimen?",
+          options: [
+            "2HRZE/4HR for 6 months, without routine steroids.",
+            "2HRZE/7HR for 9 months, without steroids.",
+            "2HRZE/4HR for 6 months, with prednisolone.",
+            "2HRZE/10HR for 12 months, with prednisolone.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> Expert opinion: 6 months is adequate for peritoneal TB, and steroids should not be prescribed routinely ${cite(4)}.`,
+            `6 vs 9 months: no difference in clinical cure (RR 1.02, 0.97–1.08); relapse too rare to compare ${cite(146)}.`,
+            `Data on adjunctive corticosteroids in TB peritonitis are limited, so they are not prescribed routinely ${cite(4)}.`,
+            `Longer courses with steroids are the TB meningitis approach; 6 months is adequate for peritoneal TB ${cite(4)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
