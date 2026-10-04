@@ -329,6 +329,22 @@ const CASES = [
           "Who else needs to know today?",
           "How much does each extra smear add? Morning sample? Fluorescence vs ZN?",
         ],
+        mcq: {
+          stem: "The first smear is negative, Xpert Ultra shows MTB detected (rifampicin resistance not detected), and the CXR shows a cavity. What is the best plan today?",
+          options: [
+            "Isolate, and wait for three smear results before treating.",
+            "Skip isolation since the smear is negative; treat today.",
+            "Isolate, send two more specimens, and start treatment today.",
+            "Isolate, and wait for culture growth before treating.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `Each extra smear adds less (first about 54%, second about 11%, third 2–5%) ${cite(1)}, and treatment need not wait: cavitary disease plus a positive NAAT is enough ${cite(4)}.`,
+            `A negative first smear does not rule out infectious TB, and cavitation independently predicts greater infectiousness ${cite(5, 6)}.`,
+            `<strong>Correct.</strong> Airborne isolation now; two more specimens for smear and culture, which gives full phenotypic DST ${cite(1)}; start treatment without waiting for culture ${cite(4)}.`,
+            `Culture takes weeks; cavitary disease plus a positive NAAT is enough to start ${cite(4)}.`,
+          ],
+        },
         reveal: `
           <h4>Today: isolation, samples and treatment</h4>
           <ul>
@@ -403,6 +419,22 @@ const CASES = [
           "What do those numbers mean in a new patient in a low-resistance setting?",
           "What if rifampicin resistance <em>is</em> detected? Does MDR-TB risk change what you do?",
         ],
+        mcq: {
+          stem: "In this new patient, Xpert Ultra reports rifampicin resistance not detected. Which statement is best supported?",
+          options: [
+            "Isoniazid susceptibility stays unknown until it is tested.",
+            "The result also confirms isoniazid susceptibility.",
+            "The result is unreliable and should be repeated first.",
+            "The result makes culture-based DST unnecessary.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> Xpert MTB/RIF reports rifampicin resistance only; the Saudi manual advises FL-LPA or phenotypic DST for isoniazid ${cite(6)}.`,
+            `Xpert MTB/RIF does not report isoniazid resistance; that needs FL-LPA or phenotypic DST ${cite(6)}.`,
+            `Ultra detects rifampicin resistance with 94.9% sensitivity and 99.1% specificity (high-certainty evidence) ${cite(14)}; the Saudi algorithm repeats the test only after a "detected" result in a low-risk patient ${cite(6)}.`,
+            `False rifampicin-susceptible results occur in 1–5% of cases tested, mostly from mutations outside the region Xpert reads ${cite(6)}; culture-based DST is still needed for the full profile, including isoniazid ${cite(1)}.`,
+          ],
+        },
         reveal: `
           <h4>If Xpert reports rifampicin resistance not detected</h4>
           <ul>
@@ -437,6 +469,22 @@ const CASES = [
           "Which one matters more clinically, and why?",
           "Does high-dose isoniazid help?",
         ],
+        mcq: {
+          stem: "DST shows isoniazid resistance through a katG mutation. What does this mean for isoniazid?",
+          options: [
+            "Low-level resistance; high-dose isoniazid can overcome it.",
+            "Low-level resistance plus cross-resistance to ethionamide.",
+            "The resistance level can't be judged from the gene.",
+            "High-level resistance; even high-dose isoniazid adds little.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `This is the usual inhA-promoter pattern, not katG ${cite(16, 9)}.`,
+            `Ethionamide/prothionamide cross-resistance goes with inhA-promoter mutations ${cite(16, 9)}.`,
+            `The gene does predict the level. WHO: with katG mutations, "the use of isoniazid even at a higher dose is less likely to be effective" ${cite(9)}.`,
+            `<strong>Correct.</strong> katG mutations usually confer high-level resistance ${cite(9)}.`,
+          ],
+        },
         reveal: `
           <p>Isoniazid resistance runs through two genes with different clinical weight:</p>
           <h4><em>katG</em> mutations</h4>
@@ -460,6 +508,22 @@ const CASES = [
           "What evidence is it based on, and how strong is it?",
           "Where do the guidelines agree or differ?",
         ],
+        mcq: {
+          stem: "Rifampicin-susceptible, isoniazid-resistant TB (katG). Which regimen does current guidance support?",
+          options: [
+            "Standard 2HRZE/4HR, with isoniazid continued throughout.",
+            "Rifampicin, ethambutol, pyrazinamide, levofloxacin for 6 months.",
+            "Rifampicin, ethambutol, pyrazinamide, streptomycin for 6 months.",
+            "Rifampicin, ethambutol, pyrazinamide alone for 6 months.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `With katG, isoniazid adds little even at high dose ${cite(9)}; WHO and the Saudi manual give rifampicin + ethambutol + pyrazinamide + levofloxacin ${cite(17, 6)}.`,
+            `<strong>Correct.</strong> WHO 2018 (conditional, very low certainty); Saudi NTP §10.5.1; ATS/CDC/ERS/IDSA 2019 similar ${cite(17, 6, 19)}.`,
+            `The streptomycin retreatment regimen did worse (aOR 0.4, 95% CI 0.2–0.7) ${cite(18)}; the Saudi manual says do not add streptomycin or other injectables ${cite(6)}.`,
+            `Adding a fluoroquinolone improved treatment success (aOR 2.8, 95% CI 1.1–7.3) ${cite(18)}; 6(H)REZ is the alternative only when levofloxacin can't be used ${cite(17)}.`,
+          ],
+        },
         reveal: `
           <p>Stop isoniazid. Give <strong>rifampin + ethambutol + pyrazinamide + levofloxacin for 6 months</strong>. ${cite(17, 6)}</p>
           <h4>Studies</h4>
