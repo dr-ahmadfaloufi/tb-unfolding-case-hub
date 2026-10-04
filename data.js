@@ -2974,6 +2974,22 @@ const CASES = [
           "CSF: 180 cells/µL, <strong>85% lymphocytes</strong>; protein 2.1 g/L; <strong>CSF:serum glucose 0.3</strong>; ADA 12 U/L. Gram stain negative. AFB smear negative. <strong>Xpert Ultra: MTB not detected.</strong> cryptococcal antigen (CrAg) negative. Brucella serology negative. HIV test negative.",
         question:
           "Does a negative Xpert Ultra rule out TB meningitis? Do you start treatment now or wait for culture?",
+        mcq: {
+          stem: "Lymphocytic CSF, low glucose ratio, high protein, ADA 12 U/L; Xpert Ultra negative; CrAg, Brucella serology and HIV negative. What is the best next step?",
+          options: [
+            "Repeat the lumbar puncture for Xpert before treating.",
+            "Wait for mycobacterial culture before starting treatment.",
+            "Start TB treatment now; add steroids if culture confirms.",
+            "Start TB treatment and dexamethasone today.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `Ultra sensitivity is 88.2% against culture, and culture itself misses paucibacillary TBM ${cite(119)}; a negative NAAT "may not be used to exclude TB" ${cite(1)}.`,
+            `CSF culture is positive in only 45–70% and takes weeks ${cite(1)}; 9-month mortality was 23.0% even in HIV-negative adults ${cite(136)}.`,
+            `Corticosteroids are initial adjunctive therapy for TB meningitis (strong, moderate) ${cite(4)}; the Saudi manual says they "should be used" ${cite(6)}.`,
+            `<strong>Correct.</strong> Empiric treatment is started in almost all situations in which TB is suspected ${cite(4)}; dexamethasone reduced death (RR 0.69) ${cite(138)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3019,6 +3035,22 @@ const CASES = [
         title: "Which regimen, how long, and steroids?",
         question:
           "What regimen and duration? Do adjunctive corticosteroids or intensified antibiotics help?",
+        mcq: {
+          stem: "For this HIV-negative adult, which plan best fits current evidence?",
+          options: [
+            "HRZE then HR, 6 months in total, without a steroid.",
+            "HRZE then HR, 9–12 months in total, with a dexamethasone taper.",
+            "High-dose rifampicin plus levofloxacin for 8 weeks, then HR.",
+            "HRZE then HR, 9–12 months, steroid only if hydrocephalus develops.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `After 2 months of HRZE, HR continues for 7–10 more months (optimal duration not defined), and a steroid is recommended (strong) ${cite(4)}.`,
+            `<strong>Correct.</strong> Adjunctive dexamethasone or prednisolone tapered over 6–8 weeks ${cite(4, 6)}; dexamethasone reduced death (RR 0.69, 0.52–0.92) ${cite(138)}.`,
+            `Intensified treatment (rifampin 15 mg/kg + levofloxacin 20 mg/kg for 8 weeks) gave no survival benefit (HR 0.94, 0.73–1.22) ${cite(139)}.`,
+            `Initial adjunctive corticosteroid therapy is recommended for all patients with TB meningitis, not only after complications ${cite(4)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
@@ -3053,6 +3085,22 @@ const CASES = [
           "On day 10 his GCS falls to 10. Computed tomography (CT): <strong>enlarging ventricles (hydrocephalus)</strong>." +
           img(8, "stage4", "ct-hydrocephalus", "Hydrocephalus on non-contrast CT (reference image; the cause in this example is not specified)"),
         question: "What do you do?",
+        mcq: {
+          stem: "On day 10 his GCS falls to 10 and CT shows enlarging ventricles. What is the best next step?",
+          options: [
+            "Urgent neurosurgical referral; continue the drugs and steroid.",
+            "Switch to a second-line regimen for presumed resistance.",
+            "Stop dexamethasone, as it may be masking infection.",
+            "Add high-dose rifampicin and levofloxacin to the regimen.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> Hydrocephalus is among the complications "warranting neurosurgical referral"; the regimen and steroid continue ${cite(4)}. A GCS &le;10 predicted poor outcome in the Saudi series ${cite(137)}.`,
+            `Adherence and susceptibility are checked first ${cite(4)}; nothing here points to resistance.`,
+            `The steroid is given as a 6–8-week taper from the start ${cite(4)}; stopping it is not the response to hydrocephalus.`,
+            `Intensified treatment did not improve survival ${cite(139)}.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>Refer to neurosurgery now.</strong> Hydrocephalus, tuberculous brain abscess and paraparesis are the listed complications "warranting neurosurgical referral". ${cite(4)}</li>
@@ -3067,6 +3115,22 @@ const CASES = [
       {
         title: "What if he had been HIV-positive?",
         question: "If his HIV test had been positive, what would change?",
+        mcq: {
+          stem: "If his HIV test had been positive, what would change?",
+          options: [
+            "Start ART within 2 weeks, as for other forms of TB.",
+            "Start ART immediately, before TB treatment begins.",
+            "Defer ART; dexamethasone showed no survival benefit.",
+            "Nothing; manage exactly as HIV-negative TB meningitis.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `In HIV-associated TB meningitis, immediate ART gave no survival benefit and more grade 4 adverse events ${cite(66)}; WHO defers ART when TB meningitis is suspected ${cite(38)}.`,
+            `Same evidence: early ART in TB meningitis did not help and caused more severe adverse events ${cite(66)}.`,
+            `<strong>Correct.</strong> ACT HIV: deaths 44.1% vs 49.0% (HR 0.85, 0.66–1.10), no subgroup clearly benefited ${cite(140)}; defer ART ${cite(38, 66)}.`,
+            `Both ART timing and the steroid evidence differ ${cite(66, 140)}; check CrAg if CD4 &lt;100 ${cite(38)}.`,
+          ],
+        },
         reveal: `
           <h4>Studies</h4>
           <div class="table-scroll">
