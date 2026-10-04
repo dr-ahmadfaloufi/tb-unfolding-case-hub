@@ -2813,7 +2813,7 @@ const CASES = [
             `The pattern allows a presumptive diagnosis, "but the definitive diagnosis depends upon bacteriological tests" ${cite(130)}; lower lumbar TB is hard to tell from brucella ${cite(131)}.`,
             `Prior antitubercular treatment reduced the biopsy yield ${cite(133)}.`,
             `<strong>Correct.</strong> Only culture gives an isolate for full DST ${cite(1)}; in one series, rifampicin resistance was found in 16 of 72 Xpert-positive biopsies (22%) ${cite(133)}.`,
-            `Treatment can rest on histology or a clinical diagnosis. The WHO/Saudi case definition of "clinically diagnosed" TB "includes cases diagnosed on the basis of X-ray abnormalities or suggestive histology and extrapulmonary cases without laboratory confirmation" ${cite(6, 9)}. In the biopsy series, histopathology was confirmatory in 36.6% ${cite(133)}, and negative microbiology "may not be used to exclude TB" ${cite(1)}.`,
+            `Treatment can rest on histology or a clinical diagnosis. The WHO/Saudi case definition of "clinically diagnosed" TB "includes cases diagnosed on the basis of X-ray abnormalities or suggestive histology and extrapulmonary cases without laboratory confirmation" (Saudi NTP &sect;9.2.1) ${cite(6, 9)}. In the biopsy series, histopathology was confirmatory in 36.6% ${cite(133)}, and negative microbiology "may not be used to exclude TB" ${cite(1)}.`,
           ],
         },
         reveal: `
@@ -3578,7 +3578,7 @@ const CASES = [
             <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> with isoniazid in pregnancy and breastfeeding. ${cite(4)}</li>
             <li><strong>Not the 4-month rifapentine&ndash;moxifloxacin regimen:</strong> WHO excludes pregnant, breastfeeding and postpartum women from that recommendation (and abdominal TB). ${cite(9)}</li>
             <li><strong>Breastfeeding continues;</strong> mother and baby stay together. ${cite(154, 4)}</li>
-            <li><strong>The newborn (WHO):</strong> exclude TB disease first. If the mother has bacteriologically confirmed pulmonary TB and the baby is well, give TB preventive treatment (preferably 3 months of isoniazid&ndash;rifampicin) with pyridoxine 5&ndash;10 mg/day, and delay BCG until it is finished. If the mother is non-infectious, as with peritoneal TB without lung involvement, screen and follow the infant, and consider preventive treatment. ${cite(155)}</li>
+            <li><strong>The newborn (WHO):</strong> exclude TB disease first. If the mother has bacteriologically confirmed pulmonary TB and the baby is well, give TB preventive treatment (preferably 3 months of isoniazid&ndash;rifampicin) with pyridoxine 5&ndash;10 mg/day, and delay bacille Calmette-Guérin (BCG) until it is finished. If the mother is non-infectious, as with peritoneal TB without lung involvement, screen and follow the infant, and consider preventive treatment. ${cite(155)}</li>
           </ul>`,
         pearl:
           "In cirrhosis, a low ADA doesn't rule out TB. In a peritoneal dialysis (PD) patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
