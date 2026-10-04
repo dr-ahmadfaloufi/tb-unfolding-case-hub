@@ -1078,7 +1078,7 @@ const CASES = [
           </div>
           ${abbrev("LAM", "RR")}
           <h4>What it means for this patient</h4>
-          <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized, unable to expectorate reliably) is exactly the phenotype where LAM-guided care showed benefit. ${cite(47)}</p>`,
+          <p><strong>Take-home:</strong> this patient (CD4 38, hospitalized) matches the groups where benefit appeared: the sickest and most immunosuppressed in Peter 2016 (the authors' interpretation), and CD4 &lt;100 among STAMP's prespecified subgroups. ${cite(47, 48)}</p>`,
         pearl:
           "Who gets tested changes what the evidence says as much as the test itself does. LAM's mortality benefit tracks with illness severity and CD4, not with HIV status alone.",
       },
@@ -1192,11 +1192,11 @@ const CASES = [
         reveal: `
           <h4>The cost of waiting</h4>
           <ul>
-            <li>In disseminated TB with advanced HIV, delaying treatment carries a real mortality cost. Trial evidence ${cite(47)} supports acting on a strong clinical/radiographic picture.</li>
+            <li>ATS/CDC/IDSA: empiric multidrug treatment is initiated in almost all situations in which active TB is suspected ${cite(4)}. For seriously ill people with HIV, the Saudi algorithm (below) starts presumptive treatment if there is no improvement after 3&ndash;5 days ${cite(6)}.</li>
           </ul>
           <h4>Is histology enough?</h4>
           <ul>
-            <li>Necrotizing (caseating) granulomas on histopathology, even with a negative culture, are generally accepted as sufficient to treat as TB in the right clinical context. Histology still has to be read in that context, "because neither false-positive nor false-negative results are rare". ${cite(1)}
+            <li>Granulomas on histology support TB but are not specific: necrotizing and non-necrotizing granulomas are also seen in other infectious and non-infectious diseases. Results must be read in the clinical context "because neither false-positive nor false-negative results are rare". ${cite(1)}
               ${img(3, "stage6", "histopath", "Necrotizing (caseating) granulomas on biopsy histopathology")}
             </li>
           </ul>
