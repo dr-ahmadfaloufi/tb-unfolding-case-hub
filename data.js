@@ -336,8 +336,8 @@ const CASES = [
             <li><strong>Two more sputum specimens</strong> (three in total) for smear and mycobacterial culture. Culture is the gold standard and provides full phenotypic drug-susceptibility testing (DST). ${cite(1)}
               <ul>
                 <li><strong>Each extra smear adds less:</strong> the first detects about 54% of culture-confirmed cases, a second adds about 11%, and a third only 2&ndash;5%. ${cite(1)}</li>
-                <li><strong>Morning sputum:</strong> a first-morning specimen is about 12% more sensitive than a spot specimen. ${cite(1)} A later meta-analysis found no significant gain from morning collection; coaching the patient on how to produce sputum did help (odds ratio (OR) 1.6). ${cite(7)}</li>
-                <li><strong>In the laboratory:</strong> concentrated specimens add about 18% sensitivity, and fluorescence microscopy is on average about 10% more sensitive than Ziehl&ndash;Neelsen (ZN) staining. ${cite(1)}</li>
+                <li><strong>Morning sputum:</strong> a first-morning specimen is about 12% more sensitive than a spot specimen. ${cite(1)} A later meta-analysis found no significant gain from morning collection; coaching the patient on how to produce sputum did help smear microscopy (odds ratio (OR) 1.6). ${cite(7)}</li>
+                <li><strong>In the laboratory:</strong> concentrated specimens add about 18% sensitivity, and fluorescence microscopy is on average about 10% more sensitive than conventional (Ziehl&ndash;Neelsen, ZN) microscopy. ${cite(1)}</li>
               </ul>
             </li>
             <li><strong>Start treatment now</strong>, without waiting weeks for culture: cavitary disease plus a positive NAAT is enough. ${cite(4)}</li>
@@ -360,7 +360,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>ATS/CDC/ERS/IDSA (2025) ${cite(8)}</td>
-                  <td><strong>4-month 2HPZM/2HPM</strong> (isoniazid 300 mg + rifapentine 1,200 mg + moxifloxacin 400 mg daily &times;17 wk; pyrazinamide weight-based &times;8 wk) for age &ge;12</td>
+                  <td><strong>4-month 2HPZM/2HPM</strong> (isoniazid 300 mg + rifapentine 1,200 mg + moxifloxacin 400 mg daily &times;17 wk; pyrazinamide weight-based &times;8 wk) for age &ge;12. <strong>Not for pregnant, breastfeeding or postpartum women:</strong> WHO excludes them from its 4-month regimen recommendation, because they were excluded from Study 31 ${cite(9)}</td>
                   <td>Conditional, moderate certainty</td>
                 </tr>
               </tbody>
@@ -408,7 +408,7 @@ const CASES = [
           <ul>
             <li><strong>What it looks at:</strong> Xpert checks only the rifampin-resistance region of one gene (<em>rpoB</em>). It does not test isoniazid at all.</li>
             <li><strong>How accurate it is:</strong> in a Cochrane review, <strong>Xpert Ultra detected rifampin resistance with 94.9% sensitivity and 99.1% specificity</strong> (Xpert MTB/RIF: 95.3% / 98.8%; high-certainty evidence). ${cite(14)}</li>
-            <li><strong>What that means here:</strong> in a new patient in a low-resistance setting, where WHO estimates <strong>3.2% of new TB cases globally</strong> have MDR/RR-TB ${cite(15)}, the review's pooled Ultra estimates give, per 1,000 tested, about <strong>2 resistant cases missed</strong> and about <strong>9 false "detected" results</strong>. A "not detected" result is right about <strong>99.8%</strong> of the time; a "detected" result only about <strong>78%</strong> of the time. These figures are calculated from the review's pooled estimates; the review itself doesn't state them. ${cite(14)}</li>
+            <li><strong>What that means in practice:</strong> false rifampicin-susceptible results are rare, seen in 1&ndash;5% of TB cases tested; mutations in the <em>rpoB</em> region Xpert reads account for 95&ndash;99% of rifampicin resistance, and most misses come from mutations outside it. ${cite(6)}</li>
             <li><strong>Rarely it misses resistance</strong>, and culture-based DST (or sequencing) confirms the final profile.</li>
             <li><strong>The real open question is isoniazid.</strong> Xpert MTB/RIF says nothing about it. You need <strong>culture-based DST</strong> or a <strong>rapid molecular test for isoniazid (line probe assay)</strong>. The Saudi manual indicates this especially after prior isoniazid treatment or where isoniazid resistance is common. ${cite(6)}</li>
           </ul>
@@ -421,7 +421,6 @@ const CASES = [
                 <li>If it <strong>does not</strong> &rarr; start first-line treatment. The second result is taken as correct: false-positive rifampicin-resistance results "are commonly due to laboratory or clerical errors and rarely to technical performance of the assay". ${cite(6)}</li>
               </ul>
             </li>
-            <li><strong>Why:</strong> at 3.2% prevalence, about 1 in 5 "detected" results would be false (positive predictive value about 78%, calculated from the pooled estimates above). ${cite(14, 15)} A single "detected" result in a low-risk patient needs confirming.</li>
           </ul>
           <p style="color:var(--text-muted); font-size:0.9rem;">Saudi NTP Manual (2021), Algorithm 1, Step 3.</p>`,
         pearl:
