@@ -682,6 +682,22 @@ const CASES = [
           "What do you send now to choose the regimen?",
           "How much worse are outcomes with rifampicin-resistant TB?",
         ],
+        mcq: {
+          stem: "In this previously treated patient, Xpert shows MTB detected, rifampicin resistance detected. What is the best step today?",
+          options: [
+            "Start 2HRZE now and adjust when full DST returns.",
+            "Treat as MDR/RR-TB and send second-line DST now.",
+            "Repeat Xpert on a second specimen before any treatment.",
+            "Wait for phenotypic DST before choosing any regimen.",
+          ],
+          answer: 1,
+          optionNotes: [
+            `Do not start the standard first-line regimen; WHO manages RR-TB and MDR-TB together as MDR/RR-TB ${cite(9)}.`,
+            `<strong>Correct.</strong> Treat as MDR/RR-TB ${cite(9)}. Fluoroquinolone susceptibility decides between BPaLM and BPaL; globally, 18% of MDR/RR-TB is pre-XDR ${cite(15)}.`,
+            `The repeat is for low-risk patients. In previously treated patients the rifampicin-resistance result is taken as definitive and an RR/MDR-TB regimen is started ${cite(6)}.`,
+            `Culture-based DST takes 3 to 8 weeks ${cite(6)}. In Saudi data, prior treatment carried an OR of 7.34 for MDR ${cite(24)}.`,
+          ],
+        },
         reveal: `
           <h4>Today, before full DST</h4>
           <ul>
@@ -731,6 +747,22 @@ const CASES = [
           "The reverse: Xpert susceptible but DST resistant?",
           "How common is drug resistance, globally and in Saudi Arabia?",
         ],
+        mcq: {
+          stem: "Xpert reported rifampicin resistance, but phenotypic DST in MGIT reports rifampicin susceptible. What is the best next step?",
+          options: [
+            "Trust the phenotype and switch to first-line treatment.",
+            "Repeat MGIT DST and treat according to that result.",
+            "Repeat Xpert on the same sample and treat by majority.",
+            "Keep the RR-TB regimen and request rpoB sequencing.",
+          ],
+          answer: 3,
+          optionNotes: [
+            `"Disputed" rpoB mutations cause low-level resistance that MGIT can miss: only 16 of 61 (26%) tested resistant ${cite(25)}. Patients with these strains often fail rifampicin-based first-line regimens ${cite(6)}.`,
+            `The Saudi manual notes these false-susceptible results occur particularly in MGIT, and lists sequencing or DST on solid media as follow-up ${cite(6)}.`,
+            `Xpert's specificity for rifampicin resistance is 99.1% (Ultra) / 98.8% (MTB/RIF) ${cite(14)}; the Saudi manual says the Xpert result should guide treatment pending additional testing ${cite(6)}.`,
+            `<strong>Correct.</strong> Don't de-escalate on the phenotype alone; sequence rpoB and treat as RR-TB if a resistance mutation is confirmed ${cite(25, 6)}.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>Mechanism in one line:</strong> Xpert detects mutations in a short rifampicin-resistance region of <em>rpoB</em>. It reads DNA, not growth.</li>
@@ -791,6 +823,22 @@ const CASES = [
           "What must you check before starting BPaLM in a woman of child-bearing age?",
           "If BPaLM isn't possible, what other short regimens are there, and which does WHO advise against?",
         ],
+        mcq: {
+          stem: "MDR-TB, fluoroquinolone-susceptible, no other resistance, not pregnant. Which regimen does current guidance favour?",
+          options: [
+            "BPaLM for 6 months.",
+            "BPaL for 6 months.",
+            "DCMZ for 9 months.",
+            "An individualized 18–20-month regimen.",
+          ],
+          answer: 0,
+          optionNotes: [
+            `<strong>Correct.</strong> WHO suggests BPaLM rather than 9-month or longer regimens (conditional, very low certainty) ${cite(9)}; ATS/CDC/ERS/IDSA 2025 strong for FQ-susceptible RR-TB, age &ge;14 ${cite(8)}. TB-PRACTECAL: unfavourable outcome 11% vs 48% (mITT); grade &ge;3 or serious AEs 19% vs 59% ${cite(31)}.`,
+            `BPaL (no moxifloxacin) is for fluoroquinolone-resistant or -intolerant disease ${cite(8)}.`,
+            `WHO suggests against 9-month DCMZ (conditional, very low certainty); it failed non-inferiority in the per-protocol analysis ${cite(9, 34)}.`,
+            `WHO suggests BPaLM rather than longer (18-month) regimens; longer regimens are the fallback ${cite(9)}.`,
+          ],
+        },
         reveal: `
           <ul>
             <li><strong>Answer: 6-month BPaLM.</strong> For eligible patients:
@@ -912,6 +960,22 @@ const CASES = [
           "What does WHO say about each option in pregnancy?",
           "If a short regimen isn't possible, what is the fallback?",
         ],
+        mcq: {
+          stem: "Before BPaLM is started, her pregnancy test is positive. Which regimen has trial data in pregnant women?",
+          options: [
+            "6-month BPaLM, started as planned.",
+            "9-month BLMZ, tested in pregnant women in endTB.",
+            "6-month BDLLfxC, tested in pregnant women in BEAT.",
+            "9-month standardized regimen with ethionamide.",
+          ],
+          answer: 2,
+          optionNotes: [
+            `BPaLM is not recommended in pregnancy or breastfeeding; pretomanid safety data are lacking ${cite(9)}.`,
+            `endTB excluded pregnancy at enrolment; WHO: "no data from the endTB trial" on these regimens in pregnancy, though it applies them to pregnant women on drug-safety grounds ${cite(34, 9)}.`,
+            `<strong>Correct.</strong> BEAT enrolled pregnant women in any trimester: 10 pregnancies, 4 on BDLLfxC, all singleton live births, one premature. WHO states BDLLfxC is recommended in pregnant and breastfeeding women ${cite(36, 9)}.`,
+            `In pregnancy, WHO advises the version with linezolid instead of ethionamide ${cite(9)}.`,
+          ],
+        },
         reveal: `
           <h4>Which short regimens have data in pregnancy?</h4>
           <div class="table-scroll">
