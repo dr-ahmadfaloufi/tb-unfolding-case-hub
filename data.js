@@ -2884,7 +2884,7 @@ const CASES = [
             <li><strong>Peritoneal carcinomatosis / advanced ovarian cancer</strong>
               <ul>
                 <li><strong>Ascitic cytology</strong>, then tissue.</li>
-                <li><strong>A raised CA-125 does not separate them:</strong> in 28 women with abdominopelvic TB, CA-125 was raised in <strong>all 28</strong>, and half were diagnosed only at laparotomy. ${cite(149)}</li>
+                <li><strong>A raised CA-125 does not separate them:</strong> abdominopelvic TB is often misdiagnosed as advanced ovarian cancer, and in a series of 28 women with abdominopelvic TB and a raised CA-125, half were diagnosed from laparotomy biopsies. ${cite(149)}</li>
               </ul>
             </li>
             <li><strong>Ascites from portal hypertension</strong> (cirrhosis, heart failure)
@@ -2951,7 +2951,7 @@ const CASES = [
           <h4>Answer</h4>
           <ul>
             <li>If <strong>malignancy remains a real possibility</strong> (as the gynaecologists fear), <strong>laparoscopy with peritoneal biopsy</strong> is the right next step. It gives histology, culture and drug-susceptibility testing (DST) in one procedure, and <strong>avoids a laparotomy</strong>. ${cite(148, 151, 149)}</li>
-            <li>If the picture were unequivocal (young, no mass, very high ADA), many would treat and follow closely. ${cite(4, 150)}</li>
+            <li>If the picture were unequivocal (young, no mass, very high ADA), treatment without tissue is an option: ATS/CDC/IDSA start empiric treatment in almost all situations in which active TB is suspected, and ascitic ADA has pooled sensitivity 90% and specificity 94% (very low certainty). ${cite(4, 150)}</li>
           </ul>`,
         pearl:
           "For peritoneal TB, the laparoscope beats the laparotomy: same tissue, far less surgery. The cure is medical.",
@@ -2989,9 +2989,9 @@ const CASES = [
           "Peritoneal TB is treated like pulmonary TB: six months, no steroids. The hard part is getting the diagnosis without a laparotomy.",
       },
       {
-        title: "Two patients who don't fit the textbook",
+        title: "Three patients who don't fit the textbook",
         question:
-          "How would your approach change if she had (a) <strong>cirrhosis</strong>, or (b) end-stage kidney disease on <strong>peritoneal dialysis</strong> with cloudy dialysate?",
+          "How would your approach change if she had (a) <strong>cirrhosis</strong>, (b) end-stage kidney disease on <strong>peritoneal dialysis</strong> with cloudy dialysate, or (c) she is <strong>pregnant</strong>?",
         reveal: `
           <h4>(a) Cirrhosis: the ADA loses sensitivity</h4>
           <ul>
@@ -3003,6 +3003,22 @@ const CASES = [
           <ul>
             <li>A <strong>Jeddah</strong> cohort of 89 continuous ambulatory peritoneal dialysis (CAPD) patients over 12 years found <strong>4 cases</strong> of TB peritonitis among 103 peritonitis episodes. All presented insidiously with <strong>cloudy fluid</strong>. Diagnosis was by polymerase chain reaction (PCR) (1), culture (2) or clinical response (1). ${cite(153)}</li>
             <li><strong>All 4 needed catheter removal</strong>, and all were converted to haemodialysis; one later restarted CAPD. All survived. The authors recommend <strong>early TB treatment and catheter removal</strong>. ${cite(153)}</li>
+          </ul>
+          <h4>(c) Pregnancy</h4>
+          <ul>
+            <li><strong>Check first:</strong> ask about current or planned pregnancy before starting treatment. ${cite(158)}</li>
+            <li><strong>The standard regimen stays:</strong> "With the exception of streptomycin, the first line anti-TB drugs are safe for use in pregnancy." ${cite(158, 6)}</li>
+            <li><strong>Pyrazinamide: guidelines differ.</strong>
+              <ul>
+                <li>WHO: the 6-month isoniazid&ndash;rifampicin&ndash;pyrazinamide regimen "should be used whenever possible"; pyrazinamide "can probably be used safely during pregnancy". ${cite(158)}</li>
+                <li>ATS/CDC/IDSA: including pyrazinamide "is controversial in the United States"; decide case by case with the patient. They note WHO recommends it, and that with HIV, extrapulmonary or severe TB it is more beneficial to include it. Without pyrazinamide, give at least 9 months of isoniazid, rifampicin and ethambutol. ${cite(4)}</li>
+                <li>Saudi NTP Manual: no pyrazinamide-specific statement; all first-line drugs are considered safe except streptomycin. ${cite(6)}</li>
+              </ul>
+            </li>
+            <li><strong>Pyridoxine 25&ndash;50 mg/day</strong> with isoniazid in pregnancy and breastfeeding. ${cite(4)}</li>
+            <li><strong>Not the 4-month rifapentine&ndash;moxifloxacin regimen:</strong> WHO excludes pregnant, breastfeeding and postpartum women from that recommendation (and abdominal TB). ${cite(9)}</li>
+            <li><strong>Breastfeeding continues;</strong> mother and baby stay together. ${cite(158, 4)}</li>
+            <li><strong>The newborn (WHO):</strong> exclude TB disease first. If the mother has bacteriologically confirmed pulmonary TB and the baby is well, give TB preventive treatment (preferably 3 months of isoniazid&ndash;rifampicin) with pyridoxine 5&ndash;10 mg/day, and delay BCG until it is finished. If the mother is non-infectious, as with peritoneal TB without lung involvement, screen and follow the infant, and consider preventive treatment. ${cite(159)}</li>
           </ul>`,
         pearl:
           "In cirrhosis, a low ADA doesn't rule out TB. In a peritoneal dialysis (PD) patient, \"culture-negative\" cloudy dialysate that doesn't respond to antibiotics needs a TB work-up, and the catheter usually has to come out.",
