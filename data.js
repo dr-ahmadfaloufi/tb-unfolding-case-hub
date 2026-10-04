@@ -1396,7 +1396,7 @@ const CASES = [
             <li><strong>Necrotizing granulomas favor TB over sarcoidosis.</strong>
               <ul>
                 <li>Sarcoidosis is defined by <strong>non-necrotizing</strong> granulomas, plus exclusion of other granulomatous causes. ${cite(73)}</li>
-                <li>In 179 patients having EBUS-TBNA in India, necrosis was seen in <strong>56% of TB</strong> but only <strong>6% of sarcoidosis</strong>. In sarcoidosis it was always focal, never extensive. Among the 135 whose samples showed granulomas, the cytologist's call on granuloma morphology was wrong in about <strong>29%</strong>. ${cite(74)}</li>
+                <li>In 179 patients having EBUS-TBNA in India, necrosis was <strong>absent in 44% of TB</strong> cases but in <strong>94% of sarcoidosis</strong>; in sarcoidosis it was only ever focal (6%), and extensive necrosis (9% of TB) was seen only in TB. Among the 135 whose samples showed granulomas, the cytologist's call on granuloma morphology was wrong in <strong>29%</strong>. ${cite(74)}</li>
               </ul>
             </li>
           </ul>
@@ -1433,7 +1433,7 @@ const CASES = [
                 </tr>
                 <tr>
                   <td>TB lymphadenitis</td>
-                  <td>EBUS-TBNA found <strong>32 of 54</strong> TB cases (<strong>59%</strong>) in an unselected London cohort: 19 (35%) confirmed by mycobacterial culture and 13 (24%) by cytopathology ${cite(76)}; accuracy <strong>57% &rarr; 71%</strong> when TB-PCR was added on rinse fluid ${cite(75)}</td>
+                  <td>EBUS-TBNA sensitivity <strong>59%</strong> for TB in an unselected London cohort (54 TB cases): 19 (35%) confirmed by mycobacterial culture and 13 (24%) by cytopathology ${cite(76)}; accuracy <strong>57% &rarr; 71%</strong> when TB-PCR was added on rinse fluid ${cite(75)}</td>
                   <td>Paucibacillary; cytology + culture alone under-detect</td>
                 </tr>
                 <tr>
@@ -1509,7 +1509,7 @@ const CASES = [
             <li><strong>Safety trade-off:</strong>
               <ul>
                 <li><strong>EBUS:</strong> in a systematic review of 16,181 patients having endosonography, serious adverse events occurred in <strong>0.14% overall and 0.05% with EBUS</strong>, with <strong>no deaths</strong>. ${cite(79)}</li>
-                <li><strong>CT-guided biopsy:</strong> in one series of 155 procedures, complications occurred in <strong>13.5%</strong>, with <strong>chest-tube pneumothorax in 1.9%</strong>. ${cite(80)}</li>
+                <li><strong>CT-guided biopsy:</strong> in one series of 155 procedures, minor complications occurred in <strong>11.6%</strong>, and <strong>pneumothorax needing a chest drain in 1.9%</strong>. ${cite(80)}</li>
               </ul>
             </li>
           </ul>
